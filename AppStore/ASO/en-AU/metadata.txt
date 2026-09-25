@@ -1,0 +1,10 @@
+LOCALE=en-AU
+LANGUAGE=English (Australia)
+APP_NAME=Arrow Maze: Logic Puzzle
+SUBTITLE=Untangle Each Twisting Path
+PROMOTIONAL_TEXT=Spot the move that frees the board. Chase bigger combos through 240 levels, take on Daily challenges, chill in Zen, or create a Photo Maze.
+KEYWORDS=brain,teaser,tap,away,block,grid,route,clear,relax,zen,daily,photo,quest,unblock,mind,sort
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

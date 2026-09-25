@@ -1,0 +1,43 @@
+{
+  "filters": [
+    {
+      "field": "promotedObjectId",
+      "operator": "EQUALS",
+      "value": [
+        "6800708435"
+      ]
+    },
+    {
+      "field": "promotedObjectType",
+      "operator": "EQUALS",
+      "value": [
+        "APPSTORE_APP"
+      ]
+    },
+    {
+      "field": "countriesOrRegions",
+      "operator": "IN",
+      "value": [
+        "BR"
+      ]
+    },
+    {
+      "field": "terms",
+      "operator": "IN",
+      "value": [
+        "arrows",
+        "arrow puzzle",
+        "arrow maze",
+        "setas",
+        "jogo de setas",
+        "labirinto de setas",
+        "jogos de lógica",
+        "tap away"
+      ]
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "pageSize": 1000
+  }
+}

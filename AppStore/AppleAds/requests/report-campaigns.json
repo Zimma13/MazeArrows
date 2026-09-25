@@ -1,0 +1,12 @@
+{
+  "timeRange": {
+    "start": "2026-09-06",
+    "end": "2026-09-07",
+    "timeZone": "ORTZ",
+    "granularity": "DAILY"
+  },
+  "pagination": {
+    "offset": 0,
+    "pageSize": 1000
+  }
+}

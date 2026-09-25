@@ -1,0 +1,10 @@
+LOCALE=zh-Hant
+LANGUAGE=繁體中文
+APP_NAME=Arrow Maze 世界：箭頭解謎
+SUBTITLE=解開路徑的燒腦挑戰
+PROMOTIONAL_TEXT=一條暢通路線，就能解鎖整個盤面。預判順序、累積連擊，挑戰240個關卡、每日謎題、Zen模式，還能把照片變成專屬Photo Maze。
+KEYWORDS=益智遊戲,邏輯推理,謎題闖關,方塊消除,點擊移動,每日任務,相片創作,禪模式
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

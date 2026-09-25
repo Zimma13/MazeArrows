@@ -1,0 +1,10 @@
+LOCALE=fr-FR
+LANGUAGE=Français (France)
+APP_NAME=Arrow Maze : Casse-tête
+SUBTITLE=Démêlez chaque parcours
+PROMOTIONAL_TEXT=Un seul passage libre peut débloquer toute la grille. Anticipez, enchaînez les combos et relevez 240 niveaux, le défi du jour, Zen et Photo Maze.
+KEYWORDS=puzzle,réflexion,labyrinthe,évasion,grille,cerveau,détente,zen,quotidien,photo,flèches,logique
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

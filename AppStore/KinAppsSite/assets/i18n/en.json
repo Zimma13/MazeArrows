@@ -1,0 +1,88 @@
+{
+  "nav.home": "Home",
+  "nav.products": "All Products",
+  "nav.about": "About Us",
+
+  "appstore.small": "Download on the",
+  "appstore.large": "App Store",
+
+  "home.title": "I build mobile apps people love to use.",
+  "home.lead": "I'm a mobile app developer. Here you'll find my projects and contact information.",
+  "home.productsTitle": "All Products",
+  "home.productsLead": "Focused iOS apps published on the App Store — utilities, a custom keyboard, a strength tracker, and a logic puzzle.",
+
+  "products.h1": "All Products",
+  "products.lead": "A growing line-up of focused iOS apps — built to do one thing well and get out of your way.",
+
+  "app.icleanse.name": "iCleanse",
+  "app.icleanse.cat": "Utilities",
+  "app.icleanse.desc": "Free up iPhone storage in a few taps: find duplicate and similar photos, large videos, and screenshots you no longer need — then review and clean safely.",
+
+  "app.fnt.name": "Fonts & Tags",
+  "app.fnt.cat": "Keyboard",
+  "app.fnt.desc": "A custom iPhone keyboard: stylish fonts, themes, saved snippets, kaomoji, and ASCII photo-to-text art. Type in many languages and 65+ fonts straight from the keyboard.",
+
+  "app.total.name": "TOTAL",
+  "app.total.cat": "Health & Fitness",
+  "app.total.desc": "A powerlifting tracker: set SBD goals (squat, bench, deadlift), run live workouts set by set, and follow analytics, e1RM and IPF GL — with full Apple Watch support.",
+
+  "app.arrowmaze.name": "Arrow Maze",
+  "app.arrowmaze.cat": "Puzzle Games",
+
+  "modal.more": "Learn more",
+  "modal.appstore": "App Store",
+
+  "about.title": "About Us",
+  "about.intro": "By downloading, installing, or using any application or service provided by Stepanov Dmitrii (“we”, “our”, “us”), you agree to be bound by these Terms of Use. Please read them carefully before using our apps or website.",
+  "about.contactTitle": "Contact",
+  "about.email": "Email",
+  "about.formTitle": "Send a message",
+  "about.name": "Your name",
+  "about.message": "Message",
+  "about.send": "Send message",
+  "about.sent": "Thanks! Your message has been sent.",
+
+  "search.placeholder": "Search the site...",
+  "search.empty": "Nothing found",
+
+  "legal.updated": "Last updated: 2025-09-27",
+
+  "terms.title": "Terms & Conditions",
+  "terms.intro": "By downloading, installing, or using any application or service provided by Stepanov Dmitrii (“we”, “our”, “us”), you agree to be bound by these Terms of Use. Please read them carefully before using our apps or website. If you do not agree with these terms, you should not use our services.",
+  "terms.b1.h": "Use of Services",
+  "terms.b1.p": "You may use our apps and services only for lawful purposes and in accordance with these Terms. You agree not to:\nAttempt to extract or modify the source code.\nUse our services in any way that could damage, disable, or impair them.\nCircumvent security measures, or use the services to distribute malware, viruses, or harmful code.",
+  "terms.b2.h": "Updates and Availability",
+  "terms.b2.p": "We may update, modify, or discontinue any app or service at any time without prior notice. While we aim to keep our apps and website available and up to date, we cannot guarantee continuous, uninterrupted, or error-free access.",
+  "terms.b3.h": "Responsibility and Limitations",
+  "terms.b3.p": "You are responsible for ensuring your device and internet connection are functional to use our apps.\nWe are not responsible for any charges incurred by your mobile network provider, including roaming or data costs.\nWe are not liable for indirect or consequential losses resulting from the use or inability to use our apps or website.",
+  "terms.b4.h": "Third-Party Services",
+  "terms.b4.p": "Some features may rely on third-party services (e.g., APIs, data providers, or platforms such as Apple App Store/Google Play). We are not responsible for the availability, accuracy, or performance of those third-party services.",
+  "terms.b5.h": "Termination",
+  "terms.b5.p": "We reserve the right to suspend or terminate your access to any of our apps or services at any time, without notice, if you violate these Terms. Upon termination, you must stop using our apps and delete them from your devices.",
+  "terms.b6.h": "Changes to Terms",
+  "terms.b6.p": "We may update these Terms of Use from time to time. Any changes will be posted on this page with the updated date. Your continued use of our apps or website after changes are made constitutes acceptance of the new Terms.",
+  "terms.b7.h": "Contact",
+  "terms.b7.p": "If you have any questions about these Terms, please contact us:\nEmail: support@kinapp.dev\nWebsite: kinapp.dev",
+
+  "privacy.title": "Privacy & Policy",
+  "privacy.intro": "This Privacy Policy explains how Stepanov Dmitrii (“we”, “our”, “us”) collects, uses, and protects information when you visit our website.",
+  "privacy.b1.h": "How We Use Information",
+  "privacy.b1.p": "Any automatically collected information is used only for:\nensuring website functionality,\nanalyzing traffic to improve content and usability.\n\nWe do not sell, rent, or share personal data with third parties for marketing purposes.",
+  "privacy.b2.h": "Third-Party Services",
+  "privacy.b2.p": "Our website may use third-party services such as analytics tools (e.g., Google Analytics). These services may collect information as described in their own privacy policies.",
+  "privacy.b3.h": "Data Security",
+  "privacy.b3.p": "We take reasonable steps to protect the information processed by our website. However, please note that no method of transmission over the internet or electronic storage is 100% secure.",
+  "privacy.b4.h": "Your Rights",
+  "privacy.b4.p": "Since we do not collect personal data directly, you generally do not need to take any action. If you have concerns about cookies or tracking, you can manage or disable them in your browser settings.",
+  "privacy.b5.h": "Changes to This Policy",
+  "privacy.b5.p": "We may update this Privacy Policy from time to time. Updates will be posted on this page with a new “Last updated” date.",
+  "privacy.b6.h": "Contact",
+  "privacy.b6.p": "If you have any questions about this Policy, please contact us:\nEmail: support@kinapp.dev\nWebsite: kinapp.dev",
+
+  "footer.tagline": "Mobile application development",
+  "footer.products": "All Products",
+  "footer.about": "About Us",
+  "footer.privacy": "Privacy & Policy",
+  "footer.terms": "Terms & Conditions",
+  "footer.rights": "All Rights Reserved © KinApps 2026"
+}

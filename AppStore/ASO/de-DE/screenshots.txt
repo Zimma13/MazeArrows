@@ -1,0 +1,26 @@
+SCREENSHOT-TEXTE — DEUTSCHLAND
+
+1. photoMaze
+   DEIN FOTO.
+   DEIN LABYRINTH.
+   Zusatz: Wähle ein Motiv. Mach daraus ein spielbares Rätsel.
+
+2. freeArrow
+   FINDE DEN
+   FREIEN PFEIL
+   Zusatz: Ein kluger Zug kann das ganze Feld öffnen.
+
+3. combo
+   SIEH, WIE SICH
+   ALLES AUFLÖST
+   Zusatz: Plane voraus. Starte eine Kettenreaktion nach der anderen.
+
+4. worlds
+   240 LEVEL.
+   7 WELTEN.
+   Zusatz: Reise von den Wiesen bis in die Leere.
+
+5. daily
+   JEDEN TAG
+   EIN NEUES RÄTSEL
+   Zusatz: Tagesrätsel, drei Aufgaben und Serienboni.

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-theme-mode="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Arrow Maze - Find the path that frees them all</title>
+  <meta name="description" content="A strategic arrow puzzle with 240 levels, daily challenges, Zen mode, Photo Maze and Game Center.">
+  <link rel="canonical" href="https://kinapp.dev/arrowmaze/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#fff7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1340" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KinApps">
+  <meta property="og:title" content="Arrow Maze - Find the path that frees them all">
+  <meta property="og:description" content="Plan every tap, build satisfying combos and clear every arrow.">
+  <meta property="og:url" content="https://kinapp.dev/arrowmaze/">
+  <meta property="og:image" content="https://kinapp.dev/arrowmaze/assets/app-icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Arrow Maze app icon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6800708435">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <link rel="preload" href="assets/app-icon.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/gameplay.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="styles.css?v=20260819-9">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Arrow Maze",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "iOS, iPadOS",
+    "description": "A strategic arrow puzzle with 240 levels, daily challenges, Zen mode and Photo Maze.",
+    "image": "https://kinapp.dev/arrowmaze/assets/app-icon.png",
+    "url": "https://kinapp.dev/arrowmaze/",
+    "author": {
+      "@type": "Organization",
+      "name": "KinApps",
+      "url": "https://kinapp.dev/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <canvas class="ambient-maze" id="ambientMaze" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="top">
+    <div class="nav-shell glass-panel">
+      <a class="brand" href="#top" aria-label="Arrow Maze home">
+        <img src="assets/app-icon.webp" width="48" height="48" alt="" fetchpriority="high">
+        <span>Arrow Maze</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation" data-i18n-aria-label="nav.aria">
+        <a href="#play" data-i18n="nav.play">Play</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#photo-title" data-i18n="nav.photo">Photo Maze</a>
+      </nav>
+
+      <div class="preferences">
+        <label class="preference-control">
+          <span class="sr-only" data-i18n="controls.language">Language</span>
+          <select id="languageSelect" aria-label="Language" data-i18n-aria-label="controls.language">
+            <option value="en">English</option>
+            <option value="en-IN">English (India)</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="es-MX">Español (México)</option>
+            <option value="fr">Français</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="pt-PT">Português (Portugal)</option>
+            <option value="ru">Русский</option>
+            <option value="th">ไทย</option>
+            <option value="zh-Hant">繁體中文</option>
+          </select>
+        </label>
+
+        <label class="preference-control theme-control">
+          <span class="sr-only" data-i18n="controls.theme">Theme</span>
+          <select id="themeSelect" aria-label="Theme" data-i18n-aria-label="controls.theme">
+            <option value="auto" data-i18n="theme.auto">System</option>
+            <option value="light" data-i18n="theme.light">Aurora</option>
+            <option value="dark" data-i18n="theme.dark">Neon</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Every arrow has a way out</p>
+        <h1 id="hero-title" data-i18n="hero.title">Find the move that frees them all.</h1>
+        <p class="hero-lede" data-i18n="hero.body">Read the board, choose the right arrow and turn a crowded maze into one satisfying clear.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#play" data-i18n="hero.play">Try the puzzle</a>
+          <a class="button button-secondary" href="#features" data-i18n="hero.explore">Explore the game</a>
+        </div>
+      </div>
+
+      <div class="hero-art reveal" aria-label="Arrow Maze gameplay preview" data-i18n-aria-label="hero.previewAlt">
+        <div class="hero-icon-card" aria-hidden="true">
+          <img src="assets/app-icon.webp" width="132" height="132" alt="">
+        </div>
+        <div class="device device-hero">
+          <div class="device-island" aria-hidden="true"></div>
+          <img src="assets/gameplay.webp" width="720" height="1564" alt="Arrow Maze level with glowing arrow paths" data-i18n-alt="images.gameplay">
+        </div>
+        <div class="combo-chip glass-panel" aria-hidden="true">
+          <span data-i18n="hero.combo">Chain clear</span>
+          <strong>×5</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-facts section-shell reveal" aria-label="Game highlights" data-i18n-aria-label="facts.aria">
+      <div><strong>240</strong><span data-i18n="facts.levels">crafted levels</span></div>
+      <div><strong>7</strong><span data-i18n="facts.worlds">evolving worlds</span></div>
+      <div><strong data-i18n="facts.dailyValue">Daily</strong><span data-i18n="facts.daily">a fresh maze</span></div>
+      <div><strong data-i18n="facts.photoValue">Photo</strong><span data-i18n="facts.photo">becomes a maze</span></div>
+    </section>
+
+    <section class="play-section section-shell" id="play" aria-labelledby="play-title">
+      <div class="play-copy reveal">
+        <h2 id="play-title" data-i18n="play.title">One free arrow can open the whole board.</h2>
+        <p data-i18n="play.body">Tap an arrow only when nothing blocks its path. Find the sequence and keep the combo alive.</p>
+        <div class="play-status" aria-live="polite">
+          <span id="playStatus" data-i18n="play.statusReady">Find the free arrow.</span>
+          <strong id="comboValue">×0</strong>
+        </div>
+        <button class="button button-secondary reset-button" id="resetMaze" type="button" data-i18n="play.reset">Reset puzzle</button>
+      </div>
+
+      <div class="mini-game glass-panel reveal" aria-label="Interactive Arrow Maze puzzle" data-i18n-aria-label="play.aria">
+        <div class="mini-game-board" id="miniGameBoard" role="group" aria-label="Puzzle board" data-i18n-aria-label="play.boardAria"></div>
+      </div>
+    </section>
+
+    <section class="feature-story section-shell" id="photo-maze" aria-labelledby="photo-title">
+      <div class="photo-comparison reveal" id="photoComparison">
+        <img class="photo-base" src="assets/photo-source.webp" width="900" height="900" loading="lazy" alt="Colourful parrot photo" data-i18n-alt="images.photoSource">
+        <div class="photo-result" id="photoResult">
+          <img src="assets/photo-result.webp" width="900" height="900" loading="lazy" alt="Parrot transformed into an Arrow Maze" data-i18n-alt="images.photoResult">
+        </div>
+        <div class="comparison-handle" id="comparisonHandle" aria-hidden="true"><span></span></div>
+        <input class="comparison-range" id="comparisonRange" type="range" min="8" max="92" value="54" aria-label="Compare photo and maze" data-i18n-aria-label="photo.compareAria">
+      </div>
+
+      <div class="feature-copy reveal">
+        <p class="eyebrow" data-i18n="photo.eyebrow">Photo Maze</p>
+        <h2 id="photo-title" data-i18n="photo.title">Your photo becomes the puzzle.</h2>
+        <p data-i18n="photo.body">Choose a subject and Arrow Maze builds a playable silhouette from its colours and detail. The image is processed on your device.</p>
+        <p class="gesture-hint" data-i18n="photo.hint">Drag across the image to compare.</p>
+      </div>
+    </section>
+
+    <section class="feature-grid section-shell" id="features" aria-labelledby="features-title">
+      <div class="feature-grid-heading reveal">
+        <h2 id="features-title" data-i18n="features.title">A puzzle for every pace.</h2>
+        <p data-i18n="features.body">Progress, return each day or slow everything down. The rules stay simple while the decisions grow deeper.</p>
+      </div>
+
+      <article class="feature-panel worlds-panel reveal">
+        <div class="panel-copy">
+          <h3 data-i18n="features.worldsTitle">Journey through seven worlds</h3>
+          <p data-i18n="features.worldsBody">Master 240 levels that introduce new board shapes, tighter routes and smarter sequences.</p>
+        </div>
+        <div class="device device-panel">
+          <div class="device-island" aria-hidden="true"></div>
+          <img src="assets/worlds.webp" width="720" height="1564" loading="lazy" alt="Arrow Maze world journey screen" data-i18n-alt="images.worlds">
+        </div>
+      </article>
+
+      <article class="feature-panel daily-panel reveal">
+        <div class="panel-copy">
+          <h3 data-i18n="features.dailyTitle">A reason to return every day</h3>
+          <p data-i18n="features.dailyBody">Solve the Daily Maze, protect your streak and finish three changing quests for rewards.</p>
+        </div>
+        <div class="device device-panel">
+          <div class="device-island" aria-hidden="true"></div>
+          <img src="assets/daily.webp" width="720" height="1564" loading="lazy" alt="Arrow Maze daily challenge screen" data-i18n-alt="images.daily">
+        </div>
+      </article>
+
+      <article class="feature-panel modes-panel reveal">
+        <div class="mode-copy">
+          <h3 data-i18n="features.moreTitle">Play your way</h3>
+          <p data-i18n="features.moreBody">Build combos, use layered hints, relax in Zen and compare achievements through Game Center.</p>
+        </div>
+        <div class="mode-cloud" aria-hidden="true">
+          <span data-i18n="features.combo">Combos</span>
+          <span data-i18n="features.hints">Hints</span>
+          <span>Zen</span>
+          <span data-i18n="features.quests">Quests</span>
+          <span>Game Center</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="theme-story section-shell reveal" aria-labelledby="theme-title">
+      <div class="theme-copy">
+        <h2 id="theme-title" data-i18n="themeStory.title">Your board, your atmosphere.</h2>
+        <p data-i18n="themeStory.body">Aurora keeps the puzzle warm and clear. Midnight Neon turns every path into electric colour. Change the theme above and the whole page follows.</p>
+      </div>
+      <div class="theme-samples">
+        <button class="theme-sample theme-sample-light" type="button" data-theme-choice="light" aria-label="Aurora" data-i18n-aria-label="theme.light">
+          <span class="sample-arrow">→</span><span class="sample-arrow">↑</span><span class="sample-arrow">←</span>
+        </button>
+        <button class="theme-sample theme-sample-dark" type="button" data-theme-choice="dark" aria-label="Neon" data-i18n-aria-label="theme.dark">
+          <span class="sample-arrow">→</span><span class="sample-arrow">↑</span><span class="sample-arrow">←</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="final-cta section-shell reveal" aria-labelledby="cta-title">
+      <img src="assets/app-icon.webp" width="112" height="112" loading="lazy" alt="Arrow Maze app icon" data-i18n-alt="images.icon">
+      <div>
+        <h2 id="cta-title" data-i18n="cta.title">Your next clear is waiting.</h2>
+        <p data-i18n="cta.body">Play Arrow Maze on iPhone and iPad.</p>
+      </div>
+      <a class="button button-primary" href="https://apps.apple.com/us/app/arrow-maze-logic-puzzle/id6800708435" data-i18n="cta.button">Download on the App Store</a>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div class="footer-brand">
+      <img src="assets/app-icon.webp" width="40" height="40" loading="lazy" alt="">
+      <div><strong>Arrow Maze</strong><span data-i18n="footer.by">by KinApps</span></div>
+    </div>
+    <nav aria-label="Legal and support" data-i18n-aria-label="footer.aria">
+      <a href="/arrowmaze/privacy/" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="/arrowmaze/terms/" data-i18n="footer.terms">Terms of Use</a>
+      <a href="/arrowmaze/support/" data-i18n="footer.support">Support</a>
+      <a href="/" data-i18n="footer.kinapps">KinApps</a>
+    </nav>
+    <p>© 2026 Stepanov Dmitrii. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </footer>
+
+  <noscript>
+    <div class="noscript">Arrow Maze needs JavaScript only for the interactive puzzle, language and theme controls. All product and legal information remains available.</div>
+  </noscript>
+  <script src="app.js?v=20260906-1" defer></script>
+</body>
+</html>

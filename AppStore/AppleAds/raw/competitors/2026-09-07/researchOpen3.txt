@@ -1,0 +1,398 @@
+Internal Error ()
+citeturn8view0 [wordlim: 200] Source: click({"ref_id":"turn5view0","id":34}); Total lines: 1
+--------------------------------------------------------------------------------
+‎Arrows Out - Color Escape App - App Store (https://apps.apple.com/us/app/arrows-out-color-escape/id6755671211)
+citeturn8view1 [wordlim: 200] Crawled: today; Content type: text/html; Source: click({"ref_id":"turn5view0","id":36}); Total lines: 562
+--------------------------------------------------------------------------------
+‎Point Out: Color Escape Puzzle App - App Store (https://apps.apple.com/us/app/point-out-color-escape-puzzle/id6754243057)
+citeturn8view2 [wordlim: 200] Crawled: today; Content type: text/html; Source: click({"ref_id":"turn5view0","id":32}); Total lines: 740
+--------------------------------------------------------------------------------
+‎Redirect It! - Logic Puzzle App - App Store (https://apps.apple.com/us/app/arrow-maze-escape-puzzle/id6754450031)
+citeturn8view3 [wordlim: 200] Crawled: today; Content type: text/html; Source: find({"ref_id":"turn7view0","pattern":"In-App Purchases"}); Redirected to URL: https://apps.apple.com/us/app/redirect-it-logic-puzzle/id6754450031; Total lines: 686
+L0: Search [Input]
+L1: 
+L2:   * cite0†Today L3:   * cite1†Games L4:   * cite2†Apps L5:   * cite3†Arcade L6: 
+L7: Platform
+L8: 
+L9:   * cite0†iPhone L10:   * cite4†iPad L11:   * cite5†Mac L12:   * cite6†Vision L13:   * cite7†Watch L14:   * cite8†TV L15: 
+L16: cite9†Image L17: 
+L18: cite9†Image L19: #
+L20: 
+L21: Redirect It! - Logic Puzzle
+L22: 
+L23: Train your logic and brain!
+L24: 
+L25: Free · In‑App Purchases · Designed for iPad. Not verified for macOS.
+L26: 
+L27: Share
+L28: 
+L29:   * cite10†94K Ratings 4.7 L30: 
+L31:   * cite11†Age Rating 4+ Years L32: 
+L33:   * cite11†Category Puzzle L34: 
+L35:   * cite12†Developer SayGames LTD L36: 
+L37:   * cite11†Language EN + 18 More L38: 
+L39:   * cite11†Size 360.8 MB L40: 
+L41:   *   * cite9†Image L42: 
+L43:   * cite9†Image L44: 
+L45:   * cite9†Image L46: 
+L47:   * cite9†Image L48: 
+L49:   * cite9†Image L50: 
+L51:   *   * iPhone, iPad
+L52: ► FOLLOW THAT ARROW Get your mind and fingers set to untangle mazes of arrows in the fun take on a traditional maze escape game. Each level you’ll square off against an increasingly tangled knot of arrows, and you’ll need to put all of your logic skills to the test as you figure out which order to remove them, thus clearing the way for the rest. Fear not though, this puzzle is minimalistic and relaxing, not cluttered and stressful.
+L53: ► MASTER THE MAZE Colorful arrows twist and turn around each other, and it’s up to you to figure out which way they’re headed and help them escape from the puzzle grid, making way for others to be moved as well. Levels start off with just a few arrows, and quickly work up to more and more, keeping things interesting. While the puzzle required you to use your logic skills and brain, it still manages to be relaxing and just the perfect level of challenging.
+L54: You’ll love: ● The minimalistic design – Black background, colorful arrows, and no crazy animations or over-the-top graphics – focus on the puzzle without worrying about what might pop up next. The bright arrows stand out well from the background making it easier to see how the maze all fits together, and adding a touch of whimsy to the game. Easily toggle the music and haptic on or off depending on your mood, and don’t worry about tons of popups and events cluttering your game.
+L55: ● The relaxing gameplay – Each level is short and sweet, meaning you can easily squeeze one in whenever you need a distraction. Plus there’s no countdown clock to put pressure on you, so if you get stuck you can easily step away and come back to finish later when you’ve got the time and energy. Last but not least boosters are available in case you can’t quite get past a tricky level.
+L56: ● The mental stimulation – While the puzzles might seem simple at first, you’ll find that they start getting challenging fast! More arrows, more twists, and more fun await as you graduate from levels with just a handful of arrows to those with dozens. All those extra colors and crazy shapes and patterns will really stimulate your brain to start looking for patterns, which can be super helpful in real life.
+L57: ► A CHALLENGING ESCAPE Ready to take on an a-maze-ing arrow puzzle that will both relax and challenge your brain? With its simple design and fun graphics you won’t feel a lick of stress as you take on this logic puzzle and help the arrows escape. Download Redirect It! today and see how many levels of twisty, knotted up arrows you can detangle before getting stuck. Privacy Policy: https://say.games/privacy-policy Terms of Use: https://say.games/terms-of-use
+L58: [Button: more]
+L59: 
+L60: cite13†Ratings & Reviews L61: 
+L62:   * 4.7
+L63: 
+L64: out of 5
+L65: 
+L66: 94K Ratings
+L67: 
+L68:   * ### Arrow maze
+L69: 
+L70:     1.     2.     3.     4.     5. May 8
+L71: 
+L72: Doghousedavid16
+L73: This is a great game to use you mind and eyes to get the arrows out without hitting another arrows. This app uses vibrant colors that helps you out when it looks like you’re in a jam and can’t find your way out. Once you reach a certain level you will earn a # grid to help to see where their is a way out and not to hit other arrows. The levels start out slow for beginners and get harder the more games you play which will keep your mind thinking. Also, has a your on fire record display as well.
+L74: Recommend checking it.
+L75: Developer Response
+L76: 
+L77: Hello Doghousedavid16! We're glad to hear you're enjoying the engaging gameplay and vibrant visuals! Your insights about the level progression and the helpful grid feature truly reflect our shared passion for creating a stimulating experience. Thank you for the recommendation, and happy gaming!
+L78: # Arrow maze
+L79: 
+L80:     1.     2.     3.     4.     5. May 8
+L81: 
+L82: Doghousedavid16
+L83: This is a great game to use you mind and eyes to get the arrows out without hitting another arrows. This app uses vibrant colors that helps you out when it looks like you’re in a jam and can’t find your way out. Once you reach a certain level you will earn a # grid to help to see where their is a way out and not to hit other arrows. The levels start out slow for beginners and get harder the more games you play which will keep your mind thinking. Also, has a your on fire record display as well.
+L84: Recommend checking it.
+L85: Developer Response May 10
+L86: 
+L87: Hello Doghousedavid16! We're glad to hear you're enjoying the engaging gameplay and vibrant visuals! Your insights about the level progression and the helpful grid feature truly reflect our shared passion for creating a stimulating experience. Thank you for the recommendation, and happy gaming!
+L88: 
+L89:   * ### Unethical advertising practices
+L90: 
+L91:     1.     2.     3.     4.     5. Jun 12
+L92: 
+L93: Happywho
+L94: I love this game and I have found my ability to track with my eyes much improved. That said, the ads have progressed to the point the take over my iPad, At first it was Temu making me click through 4-6 ads and open a purchase window before I could click out and return to my game. Then there were the ads that were composed with messages the said my tablet was infected by viruses and downloaded another app without my consent if I clicked to close the screen.
+L95: Then the one that looked like a message from YOUR game saying I had completed oat the levels and to click the button to access more levels. That also downloaded another arrow game instead of giving me more levels in your game. But the straw that broke the camel’s back was when an ad had no way to escape it. I finally clicked a back button and it opened a browser with likely hundreds of open windows of more ads. I quit closing windows at 75. It just kept opening new windows without apparent end.
+L96: This is unethical and should be illegal. I know app designers hire companies to run their ads and get paid to do so. Some claim they have no control over what ads play or how they play. But you have the power of the purse. If you don’t hire these unethical ad companies, they will either change their methods or be forced out of business. There ARE ethical companies where you can negotiate content, add length, and a consistent way to exit these ads so players can return to game play.
+L97: I’m not going to play this game for two days. If the ads are still unethical, I will delete your game. I recommend everyone else consider this too. The more levels I played, the longer and more frequent the ads and then came the ones that opened unauthorized windows and made purchases I didn’t consent to.
+L98: Developer Response
+L99: Hello Happywho! Thank you for your passion for the game and for sharing your concerns about the advertising experience. We understand that ads can sometimes be overwhelming, and we want to assure you that ads help us continue developing the game, but we will definitely consider the possibility of reducing their frequency. Additionally, we have passed on your feedback regarding the issues with ads taking over your device, and we will address this as soon as possible.
+L100: We truly appreciate your insights and hope you might give the game another chance in the future. Your voice matters, and we're grateful for your support!
+L101: # Unethical advertising practices
+L102: 
+L103:     1.     2.     3.     4.     5. Jun 12
+L104: 
+L105: Happywho
+L106: I love this game and I have found my ability to track with my eyes much improved. That said, the ads have progressed to the point the take over my iPad, At first it was Temu making me click through 4-6 ads and open a purchase window before I could click out and return to my game. Then there were the ads that were composed with messages the said my tablet was infected by viruses and downloaded another app without my consent if I clicked to close the screen.
+L107: Then the one that looked like a message from YOUR game saying I had completed oat the levels and to click the button to access more levels. That also downloaded another arrow game instead of giving me more levels in your game. But the straw that broke the camel’s back was when an ad had no way to escape it. I finally clicked a back button and it opened a browser with likely hundreds of open windows of more ads. I quit closing windows at 75. It just kept opening new windows without apparent end.
+L150: # Version History
+L151: 
+L152:   * New mechanics added
+L153: 
+L154: 1.13.0 Aug 19
+L155: 
+L156:   * New mechanics added
+L157: 
+L158: 1.12.3 Jun 30
+L159: 
+L160:   * New mechanics added
+L161: 
+L162: 1.11.3 Jun 19
+L163: 
+L164:   * Bug fixes and performance improvements
+L165: 
+L166: 1.11.2 Jun 2
+L167: 
+L168:   * New mechanics added
+L169: 
+L170: 1.11.1 May 21
+L171: 
+L172:   * New mechanics added
+L173: 
+L174: 1.10.0 Apr 19
+L175: 
+L176:   * New mechanics added
+L177: 
+L178: 1.9.0 Mar 24
+L179: 
+L180:   * New mechanics added
+L181: 
+L182: 1.8.2 Mar 7
+L183: 
+L184:   * New levels added
+L185: 
+L186: 1.7.0 Feb 11
+L187: 
+L188:   * New levels added
+L189: 
+L190: 1.6.0 Jan 22
+L191: 
+L192:   * New levels added
+L193: 
+L194: 1.5.1 12/26/2025
+L195: 
+L196:   * New levels added
+L197: 
+L199:   * Levels updated
+L200: 
+L201: 1.0.1 11/08/2025
+L202: 
+L203:   * 1.0 10/25/2025
+L204: 
+L205: New mechanics added
+L206: 
+L207: [Button: more]
+L208: 
+L209: Version 1.13.0 Aug 19
+L210: 
+L211: cite14†App Privacy L212: # App Privacy
+L213: 
+L214: The developer, SayGames LTD, indicated that the app’s privacy practices may include handling of data as described below. This information has not been verified by Apple. For more information, see the cite15†developer’s privacy policy†say.games .
+L215: 
+L216: To help you better understand the developer’s responses, see cite16†Privacy Definitions and Examples .
+L217: 
+L218: Privacy practices may vary, for example, based on the features you use or your age. cite17†Learn More L219: ### Data Used to Track You
+L220: 
+L221: The following data may be used to track you across apps and websites owned by other companies:
+L222: 
+L223:     * Location
+L224:     * Identifiers
+L225:     * Usage Data
+L226:     * Diagnostics
+L227:     * Other Data
+L228: 
+L229: ### Data Linked to You
+L230: 
+L231: The following data, which may be collected and linked to your identity, may be used for the following purposes:
+L232: #### Third-Party Advertising
+L233: 
+L234:   * Location
+L235:     * Precise Location
+L236:     * Coarse Location
+L237:   * Identifiers
+L238:     * User ID
+L239:     * Device ID
+L240:   * Usage Data
+L241:     * Product Interaction
+L242:     * Advertising Data
+L243:   * Diagnostics
+L244:     * Crash Data
+L245:     * Performance Data
+L246:     * Other Diagnostic Data
+L247:   * Other Data
+L248:     * Other Data Types
+L249: #### Developer’s Advertising or Marketing
+L250: 
+L251:   * Location
+L252:     * Coarse Location
+L253:   * Identifiers
+L254:     * Device ID
+L255:   * Usage Data
+L256:     * Product Interaction
+L257:     * Advertising Data
+L258:   * Diagnostics
+L259:     * Performance Data
+L260:     * Other Diagnostic Data
+L261:   * Other Data
+L262:     * Other Data Types
+L263: #### Analytics
+L264: 
+L265:   * Location
+L266:     * Precise Location
+L267:     * Coarse Location
+L268:   * Identifiers
+L269:     * User ID
+L270:     * Device ID
+L271:   * Usage Data
+L272:     * Advertising Data
+L273:   * Diagnostics
+L274:     * Crash Data
+L275:     * Performance Data
+L276:     * Other Diagnostic Data
+L277:   * Other Data
+L278:     * Other Data Types
+L279: #### App Functionality
+L280: 
+L281:   * Location
+L282:     * Coarse Location
+L283:   * Identifiers
+L284:     * User ID
+L285:     * Device ID
+L286:   * Usage Data
+L287:     * Product Interaction
+L288:   * Diagnostics
+L289:     * Crash Data
+L290:     * Performance Data
+L291:     * Other Diagnostic Data
+L292:   * Other Data
+L293:     * Other Data Types
+L294: 
+L295: ### Data Not Linked to You
+L296: 
+L297: The following data, which may be collected but is not linked to your identity, may be used for the following purposes:
+L298: 
+L299: #### Third-Party Advertising
+L300: 
+L301:   * Usage Data
+L302:     * Other Usage Data
+L303: #### Analytics
+L304: 
+L305:   * Usage Data
+L306:     * Other Usage Data
+L307: 
+L308: The developer, SayGames LTD, indicated that the app’s privacy practices may include handling of data as described below. For more information, see the cite15†developer’s privacy policy†say.games .
+L309: 
+L310:   * ### Data Used to Track You
+L311: 
+L312: The following data may be used to track you across apps and websites owned by other companies:
+L313: 
+L314:     * Location
+L315:     * Identifiers
+L316:     * Usage Data
+L317:     * Diagnostics
+L318:     * Other Data
+L319: 
+L320:   * ### Data Linked to You
+L321: The following data may be collected and linked to your identity:
+L322: 
+L323:     * Location
+L324:     * Identifiers
+L325:     * Usage Data
+L326:     * Diagnostics
+L327:     * Other Data
+L328: 
+L329:   * ### Data Not Linked to You
+L330: 
+L331: The following data may be collected but it is not linked to your identity:
+L332: 
+L333:     * Usage Data
+L334: 
+L335: Privacy practices may vary, for example, based on the features you use or your age. cite17†Learn More L336: ## Accessibility
+L337: 
+L338: The developer has not yet indicated which accessibility features this app supports. cite18†Learn More L339: ## Information
+L340: 
+L341: Seller
+L342: 
+L343: 
+L344:   * SayGames LTD
+L345: 
+L346: Size
+L347: 
+L348: 
+L349:   * 360.8 MB
+L350: 
+L351: Category
+L352: 
+L353: 
+L354:   * Puzzle
+L355: 
+L356: Compatibility
+L357:     Requires iOS 15.0 or later.
+L358: 
+L359:   * iPhone
+L360: Requires iOS 15.0 or later.
+L361:   *   * iPad
+L362: Requires iPadOS 15.0 or later.
+L363:   *   * iPod touch
+L364: Requires iOS 15.0 or later.
+L365:   *   * Mac
+L366: Requires macOS 15.0 or later and a Mac with Apple M1 chip or later.
+L367:   *   * Apple Vision
+L368: Requires visionOS 1.0 or later.
+L369: 
+L370: Languages
+L371:     English and 18 more
+L372:   * English, Arabic, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Simplified Chinese, Spanish, Thai, Traditional Chinese, Turkish, Ukrainian, Vietnamese
+L373: 
+L374: Age Rating
+L375:     4+
+L376: 
+L377:   * 4+
+L378: 
+L379:   * cite19†Learn More L380: 
+L381:   *   * Contains
+L382: Advertising
+L383: 
+L384: In-App Purchases
+L385:     Yes
+L386: 
+L387:   * Coins 2 $1.99
+L388: 
+L389:   * Revive pack 1 $5.99
+L390: 
+L391:   * No Ads $7.99
+L392: 
+L393:   * Coins 7 $8.99
+L394: 
+L395:   * Small Offer $1.99
+L396: 
+L397:   * No Ads Bundle $9.99
+L398: 
+L399:   * Coins 8 $17.99
+L400: 
+L401:   * Coins 1 $0.99
+L402: 
+L403:   * Coins 3 $3.99
+L404: 
+L405:   * Coins 6 $14.99
+L406:   * cite20†Learn More L407: 
+L408: Copyright
+L409: 
+L410: 
+L411:   * © SayGames LTD
+L412: 
+L413: * cite21†Developer Website†say.games L414: 
+L415: * cite15†Privacy Policy†say.games L416: 
+L417: cite22†More by SayGames LTD L418: 
+L419:   * cite23†View My Perfect Hotel Grow Your Hotel Empire Offline L420: 
+L421:   * cite24†View Jelly Shift - Obstacle Course Change the Shape & Win a Race L422: 
+L423:   * cite25†View Johnny Trigger Bullet time! L424: 
+L425:   * cite26†View Drive and Park Show off your parking skills! L426: 
+L427:   * cite27†View Stealth Master: Assassin Ninja Become the best killer! L428:   * cite28†View Sushi Roll 3D - ASMR Food Game Enjoy Сooking Like a Master! L429: 
+L430:   * cite29†View Sand Balls - Digger Puzzle Dig up the balls! L431: 
+L432:   * cite30†View DOP 2: Delete One Part Erase and solve the puzzle! L433: 
+L434:   * cite31†View Clean Road Clean the road! L435: 
+L436:   * cite32†View Battle Disc Best Disc Throwing game L437: 
+L438:   * cite33†View Perfect Slices Chop, chop, chop - perfect! L439: 
+L440:   * cite34†View DOP 4: Draw One Part Guess the Drawing! L441: 
+L442:   * cite35†View Turbo Stars - Epic Racing Exhilarating speed tracks L443: 
+L444:   *   * cite36†You Might Also Like L445:   * cite37†View Maze Madness - Brain Puzzle Calm Logic, Tap to Clear L446: 
+L447:   * cite38†View Arrow Fever: Tap Out Puzzle Daily Arrow Puzzle, Tap Escape L448: 
+L449:   * cite39†View Arrow Out Puzzle Tap Arrow, Tap Away! L450: 
+L451:   * cite40†View Color Maze Master Tap & Clear L452: 
+L453:   * cite41†View Arrow Frenzy Escape Escape the arrows frenzy jam L454: 
+L455:   * cite42†View Arrow Puzzle - Tap Away Game Help arrows escape the maze! L456: 
+L457:   * cite43†View Path Flow - Maze Puzzle Train your brain, find the way L458: 
+L459:   * cite44†View Line Shift Puzzle Minimal Logic Puzzle Game L460:   * cite45†View Happy Arrow Master Clear Arrows in Fewer Moves L461: 
+L462:   * cite46†View Wood Color Jam - Block Puzzle The Best Block Puzzle L463: 
+L464: [Button: United States]
+L465: 
+L466:   * cite47†Español (México) L467:   * cite48†العربية L468:   * cite49†Русский L469:   * cite50†简体中文 L470:   * cite51†Français (France) L471:   * cite52†한국어 L472:   * cite53†Português (Brazil) L473:   * cite54†Tiếng Việt L474:   * cite55†繁體中文 (台灣) L475: 
+L476: Select a country or region
+L477: ## Africa, Middle East, and India
+L478: 
+L479: [Button: See All ]
+L480:   * cite56†Algeria L481:   * cite57†Angola L482:   * cite58†Armenia L483:   * cite59†Azerbaijan L484:   * cite60†Bahrain L485:   * cite61†Benin L486:   * cite62†Botswana L487:   * cite63†Burkina Faso L488:   * cite64†Cameroun L489:   * cite65†Cape Verde L490:   * cite66†Chad L491:   * cite67†Côte d’Ivoire L492:   * cite68†Congo, The Democratic Republic Of The L493:   * cite69†Egypt L494:   * cite70†Eswatini L495:   * cite71†Gabon L496:   * cite72†Gambia L497:   * cite73†Ghana L498:   * cite74†Guinea-Bissau L499:   * cite75†India L500:   * cite76†Iraq L501:   * cite77†Israel L502:   * cite78†Jordan L503:   * cite79†Kenya L504:   * cite80†Kuwait L505:   * cite81†Lebanon L506:   * cite82†Liberia L507:   * cite83†Libya L508:   * cite84†Madagascar L509:   * cite85†Malawi L510:   * cite86†Mali L511:   * cite87†Mauritania L512:   * cite88†Mauritius L513:   * cite89†Morocco L514:   * cite90†Mozambique L515:   * cite91†Namibia L516:   * cite92†Niger (English) L517:   * cite93†Nigeria L518:   * cite94†Oman L519:   * cite95†Qatar L520:   * cite96†Congo, Republic of L521:   * cite97†Rwanda L522:   * cite98†São Tomé and Príncipe L523:   * cite99†Saudi Arabia L524:   * cite100†Senegal L525:   * cite101†Seychelles L526:   * cite102†Sierra Leone L527:   * cite103†South Africa L528:   * cite104†Sri Lanka L529:   * cite105†Tajikistan L530:   * cite106†Tanzania, United Republic Of L531:   * cite107†Tunisia L532:   * cite108†Turkmenistan L533:   * cite109†United Arab Emirates L534:   * cite110†Uganda L535:   * cite111†Yemen L536:   * cite112†Zambia L537:   * cite113†Zimbabwe L538: ## Asia Pacific
+L539: 
+L540: [Button: See All ]
+L541:   * cite114†Afghanistan L542:   * cite115†Australia L543:   * cite116†Bhutan L544:   * cite117†Brunei Darussalam L545:   * cite118†Cambodia L546:   * cite119†中国大陆 L547:   * cite120†Fiji L548:   * cite121†香港 L549:   * cite122†Indonesia (English) L550:   * cite123†日本 L551:   * cite124†Kazakhstan L552:   * cite125†대한민국 L553:   * cite126†Kyrgyzstan L554:   * cite127†Lao People's Democratic Republic L555:   * cite128†澳門 L556:   * cite129†Malaysia (English) L557:   * cite130†Maldives L558:   * cite131†Micronesia, Federated States of L559:   * cite132†Mongolia L560:   * cite133†Myanmar L561:   * cite134†Nauru L562:   * cite135†Nepal L563:   * cite136†New Zealand L564:   * cite137†Pakistan L565:   * cite138†Palau L566:   * cite139†Papua New Guinea L567:   * cite140†Philippines L568:   * cite141†Singapore L569:   * cite142†Solomon Islands L570:   * cite143†台灣 L571:   * cite144†Thailand L572:   * cite145†Tonga L573:   * cite108†Turkmenistan L574:   * cite146†Uzbekistan L575:   * cite147†Vanuatu L576:   * cite148†Vietnam L577: ## Europe
+L578: 
+L579: [Button: See All ]
+L580:   * cite149†Albania L581:   * cite58†Armenia L582:   * cite150†Österreich L583:   * cite151†Belarus L584:   * cite152†Belgium L585:   * cite153†Bosnia and Herzegovina L586:   * cite154†Bulgaria L587:   * cite155†Croatia L588:   * cite156†Cyprus L589:   * cite157†Czechia L590:   * cite158†Denmark L591:   * cite159†Estonia L592:   * cite160†Finland L593:   * cite161†France (Français) L594:   * cite162†Georgia L595:   * cite163†Deutschland L596:   * cite164†Greece L597:   * cite165†Hungary L598:   * cite166†Iceland L599:   * cite167†Ireland L600:   * cite168†Italia L601:   * cite169†Kosovo L602:   * cite170†Latvia L603:   * cite171†Lithuania L604:   * cite172†Luxembourg (English) L605:   * cite173†Malta L606:   * cite174†Moldova, Republic Of L607:   * cite175†Montenegro L608:   * cite176†Nederland L609:   * cite177†North Macedonia L610:   * cite178†Norway L611:   * cite179†Poland L612:   * cite180†Portugal (Português) L613:   * cite181†Romania L614:   * cite182†Россия L615:   * cite183†Serbia L616:   * cite184†Slovakia L617:   * cite185†Slovenia L618:   * cite186†España L619:   * cite187†Sverige L620:   * cite188†Schweiz L621:   * cite189†Türkiye (English) L622:   * cite190†Ukraine L623:   * cite191†United Kingdom L624: ## Latin America and the Caribbean
+L625: 
+L626: [Button: See All ]
+L627:   * cite192†Anguilla L628:   * cite193†Antigua and Barbuda L629:   * cite194†Argentina (Español) L630:   * cite195†Bahamas L631:   * cite196†Barbados L632:   * cite197†Belize L633:   * cite198†Bermuda L634:   * cite199†Bolivia (Español) L635:   * cite200†Brasil L636:   * cite201†Virgin Islands, British L637:   * cite202†Cayman Islands L638:   * cite203†Chile (Español) L639:   * cite204†Colombia (Español) L640:   * cite205†Costa Rica (Español) L641:   * cite206†Dominica L642:   * cite207†República Dominicana L643:   * cite208†Ecuador (Español) L644:   * cite209†El Salvador (Español) L645:   * cite210†Grenada L646:   * cite211†Guatemala (Español) L647:   * cite212†Guyana L648:   * cite213†Honduras (Español) L649:   * cite214†Jamaica L650:   * cite215†México L651:   * cite216†Montserrat L652:   * cite217†Nicaragua (Español) L653:   * cite218†Panamá L654:   * cite219†Paraguay (Español) L655:   * cite220†Perú L656:   * cite221†St. Kitts and Nevis L657:   * cite222†Saint Lucia L658:   * cite223†St. Vincent and The Grenadines L659:   * cite224†Suriname L660:   * cite225†Trinidad and Tobago L661:   * cite226†Turks and Caicos L662:   * cite227†Uruguay (English) L663:   * cite228†Venezuela (Español) L664: ## The United States and Canada
+L665: 
+L666: [Button: See All ]
+L667: 
+L668:   * cite229†Canada (English) L669:   * cite230†Canada (Français) L670:   * cite0†United States L671:   * cite231†Estados Unidos (Español México) L672:   * cite232†الولايات المتحدة L673:   * cite233†США L674:   * cite234†美国 (简体中文) L675:   * cite235†États-Unis (Français France) L676:   * cite236†미국 L677:   * cite237†Estados Unidos (Português Brasil) L678:   * cite238†Hoa Kỳ L679:   * cite239†美國 (繁體中文台灣) L680: 
+L681: Copyright © 2026 cite240†Apple Inc.†www.apple.com All rights reserved.
+L682:   * cite241†Internet Service Terms†www.apple.com L683:   * cite242†App Store & Privacy†www.apple.com L684:   * cite243†Cookie Warning†www.apple.com L685:   * cite244†Support†support.apple.com 

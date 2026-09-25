@@ -1,0 +1,96 @@
+"onboarding.action.skip" = "छोड़ें";
+"onboarding.action.close" = "बंद करें";
+"onboarding.action.continue" = "जारी रखें";
+"onboarding.action.next" = "अगला";
+"onboarding.action.not_now" = "अभी नहीं";
+"onboarding.common.premium" = "प्रीमियम";
+"onboarding.action.ok" = "ठीक है";
+"onboarding.accessibility.page_progress" = "%lld में से %lld";
+
+"onboarding.tutorial.tap_arrow" = "तीर पर टैप करें";
+"onboarding.tutorial.great" = "बढ़िया!";
+"onboarding.tutorial.path_blocked" = "रास्ता बंद है";
+"onboarding.tutorial.free_path_first" = "पहले रास्ता साफ़ करें";
+"onboarding.tutorial.hint" = "संकेत रास्ता दिखाते हैं";
+"onboarding.tutorial.hints_three" = "संकेत: 3";
+"onboarding.tutorial.combo" = "चेन क्लियर!";
+"onboarding.tutorial.lives_rule" = "3 जीवन। बंद रास्ते पर टैप करने से 1 जीवन कम हो जाता है";
+
+"onboarding.paywall.intro.title" = "बिना किसी सीमा के खेलें";
+"onboarding.paywall.intro.photo_title" = "कोई भी फ़ोटो। एक भूलभुलैया।";
+"onboarding.paywall.intro.hints" = "असीमित संकेत";
+"onboarding.paywall.intro.photo_benefit" = "किसी भी फ़ोटो को भूलभुलैया में बदलें";
+"onboarding.paywall.intro.photo_unlimited" = "असीमित फ़ोटो मेज़ निर्माण";
+"onboarding.paywall.intro.no_ads" = "कोई विज्ञापन नहीं";
+
+
+"onboarding.paywall.plans.title" = "प्लान चुनें";
+"onboarding.paywall.plans.week" = "सप्ताह";
+"onboarding.paywall.plans.year" = "साल";
+"onboarding.paywall.plans.weekly_price" = "%@/सप्ताह";
+"onboarding.paywall.plans.annual_price" = "%@/साल";
+"onboarding.paywall.plans.annual_per_week" = "≈ %@/सप्ताह";
+"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
+"onboarding.paywall.plans.savings" = "%@ की बचत";
+"onboarding.paywall.plans.weekly_cta" = "साप्ताहिक प्रीमियम शुरू करें";
+"onboarding.paywall.plans.annual_cta" = "एक साल का प्लान %@ में लें";
+"onboarding.paywall.plans.annual_billing" = "%@ आज लिया जाएगा · नवीनीकरण %@ को";
+
+"onboarding.paywall.restore" = "खरीदारियाँ पुनर्स्थापित करें";
+"onboarding.paywall.manage_subscription" = "सदस्यता प्रबंधित करें";
+"onboarding.paywall.auto_renewal" = "सदस्यता रद्द किए जाने तक अपने-आप नवीनीकृत होती रहेगी।";
+"onboarding.paywall.terms" = "उपयोग की शर्तें";
+"onboarding.paywall.privacy" = "गोपनीयता नीति";
+"onboarding.paywall.purchase_pending" = "खरीदारी स्वीकृति का इंतज़ार कर रही है";
+"onboarding.paywall.purchase_failed" = "खरीदारी पूरी नहीं हो सकी। फिर से कोशिश करें।";
+"onboarding.paywall.restore_failed" = "खरीदारियाँ पुनर्स्थापित नहीं हो सकीं। फिर से कोशिश करें।";
+"onboarding.paywall.nothing_to_restore" = "कोई सक्रिय प्रीमियम खरीदारी नहीं मिली।";
+"onboarding.paywall.restored" = "प्रीमियम पुनर्स्थापित हो गया";
+
+"onboarding.action.yes_remind" = "हाँ, याद दिलाएँ";
+
+"onboarding.streak.one_day" = "1 दिन";
+"onboarding.streak.title" = "आपकी स्ट्रीक का पहला दिन!";
+"onboarding.streak.gift" = "+25 · शुरुआती उपहार";
+"onboarding.streak.first_steps" = "पहले कदम";
+"onboarding.streak.first_flight" = "पहली उड़ान";
+"onboarding.streak.first_combo" = "पहला कॉम्बो";
+"onboarding.streak.level_five" = "लेवल 5 पूरा करें";
+"onboarding.streak.daily" = "रोज़ की भूलभुलैया खेलें";
+"onboarding.streak.tomorrow" = "कल फिर आएँ";
+"onboarding.streak.continues" = "आपकी रोज़ की स्ट्रीक जारी रहेगी";
+"onboarding.streak.claim" = "उपहार पाएँ";
+
+"onboarding.push.title" = "रोज़ की भूलभुलैया + आपकी स्ट्रीक — याद दिलाएँ?";
+"onboarding.push.body" = "दिन में एक शांत सूचना। कोई स्पैम नहीं।";
+
+"onboarding.theme.title" = "अपना स्टाइल चुनें";
+"onboarding.theme.subtitle" = "थीम तुरंत लागू हो जाती है। यह आपका बोर्ड है।";
+"onboarding.theme.aurora" = "हल्की और चमकदार";
+"onboarding.theme.neon" = "गहरा निऑन";
+"onboarding.theme.petal" = "नर्म पेस्टल";
+"onboarding.theme.aurora_name" = "ऑरोरा लाइट";
+"onboarding.theme.neon_name" = "मिडनाइट निऑन";
+"onboarding.theme.petal_name" = "पेटल पेस्टल";
+"onboarding.theme.more" = "प्रीमियम में 3 और थीम";
+"onboarding.theme.later" = "बाद में";
+
+"onboarding.handoff.title" = "आप बढ़िया कर रहे हैं";
+"onboarding.handoff.progress" = "4 लेवल पूरे";
+"onboarding.handoff.chapter" = "अध्याय 2 दिख रहा है, लेकिन लॉक है। इसे खोलने के लिए अध्याय 1 पूरा करें।";
+"onboarding.handoff.level_five" = "अगला → लेवल 5";
+"onboarding.handoff.world_map" = "दुनिया का नक्शा";
+
+"onboarding.tutorial.level_number" = "लेवल %lld";
+"onboarding.accessibility.lives_count" = "%lld जीवन बाकी";
+"onboarding.accessibility.arrow" = "तीर %@, %@ दिशा में";
+"onboarding.accessibility.arrow_free" = "रास्ता साफ़ है। चलाने के लिए दो बार टैप करें।";
+"onboarding.accessibility.arrow_blocked" = "रास्ता बंद है। पहले रास्ता रोकने वाला तीर ढूँढें।";
+"onboarding.direction.up" = "ऊपर";
+"onboarding.direction.down" = "नीचे";
+"onboarding.direction.left" = "बाएँ";
+"onboarding.direction.right" = "दाएँ";
+
+"Daily maze is ready" = "रोज़ की भूलभुलैया तैयार है";
+"Keep your streak alive with one quick maze." = "एक छोटी भूलभुलैया खेलकर अपनी स्ट्रीक जारी रखें।";
+"Review your plan before the first charge." = "पहले भुगतान से पहले अपना प्लान देख लें।";

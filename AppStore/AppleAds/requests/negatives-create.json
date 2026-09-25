@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "correlationId": 1,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "archery",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 2,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "bowmasters",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 3,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "wallpaper",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 4,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "navigation",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 5,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "gps",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 6,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "tv",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 7,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "crossword",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 8,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "sudoku",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 9,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "minecraft",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 10,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "roblox",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 11,
+      "data": {
+        "campaignId": 2144620520,
+        "text": "3d",
+        "matchType": "BROAD",
+        "status": "ENABLED"
+      }
+    }
+  ]
+}

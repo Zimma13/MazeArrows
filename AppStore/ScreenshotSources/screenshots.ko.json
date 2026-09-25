@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "locale": "ko",
+  "captureLocale": "ko",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": ["내 사진.", "나만의 미로."],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": ["원하는 대상을 골라 직접 즐길 퍼즐로 바꿔 보세요."],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": ["움직일 수 있는", "화살표를 찾으세요"],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": ["영리한 한 수가 보드 전체를 열어 줍니다."],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": ["모든 길이 풀리는", "짜릿한 콤보"],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": ["앞을 내다보고 짜릿한 콤보를 이어 가세요."],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_240-levels-7-worlds.png",
+      "headline": ["240개 레벨", "7개 월드"],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": ["푸른 초원부터 끝없는 공허까지 여행하세요."],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": ["매일 새로운", "미로에 도전하세요"],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": ["일일 퍼즐, 퀘스트 3개, 연속 기록 보상까지."],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

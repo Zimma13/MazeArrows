@@ -1,0 +1,96 @@
+"onboarding.action.skip" = "Skip";
+"onboarding.action.close" = "Close";
+"onboarding.action.continue" = "Continue";
+"onboarding.action.next" = "Next";
+"onboarding.action.not_now" = "Not now";
+"onboarding.common.premium" = "Premium";
+"onboarding.action.ok" = "OK";
+"onboarding.accessibility.page_progress" = "%lld of %lld";
+
+"onboarding.tutorial.tap_arrow" = "Tap the arrow";
+"onboarding.tutorial.great" = "Nice!";
+"onboarding.tutorial.path_blocked" = "Path blocked";
+"onboarding.tutorial.free_path_first" = "Clear the path first";
+"onboarding.tutorial.hint" = "Hints show the way";
+"onboarding.tutorial.hints_three" = "Hints: 3";
+"onboarding.tutorial.combo" = "Chain Clear!";
+"onboarding.tutorial.lives_rule" = "3 lives. Tapping a blocked path costs 1 life";
+
+"onboarding.paywall.intro.title" = "Play without limits";
+"onboarding.paywall.intro.photo_title" = "Any photo. A maze.";
+"onboarding.paywall.intro.hints" = "Unlimited hints";
+"onboarding.paywall.intro.photo_benefit" = "Turn any photo into a maze";
+"onboarding.paywall.intro.photo_unlimited" = "Unlimited Photo Maze creations";
+"onboarding.paywall.intro.no_ads" = "No ads";
+
+
+"onboarding.paywall.plans.title" = "Choose a plan";
+"onboarding.paywall.plans.week" = "Week";
+"onboarding.paywall.plans.year" = "Year";
+"onboarding.paywall.plans.weekly_price" = "%@/week";
+"onboarding.paywall.plans.annual_price" = "%@/year";
+"onboarding.paywall.plans.annual_per_week" = "≈ %@/week";
+"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
+"onboarding.paywall.plans.savings" = "Save %@";
+"onboarding.paywall.plans.weekly_cta" = "Start weekly Premium";
+"onboarding.paywall.plans.annual_cta" = "Get a year for %@";
+"onboarding.paywall.plans.annual_billing" = "%@ charged today · Renews %@";
+
+"onboarding.paywall.restore" = "Restore purchases";
+"onboarding.paywall.manage_subscription" = "Manage subscription";
+"onboarding.paywall.auto_renewal" = "Subscription renews automatically until cancelled.";
+"onboarding.paywall.terms" = "Terms of Use";
+"onboarding.paywall.privacy" = "Privacy Policy";
+"onboarding.paywall.purchase_pending" = "Purchase is waiting for approval";
+"onboarding.paywall.purchase_failed" = "Purchase couldn't be completed. Please try again.";
+"onboarding.paywall.restore_failed" = "Purchases couldn't be restored. Please try again.";
+"onboarding.paywall.nothing_to_restore" = "No active Premium purchase was found.";
+"onboarding.paywall.restored" = "Premium restored";
+
+"onboarding.action.yes_remind" = "Yes, remind me";
+
+"onboarding.streak.one_day" = "1 day";
+"onboarding.streak.title" = "Day 1 of your streak!";
+"onboarding.streak.gift" = "+25 · starter gift";
+"onboarding.streak.first_steps" = "First steps";
+"onboarding.streak.first_flight" = "First flight";
+"onboarding.streak.first_combo" = "First combo";
+"onboarding.streak.level_five" = "Clear level 5";
+"onboarding.streak.daily" = "Play the daily maze";
+"onboarding.streak.tomorrow" = "Come back tomorrow";
+"onboarding.streak.continues" = "Your day streak will continue";
+"onboarding.streak.claim" = "Claim gift";
+
+"onboarding.push.title" = "Daily maze + your streak — want a reminder?";
+"onboarding.push.body" = "One quiet notification a day. No spam.";
+
+"onboarding.theme.title" = "Pick your style";
+"onboarding.theme.subtitle" = "The theme applies instantly. This is your board.";
+"onboarding.theme.aurora" = "Soft and bright";
+"onboarding.theme.neon" = "Dark neon";
+"onboarding.theme.petal" = "Gentle pastel";
+"onboarding.theme.aurora_name" = "Aurora Light";
+"onboarding.theme.neon_name" = "Midnight Neon";
+"onboarding.theme.petal_name" = "Petal Pastel";
+"onboarding.theme.more" = "3 more themes in Premium";
+"onboarding.theme.later" = "Later";
+
+"onboarding.handoff.title" = "You're on a roll";
+"onboarding.handoff.progress" = "4 levels cleared";
+"onboarding.handoff.chapter" = "Chapter 2 is visible but locked. Finish Chapter 1 to open it.";
+"onboarding.handoff.level_five" = "Next → Level 5";
+"onboarding.handoff.world_map" = "World map";
+
+"onboarding.tutorial.level_number" = "Level %lld";
+"onboarding.accessibility.lives_count" = "%lld lives remaining";
+"onboarding.accessibility.arrow" = "Arrow %@, points %@";
+"onboarding.accessibility.arrow_free" = "Path is clear. Double-tap to launch.";
+"onboarding.accessibility.arrow_blocked" = "Path is blocked. Find the blocking arrow first.";
+"onboarding.direction.up" = "up";
+"onboarding.direction.down" = "down";
+"onboarding.direction.left" = "left";
+"onboarding.direction.right" = "right";
+
+"Daily maze is ready" = "Daily maze is ready";
+"Keep your streak alive with one quick maze." = "Keep your streak alive with one quick maze.";
+"Review your plan before the first charge." = "Review your plan before the first charge.";

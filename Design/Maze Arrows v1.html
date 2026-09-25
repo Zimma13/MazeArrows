@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Maze Arrows — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9;
+    font-family: 'Geist', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0) }
+    20% { transform: translateX(-3px) }
+    40% { transform: translateX(3px) }
+    60% { transform: translateX(-2px) }
+    80% { transform: translateX(2px) }
+  }
+  @keyframes float-up {
+    0% { transform: translateY(0); opacity: 1 }
+    100% { transform: translateY(-60px) scale(0.6); opacity: 0 }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="pieces.jsx"></script>
+<script type="text/babel" src="themes.jsx"></script>
+<script type="text/babel" src="puzzle-board.jsx"></script>
+<script type="text/babel" src="ui.jsx"></script>
+<script type="text/babel" src="screens-meta.jsx"></script>
+<script type="text/babel" src="screens-game.jsx"></script>
+
+<script type="text/babel">
+// ─── Phone artboard wrapper ───────────────────────────────────
+function Phone({ theme = THEMES.aurora, children, label }) {
+  return (
+    <IOSDevice dark={theme.pieceGlow} width={360} height={780}>
+      <div data-screen-label={label} style={{ width: '100%', height: '100%' }}>
+        {children}
+      </div>
+    </IOSDevice>
+  );
+}
+
+// ─── Color swatch card ────────────────────────────────────────
+function SwatchRow({ theme }) {
+  const items = [
+    { label: 'App BG', value: theme.appBg, isBg: true },
+    { label: 'Surface', value: theme.surface },
+    { label: 'Ink', value: theme.ink },
+    { label: 'Ink soft', value: theme.inkSoft },
+    { label: 'Accent', value: theme.accent },
+    { label: 'Accent 2', value: theme.accent2 ?? theme.accent },
+    { label: 'Heart', value: theme.heartFill },
+    { label: 'Danger', value: theme.danger },
+    { label: 'Success', value: theme.success },
+  ];
+  return (
+    <div style={{
+      width: 380, padding: 18, borderRadius: 22, background: '#fff',
+      border: '1px solid rgba(0,0,0,0.06)',
+      boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+        <div style={{ width: 28, height: 28, borderRadius: 8, background: theme.appBg,
+          border: '1px solid rgba(0,0,0,0.08)' }}/>
+        <div>
+          <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 16, color: '#1A1B2E' }}>{theme.name}</div>
+          <div style={{ fontFamily: 'Geist', fontSize: 11, color: '#888', letterSpacing: 0.6, textTransform: 'uppercase' }}>
+            {theme.locale ? `Locale · ${theme.locale}` : 'Core theme'}
+          </div>
+        </div>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+        {items.map(it => (
+          <div key={it.label} style={{
+            borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)',
+          }}>
+            <div style={{ height: 44, background: it.value }}/>
+            <div style={{ padding: '6px 8px' }}>
+              <div style={{ fontFamily: 'Geist', fontSize: 10, color: '#666', textTransform: 'uppercase', letterSpacing: 0.6 }}>{it.label}</div>
+              <div style={{ fontFamily: 'Geist', fontSize: 10, color: '#222', fontWeight: 600,
+                overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {it.isBg ? 'gradient' : it.value}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Piece-state showcase card ────────────────────────────────
+function StateCard({ label, sub, children, w = 200, h = 200 }) {
+  return (
+    <div style={{
+      width: w, padding: 16, borderRadius: 22, background: '#fff',
+      border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+    }}>
+      <div style={{
+        width: '100%', height: h, borderRadius: 14, background: '#FDFBF6',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        position: 'relative', overflow: 'hidden',
+      }}>
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none',
+          backgroundImage: 'radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px)',
+          backgroundSize: '14px 14px' }}/>
+        <div style={{ position: 'relative' }}>{children}</div>
+      </div>
+      <div style={{ marginTop: 12 }}>
+        <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 14, color: '#1A1B2E' }}>{label}</div>
+        <div style={{ fontFamily: 'Geist', fontSize: 11, color: '#666', marginTop: 2 }}>{sub}</div>
+      </div>
+    </div>
+  );
+}
+
+function PostNote({ children, title, color = '#FFE8A8' }) {
+  return (
+    <div style={{
+      width: 320, padding: '18px 20px', borderRadius: 14,
+      background: color,
+      boxShadow: '0 6px 14px rgba(0,0,0,0.08), 0 1px 0 rgba(0,0,0,0.04)',
+      fontFamily: 'Geist', fontSize: 13, lineHeight: 1.55, color: '#3A2E18',
+    }}>
+      {title && <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 14, marginBottom: 6 }}>{title}</div>}
+      {children}
+    </div>
+  );
+}
+
+// ─── Typography card ──────────────────────────────────────────
+function TypeCard() {
+  return (
+    <div style={{
+      width: 480, padding: 24, borderRadius: 22, background: '#fff',
+      border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+    }}>
+      <div style={{ fontFamily: 'Geist', fontSize: 11, color: '#888', textTransform: 'uppercase', letterSpacing: 0.8 }}>Display · Bricolage Grotesque</div>
+      <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 56, lineHeight: 0.95, color: '#1A1B2E', letterSpacing: -1.8, marginTop: 4 }}>Cleared!</div>
+      <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 28, lineHeight: 1, color: '#1A1B2E', letterSpacing: -0.5, marginTop: 14 }}>Level 21 · Open Paths</div>
+      <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 700, fontSize: 18, color: '#3E3F5C', marginTop: 10 }}>Buttons & section headers</div>
+      <div style={{ height: 1, background: 'rgba(0,0,0,0.08)', margin: '20px 0' }}/>
+      <div style={{ fontFamily: 'Geist', fontSize: 11, color: '#888', textTransform: 'uppercase', letterSpacing: 0.8 }}>UI · Geist</div>
+      <div style={{ fontFamily: 'Geist', fontWeight: 600, fontSize: 17, color: '#1A1B2E', marginTop: 6 }}>Body & list rows · 17 / 600</div>
+      <div style={{ fontFamily: 'Geist', fontSize: 13, color: '#3E3F5C', marginTop: 8 }}>Helper, captions, stats · 13 / 400</div>
+      <div style={{ fontFamily: 'Geist', fontSize: 11, color: '#8B8CA8', marginTop: 8, textTransform: 'uppercase', letterSpacing: 1.2, fontWeight: 700 }}>Labels · 11 / 700 · 1.2 tracking</div>
+    </div>
+  );
+}
+
+// ─── Button showcase ──────────────────────────────────────────
+function ButtonShowcase() {
+  return (
+    <div style={{
+      width: 540, padding: 24, borderRadius: 22, background: '#FAF7F2',
+      border: '1px solid rgba(0,0,0,0.06)',
+    }}>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <PrimaryButton theme={THEMES.aurora}>Play · level 21</PrimaryButton>
+        <PrimaryButton theme={THEMES.aurora} size="md">Next</PrimaryButton>
+        <GhostButton theme={THEMES.aurora}>Levels</GhostButton>
+      </div>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginTop: 14 }}>
+        <PrimaryButton theme={THEMES.neon}>Continue</PrimaryButton>
+        <PrimaryButton theme={THEMES.petal} size="md">Replay</PrimaryButton>
+        <PrimaryButton theme={THEMES.sakura} size="md">続ける</PrimaryButton>
+      </div>
+      <div style={{ display: 'flex', gap: 16, marginTop: 18, alignItems: 'flex-end' }}>
+        <ActionPill theme={THEMES.aurora} label="Hint" badge="3" icon={<IconHint color="#1A1B2E"/>}/>
+        <ActionPill theme={THEMES.aurora} label="Undo" badge="5" icon={<IconUndo color="#1A1B2E"/>}/>
+        <ActionPill theme={THEMES.aurora} label="Restart" icon={<IconRefresh color="#1A1B2E"/>}/>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <HeartRow filled={4} total={4} color="#FF5A6E" size={20}/>
+          <HeartRow filled={1} total={4} color="#FF5A6E" size={20}/>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── App ──────────────────────────────────────────────────────
+function App() {
+  const T = THEMES;
+  return (
+    <DesignCanvas>
+      {/* ─── Cover ─────────────────────────────────────────── */}
+      <DCSection id="cover" title="Maze Arrows" subtitle="A premium puzzle game UI · 8 screens · 4 core themes · locale-aware skins">
+        <div style={{ display: 'flex', gap: 28, alignItems: 'flex-start' }}>
+          <div style={{
+            width: 560, padding: 32, borderRadius: 28,
+            background: 'linear-gradient(135deg, #FFF7EE 0%, #ECE5D6 100%)',
+            border: '1px solid rgba(0,0,0,0.06)',
+            position: 'relative', overflow: 'hidden',
+          }}>
+            <div style={{ position: 'absolute', right: -40, top: -30, opacity: 0.6 }}>
+              <MazePiece paths={PIECES.spiral.paths} width={280} height={280} stroke="#1A1B2E" strokeWidth={5}/>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <div style={{ fontFamily: 'Geist', fontSize: 12, fontWeight: 700, letterSpacing: 1.4, color: '#5B5BD6', textTransform: 'uppercase' }}>iOS Puzzle Game</div>
+              <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 76, lineHeight: 0.88, letterSpacing: -2.6, color: '#1A1B2E', marginTop: 8 }}>
+                Maze<br/>Arrows
+              </div>
+              <div style={{ fontFamily: 'Geist', fontSize: 16, color: '#3E3F5C', marginTop: 18, maxWidth: 320, lineHeight: 1.5 }}>
+                Tap a maze-path to fly it off the board — but only if its full shape has a clear exit. A calm puzzle of paths, dressed for premium.
+              </div>
+            </div>
+          </div>
+          <PostNote title="Design upgrade vs reference">
+            <ul style={{ margin: 0, paddingLeft: 18 }}>
+              <li>Pieces become <b>embossed maze tiles</b>, not flat black ink</li>
+              <li>Soft dot-grid board surface — anchors the maze, removes void</li>
+              <li>Premium gradient + ledged buttons (lifted, not flat blocks)</li>
+              <li>Subtle locale motifs behind the board (seigaiha, zellige, birch)</li>
+              <li>Glass top-bar pills, hearts with gloss + drop shadow</li>
+              <li>States via <i>color &amp; light</i>, not stroke weight</li>
+            </ul>
+          </PostNote>
+        </div>
+      </DCSection>
+
+      {/* ─── Core screens (light theme) ─────────────────────── */}
+      <DCSection id="screens" title="01 · Core screens" subtitle="All eight screens in the Aurora Light default theme">
+        <DCArtboard id="splash" label="Splash" width={360} height={780}>
+          <Phone theme={T.aurora} label="01 Splash"><SplashScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="menu" label="Main menu" width={360} height={780}>
+          <Phone theme={T.aurora} label="02 Menu"><MainMenuScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="levels" label="Level select" width={360} height={780}>
+          <Phone theme={T.aurora} label="03 Levels"><LevelSelectScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="game" label="Game · in play" width={360} height={780}>
+          <Phone theme={T.aurora} label="04 Game"><GameScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="win" label="Win" width={360} height={780}>
+          <Phone theme={T.aurora} label="05 Win"><WinScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="fail" label="Fail" width={360} height={780}>
+          <Phone theme={T.aurora} label="06 Fail"><FailScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="settings" label="Settings" width={360} height={780}>
+          <Phone theme={T.aurora} label="07 Settings"><SettingsScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="themes" label="Themes" width={360} height={780}>
+          <Phone theme={T.aurora} label="08 Themes"><ThemeScreen theme={T.aurora} themes={T}/></Phone>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ─── Game-screen theme variants ──────────────────────── */}
+      <DCSection id="game-themes" title="02 · Game screen across themes" subtitle="Same level, four visual directions. The puzzle stays readable; the dress changes.">
+        <DCArtboard id="g-aurora" label="Aurora Light" width={360} height={780}>
+          <Phone theme={T.aurora} label="Game · Aurora"><GameScreen theme={T.aurora}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="g-neon" label="Midnight Neon" width={360} height={780}>
+          <Phone theme={T.neon} label="Game · Neon"><GameScreen theme={T.neon}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="g-petal" label="Petal Pastel" width={360} height={780}>
+          <Phone theme={T.petal} label="Game · Petal"><GameScreen theme={T.petal}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="g-sakura" label="Sakura · JP" width={360} height={780}>
+          <Phone theme={T.sakura} label="Game · Sakura"><GameScreen theme={T.sakura}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="g-atlas" label="Atlas · MA" width={360} height={780}>
+          <Phone theme={T.atlas} label="Game · Atlas"><GameScreen theme={T.atlas}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="g-nordic" label="Nordic · SE" width={360} height={780}>
+          <Phone theme={T.nordic} label="Game · Nordic"><GameScreen theme={T.nordic}/></Phone>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ─── Locale-aware theming concept ────────────────────── */}
+      <DCSection id="locale" title="03 · Locale-aware skinning" subtitle="Same gameplay, regional dress. Menu and win screens adapt to the user's region while the puzzle mechanics stay identical.">
+        <DCArtboard id="loc-jp-menu" label="JP · Menu" width={360} height={780}>
+          <Phone theme={T.sakura} label="Locale · JP Menu"><MainMenuScreen theme={T.sakura}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="loc-jp-win" label="JP · Win" width={360} height={780}>
+          <Phone theme={T.sakura} label="Locale · JP Win"><WinScreen theme={T.sakura}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="loc-ma-menu" label="MA · Menu" width={360} height={780}>
+          <Phone theme={T.atlas} label="Locale · MA Menu"><MainMenuScreen theme={T.atlas}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="loc-ma-levels" label="MA · Levels" width={360} height={780}>
+          <Phone theme={T.atlas} label="Locale · MA Levels"><LevelSelectScreen theme={T.atlas}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="loc-se-menu" label="SE · Menu" width={360} height={780}>
+          <Phone theme={T.nordic} label="Locale · SE Menu"><MainMenuScreen theme={T.nordic}/></Phone>
+        </DCArtboard>
+        <DCArtboard id="loc-se-fail" label="SE · Fail" width={360} height={780}>
+          <Phone theme={T.nordic} label="Locale · SE Fail"><FailScreen theme={T.nordic}/></Phone>
+        </DCArtboard>
+
+        <DCPostIt top={10} left={-260} width={240} rotate={-2}>
+          Locale logic: detect region on first launch → suggest matching skin in onboarding. Players can also opt out with the "Match my region" toggle in Settings.
+        </DCPostIt>
+        <DCPostIt top={460} left={-260} width={240} rotate={2}>
+          Seasonal events (cherry blossom in spring, Diwali, Lunar New Year) layer over the base locale theme — palette stays, motif rotates.
+        </DCPostIt>
+      </DCSection>
+
+      {/* ─── Piece states ────────────────────────────────────── */}
+      <DCSection id="states" title="04 · Puzzle-piece states" subtitle="Same piece geometry, different visual treatment for every gameplay state">
+        <DCArtboard id="s-normal" label="Normal" width={220} height={260}>
+          <StateCard label="Normal" sub="Default rest state. Subtle emboss highlight on the top edge.">
+            <MazePiece paths={PIECES.snake.paths} width={160} height={120} stroke="#1A1B2E" strokeWidth={6}/>
+          </StateCard>
+        </DCArtboard>
+        <DCArtboard id="s-free" label="Free" width={220} height={260}>
+          <StateCard label="Free / tappable" sub="Soft halo + slight scale on touch. Haptic: light tick.">
+            <div style={{ filter: 'drop-shadow(0 0 14px rgba(91,91,214,0.35))' }}>
+              <MazePiece paths={PIECES.snake.paths} width={160} height={120} stroke="#5B5BD6" strokeWidth={6}/>
+            </div>
+          </StateCard>
+        </DCArtboard>
+        <DCArtboard id="s-blocked" label="Blocked" width={220} height={260}>
+          <StateCard label="Blocked" sub="Tinted red + shake (0.4s, 4 oscillations). Haptic: rigid bump.">
+            <MazePiece paths={PIECES.snake.paths} width={160} height={120} state="blocked" strokeWidth={6}/>
+          </StateCard>
+        </DCArtboard>
+        <DCArtboard id="s-hint" label="Hint" width={220} height={260}>
+          <StateCard label="Hint" sub="Pulses amber 1.2s on/off. Used by Hint button and idle nudge.">
+            <div style={{ filter: 'drop-shadow(0 0 12px rgba(255,176,32,0.55))' }}>
+              <MazePiece paths={PIECES.snake.paths} width={160} height={120} stroke="#FFB020" strokeWidth={6}/>
+            </div>
+          </StateCard>
+        </DCArtboard>
+        <DCArtboard id="s-leaving" label="Leaving" width={220} height={260}>
+          <StateCard label="Flying out" sub="Eases off-board along exit direction (300ms), shrinks to 0.6, fades.">
+            <div style={{ position: 'relative' }}>
+              <MazePiece paths={PIECES.snake.paths} width={160} height={120} stroke="#1A1B2E" strokeWidth={6} style={{ opacity: 0.25, transform: 'translateX(0) scale(1)' }}/>
+              <div style={{ position: 'absolute', left: 30, top: 0 }}>
+                <MazePiece paths={PIECES.snake.paths} width={130} height={100} stroke="#1A1B2E" strokeWidth={5} style={{ opacity: 0.6, transform: 'translateX(20px) scale(0.85)' }}/>
+              </div>
+              <div style={{ position: 'absolute', left: 60, top: 0 }}>
+                <MazePiece paths={PIECES.snake.paths} width={100} height={80} stroke="#1A1B2E" strokeWidth={4} style={{ opacity: 0.25, transform: 'translateX(40px) scale(0.7)' }}/>
+              </div>
+            </div>
+          </StateCard>
+        </DCArtboard>
+        <DCArtboard id="s-ghost" label="Ghost" width={220} height={260}>
+          <StateCard label="Ghost" sub="Already-flown piece, faded outline. Used in win/fail preview.">
+            <MazePiece paths={PIECES.snake.paths} width={160} height={120} state="ghost" strokeWidth={6}/>
+          </StateCard>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ─── Piece library ───────────────────────────────────── */}
+      <DCSection id="library" title="05 · Piece library" subtitle="Handcrafted maze fragments — used as building blocks for every level">
+        <DCArtboard id="pl-1" label="Library" width={760} height={300}>
+          <div style={{
+            width: 760, padding: 24, borderRadius: 22, background: '#fff',
+            border: '1px solid rgba(0,0,0,0.06)', display: 'grid',
+            gridTemplateColumns: 'repeat(6, 1fr)', gap: 12,
+          }}>
+            {Object.entries(PIECES).map(([k, def]) => (
+              <div key={k} style={{
+                aspectRatio: '1', borderRadius: 14, background: '#FDFBF6',
+                border: '1px solid rgba(0,0,0,0.05)',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4,
+                padding: 6,
+              }}>
+                <MazePiece paths={def.paths} width={70} height={70} stroke="#1A1B2E" strokeWidth={6}/>
+                <div style={{ fontFamily: 'Geist', fontSize: 10, color: '#666', fontWeight: 600 }}>{k}</div>
+              </div>
+            ))}
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ─── Design system ───────────────────────────────────── */}
+      <DCSection id="ds" title="06 · Design system" subtitle="Color, type, components">
+        <DCArtboard id="ds-type" label="Typography" width={500} height={460}>
+          <TypeCard/>
+        </DCArtboard>
+        <DCArtboard id="ds-btn" label="Buttons & controls" width={560} height={360}>
+          <ButtonShowcase/>
+        </DCArtboard>
+        <DCArtboard id="ds-aurora" label="Aurora" width={400} height={320}>
+          <SwatchRow theme={T.aurora}/>
+        </DCArtboard>
+        <DCArtboard id="ds-neon" label="Neon" width={400} height={320}>
+          <SwatchRow theme={T.neon}/>
+        </DCArtboard>
+        <DCArtboard id="ds-petal" label="Petal" width={400} height={320}>
+          <SwatchRow theme={T.petal}/>
+        </DCArtboard>
+        <DCArtboard id="ds-sakura" label="Sakura" width={400} height={320}>
+          <SwatchRow theme={T.sakura}/>
+        </DCArtboard>
+        <DCArtboard id="ds-atlas" label="Atlas" width={400} height={320}>
+          <SwatchRow theme={T.atlas}/>
+        </DCArtboard>
+        <DCArtboard id="ds-nordic" label="Nordic" width={400} height={320}>
+          <SwatchRow theme={T.nordic}/>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ─── Animation & haptic notes ────────────────────────── */}
+      <DCSection id="motion" title="07 · Motion & haptics" subtitle="Micro-interactions across the game">
+        <DCArtboard id="mo-1" label="Tap-to-fly" width={360} height={260}>
+          <PostNote title="Tap to fly out" color="#FFE8A8">
+            <b>Press:</b> piece scales to 0.96 + tightens glow (60ms)<br/>
+            <b>Release (free):</b> 300ms cubic ease, translates to exit edge, shrinks to 0.5, fades to 0. Trails by 2 ghost frames at 80ms.<br/>
+            <b>Haptic:</b> Selection (light) on press → Impact (medium) on launch.
+          </PostNote>
+        </DCArtboard>
+        <DCArtboard id="mo-2" label="Blocked path" width={360} height={260}>
+          <PostNote title="Blocked tap" color="#FFD0D0">
+            <b>Visual:</b> piece flips ink → danger red over 80ms, shakes 4px × 4 oscillations (400ms total), settles back to ink.<br/>
+            <b>Audio:</b> short muted thud — not punishing.<br/>
+            <b>Haptic:</b> Rigid Impact (heavy). Reserved for true blocks; never used elsewhere.
+          </PostNote>
+        </DCArtboard>
+        <DCArtboard id="mo-3" label="Hint pulse" width={360} height={260}>
+          <PostNote title="Hint &amp; idle nudge" color="#FFE2C2">
+            <b>Hint button:</b> selected piece glows amber, breathing pulse (1.2s ease-in-out), arrow shows recommended exit edge.<br/>
+            <b>Idle:</b> after 25s of inactivity, gently pulse one free piece — barely-there cue, never blocking.
+          </PostNote>
+        </DCArtboard>
+        <DCArtboard id="mo-4" label="Win celebration" width={360} height={260}>
+          <PostNote title="Cleared!" color="#D9F0D0">
+            <b>Last piece launches</b> → 200ms hold → confetti spawn (24 chips, gravity = 1200, drag = 0.92) → stars settle in one by one (stagger 120ms) → stats card slides up.<br/>
+            <b>Haptic:</b> success notification.
+          </PostNote>
+        </DCArtboard>
+        <DCArtboard id="mo-5" label="Theme switch" width={360} height={260}>
+          <PostNote title="Theme switch" color="#D6E2FB">
+            <b>Cross-fade:</b> 350ms ease. Pieces re-stroke through interpolated color; background gradient lerps. Motifs fade in last (delay 100ms) so theme &quot;snaps&quot; before texture lands.
+          </PostNote>
+        </DCArtboard>
+        <DCArtboard id="mo-6" label="Locale onboarding" width={360} height={260}>
+          <PostNote title="First-launch locale suggest" color="#F0DCFB">
+            On first launch, detect region → show a small sheet:<br/>
+            &ldquo;We picked <b>Sakura</b> for you. Want to keep it?&rdquo; with [Yes] / [Try another] / [Match my region automatically].<br/>
+            User choice is sticky; auto-match keeps re-evaluating on app launch.
+          </PostNote>
+        </DCArtboard>
+      </DCSection>
+
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

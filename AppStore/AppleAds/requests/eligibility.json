@@ -1,0 +1,30 @@
+{
+  "filters": [
+    {
+      "field": "adamId",
+      "operator": "EQUALS",
+      "value": 6800708435
+    },
+    {
+      "field": "countryOrRegion",
+      "operator": "IN",
+      "value": [
+        "CA",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "TW"
+      ]
+    },
+    {
+      "field": "supplyPlacement",
+      "operator": "EQUALS",
+      "value": "APPSTORE_SEARCH_RESULTS"
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "pageSize": 1000
+  }
+}

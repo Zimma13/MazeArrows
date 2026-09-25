@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrow Maze Support</title>
+  <meta name="description" content="Help and contact information for Arrow Maze.">
+  <style>
+    :root { color-scheme:light dark; --accent:#bd27ab; --muted:#777; --line:color-mix(in srgb, currentColor 16%, transparent); }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { width:min(760px, calc(100% - 40px)); margin:0 auto; padding:64px 0 80px; }
+    h1 { margin:0 0 8px; font-size:clamp(2rem,7vw,3.4rem); line-height:1.05; letter-spacing:-.04em; }
+    h2 { margin:40px 0 10px; font-size:1.35rem; }
+    .meta, footer { color:var(--muted); }
+    .contact { margin:28px 0; padding:20px; border:1px solid var(--line); border-radius:18px; }
+    dt { margin-top:22px; font-weight:750; }
+    dd { margin:4px 0 0; }
+    a { color:var(--accent); }
+    footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); }
+  </style>
+</head>
+<body>
+<main>
+  <!-- Replace every placeholder listed in AppStore/Legal/README.md before publishing. -->
+  <h1>Arrow Maze Support</h1>
+  <p class="meta">Help with gameplay, purchases, Game Center, and Photo Maze.</p>
+
+  <div class="contact">
+    <strong>Contact support</strong><br>
+    Email: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a><br>
+    Operator: {{LEGAL_NAME}}<br>
+    Postal address: {{POSTAL_ADDRESS}}
+    <p>When reporting a problem, include your device model, iOS/iPadOS version, Arrow Maze app version, the screen or level involved, and the steps that reproduce the issue. Do not include payment-card details or other unnecessary sensitive information.</p>
+  </div>
+
+  <h2>Quick help</h2>
+  <dl>
+    <dt>How do I restore Premium?</dt>
+    <dd>Open Arrow Maze and use Restore Purchases on the Premium screen. Make sure the device is signed in to the Apple Account that made the purchase.</dd>
+
+    <dt>How do I cancel a subscription?</dt>
+    <dd>Open device Settings → Apple Account → Subscriptions → Arrow Maze, then choose the available cancellation option. Deleting the App does not cancel a subscription.</dd>
+
+    <dt>Where can I request a refund?</dt>
+    <dd>App Store billing and refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>.</dd>
+
+    <dt>Why is Game Center unavailable?</dt>
+    <dd>Check your Game Center sign-in, network connection, Screen Time restrictions, and Apple service status. The core game remains playable without Game Center.</dd>
+
+    <dt>What happens to a photo used in Photo Maze?</dt>
+    <dd>The selected image is processed on your device and is not uploaded to the Developer.</dd>
+
+    <dt>How do I remove local game data?</dt>
+    <dd>Deleting Arrow Maze removes its local container, subject to Apple backup and restore behaviour. Game Center and purchase records are managed separately through your Apple Account.</dd>
+  </dl>
+
+  <h2>Privacy requests</h2>
+  <p>Read the <a href="{{PRIVACY_URL}}">Privacy Policy</a>. To request access to or deletion of information that you sent directly to support, email <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>. Arrow Maze does not operate a gameplay account or server-side player profile in the current version.</p>
+
+  <footer>
+    <a href="{{PRIVACY_URL}}">Privacy Policy</a> · <a href="{{TERMS_URL}}">Terms of Use</a> · <a href="{{WEBSITE_URL}}">Website</a><br>
+    © 2026 {{LEGAL_NAME}}. All rights reserved.
+  </footer>
+</main>
+</body>
+</html>

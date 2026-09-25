@@ -1,0 +1,107 @@
+/* Common actions */
+"onboarding.action.skip" = "略過";
+"onboarding.action.close" = "關閉";
+"onboarding.action.continue" = "繼續";
+"onboarding.action.next" = "下一步";
+"onboarding.action.not_now" = "暫時不要";
+"onboarding.common.premium" = "Premium";
+"onboarding.action.ok" = "好";
+"onboarding.action.yes_remind" = "好，提醒我";
+
+/* Tutorial */
+"onboarding.accessibility.page_progress" = "第 %lld 頁，共 %lld 頁";
+"onboarding.tutorial.tap_arrow" = "點一下箭頭";
+"onboarding.tutorial.great" = "做得好！";
+"onboarding.tutorial.path_blocked" = "路徑受阻";
+"onboarding.tutorial.free_path_first" = "先清出路徑";
+"onboarding.tutorial.hint" = "提示會指引方向";
+"onboarding.tutorial.hints_three" = "提示：3";
+"onboarding.tutorial.combo" = "連續消除！";
+"onboarding.tutorial.lives_rule" = "你有 3 條命。點擊受阻的路徑會失去 1 條命";
+"onboarding.tutorial.level_number" = "第 %lld 關";
+
+/* Premium introduction */
+"onboarding.paywall.intro.title" = "暢玩無限制";
+"onboarding.paywall.intro.photo_title" = "任何照片，都能變成迷宮。";
+"onboarding.paywall.intro.hints" = "無限提示";
+"onboarding.paywall.intro.photo_benefit" = "把任何照片變成迷宮";
+"onboarding.paywall.intro.photo_unlimited" = "無限建立相片迷宮";
+"onboarding.paywall.intro.no_ads" = "無廣告";
+
+/* Trial timeline */
+
+/* Plans and purchase */
+"onboarding.paywall.plans.title" = "選擇方案";
+"onboarding.paywall.plans.week" = "每週";
+"onboarding.paywall.plans.year" = "每年";
+"onboarding.paywall.plans.weekly_price" = "每週 %@";
+"onboarding.paywall.plans.annual_price" = "每年 %@";
+"onboarding.paywall.plans.annual_per_week" = "每週約 %@";
+"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
+"onboarding.paywall.plans.savings" = "省下 %@";
+"onboarding.paywall.plans.weekly_cta" = "開始每週 Premium";
+"onboarding.paywall.plans.annual_cta" = "以 %@ 訂閱一年";
+"onboarding.paywall.plans.annual_billing" = "今天收取 %@ · %@ 續訂";
+"onboarding.paywall.restore" = "回復購買項目";
+"onboarding.paywall.manage_subscription" = "管理訂閱";
+"onboarding.paywall.auto_renewal" = "訂閱會自動續訂，直到取消為止。";
+"onboarding.paywall.terms" = "使用條款";
+"onboarding.paywall.privacy" = "隱私權政策";
+"onboarding.paywall.purchase_pending" = "購買正在等待核准";
+"onboarding.paywall.purchase_failed" = "無法完成購買。請再試一次。";
+"onboarding.paywall.restore_failed" = "無法回復購買項目。請再試一次。";
+"onboarding.paywall.nothing_to_restore" = "找不到有效的 Premium 購買項目。";
+"onboarding.paywall.restored" = "已回復 Premium";
+
+/* Trial reminder */
+
+/* Streak */
+"onboarding.streak.one_day" = "1 天";
+"onboarding.streak.title" = "連續挑戰第 1 天！";
+"onboarding.streak.gift" = "+25 · 新手禮物";
+"onboarding.streak.first_steps" = "第一步";
+"onboarding.streak.first_flight" = "首次起飛";
+"onboarding.streak.first_combo" = "首次連擊";
+"onboarding.streak.level_five" = "完成第 5 關";
+"onboarding.streak.daily" = "遊玩每日迷宮";
+"onboarding.streak.tomorrow" = "明天再回來";
+"onboarding.streak.continues" = "你的連續挑戰紀錄將繼續";
+"onboarding.streak.claim" = "領取禮物";
+
+/* Push prompt */
+"onboarding.push.title" = "每日迷宮與連續紀錄 — 要提醒你嗎？";
+"onboarding.push.body" = "每天一則安靜通知，絕不打擾。";
+
+/* Themes */
+"onboarding.theme.title" = "挑選你的風格";
+"onboarding.theme.subtitle" = "主題會立即套用。這是你的棋盤。";
+"onboarding.theme.aurora" = "柔和明亮";
+"onboarding.theme.neon" = "暗色霓虹";
+"onboarding.theme.petal" = "柔美粉彩";
+"onboarding.theme.aurora_name" = "極光亮彩";
+"onboarding.theme.neon_name" = "午夜霓虹";
+"onboarding.theme.petal_name" = "花瓣粉彩";
+"onboarding.theme.more" = "Premium 另有 3 款主題";
+"onboarding.theme.later" = "稍後";
+
+/* Handoff */
+"onboarding.handoff.title" = "你勢不可擋";
+"onboarding.handoff.progress" = "已完成 4 關";
+"onboarding.handoff.chapter" = "第 2 章已顯示但仍鎖定。完成第 1 章即可解鎖。";
+"onboarding.handoff.level_five" = "下一步 → 第 5 關";
+"onboarding.handoff.world_map" = "世界地圖";
+
+/* Accessibility */
+"onboarding.accessibility.lives_count" = "剩餘 %lld 條命";
+"onboarding.accessibility.arrow" = "箭頭 %@，指向%@";
+"onboarding.accessibility.arrow_free" = "路徑暢通。點兩下即可發射。";
+"onboarding.accessibility.arrow_blocked" = "路徑受阻。請先找出阻擋路徑的箭頭。";
+"onboarding.direction.up" = "上方";
+"onboarding.direction.down" = "下方";
+"onboarding.direction.left" = "左方";
+"onboarding.direction.right" = "右方";
+
+/* Local notification content */
+"Daily maze is ready" = "每日迷宮已準備好";
+"Keep your streak alive with one quick maze." = "快速完成一個迷宮，延續你的連續紀錄。";
+"Review your plan before the first charge." = "請在首次扣款前檢查你的方案。";

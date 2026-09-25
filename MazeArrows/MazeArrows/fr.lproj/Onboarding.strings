@@ -1,0 +1,96 @@
+"onboarding.action.skip" = "Passer";
+"onboarding.action.close" = "Fermer";
+"onboarding.action.continue" = "Continuer";
+"onboarding.action.next" = "Suivant";
+"onboarding.action.not_now" = "Pas maintenant";
+"onboarding.common.premium" = "Premium";
+"onboarding.action.ok" = "OK";
+"onboarding.accessibility.page_progress" = "%lld sur %lld";
+
+"onboarding.tutorial.tap_arrow" = "Touchez la flèche";
+"onboarding.tutorial.great" = "Bravo !";
+"onboarding.tutorial.path_blocked" = "Chemin bloqué";
+"onboarding.tutorial.free_path_first" = "Libérez d'abord le chemin";
+"onboarding.tutorial.hint" = "Les indices montrent le chemin";
+"onboarding.tutorial.hints_three" = "Indices : 3";
+"onboarding.tutorial.combo" = "Combo réussi !";
+"onboarding.tutorial.lives_rule" = "3 vies. Toucher un chemin bloqué coûte 1 vie";
+
+"onboarding.paywall.intro.title" = "Jouez sans limites";
+"onboarding.paywall.intro.photo_title" = "Chaque photo devient un labyrinthe.";
+"onboarding.paywall.intro.hints" = "Indices illimités";
+"onboarding.paywall.intro.photo_benefit" = "Transformez n'importe quelle photo en labyrinthe";
+"onboarding.paywall.intro.photo_unlimited" = "Créations illimitées de labyrinthes photo";
+"onboarding.paywall.intro.no_ads" = "Sans publicité";
+
+
+"onboarding.paywall.plans.title" = "Choisissez une formule";
+"onboarding.paywall.plans.week" = "Semaine";
+"onboarding.paywall.plans.year" = "Année";
+"onboarding.paywall.plans.weekly_price" = "%@/semaine";
+"onboarding.paywall.plans.annual_price" = "%@/an";
+"onboarding.paywall.plans.annual_per_week" = "≈ %@/semaine";
+"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
+"onboarding.paywall.plans.savings" = "Économisez %@";
+"onboarding.paywall.plans.weekly_cta" = "Commencer Premium à la semaine";
+"onboarding.paywall.plans.annual_cta" = "Obtenir un an pour %@";
+"onboarding.paywall.plans.annual_billing" = "%@ facturés aujourd'hui · Renouvellement le %@";
+
+"onboarding.paywall.restore" = "Restaurer les achats";
+"onboarding.paywall.manage_subscription" = "Gérer l’abonnement";
+"onboarding.paywall.auto_renewal" = "L’abonnement est renouvelé automatiquement jusqu’à sa résiliation.";
+"onboarding.paywall.terms" = "Conditions d'utilisation";
+"onboarding.paywall.privacy" = "Politique de confidentialité";
+"onboarding.paywall.purchase_pending" = "L'achat est en attente d'autorisation";
+"onboarding.paywall.purchase_failed" = "L'achat n'a pas pu être effectué. Veuillez réessayer.";
+"onboarding.paywall.restore_failed" = "Les achats n'ont pas pu être restaurés. Veuillez réessayer.";
+"onboarding.paywall.nothing_to_restore" = "Aucun achat Premium actif n'a été trouvé.";
+"onboarding.paywall.restored" = "Premium restauré";
+
+"onboarding.action.yes_remind" = "Oui, me le rappeler";
+
+"onboarding.streak.one_day" = "1 jour";
+"onboarding.streak.title" = "Jour 1 de votre série !";
+"onboarding.streak.gift" = "+25 · cadeau de bienvenue";
+"onboarding.streak.first_steps" = "Premiers pas";
+"onboarding.streak.first_flight" = "Premier envol";
+"onboarding.streak.first_combo" = "Premier combo";
+"onboarding.streak.level_five" = "Terminer le niveau 5";
+"onboarding.streak.daily" = "Jouer au labyrinthe du jour";
+"onboarding.streak.tomorrow" = "Revenez demain";
+"onboarding.streak.continues" = "Votre série quotidienne continuera";
+"onboarding.streak.claim" = "Récupérer le cadeau";
+
+"onboarding.push.title" = "Labyrinthe du jour + votre série : souhaitez-vous un rappel ?";
+"onboarding.push.body" = "Une notification discrète par jour. Aucun spam.";
+
+"onboarding.theme.title" = "Choisissez votre style";
+"onboarding.theme.subtitle" = "Le thème s'applique instantanément. Ce plateau est le vôtre.";
+"onboarding.theme.aurora" = "Doux et lumineux";
+"onboarding.theme.neon" = "Néon sombre";
+"onboarding.theme.petal" = "Pastel délicat";
+"onboarding.theme.aurora_name" = "Aurora Light";
+"onboarding.theme.neon_name" = "Midnight Neon";
+"onboarding.theme.petal_name" = "Petal Pastel";
+"onboarding.theme.more" = "3 autres thèmes avec Premium";
+"onboarding.theme.later" = "Plus tard";
+
+"onboarding.handoff.title" = "Vous êtes lancé !";
+"onboarding.handoff.progress" = "4 niveaux terminés";
+"onboarding.handoff.chapter" = "Le chapitre 2 est visible, mais verrouillé. Terminez le chapitre 1 pour l'ouvrir.";
+"onboarding.handoff.level_five" = "Suivant → Niveau 5";
+"onboarding.handoff.world_map" = "Carte du monde";
+
+"onboarding.tutorial.level_number" = "Niveau %lld";
+"onboarding.accessibility.lives_count" = "%lld vies restantes";
+"onboarding.accessibility.arrow" = "Flèche %@, direction : %@";
+"onboarding.accessibility.arrow_free" = "Le chemin est libre. Touchez deux fois pour lancer.";
+"onboarding.accessibility.arrow_blocked" = "Le chemin est bloqué. Trouvez d'abord la flèche qui le bloque.";
+"onboarding.direction.up" = "haut";
+"onboarding.direction.down" = "bas";
+"onboarding.direction.left" = "gauche";
+"onboarding.direction.right" = "droite";
+
+"Daily maze is ready" = "Votre labyrinthe du jour est prêt";
+"Keep your streak alive with one quick maze." = "Entretenez votre série avec un petit labyrinthe.";
+"Review your plan before the first charge." = "Vérifiez votre formule avant le premier prélèvement.";

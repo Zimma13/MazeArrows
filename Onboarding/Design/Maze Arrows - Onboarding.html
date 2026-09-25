@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Maze Arrows — Онбординг</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9;
+    font-family: 'Geist', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #5B5BD6; }
+  a:hover { color: #4A4ABF; }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0) }
+    20% { transform: translateX(-3px) }
+    40% { transform: translateX(3px) }
+    60% { transform: translateX(-2px) }
+    80% { transform: translateX(2px) }
+  }
+  /* Phone screens combine height:100% with vertical padding — force
+     border-box so a padded full-height screen stays 780px, not 780+padding. */
+  [data-screen-label], [data-screen-label] * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="pieces.jsx"></script>
+<script type="text/babel" src="themes.jsx"></script>
+<script type="text/babel" src="puzzle-board.jsx"></script>
+<script type="text/babel" src="ui.jsx"></script>
+<script type="text/babel" src="screens-meta.jsx"></script>
+<script type="text/babel" src="screens-game.jsx"></script>
+<script type="text/babel" src="onboarding-screens.jsx"></script>
+<script type="text/babel" src="onboarding-paywall.jsx"></script>
+
+<script type="text/babel">
+const T = THEMES;
+
+function Phone({ theme = T.aurora, children, label }) {
+  return (
+    <IOSDevice dark={theme.pieceGlow} width={360} height={780}>
+      <div data-screen-label={label} style={{ width: '100%', height: '100%' }}>
+        {children}
+      </div>
+    </IOSDevice>
+  );
+}
+
+function App() {
+  return (
+    <DesignCanvas>
+      {/* ─── Cover ───────────────────────────────────────── */}
+      <DCSection id="cover" title="Maze Arrows — Онбординг" subtitle="День-0 воронка: cold start → 3 туториальных уровня → мультистраничный пейволл → level 4 → закрывающий блок. По onboarding-spec.md v1.1.">
+        <div style={{ display: 'flex', gap: 26, alignItems: 'flex-start' }}>
+          <div style={{
+            width: 560, padding: 32, borderRadius: 28,
+            background: 'linear-gradient(135deg, #FFF7EE 0%, #ECE5D6 100%)',
+            border: '1px solid rgba(0,0,0,0.06)', position: 'relative', overflow: 'hidden',
+          }}>
+            <div style={{ position: 'absolute', right: -30, top: -20, opacity: 0.5 }}>
+              <MazePiece paths={PIECES.stairs.paths} width={240} height={240} stroke="#1A1B2E" strokeWidth={6}/>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <div style={{ fontFamily: 'Geist', fontSize: 12, fontWeight: 700, letterSpacing: 1.4, color: '#5B5BD6', textTransform: 'uppercase' }}>Первая сессия · iOS</div>
+              <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 60, lineHeight: 0.9, letterSpacing: -2, color: '#1A1B2E', marginTop: 8 }}>
+                Онбординг<br/>день&nbsp;0
+              </div>
+              <div style={{ fontFamily: 'Geist', fontSize: 15, color: '#3E3F5C', marginTop: 16, maxWidth: 380, lineHeight: 1.55 }}>
+                Доска раньше меню. Туториал — это настоящие уровни. Ценность подписки прожита до пейволла. 14 экранов в порядке показа.
+              </div>
+              <div style={{ display: 'flex', gap: 20, marginTop: 22, flexWrap: 'wrap' }}>
+                {[['< 10 с','до интерактивной доски'],['< 90 с','до первой победы'],['6–8 %','install → trial'],['30–32 %','цель D1']].map(([a,b])=>(
+                  <div key={a}>
+                    <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 24, color: '#1A1B2E' }}>{a}</div>
+                    <div style={{ fontFamily: 'Geist', fontSize: 11.5, color: '#777', maxWidth: 120 }}>{b}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div style={{ width: 300, padding: '20px 22px', borderRadius: 14, background: '#FFE8A8',
+            boxShadow: '0 6px 14px rgba(0,0,0,0.08)', fontFamily: 'Geist', fontSize: 13, lineHeight: 1.55, color: '#3A2E18' }}>
+            <div style={{ fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 14, marginBottom: 6 }}>5 принципов</div>
+            <ul style={{ margin: 0, paddingLeft: 16 }}>
+              <li>Доска раньше меню — без MainMenu</li>
+              <li>Туториал = уровни 1–3, не режим</li>
+              <li>Перк прожит до пейволла (хинт + Photo Maze)</li>
+              <li>Джус по инвертированной U — пик не протухает</li>
+              <li>Ноль монетизационного шума до пейволла</li>
+            </ul>
+          </div>
+        </div>
+      </DCSection>
+
+      {/* ─── The flow ────────────────────────────────────── */}
+      <DCSection id="flow" title="Поток первой сессии" subtitle="Слева направо — порядок показа. Skip (с L1) ведёт в меню, не на пейволл.">
+        <DCArtboard id="s01" label="0:00 · Холодный старт" width={360} height={780}><Phone label="Холодный старт"><OB_ColdStart theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s02" label="0:05 · ATT промпт" width={360} height={780}><Phone label="ATT промпт"><OB_ATT theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s03" label="0:15 · L1 · Тапни по стрелке" width={360} height={780}><Phone label="L1 Тапни"><OB_Level1 theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s04" label="0:20 · L1 · Slow-mo вылет" width={360} height={780}><Phone label="L1 Slow-mo"><OB_Level1Fly theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s05" label="0:50 · L2 · Путь занят" width={360} height={780}><Phone label="L2 Путь занят"><OB_Level2 theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s06" label="1:10 · L2 · Освободи путь" width={360} height={780}><Phone label="L2 Освободи"><OB_Level2b theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s07" label="2:20 · L3 · Демо хинта" width={360} height={780}><Phone label="L3 Хинт"><OB_Level3Hint theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s08" label="3:30 · L3 · Серия! + победа" width={360} height={780}><Phone label="L3 Серия"><OB_Level3Combo theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s09" label="3:50 · Пейволл P1 · Ценность" width={360} height={780}><Phone label="Пейволл P1"><OB_PaywallValue theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s10" label="3:50 · Пейволл P2 · Таймлайн" width={360} height={780}><Phone label="Пейволл P2"><OB_PaywallTimeline theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s11" label="3:50 · Пейволл P3 · План" width={360} height={780}><Phone label="Пейволл P3"><OB_PaywallPlans theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s12" label="4:40 · L4 · авто-старт" width={360} height={780}><Phone label="L4"><OB_Level4 theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s13" label="6:30 · Streak + чек-лист" width={360} height={780}><Phone label="Streak"><OB_Streak theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s14" label="6:40 · Push soft-ask" width={360} height={780}><Phone label="Push"><OB_Push theme={T.aurora}/></Phone></DCArtboard>
+        <DCArtboard id="s15" label="6:50 · Выбор темы" width={360} height={780}><Phone label="Темы"><OB_ThemePick theme={T.aurora} themes={T}/></Phone></DCArtboard>
+        <DCArtboard id="s16" label="7:00 · Дальше → Уровень 5" width={360} height={780}><Phone label="Продолжение"><OB_Continue theme={T.aurora}/></Phone></DCArtboard>
+
+        <DCPostIt top={-40} left={200} width={230} rotate={-2}>
+          <b>ATT</b> — на 5–10-й секунде, без кастомного пре-экрана. 81% топ-игр стреляют в первые 30 с; задержка 2 ч ≈ −30% согласий.
+        </DCPostIt>
+        <DCPostIt top={810} left={1180} width={240} rotate={1.5}>
+          <b>Пейволл — немедленно после victoryBurst L3.</b> Дофаминовый пик не протухает: между победой и P1 — ноль промежуточных экранов.
+        </DCPostIt>
+        <DCPostIt top={810} left={2960} width={240} rotate={-1.5}>
+          <b>Закрывающий блок — только в живой сессии.</b> Streak, чек-лист, push и выбор темы стоят ПОСЛЕ пейволла — один попап за сессию.
+        </DCPostIt>
+      </DCSection>
+
+      {/* ─── Tutorial boards (spec §4) ───────────────────── */}
+      <DCSection id="boards" title="Туториальные доски L1–L3" subtitle="Перерисованы с явной нотацией (§4). Все unloseable, граф блокировок ацикличен, покрыты солвер-тестом.">
+        <DCArtboard id="b1" label="L1 · тап → полёт" width={340} height={400}>
+          <BoardCard theme={T.aurora} title="Level 1" desc="4 фигуры, любой порядок. Учит: направление стрелки = направление вылета.">
+            <TutorialBoard theme={T.aurora} layout="L1" size={260} spotlight={{ x: 16.7, y: 25 }} highlightId="A" highlightState="free"/>
+          </BoardCard>
+        </DCArtboard>
+        <DCArtboard id="b2" label="L2 · блокировка" width={340} height={400}>
+          <BoardCard theme={T.aurora} title="Level 2" desc="Зависимость X ← B. Тап в занятый путь = красная вспышка, без штрафа.">
+            <TutorialBoard theme={T.aurora} layout="L2" size={260} spotlight={{ x: 18, y: 58.3 }} highlightId="X" highlightState="blocked" hand={false}/>
+          </BoardCard>
+        </DCArtboard>
+        <DCArtboard id="b3" label="L3 · цепочка + комбо" width={340} height={400}>
+          <BoardCard theme={T.aurora} title="Level 3" desc="Цепочка C → D → E. Форс-хинт на C — реально свободную открывашку.">
+            <TutorialBoard theme={T.aurora} layout="L3" size={260} highlightId="C" highlightState="hint"/>
+          </BoardCard>
+        </DCArtboard>
+      </DCSection>
+
+      {/* ─── Decline / edge cases ────────────────────────── */}
+      <DCSection id="edges" title="Ветвления и крайние случаи" subtitle="Что происходит после пейволла и на нестандартных путях (§2, §5).">
+        <DCArtboard id="e1" label="Decline-флоу" width={320} height={300}>
+          <EdgeCard theme={T.aurora} title="Закрыл пейволл">
+            Никакого мгновенного контр-оффера. Пейволл закрывается → авто-старт Level 4. Молча планируется welcome-offer: локальная нотификация + показ при след. запуске. <b>Дедлайн 24 ч — от первого показа оффера</b>, не от dismissal.
+          </EdgeCard>
+        </DCArtboard>
+        <DCArtboard id="e2" label="Abandoned txn" width={320} height={300}>
+          <EdgeCard theme={T.aurora} title="Отменил StoreKit-шит">
+            Recovery-пейволл (одна страница, тот же план, без скидки): «Передумал? Триал всё ещё бесплатный». Exit/abandon-пейволлы = ~17% выручки когорты.
+          </EdgeCard>
+        </DCArtboard>
+        <DCArtboard id="e3" label="Skip / реинсталл" width={320} height={300}>
+          <EdgeCard theme={T.aurora} title="Skip и активный подписчик">
+            <b>Skip</b> (с L1) → сразу в меню, БЕЗ пейволла; флаг skipped_paywall_never_shown, показ только контекстно. <b>Реинсталл с премиумом</b> → пейволл и Premium-подписи выпилены: L1→L2→L3→L4→закрывающий блок.
+          </EdgeCard>
+        </DCArtboard>
+        <DCArtboard id="e4" label="Офлайн" width={320} height={300}>
+          <EdgeCard theme={T.aurora} title="Продукты не загрузились">
+            Если pre-fetch StoreKit не успел (офлайн/плохая сеть) — пейволл <b>молча скипается</b>, welcomeOfferDeadline не ставится, летит paywall_products_load_failed, показ — контекстно позже.
+          </EdgeCard>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+function BoardCard({ theme, title, desc, children }) {
+  return (
+    <div style={{ width: 340, padding: 20, borderRadius: 22, background: '#fff',
+      border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 16px rgba(0,0,0,0.04)' }}>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>{children}</div>
+      <div style={{ marginTop: 14, fontFamily: 'Bricolage Grotesque', fontWeight: 800, fontSize: 16, color: '#1A1B2E' }}>{title}</div>
+      <div style={{ marginTop: 4, fontFamily: 'Geist', fontSize: 12.5, color: '#666', lineHeight: 1.45 }}>{desc}</div>
+    </div>
+  );
+}
+
+function EdgeCard({ theme, title, children }) {
+  return (
+    <div style={{ width: 320, height: 300, boxSizing: 'border-box', padding: 22, borderRadius: 22, background: '#fff',
+      border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 16px rgba(0,0,0,0.04)' }}>
+      <div style={{ display: 'inline-block', padding: '5px 12px', borderRadius: 999, background: '#F0EEFD',
+        fontFamily: 'Geist', fontSize: 11, fontWeight: 700, color: '#5B5BD6', letterSpacing: 0.4, textTransform: 'uppercase' }}>{title}</div>
+      <div style={{ marginTop: 14, fontFamily: 'Geist', fontSize: 13.5, color: '#3E3F5C', lineHeight: 1.6 }}>{children}</div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

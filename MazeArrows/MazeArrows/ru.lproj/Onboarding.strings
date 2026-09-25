@@ -1,0 +1,96 @@
+"onboarding.action.skip" = "Пропустить";
+"onboarding.action.close" = "Закрыть";
+"onboarding.action.continue" = "Продолжить";
+"onboarding.action.next" = "Дальше";
+"onboarding.action.not_now" = "Не сейчас";
+"onboarding.common.premium" = "Premium";
+"onboarding.action.ok" = "ОК";
+"onboarding.accessibility.page_progress" = "%lld из %lld";
+
+"onboarding.tutorial.tap_arrow" = "Нажми на стрелку";
+"onboarding.tutorial.great" = "Отлично!";
+"onboarding.tutorial.path_blocked" = "Путь заблокирован";
+"onboarding.tutorial.free_path_first" = "Сначала освободи путь";
+"onboarding.tutorial.hint" = "Подсказки показывают путь";
+"onboarding.tutorial.hints_three" = "Подсказки: 3";
+"onboarding.tutorial.combo" = "Серия!";
+"onboarding.tutorial.lives_rule" = "3 жизни. Нажатие на заблокированный путь отнимает 1 жизнь";
+
+"onboarding.paywall.intro.title" = "Играй без границ";
+"onboarding.paywall.intro.photo_title" = "Любое фото — лабиринт";
+"onboarding.paywall.intro.hints" = "Безлимитные подсказки";
+"onboarding.paywall.intro.photo_benefit" = "Превращай любое фото в лабиринт";
+"onboarding.paywall.intro.photo_unlimited" = "Фотолабиринты без ограничений";
+"onboarding.paywall.intro.no_ads" = "Без рекламы";
+
+
+"onboarding.paywall.plans.title" = "Выбери план";
+"onboarding.paywall.plans.week" = "Неделя";
+"onboarding.paywall.plans.year" = "Год";
+"onboarding.paywall.plans.weekly_price" = "%@/нед.";
+"onboarding.paywall.plans.annual_price" = "%@/год";
+"onboarding.paywall.plans.annual_per_week" = "≈ %@/нед.";
+"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
+"onboarding.paywall.plans.savings" = "Экономия %@";
+"onboarding.paywall.plans.weekly_cta" = "Подключить Premium на неделю";
+"onboarding.paywall.plans.annual_cta" = "Подключить на год за %@";
+"onboarding.paywall.plans.annual_billing" = "%@ спишется сегодня · Продление %@";
+
+"onboarding.paywall.restore" = "Восстановить покупки";
+"onboarding.paywall.manage_subscription" = "Управлять подпиской";
+"onboarding.paywall.auto_renewal" = "Подписка продлевается автоматически до отмены.";
+"onboarding.paywall.terms" = "Условия";
+"onboarding.paywall.privacy" = "Конфиденциальность";
+"onboarding.paywall.purchase_pending" = "Покупка ожидает подтверждения";
+"onboarding.paywall.purchase_failed" = "Покупку не удалось завершить. Попробуйте ещё раз.";
+"onboarding.paywall.restore_failed" = "Покупки не удалось восстановить. Попробуйте ещё раз.";
+"onboarding.paywall.nothing_to_restore" = "Активная покупка Premium не найдена.";
+"onboarding.paywall.restored" = "Premium восстановлен";
+
+"onboarding.action.yes_remind" = "Да, напомнить";
+
+"onboarding.streak.one_day" = "1 день";
+"onboarding.streak.title" = "День 1 твоей серии!";
+"onboarding.streak.gift" = "+25 · стартовый подарок";
+"onboarding.streak.first_steps" = "Первые шаги";
+"onboarding.streak.first_flight" = "Первый полёт";
+"onboarding.streak.first_combo" = "Первое комбо";
+"onboarding.streak.level_five" = "Пройди уровень 5";
+"onboarding.streak.daily" = "Сыграй в ежедневный лабиринт";
+"onboarding.streak.tomorrow" = "Возвращайся завтра";
+"onboarding.streak.continues" = "Твоя серия дней продолжится";
+"onboarding.streak.claim" = "Забрать подарок";
+
+"onboarding.push.title" = "Ежедневный лабиринт + твоя серия — напомнить?";
+"onboarding.push.body" = "Один тихий пуш в день. Никакого спама.";
+
+"onboarding.theme.title" = "Выбери свой стиль";
+"onboarding.theme.subtitle" = "Тема применится мгновенно. Это твоя доска.";
+"onboarding.theme.aurora" = "Мягкий светлый";
+"onboarding.theme.neon" = "Тёмный неон";
+"onboarding.theme.petal" = "Нежная пастель";
+"onboarding.theme.aurora_name" = "Светлая Аврора";
+"onboarding.theme.neon_name" = "Полуночный неон";
+"onboarding.theme.petal_name" = "Пастельные лепестки";
+"onboarding.theme.more" = "Ещё 3 темы в Premium";
+"onboarding.theme.later" = "Позже";
+
+"onboarding.handoff.title" = "Ты в ударе";
+"onboarding.handoff.progress" = "4 уровня пройдено";
+"onboarding.handoff.chapter" = "Глава 2 видна, но заперта. Пройди главу 1.";
+"onboarding.handoff.level_five" = "Дальше → Уровень 5";
+"onboarding.handoff.world_map" = "На карту мира";
+
+"onboarding.tutorial.level_number" = "Уровень %lld";
+"onboarding.accessibility.lives_count" = "Осталось жизней: %lld";
+"onboarding.accessibility.arrow" = "Стрелка %@, направлена %@";
+"onboarding.accessibility.arrow_free" = "Путь свободен. Коснись дважды, чтобы запустить стрелку.";
+"onboarding.accessibility.arrow_blocked" = "Путь заблокирован. Сначала найди блокирующую стрелку.";
+"onboarding.direction.up" = "вверх";
+"onboarding.direction.down" = "вниз";
+"onboarding.direction.left" = "влево";
+"onboarding.direction.right" = "вправо";
+
+"Daily maze is ready" = "Ежедневный лабиринт готов";
+"Keep your streak alive with one quick maze." = "Сохрани серию — пройди один короткий лабиринт.";
+"Review your plan before the first charge." = "Проверь план до первого списания.";

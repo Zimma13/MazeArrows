@@ -1,0 +1,6 @@
+LOCALE=ko
+GROUP_DISPLAY_NAME=Arrow Maze Premium
+WEEKLY_DISPLAY_NAME=주간 Premium
+WEEKLY_DESCRIPTION=Photo Maze, 무제한 힌트와 테마
+ANNUAL_DISPLAY_NAME=연간 Premium
+ANNUAL_DESCRIPTION=Photo Maze, 무제한 힌트와 테마

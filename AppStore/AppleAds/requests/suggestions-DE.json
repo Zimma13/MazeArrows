@@ -1,0 +1,44 @@
+{
+  "filters": [
+    {
+      "field": "promotedObjectId",
+      "operator": "EQUALS",
+      "value": [
+        "6800708435"
+      ]
+    },
+    {
+      "field": "promotedObjectType",
+      "operator": "EQUALS",
+      "value": [
+        "APPSTORE_APP"
+      ]
+    },
+    {
+      "field": "countriesOrRegions",
+      "operator": "IN",
+      "value": [
+        "DE"
+      ]
+    },
+    {
+      "field": "terms",
+      "operator": "IN",
+      "value": [
+        "arrows",
+        "arrow puzzle",
+        "arrow maze",
+        "pfeile",
+        "pfeil puzzle",
+        "pfeile spiel",
+        "pfeilrätsel",
+        "logikspiele",
+        "tap away"
+      ]
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "pageSize": 1000
+  }
+}

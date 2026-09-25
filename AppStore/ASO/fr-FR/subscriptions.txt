@@ -1,0 +1,6 @@
+LOCALE=fr-FR
+GROUP_DISPLAY_NAME=Arrow Maze Premium
+WEEKLY_DISPLAY_NAME=Premium hebdomadaire
+WEEKLY_DESCRIPTION=Photo Maze, indices illimités et thèmes
+ANNUAL_DISPLAY_NAME=Premium annuel
+ANNUAL_DESCRIPTION=Photo Maze, indices illimités et thèmes

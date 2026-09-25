@@ -1,0 +1,10 @@
+LOCALE=pt-BR
+LANGUAGE=Português (Brasil)
+APP_NAME=Arrow Maze Quest: Lógica
+SUBTITLE=Solte todas as setas
+PROMOTIONAL_TEXT=Um caminho livre pode abrir o tabuleiro inteiro. Planeje, aumente seu combo e domine 240 fases, o desafio diário, Zen e seu próprio Photo Maze.
+KEYWORDS=labirinto,puzzle,flecha,escape,cérebro,bloco,toque,rota,desafio,relaxar,zen,diário,foto,trilha
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

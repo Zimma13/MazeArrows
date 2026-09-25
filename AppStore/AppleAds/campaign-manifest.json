@@ -1,0 +1,164 @@
+{
+  "prepared_at_bangkok": "2026-09-07",
+  "app_id": "6800708435",
+  "account_id": 21329790,
+  "account_name": "Stepanov Dmitry",
+  "ads_profile": "icleanse-apple-ads",
+  "campaign_id": 2144620520,
+  "campaign_name": "AM_SR_CA_EXACT_PREMIUM_20260907",
+  "url": "https://app-ads.apple.com/cm/app/21329790/report/campaign/2144620520",
+  "country": "CA",
+  "currency": "USD",
+  "daily_media_budget": "3.07",
+  "assumed_invoice_vat_percent": 7,
+  "monthly_media_ceiling": "93.328",
+  "monthly_ceiling_with_vat": "99.86096",
+  "start_time_utc": "2026-09-06T17:00:00Z",
+  "end_time_utc": "2026-10-06T16:59:59Z",
+  "end_time_bangkok": "2026-10-06T23:59:59+07:00",
+  "status": "ENABLED",
+  "display_status": "ON_HOLD",
+  "system_status": "NOT_RUNNING",
+  "system_status_reasons": [
+    "APP_NOT_CATEGORIZED"
+  ],
+  "adgroups": [
+    {
+      "id": 2150883158,
+      "name": "Core_EN_Exact",
+      "default_max_cpt": "0.2",
+      "search_match": false,
+      "status": "ENABLED"
+    },
+    {
+      "id": 2150883803,
+      "name": "Competitors_Exact",
+      "default_max_cpt": "0.15",
+      "search_match": false,
+      "status": "ENABLED"
+    },
+    {
+      "id": 2150883008,
+      "name": "Core_FR_Exact",
+      "default_max_cpt": "0.15",
+      "search_match": false,
+      "status": "ENABLED"
+    }
+  ],
+  "keywords": [
+    {
+      "keyword_id": 2308903436,
+      "adgroup_id": 2150883158,
+      "keyword": "arrow puzzle",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.2"
+    },
+    {
+      "keyword_id": 2308903437,
+      "adgroup_id": 2150883158,
+      "keyword": "arrow game",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.2"
+    },
+    {
+      "keyword_id": 2308903438,
+      "adgroup_id": 2150883158,
+      "keyword": "arrow maze",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.2"
+    },
+    {
+      "keyword_id": 2308903439,
+      "adgroup_id": 2150883158,
+      "keyword": "arrow escape",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.2"
+    },
+    {
+      "keyword_id": 2308903440,
+      "adgroup_id": 2150883158,
+      "keyword": "untangle arrows",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.2"
+    },
+    {
+      "keyword_id": 2308903441,
+      "adgroup_id": 2150883158,
+      "keyword": "arrows puzzle",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.2"
+    },
+    {
+      "keyword_id": 2308910792,
+      "adgroup_id": 2150883803,
+      "keyword": "arrows",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    },
+    {
+      "keyword_id": 2308910793,
+      "adgroup_id": 2150883803,
+      "keyword": "arrows puzzle escape",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    },
+    {
+      "keyword_id": 2308910794,
+      "adgroup_id": 2150883803,
+      "keyword": "arrows go",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    },
+    {
+      "keyword_id": 2308910795,
+      "adgroup_id": 2150883803,
+      "keyword": "arrow out",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    },
+    {
+      "keyword_id": 2308910796,
+      "adgroup_id": 2150883803,
+      "keyword": "point out",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    },
+    {
+      "keyword_id": 2308910797,
+      "adgroup_id": 2150883008,
+      "keyword": "jeu de flèches",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    },
+    {
+      "keyword_id": 2308910798,
+      "adgroup_id": 2150883008,
+      "keyword": "casse tête flèches",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    },
+    {
+      "keyword_id": 2308910799,
+      "adgroup_id": 2150883008,
+      "keyword": "puzzle flèches",
+      "match_type": "EXACT",
+      "max_cpt_usd": "0.15"
+    }
+  ],
+  "negative_keywords": [
+    "archery",
+    "bowmasters",
+    "wallpaper",
+    "navigation",
+    "gps",
+    "tv",
+    "crossword",
+    "sudoku",
+    "minecraft",
+    "roblox",
+    "3d"
+  ],
+  "creative_id": 4064902,
+  "creative_note": "API DEFAULT_PRODUCT_PAGE creative VALID; not linked to a separate ad because account API rejects search-results ads creation. Built-in Default Ad visible ACTIVE in Apple Ads UI; uses localized default product page.",
+  "monitoring": "User declined daily monitoring; manual checks only."
+}

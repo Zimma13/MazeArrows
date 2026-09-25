@@ -1,0 +1,10 @@
+LOCALE=ja
+LANGUAGE=日本語
+APP_NAME=Arrow Maze：矢印脱出
+SUBTITLE=からまる道を解く脳トレ
+PROMOTIONAL_TEXT=ひとつの正解が盤面を一気に動かす。先を読み、コンボをつなぎ、240ステージとデイリー、Zen、写真から作るPhoto Mazeに挑戦しよう。
+KEYWORDS=迷路ゲーム,ロジック,タップ,暇つぶし,頭脳戦,ひらめき,癒やし,爽快感
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

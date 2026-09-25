@@ -1,0 +1,26 @@
+TEXTES DES CAPTURES — CANADA
+
+1. photoMaze
+   VOTRE PHOTO.
+   VOTRE LABYRINTHE.
+   Sous-titre : Choisissez un sujet. Transformez-le en énigme jouable.
+
+2. freeArrow
+   TROUVEZ LA
+   FLÈCHE LIBRE
+   Sous-titre : Un seul bon geste peut ouvrir toute la grille.
+
+3. combo
+   REGARDEZ TOUT
+   SE DÉNOUER
+   Sous-titre : Anticipez. Enchaînez des combos parfaits.
+
+4. worlds
+   240 NIVEAUX.
+   7 MONDES.
+   Sous-titre : Voyagez des Prairies jusqu’au Néant.
+
+5. daily
+   NOUVELLE ÉNIGME
+   CHAQUE JOUR
+   Sous-titre : Énigme quotidienne, trois quêtes et bonus de série.

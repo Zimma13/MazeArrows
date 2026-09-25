@@ -1,0 +1,107 @@
+/* Common actions */
+"onboarding.action.skip" = "Lewati";
+"onboarding.action.close" = "Tutup";
+"onboarding.action.continue" = "Lanjutkan";
+"onboarding.action.next" = "Berikutnya";
+"onboarding.action.not_now" = "Nanti saja";
+"onboarding.common.premium" = "Premium";
+"onboarding.action.ok" = "OK";
+"onboarding.action.yes_remind" = "Ya, ingatkan saya";
+
+/* Tutorial */
+"onboarding.accessibility.page_progress" = "%lld dari %lld";
+"onboarding.tutorial.tap_arrow" = "Ketuk panah";
+"onboarding.tutorial.great" = "Bagus!";
+"onboarding.tutorial.path_blocked" = "Jalur terhalang";
+"onboarding.tutorial.free_path_first" = "Buka jalurnya terlebih dahulu";
+"onboarding.tutorial.hint" = "Petunjuk menunjukkan jalan";
+"onboarding.tutorial.hints_three" = "Petunjuk: 3";
+"onboarding.tutorial.combo" = "Bersih Beruntun!";
+"onboarding.tutorial.lives_rule" = "3 nyawa. Mengetuk jalur yang terhalang mengurangi 1 nyawa";
+"onboarding.tutorial.level_number" = "Level %lld";
+
+/* Premium introduction */
+"onboarding.paywall.intro.title" = "Main tanpa batas";
+"onboarding.paywall.intro.photo_title" = "Foto apa pun. Jadi labirin.";
+"onboarding.paywall.intro.hints" = "Petunjuk tanpa batas";
+"onboarding.paywall.intro.photo_benefit" = "Ubah foto apa pun menjadi labirin";
+"onboarding.paywall.intro.photo_unlimited" = "Pembuatan Labirin Foto tanpa batas";
+"onboarding.paywall.intro.no_ads" = "Tanpa iklan";
+
+/* Trial timeline */
+
+/* Plans and purchase */
+"onboarding.paywall.plans.title" = "Pilih paket";
+"onboarding.paywall.plans.week" = "Mingguan";
+"onboarding.paywall.plans.year" = "Tahunan";
+"onboarding.paywall.plans.weekly_price" = "%@/minggu";
+"onboarding.paywall.plans.annual_price" = "%@/tahun";
+"onboarding.paywall.plans.annual_per_week" = "≈ %@/minggu";
+"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
+"onboarding.paywall.plans.savings" = "Hemat %@";
+"onboarding.paywall.plans.weekly_cta" = "Mulai Premium mingguan";
+"onboarding.paywall.plans.annual_cta" = "Dapatkan 1 tahun seharga %@";
+"onboarding.paywall.plans.annual_billing" = "%@ ditagihkan hari ini · Diperpanjang %@";
+"onboarding.paywall.restore" = "Pulihkan pembelian";
+"onboarding.paywall.manage_subscription" = "Kelola langganan";
+"onboarding.paywall.auto_renewal" = "Langganan diperpanjang secara otomatis hingga dibatalkan.";
+"onboarding.paywall.terms" = "Ketentuan Penggunaan";
+"onboarding.paywall.privacy" = "Kebijakan Privasi";
+"onboarding.paywall.purchase_pending" = "Pembelian sedang menunggu persetujuan";
+"onboarding.paywall.purchase_failed" = "Pembelian tidak dapat diselesaikan. Silakan coba lagi.";
+"onboarding.paywall.restore_failed" = "Pembelian tidak dapat dipulihkan. Silakan coba lagi.";
+"onboarding.paywall.nothing_to_restore" = "Tidak ditemukan pembelian Premium yang aktif.";
+"onboarding.paywall.restored" = "Premium berhasil dipulihkan";
+
+/* Trial reminder */
+
+/* Streak */
+"onboarding.streak.one_day" = "1 hari";
+"onboarding.streak.title" = "Hari pertama rentetan Anda!";
+"onboarding.streak.gift" = "+25 · hadiah awal";
+"onboarding.streak.first_steps" = "Langkah pertama";
+"onboarding.streak.first_flight" = "Penerbangan pertama";
+"onboarding.streak.first_combo" = "Kombo pertama";
+"onboarding.streak.level_five" = "Selesaikan level 5";
+"onboarding.streak.daily" = "Mainkan labirin harian";
+"onboarding.streak.tomorrow" = "Kembali besok";
+"onboarding.streak.continues" = "Rentetan harian Anda akan berlanjut";
+"onboarding.streak.claim" = "Klaim hadiah";
+
+/* Push prompt */
+"onboarding.push.title" = "Labirin harian + rentetan Anda — ingin diingatkan?";
+"onboarding.push.body" = "Satu notifikasi senyap sehari. Tanpa spam.";
+
+/* Themes */
+"onboarding.theme.title" = "Pilih gaya Anda";
+"onboarding.theme.subtitle" = "Tema langsung diterapkan. Ini papan Anda.";
+"onboarding.theme.aurora" = "Lembut dan cerah";
+"onboarding.theme.neon" = "Neon gelap";
+"onboarding.theme.petal" = "Pastel lembut";
+"onboarding.theme.aurora_name" = "Cahaya Aurora";
+"onboarding.theme.neon_name" = "Neon Tengah Malam";
+"onboarding.theme.petal_name" = "Pastel Kelopak";
+"onboarding.theme.more" = "3 tema lainnya di Premium";
+"onboarding.theme.later" = "Nanti";
+
+/* Handoff */
+"onboarding.handoff.title" = "Anda sedang melaju";
+"onboarding.handoff.progress" = "4 level diselesaikan";
+"onboarding.handoff.chapter" = "Bab 2 sudah terlihat, tetapi masih terkunci. Selesaikan Bab 1 untuk membukanya.";
+"onboarding.handoff.level_five" = "Berikutnya → Level 5";
+"onboarding.handoff.world_map" = "Peta dunia";
+
+/* Accessibility */
+"onboarding.accessibility.lives_count" = "%lld nyawa tersisa";
+"onboarding.accessibility.arrow" = "Panah %@, mengarah ke %@";
+"onboarding.accessibility.arrow_free" = "Jalur terbuka. Ketuk dua kali untuk meluncurkan.";
+"onboarding.accessibility.arrow_blocked" = "Jalur terhalang. Temukan dahulu panah yang menghalangi.";
+"onboarding.direction.up" = "atas";
+"onboarding.direction.down" = "bawah";
+"onboarding.direction.left" = "kiri";
+"onboarding.direction.right" = "kanan";
+
+/* Local notification content */
+"Daily maze is ready" = "Labirin harian sudah siap";
+"Keep your streak alive with one quick maze." = "Pertahankan rentetan Anda dengan satu labirin singkat.";
+"Review your plan before the first charge." = "Tinjau paket Anda sebelum tagihan pertama.";

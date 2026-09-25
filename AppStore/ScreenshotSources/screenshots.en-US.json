@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "locale": "en-US",
+  "captureLocale": "en-US",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": ["YOUR PHOTO.", "YOUR MAZE."],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": ["Pick a subject. Turn it into a playable puzzle."],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": ["FIND THE", "FREE ARROW"],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": ["One smart move can unlock the whole board."],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": ["WATCH IT ALL", "UNRAVEL"],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": ["Plan ahead. Chain satisfying combos."],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_240-levels-7-worlds.png",
+      "headline": ["240 LEVELS.", "7 WORLDS."],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": ["Journey from The Meadows to The Void."],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": ["A FRESH MAZE", "EVERY DAY"],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": ["Daily puzzles, three quests, and streak rewards."],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Arrow Maze - Default Product Page CA",
+  "creativeType": "DEFAULT_PRODUCT_PAGE",
+  "creativeSpec": {},
+  "destination": {
+    "destinationType": "APP_STORE_PRODUCT_PAGE",
+    "parameters": {
+      "adamId": "6800708435"
+    }
+  }
+}

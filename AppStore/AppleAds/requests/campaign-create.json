@@ -1,0 +1,36 @@
+{
+  "name": "AM_SR_CA_EXACT_PREMIUM_20260907",
+  "status": "PAUSED",
+  "adAccountId": 21329790,
+  "promotedObjectType": "APPSTORE_APP",
+  "promotedObjectId": "6800708435",
+  "billingEvent": "TAPS",
+  "dailyBudget": {
+    "value": {
+      "amount": "3.07",
+      "currency": "USD"
+    }
+  },
+  "endTime": "2026-10-06T16:59:59.000",
+  "targeting": {
+    "countryOrRegion": {
+      "include": [
+        "CA"
+      ]
+    },
+    "supplyPlacement": {
+      "include": [
+        "APPSTORE_SEARCH_RESULTS"
+      ]
+    },
+    "supplySource": {
+      "include": [
+        "APPSTORE"
+      ]
+    }
+  },
+  "bidStrategy": {
+    "bidStrategyType": "MANUAL_CPT",
+    "bidStrategyGoal": "TAP"
+  }
+}

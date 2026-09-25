@@ -1,0 +1,23 @@
+Toda seta tem uma saída. Você consegue descobrir a ordem que limpa o tabuleiro inteiro?
+
+Arrow Maze é um jogo de lógica elegante em que cada toque muda o próximo passo. Uma seta só pode sair quando o caminho está livre. Observe a grade, libere as peças certas na sequência correta e transforme um labirinto lotado em uma solução super satisfatória. Um toque apressado pode custar uma vida; uma boa jogada aumenta seu combo.
+
+COMO JOGAR
+• Observe a direção de cada seta.
+• Toque apenas quando o caminho à frente estiver livre.
+• Remova primeiro as peças certas para abrir novas rotas.
+• Limpe o tabuleiro, preserve suas vidas e conquiste até três estrelas.
+
+SEMPRE HÁ UM NOVO DESAFIO
+• Avance por 240 fases distribuídas em sete mundos.
+• Jogue um quebra-cabeça diário, mantenha sua sequência e cumpra três missões do dia.
+• Relaxe com sessões tranquilas no modo Zen.
+• Com Premium, transforme uma foto escolhida por você em um labirinto jogável.
+• Desbloqueie conquistas e compare pontuações pelo Game Center.
+• Escolha temas visuais para deixar o tabuleiro com a sua cara.
+
+As regras são aprendidas em segundos, mas as fases avançadas exigem paciência, percepção de padrões e estratégia. Perfeito para uma pausa rápida ou uma longa sessão de raciocínio.
+
+Assinaturas Premium semanais e anuais opcionais estão disponíveis. Preço, duração e benefícios são exibidos antes da compra. A assinatura é renovada automaticamente, a menos que seja cancelada nos ajustes da Conta Apple pelo menos 24 horas antes do fim do período atual.
+
+Termos de Uso: https://kinapp.dev/arrowmaze/terms/

@@ -1,0 +1,23 @@
+Every arrow has an exit. Can you uncover the sequence that clears the entire board?
+
+Arrow Maze is a crisp logic puzzle where each tap changes what becomes possible next. An arrow can move only when its route is open. Read the grid, release the right piece and turn a tangled maze into a wonderfully satisfying clear. Move too quickly and you may lose a life; plan carefully and your combo will keep growing.
+
+HOW TO PLAY
+• Check the direction of every arrow.
+• Tap only when the route ahead is open.
+• Remove the right pieces first to reveal new paths.
+• Clear the board, protect your lives and earn up to three stars.
+
+PLENTY TO MASTER
+• Travel through 240 levels across seven changing worlds.
+• Tackle a fresh Daily Puzzle, maintain your streak and finish three Daily Quests.
+• Unwind with calmer Zen sessions.
+• With Premium, turn a chosen photo into a playable maze and adjust its detail and silhouette.
+• Build combos, unlock achievements and compare scores with Game Center.
+• Pick a visual theme that suits the way you play.
+
+The rules take seconds to learn, but the later boards demand patience, pattern recognition and smart sequencing. Play one quick level or settle in for a longer puzzle session.
+
+Optional weekly and annual Premium subscriptions are available. The current price, duration and included benefits are shown before purchase. Subscriptions renew automatically unless cancelled in your Apple Account settings at least 24 hours before the current period ends.
+
+Terms of Use: https://kinapp.dev/arrowmaze/terms/

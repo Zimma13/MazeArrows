@@ -1,0 +1,66 @@
+{
+  "observed_date": "2026-09-07",
+  "source": "Authorized App Store Connect UI via CUA; manually transcribed visible values, not API export",
+  "app_id": "6800708435",
+  "version": "1.0",
+  "build": "1",
+  "version_state": "Ready for Distribution",
+  "sales": {
+    "period": "2026-08-30 to 2026-09-05",
+    "timezone": "UTC",
+    "parent_app": "Arrow Maze: Logic Puzzle",
+    "worldwide_proceeds_usd": 0,
+    "worldwide_units": 4,
+    "country_units": {
+      "France": 3,
+      "Switzerland": 1,
+      "Canada": 0
+    }
+  },
+  "subscription_summary": {
+    "as_of": "2026-09-05",
+    "app_filter": "6800708435",
+    "result": "There is not any data for selected period or filter",
+    "caveat": "Unexpected error banner present; not independent proof of zero active subscriptions"
+  },
+  "subscription_group": {
+    "id": "22305547",
+    "name": "Arrow Maze Premium",
+    "state": "Approved",
+    "products": [
+      {
+        "id": "6800860897",
+        "sku": "zimma.MazeArrows.premium.annual",
+        "duration": "1 year",
+        "state": "Approved"
+      },
+      {
+        "id": "6800858748",
+        "sku": "zimma.MazeArrows.premium.weekly",
+        "duration": "1 week",
+        "state": "Approved"
+      }
+    ],
+    "localizations": [
+      "Chinese (Traditional)",
+      "English (Australia)",
+      "English (Canada)",
+      "English (U.K.)",
+      "English (U.S.)",
+      "French",
+      "French (Canada)",
+      "German",
+      "Japanese",
+      "Korean",
+      "Portuguese (Brazil)",
+      "Spanish (Mexico)",
+      "Spanish (Spain)"
+    ]
+  },
+  "billing_grace_period": {
+    "days": 16,
+    "eligible": "Only Paid-to-Paid Renewals",
+    "environment": "Production and Sandbox Environment"
+  },
+  "streamlined_purchasing": "Turned On"
+}

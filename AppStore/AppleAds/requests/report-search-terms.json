@@ -1,0 +1,21 @@
+{
+  "timeRange": {
+    "start": "2026-09-06",
+    "end": "2026-09-07",
+    "timeZone": "ORTZ",
+    "granularity": "DAILY"
+  },
+  "filters": [
+    {
+      "field": "campaignId",
+      "operator": "EQUALS",
+      "value": [
+        2144620520
+      ]
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "pageSize": 1000
+  }
+}

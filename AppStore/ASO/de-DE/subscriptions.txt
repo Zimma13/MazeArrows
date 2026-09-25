@@ -1,0 +1,6 @@
+LOCALE=de-DE
+GROUP_DISPLAY_NAME=Arrow Maze Premium
+WEEKLY_DISPLAY_NAME=Premium wöchentlich
+WEEKLY_DESCRIPTION=Photo Maze, unbegrenzte Tipps und Designs
+ANNUAL_DISPLAY_NAME=Premium jährlich
+ANNUAL_DESCRIPTION=Photo Maze, unbegrenzte Tipps und Designs

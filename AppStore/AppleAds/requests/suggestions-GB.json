@@ -1,0 +1,44 @@
+{
+  "filters": [
+    {
+      "field": "promotedObjectId",
+      "operator": "EQUALS",
+      "value": [
+        "6800708435"
+      ]
+    },
+    {
+      "field": "promotedObjectType",
+      "operator": "EQUALS",
+      "value": [
+        "APPSTORE_APP"
+      ]
+    },
+    {
+      "field": "countriesOrRegions",
+      "operator": "IN",
+      "value": [
+        "GB"
+      ]
+    },
+    {
+      "field": "terms",
+      "operator": "IN",
+      "value": [
+        "arrows",
+        "arrow puzzle",
+        "arrows puzzle",
+        "arrow maze",
+        "arrows game",
+        "arrow escape",
+        "untangle",
+        "tap away",
+        "logic puzzle"
+      ]
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "pageSize": 1000
+  }
+}

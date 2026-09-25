@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "locale": "es-ES",
+  "captureLocale": "es",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": ["TU FOTO.", "TU LABERINTO."],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": ["Elige una silueta. Conviértela en un laberinto jugable."],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": ["ENCUENTRA LA", "FLECHA LIBRE"],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": ["Una jugada inteligente puede abrir todo el tablero."],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": ["MIRA CÓMO", "TODO ENCAJA"],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": ["Planifica tus jugadas. Encadena combos perfectos."],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_240-levels-7-worlds.png",
+      "headline": ["240 NIVELES.", "7 MUNDOS."],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": ["Viaja de las Praderas al Vacío."],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": ["NUEVO LABERINTO", "CADA DÍA"],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": ["Reto diario, tres misiones y recompensas por tu racha."],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

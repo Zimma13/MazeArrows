@@ -1,0 +1,23 @@
+Jeder Pfeil hat einen Ausweg. Findest du die Reihenfolge, die das gesamte Spielfeld befreit?
+
+Arrow Maze ist ein klares, taktisches Logikspiel, bei dem jeder Tipp zählt. Ein Pfeil kann das Feld nur verlassen, wenn sein Weg frei ist. Lies das Muster, löse die richtigen Teile zuerst und verwandle ein dichtes Labyrinth in einen befriedigenden Abschluss. Wer zu früh tippt, riskiert ein Leben; wer vorausplant, steigert seine Serie.
+
+SO FUNKTIONIERT ES
+• Prüfe die Richtung jedes Pfeils.
+• Tippe nur, wenn der Weg vor ihm frei ist.
+• Entferne die richtigen Teile zuerst und öffne neue Routen.
+• Räume das Feld, schütze deine Leben und verdiene bis zu drei Sterne.
+
+IMMER ETWAS NEUES
+• Meistere 240 Level in sieben abwechslungsreichen Welten.
+• Spiele das tägliche Rätsel, halte deine Serie und erfülle drei Tagesaufgaben.
+• Entspanne dich in ruhigen Zen-Runden.
+• Mit Premium verwandelst du ein ausgewähltes Foto in ein spielbares Labyrinth.
+• Sammle Erfolge und vergleiche Ergebnisse über Game Center.
+• Wähle ein Design, das zu deinem Stil passt.
+
+Die Regeln sind in Sekunden verstanden, doch spätere Felder verlangen Geduld, Mustererkennung und kluge Reihenfolgen. Perfekt für eine kurze Pause oder eine lange Knobelrunde.
+
+Optionale Premium-Abos mit wöchentlicher oder jährlicher Laufzeit sind verfügbar. Preis, Laufzeit und enthaltene Vorteile werden vor dem Kauf angezeigt. Das Abo verlängert sich automatisch, sofern es nicht spätestens 24 Stunden vor Ablauf des aktuellen Zeitraums in den Apple-Account-Einstellungen gekündigt wird.
+
+Nutzungsbedingungen: https://kinapp.dev/arrowmaze/terms/

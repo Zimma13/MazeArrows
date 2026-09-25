@@ -1,0 +1,10 @@
+LOCALE=en-CA
+LANGUAGE=English (Canada)
+APP_NAME=Arrow Maze: Logic Puzzle
+SUBTITLE=Clear Every Twisting Route
+PROMOTIONAL_TEXT=Find the move that opens the board. Build satisfying combos across 240 levels, return for Daily challenges, unwind in Zen, or make a Photo Maze.
+KEYWORDS=brain,teaser,tap,away,block,grid,path,relax,zen,daily,photo,unblock,casual,think,calm,sequence,focus
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

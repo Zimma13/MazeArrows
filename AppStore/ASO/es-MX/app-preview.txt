@@ -1,0 +1,13 @@
+APP PREVIEW — 24 SEGUNDOS — ESPAÑOL (MÉXICO)
+
+0:00–0:02 — Tablero lleno. Texto: CADA FLECHA TIENE UNA SALIDA.
+0:02–0:06 — Una jugada abre dos rutas. Texto: ENCUENTRA EL ORDEN CORRECTO.
+0:06–0:09 — Toque bloqueado y corrección. Texto: PIENSA ANTES DE TOCAR.
+0:09–0:12 — Cadena rápida hasta x3. Texto: AUMENTA TU COMBO.
+0:12–0:15 — Mundos y niveles. Texto: 240 NIVELES · 7 MUNDOS.
+0:15–0:18 — Diario y misiones. Texto: ALGO NUEVO CADA DÍA.
+0:18–0:21 — Foto convertida en tablero. Texto: CREA TU PROPIO LABERINTO.
+0:21–0:24 — Victoria, estrellas y logo. Texto: MAZE ARROWS · DESENREDA EL CAMINO.
+
+Fotograma de portada: 0:03–0:04. Usar solo escenas reales de la app y diseñar para reproducción sin audio.
+

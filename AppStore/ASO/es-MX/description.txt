@@ -1,0 +1,23 @@
+Cada flecha tiene una salida. ¿Puedes encontrar el orden que libera todo el tablero?
+
+Arrow Maze es un juego de lógica limpio y estratégico donde cada toque cambia lo que puedes hacer después. Una flecha solo puede salir si tiene el camino libre. Observa la cuadrícula, libera las piezas correctas en el orden ideal y convierte un laberinto lleno en una solución muy satisfactoria. Un toque apresurado puede costarte una vida; una buena cadena aumenta tu combo.
+
+CÓMO JUGAR
+• Revisa la dirección de cada flecha.
+• Toca una pieza solo cuando su camino esté libre.
+• Quita primero las flechas correctas para abrir nuevas rutas.
+• Limpia el tablero, cuida tus vidas y consigue hasta tres estrellas.
+
+SIEMPRE HAY ALGO POR RESOLVER
+• Recorre 240 niveles distribuidos en siete mundos.
+• Vuelve por un desafío diario, conserva tu racha y completa tres misiones del día.
+• Relájate con sesiones tranquilas en el modo Zen.
+• Con Premium, convierte una foto que elijas en un laberinto jugable.
+• Desbloquea logros y compara puntuaciones con Game Center.
+• Cambia el tema visual para darle otro estilo al tablero.
+
+Las reglas se aprenden en segundos, pero los tableros avanzados exigen paciencia, reconocimiento de patrones y estrategia. Juega una partida rápida o disfruta un capítulo completo.
+
+Hay suscripciones Premium semanales y anuales opcionales. El precio, la duración y los beneficios incluidos se muestran antes de comprar. La suscripción se renueva automáticamente, salvo que la canceles en la configuración de tu Cuenta de Apple al menos 24 horas antes de que termine el periodo actual.
+
+Términos de uso: https://kinapp.dev/arrowmaze/terms/

@@ -1,0 +1,43 @@
+{
+  "filters": [
+    {
+      "field": "promotedObjectId",
+      "operator": "EQUALS",
+      "value": [
+        "6800708435"
+      ]
+    },
+    {
+      "field": "promotedObjectType",
+      "operator": "EQUALS",
+      "value": [
+        "APPSTORE_APP"
+      ]
+    },
+    {
+      "field": "countriesOrRegions",
+      "operator": "IN",
+      "value": [
+        "TW"
+      ]
+    },
+    {
+      "field": "terms",
+      "operator": "IN",
+      "value": [
+        "arrows",
+        "arrow puzzle",
+        "arrow maze",
+        "箭頭",
+        "箭頭遊戲",
+        "箭頭消除",
+        "益智遊戲",
+        "tap away"
+      ]
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "pageSize": 1000
+  }
+}

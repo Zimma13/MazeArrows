@@ -1,0 +1,186 @@
+{
+  "items": [
+    {
+      "correlationId": 1,
+      "data": {
+        "adGroupId": 2150883158,
+        "text": "arrow puzzle",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.20",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 2,
+      "data": {
+        "adGroupId": 2150883158,
+        "text": "arrow game",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.20",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 3,
+      "data": {
+        "adGroupId": 2150883158,
+        "text": "arrow maze",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.20",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 4,
+      "data": {
+        "adGroupId": 2150883158,
+        "text": "arrow escape",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.20",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 5,
+      "data": {
+        "adGroupId": 2150883158,
+        "text": "untangle arrows",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.20",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 6,
+      "data": {
+        "adGroupId": 2150883158,
+        "text": "arrows puzzle",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.20",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 7,
+      "data": {
+        "adGroupId": 2150883803,
+        "text": "arrows",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 8,
+      "data": {
+        "adGroupId": 2150883803,
+        "text": "arrows puzzle escape",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 9,
+      "data": {
+        "adGroupId": 2150883803,
+        "text": "arrows go",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 10,
+      "data": {
+        "adGroupId": 2150883803,
+        "text": "arrow out",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 11,
+      "data": {
+        "adGroupId": 2150883803,
+        "text": "point out",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 12,
+      "data": {
+        "adGroupId": 2150883008,
+        "text": "jeu de flèches",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 13,
+      "data": {
+        "adGroupId": 2150883008,
+        "text": "casse tête flèches",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    },
+    {
+      "correlationId": 14,
+      "data": {
+        "adGroupId": 2150883008,
+        "text": "puzzle flèches",
+        "matchType": "EXACT",
+        "bid": {
+          "amount": "0.15",
+          "currency": "USD"
+        },
+        "status": "ENABLED"
+      }
+    }
+  ]
+}

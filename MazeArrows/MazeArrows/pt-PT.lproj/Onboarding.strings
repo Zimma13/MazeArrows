@@ -1,0 +1,96 @@
+"onboarding.action.skip" = "Saltar";
+"onboarding.action.close" = "Fechar";
+"onboarding.action.continue" = "Continuar";
+"onboarding.action.next" = "Seguinte";
+"onboarding.action.not_now" = "Agora não";
+"onboarding.common.premium" = "Premium";
+"onboarding.action.ok" = "OK";
+"onboarding.accessibility.page_progress" = "%lld de %lld";
+
+"onboarding.tutorial.tap_arrow" = "Toca na seta";
+"onboarding.tutorial.great" = "Muito bem!";
+"onboarding.tutorial.path_blocked" = "Caminho bloqueado";
+"onboarding.tutorial.free_path_first" = "Liberta primeiro o caminho";
+"onboarding.tutorial.hint" = "As pistas mostram o caminho";
+"onboarding.tutorial.hints_three" = "Pistas: 3";
+"onboarding.tutorial.combo" = "Combinação em cadeia!";
+"onboarding.tutorial.lives_rule" = "3 vidas. Tocar num caminho bloqueado custa 1 vida";
+
+"onboarding.paywall.intro.title" = "Joga sem limites";
+"onboarding.paywall.intro.photo_title" = "Qualquer fotografia. Um labirinto.";
+"onboarding.paywall.intro.hints" = "Pistas ilimitadas";
+"onboarding.paywall.intro.photo_benefit" = "Transforma qualquer fotografia num labirinto";
+"onboarding.paywall.intro.photo_unlimited" = "Criações ilimitadas de Labirintos de Fotografia";
+"onboarding.paywall.intro.no_ads" = "Sem anúncios";
+
+
+"onboarding.paywall.plans.title" = "Escolhe um plano";
+"onboarding.paywall.plans.week" = "Semana";
+"onboarding.paywall.plans.year" = "Ano";
+"onboarding.paywall.plans.weekly_price" = "%@/semana";
+"onboarding.paywall.plans.annual_price" = "%@/ano";
+"onboarding.paywall.plans.annual_per_week" = "≈ %@/semana";
+"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
+"onboarding.paywall.plans.savings" = "Poupa %@";
+"onboarding.paywall.plans.weekly_cta" = "Começar o Premium semanal";
+"onboarding.paywall.plans.annual_cta" = "Obtém um ano por %@";
+"onboarding.paywall.plans.annual_billing" = "%@ cobrados hoje · Renova em %@";
+
+"onboarding.paywall.restore" = "Restaurar compras";
+"onboarding.paywall.manage_subscription" = "Gerir subscrição";
+"onboarding.paywall.auto_renewal" = "A subscrição é renovada automaticamente até ser cancelada.";
+"onboarding.paywall.terms" = "Termos de Utilização";
+"onboarding.paywall.privacy" = "Política de Privacidade";
+"onboarding.paywall.purchase_pending" = "A compra está a aguardar aprovação";
+"onboarding.paywall.purchase_failed" = "Não foi possível concluir a compra. Tenta novamente.";
+"onboarding.paywall.restore_failed" = "Não foi possível restaurar as compras. Tenta novamente.";
+"onboarding.paywall.nothing_to_restore" = "Não foi encontrada nenhuma compra Premium ativa.";
+"onboarding.paywall.restored" = "Premium restaurado";
+
+"onboarding.action.yes_remind" = "Sim, lembra-me";
+
+"onboarding.streak.one_day" = "1 dia";
+"onboarding.streak.title" = "Dia 1 da tua sequência!";
+"onboarding.streak.gift" = "+25 · oferta inicial";
+"onboarding.streak.first_steps" = "Primeiros passos";
+"onboarding.streak.first_flight" = "Primeiro voo";
+"onboarding.streak.first_combo" = "Primeira combinação";
+"onboarding.streak.level_five" = "Conclui o nível 5";
+"onboarding.streak.daily" = "Joga o labirinto diário";
+"onboarding.streak.tomorrow" = "Volta amanhã";
+"onboarding.streak.continues" = "A tua sequência diária vai continuar";
+"onboarding.streak.claim" = "Recolher oferta";
+
+"onboarding.push.title" = "Labirinto diário + a tua sequência — queres um lembrete?";
+"onboarding.push.body" = "Uma notificação discreta por dia. Sem spam.";
+
+"onboarding.theme.title" = "Escolhe o teu estilo";
+"onboarding.theme.subtitle" = "O tema é aplicado de imediato. Este é o teu tabuleiro.";
+"onboarding.theme.aurora" = "Suave e luminoso";
+"onboarding.theme.neon" = "Néon escuro";
+"onboarding.theme.petal" = "Pastel delicado";
+"onboarding.theme.aurora_name" = "Aurora Light";
+"onboarding.theme.neon_name" = "Midnight Neon";
+"onboarding.theme.petal_name" = "Petal Pastel";
+"onboarding.theme.more" = "Mais 3 temas no Premium";
+"onboarding.theme.later" = "Mais tarde";
+
+"onboarding.handoff.title" = "Estás imparável";
+"onboarding.handoff.progress" = "4 níveis concluídos";
+"onboarding.handoff.chapter" = "O capítulo 2 está visível, mas bloqueado. Conclui o capítulo 1 para o abrir.";
+"onboarding.handoff.level_five" = "Seguinte → Nível 5";
+"onboarding.handoff.world_map" = "Mapa do mundo";
+
+"onboarding.tutorial.level_number" = "Nível %lld";
+"onboarding.accessibility.lives_count" = "%lld vidas restantes";
+"onboarding.accessibility.arrow" = "Seta %@, aponta para %@";
+"onboarding.accessibility.arrow_free" = "O caminho está livre. Faz duplo toque para lançar.";
+"onboarding.accessibility.arrow_blocked" = "O caminho está bloqueado. Encontra primeiro a seta que o bloqueia.";
+"onboarding.direction.up" = "cima";
+"onboarding.direction.down" = "baixo";
+"onboarding.direction.left" = "a esquerda";
+"onboarding.direction.right" = "a direita";
+
+"Daily maze is ready" = "O teu labirinto diário está pronto";
+"Keep your streak alive with one quick maze." = "Mantém a tua sequência com um labirinto rápido.";
+"Review your plan before the first charge." = "Revê o teu plano antes da primeira cobrança.";

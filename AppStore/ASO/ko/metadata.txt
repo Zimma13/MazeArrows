@@ -1,0 +1,10 @@
+LOCALE=ko
+LANGUAGE=한국어
+APP_NAME=Arrow Maze Quest: 화살표 탈출
+SUBTITLE=막힌 길을 푸는 두뇌 도전
+PROMOTIONAL_TEXT=단 하나의 열린 길이 보드 전체를 바꿉니다. 수를 읽고 콤보를 이어 240개 레벨과 데일리, Zen, 사진으로 만드는 Photo Maze에 도전하세요.
+KEYWORDS=논리훈련,순서퍼즐,블록제거,집중력,사진미로,오늘문제,힐링휴식,탈출게임
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

@@ -1,0 +1,6 @@
+LOCALE=zh-Hant
+GROUP_DISPLAY_NAME=Arrow Maze Premium
+WEEKLY_DISPLAY_NAME=每週Premium
+WEEKLY_DESCRIPTION=Photo Maze、無限提示與主題
+ANNUAL_DISPLAY_NAME=每年Premium
+ANNUAL_DESCRIPTION=Photo Maze、無限提示與主題

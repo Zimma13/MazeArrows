@@ -1,0 +1,10 @@
+LOCALE=es-MX
+LANGUAGE=Español (México)
+APP_NAME=Arrow Maze: Flechas México
+SUBTITLE=Desenreda cada camino
+PROMOTIONAL_TEXT=Una ruta libre puede abrir todo el tablero. Piensa, aumenta tu combo y supera 240 niveles, el reto diario, Zen y tu propio Photo Maze.
+KEYWORDS=rompecabezas,laberinto,escape,bloque,toque,ruta,mente,reto,relajante,diario,foto,zen,calma,lógica
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

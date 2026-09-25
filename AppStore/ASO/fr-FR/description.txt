@@ -1,0 +1,23 @@
+Chaque flèche a une sortie. Saurez-vous trouver l’ordre qui libère toute la grille ?
+
+Arrow Maze est un jeu de réflexion épuré où chaque geste change la suite. Une flèche ne peut sortir que si son chemin est dégagé. Observez la grille, libérez les bonnes pièces dans le bon ordre et transformez un labyrinthe emmêlé en résolution parfaitement satisfaisante. Un geste trop rapide peut coûter une vie ; une bonne anticipation fait grimper votre combo.
+
+COMMENT JOUER
+• Repérez la direction de chaque flèche.
+• Touchez une pièce uniquement si le passage est libre.
+• Retirez d’abord les bonnes flèches pour ouvrir de nouveaux chemins.
+• Videz la grille, préservez vos vies et gagnez jusqu’à trois étoiles.
+
+DES DÉFIS POUR TOUS LES RYTHMES
+• Progressez dans 240 niveaux répartis sur sept mondes.
+• Retrouvez une énigme quotidienne, entretenez votre série et terminez trois quêtes du jour.
+• Ralentissez avec les sessions apaisantes du mode Zen.
+• Avec Premium, transformez la photo de votre choix en labyrinthe jouable.
+• Débloquez des succès et comparez vos scores avec Game Center.
+• Changez de thème visuel pour renouveler l’ambiance.
+
+Les règles s’apprennent en quelques secondes, mais les grilles avancées exigent patience, observation et stratégie. Jouez un niveau rapide ou plongez dans un chapitre entier.
+
+Des abonnements Premium hebdomadaires et annuels facultatifs sont proposés. Le prix, la durée et les avantages inclus sont affichés avant l’achat. L’abonnement se renouvelle automatiquement sauf résiliation dans les réglages du compte Apple au moins 24 heures avant la fin de la période en cours.
+
+Conditions d’utilisation : https://kinapp.dev/arrowmaze/terms/

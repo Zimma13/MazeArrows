@@ -1,0 +1,254 @@
+[
+  {
+    "country": "au",
+    "name": "Arrow Maze: Logic Puzzle",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "AUD"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Annual Premium",
+        "$49.99"
+      ],
+      [
+        "Weekly Premium",
+        "$9.99"
+      ]
+    ]
+  },
+  {
+    "country": "br",
+    "name": "Arrow Maze Quest: Lógica",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "BRL"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Premium anual",
+        "R$ 199,90"
+      ],
+      [
+        "Premium semanal",
+        "R$ 39,90"
+      ]
+    ]
+  },
+  {
+    "country": "ca",
+    "name": "Arrow Maze: Logic Puzzle",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "CAD"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Annual Premium",
+        "$39.99"
+      ],
+      [
+        "Weekly Premium",
+        "$7.99"
+      ]
+    ]
+  },
+  {
+    "country": "de",
+    "name": "Arrow Maze: Pfeilwelt 240",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "EUR"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Premium jährlich",
+        "34,99 €"
+      ],
+      [
+        "Premium wöchentlich",
+        "6,99 €"
+      ]
+    ]
+  },
+  {
+    "country": "es",
+    "name": "Arrow Maze Quest: Acertijos",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "EUR"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Premium anual",
+        "34,99 €"
+      ],
+      [
+        "Premium semanal",
+        "6,99 €"
+      ]
+    ]
+  },
+  {
+    "country": "fr",
+    "name": "Arrow Maze : Casse-tête",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "EUR"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Premium annuel",
+        "34,99 €"
+      ],
+      [
+        "Premium hebdomadaire",
+        "6,99 €"
+      ]
+    ]
+  },
+  {
+    "country": "gb",
+    "name": "Arrow Maze: Logic Puzzle",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "GBP"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Annual Premium",
+        "£29.99"
+      ],
+      [
+        "Weekly Premium",
+        "£5.99"
+      ]
+    ]
+  },
+  {
+    "country": "jp",
+    "name": "Arrow Maze：矢印脱出",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "JPY"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "年間Premium",
+        "¥5,000"
+      ],
+      [
+        "週間Premium",
+        "¥1,000"
+      ]
+    ]
+  },
+  {
+    "country": "kr",
+    "name": "Arrow Maze Quest: 화살표 탈출",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "KRW"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "연간 Premium",
+        "￦49,000"
+      ],
+      [
+        "주간 Premium",
+        "￦9,900"
+      ]
+    ]
+  },
+  {
+    "country": "mx",
+    "name": "Arrow Maze: Flechas México",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "MXN"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Premium anual",
+        "$599.00"
+      ],
+      [
+        "Premium semanal",
+        "$129.00"
+      ]
+    ]
+  },
+  {
+    "country": "tw",
+    "name": "Arrow Maze 世界：箭頭解謎",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "TWD"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "每年Premium",
+        "$990.00"
+      ],
+      [
+        "每週Premium",
+        "$190.00"
+      ]
+    ]
+  },
+  {
+    "country": "us",
+    "name": "Arrow Maze: Logic Puzzle",
+    "url": null,
+    "offers": {
+      "@type": "Offer",
+      "price": 0,
+      "priceCurrency": "USD"
+    },
+    "rating": null,
+    "iap": [
+      [
+        "Annual Premium",
+        "$29.99"
+      ],
+      [
+        "Weekly Premium",
+        "$5.99"
+      ]
+    ]
+  }
+]

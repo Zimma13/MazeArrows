@@ -1,0 +1,6 @@
+LOCALE=ja
+GROUP_DISPLAY_NAME=Arrow Maze Premium
+WEEKLY_DISPLAY_NAME=週間Premium
+WEEKLY_DESCRIPTION=Photo Maze、無制限ヒント、限定テーマ
+ANNUAL_DISPLAY_NAME=年間Premium
+ANNUAL_DESCRIPTION=Photo Maze、無制限ヒント、限定テーマ

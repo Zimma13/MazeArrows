@@ -1,0 +1,10 @@
+LOCALE=en-GB
+LANGUAGE=English (U.K.)
+APP_NAME=Arrow Maze: Logic Puzzle
+SUBTITLE=Untangle Every Tricky Route
+PROMOTIONAL_TEXT=One open route can transform the whole board. Think ahead, grow your combo and conquer 240 levels, Daily challenges, Zen and Photo Maze.
+KEYWORDS=brain,teaser,tap,away,block,grid,path,clear,relax,zen,daily,photo,quest,casual,unblock,mind,escape
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0

@@ -1,0 +1,60 @@
+{
+  "timeRange": {
+    "start": "2026-08-01",
+    "end": "2026-08-31",
+    "timeZone": "UTC",
+    "granularity": "MONTHLY"
+  },
+  "filters": [
+    {
+      "field": "countryOrRegion",
+      "operator": "IN",
+      "value": [
+        "CA",
+        "GB",
+        "DE",
+        "BR",
+        "MX",
+        "TW"
+      ]
+    },
+    {
+      "field": "searchTerm",
+      "operator": "IN",
+      "value": [
+        "arrows",
+        "arrow puzzle",
+        "arrows puzzle",
+        "arrow maze",
+        "arrows game",
+        "arrow escape",
+        "untangle",
+        "tap away",
+        "logic puzzle",
+        "flèches",
+        "casse tête flèches",
+        "pfeile",
+        "pfeil puzzle",
+        "pfeile spiel",
+        "pfeilrätsel",
+        "logikspiele",
+        "setas",
+        "jogo de setas",
+        "labirinto de setas",
+        "jogos de lógica",
+        "flechas",
+        "juego de flechas",
+        "rompecabezas flechas",
+        "laberinto flechas",
+        "箭頭",
+        "箭頭遊戲",
+        "箭頭消除",
+        "益智遊戲"
+      ]
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "pageSize": 5000
+  }
+}

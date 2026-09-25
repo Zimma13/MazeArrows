@@ -1,0 +1,1 @@
+{"filters":[{"field":"promotedObjectId","operator":"EQUALS","value":["6800708435"]},{"field":"promotedObjectType","operator":"EQUALS","value":["APPSTORE_APP"]}],"pagination":{"offset":0,"pageSize":1000}}
