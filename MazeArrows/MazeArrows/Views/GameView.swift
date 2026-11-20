@@ -68,6 +68,19 @@ struct GameView: View {
             VStack(spacing: 8) {
                 gameHUD
 
+                if model.hasKeyGates {
+                    if model.isGateTraining {
+                        Label(String(localized: "Practice: mistakes cost no hearts", table: "Gates"), systemImage: "shield.checkered")
+                            .scaledFont(size: 12, weight: .semibold)
+                            .foregroundStyle(theme.inkMuted)
+                            .padding(.horizontal, 18)
+                    }
+                    if model.gateGuidance != nil {
+                        gateGuidanceView
+                            .padding(.horizontal, 18)
+                    }
+                }
+
                 GeometryReader { proxy in
                     let sceneSize = fittedSceneSize(for: model.level, in: proxy.size)
                     let scene = sceneContainer.scene(
@@ -90,6 +103,7 @@ struct GameView: View {
                                 contentID: analyticsContentID,
                                 mode: analyticsMode
                             )
+                            model.presentGateTrainingFocus()
                         },
                         bind: {
                             model.scene = $0
@@ -474,6 +488,28 @@ struct GameView: View {
 
     // MARK: - game HUD
 
+    private var gateGuidanceView: some View {
+        HStack(alignment: .top, spacing: 8) {
+            if let message = model.gateGuidance {
+                Text(verbatim: message)
+                    .scaledFont(size: 13, weight: .medium)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, 8)
+                Button {
+                    model.dismissGateGuidance()
+                } label: {
+                    Image(systemName: "xmark")
+                        .frame(minWidth: 44, minHeight: 44)
+                }
+                .accessibilityLabel(Text(String(localized: "Dismiss gate explanation", table: "Gates")))
+            }
+        }
+        .padding(.leading, 14)
+        .foregroundStyle(theme.ink)
+        .background(theme.surface, in: RoundedRectangle(cornerRadius: 14))
+    }
+
     private var gameHUD: some View {
         let usesAccessibilityLayout = dynamicTypeSize.isAccessibilitySize
         let horizontalAlignment: HorizontalAlignment = usesAccessibilityLayout ? .leading : .center
@@ -513,6 +549,14 @@ struct GameView: View {
 
             CircleIconButton(systemImage: "chevron.left", theme: theme) {
                 closeGame()
+            }
+        }
+        .overlay(alignment: .topTrailing) {
+            if model.hasKeyGates {
+                CircleIconButton(systemImage: "info.circle", theme: theme) {
+                    model.showGateRules()
+                }
+                .accessibilityLabel(Text(String(localized: "Gate rules", table: "Gates")))
             }
         }
         .padding(.horizontal, 16)
@@ -582,7 +626,9 @@ struct GameView: View {
 
     @ViewBuilder
     private var statusBar: some View {
-        if model.usesLives && !model.hasTimer {
+        if model.isGateTraining {
+            EmptyView()
+        } else if model.usesLives && !model.hasTimer {
             HeartsView(total: model.totalLives, filled: model.lives, theme: theme)
         } else if model.hasTimer {
             timerView
@@ -722,6 +768,13 @@ private struct GameBoardAccessibilityLayer: View {
         }
     }
 
+    private var orderedKeyGates: [Obstacle] {
+        scene.board.obstacles.filter { $0.kind == .keyGate }.sorted {
+            if $0.cell.y == $1.cell.y { return $0.cell.x < $1.cell.x }
+            return $0.cell.y < $1.cell.y
+        }
+    }
+
     var body: some View {
         let geometry = BoardGeometry(
             boardWidth: scene.board.width,
@@ -749,12 +802,32 @@ private struct GameBoardAccessibilityLayer: View {
                 )
                 .position(position(for: piece, geometry: geometry))
             }
+
+            ForEach(orderedKeyGates) { gate in
+                Button {
+                    _ = scene.inspectKeyGate(id: gate.id)
+                } label: {
+                    Color.white.opacity(0.02)
+                        .frame(width: targetSize, height: targetSize)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("game-gate-\(gate.id)")
+                .accessibilityLabel(Text(scene.keyGateAccessibilityLabel(for: gate)))
+                .accessibilityValue(Text(scene.keyGateAccessibilityValue(for: gate)))
+                .accessibilityHint(Text(String(localized: "Double-tap to inspect its key and connected gates. No move is made.", table: "Gates")))
+                .position(position(for: gate.cell, geometry: geometry))
+            }
         }
         .frame(width: sceneSize.width, height: sceneSize.height)
     }
 
     private func position(for piece: ArrowPiece, geometry: BoardGeometry) -> CGPoint {
-        let scenePoint = geometry.point(for: piece.headCell)
+        position(for: piece.headCell, geometry: geometry)
+    }
+
+    private func position(for cell: GridPoint, geometry: BoardGeometry) -> CGPoint {
+        let scenePoint = geometry.point(for: cell)
         return CGPoint(x: scenePoint.x, y: sceneSize.height - scenePoint.y)
     }
 }
@@ -780,6 +853,13 @@ private struct AccessibleGamePieceButton: View {
         .accessibilityActions {
             Button("Describe path") {
                 _ = scene.describeAccessiblePath(for: piece.id)
+            }
+            if !scene.board.keyGates(forKeyID: piece.id).isEmpty {
+                Button {
+                    _ = scene.inspectAccessibleKeyGates(forKeyID: piece.id)
+                } label: {
+                    Text(String(localized: "Inspect connected gates", table: "Gates"))
+                }
             }
             if piece.kind == .double {
                 Button {
@@ -823,10 +903,16 @@ private struct AccessibleGamePieceButton: View {
         if piece.kind == .fragile, piece.crackLevel > 0 {
             parts.append(String(localized: "Cracked"))
         }
+        if let gateDescription = scene.keyGateKeyAccessibilityValue(forKeyID: piece.id) {
+            parts.append(gateDescription)
+        }
         return parts.joined(separator: ". ")
     }
 
     private var accessibilityHint: String {
+        if !scene.board.keyGates(forKeyID: piece.id).isEmpty {
+            return String(localized: "Double-tap to move. Use Actions to inspect connected gates or describe the path.", table: "Gates")
+        }
         if piece.kind == .double {
             return String(
                 localized: "Double-tap to use \(directionName(piece.direction)). Use Actions to choose a direction or describe the path."
@@ -917,7 +1003,7 @@ final class SceneContainer {
            cached.increasedContrast == increasedContrast,
            cached.showsArrowOutlines == showsArrowOutlines,
            cached.arrowOutlineColor == arrowOutlineColor,
-           cached.size == size {
+           cached.size == size || level.rulesVersion == 2 {
             if cached.scene.view == nil {
                 onPreparationStarted()
             }
@@ -925,6 +1011,15 @@ final class SceneContainer {
             cached.scene.didPrepareForDisplay = onReady
             bind(cached.scene)
             cached.scene.setReduceMotion(reduceMotion)
+            if cached.size != size {
+                // Gate guidance changes the available height. Keep the live
+                // board (including its original key IDs) and the VM's move
+                // history together instead of constructing the initial level
+                // again. didChangeSize resolves in-flight actions and redraws
+                // the same Board at its new geometry.
+                cached.scene.size = size
+                self.cached?.size = size
+            }
             return cached.scene
         }
         onPreparationStarted()

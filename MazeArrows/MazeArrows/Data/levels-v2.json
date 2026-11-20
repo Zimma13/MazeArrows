@@ -1,0 +1,6522 @@
+[
+  {
+    "id": "story_241",
+    "index": 241,
+    "rulesVersion": 2,
+    "name": "First Passage",
+    "difficulty": "easy",
+    "width": 9,
+    "height": 9,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s241_X",
+        "cells": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s241_Y",
+        "cells": [
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 5
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s241_KA",
+        "cells": [
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s241_X1",
+        "cells": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s241_Y2",
+        "cells": [
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 7
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s241_X3",
+        "cells": [
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s241_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 6,
+          "y": 4
+        },
+        "parameter": "s241_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_242",
+    "index": 242,
+    "rulesVersion": 2,
+    "name": "The Other Side",
+    "difficulty": "easy",
+    "width": 9,
+    "height": 12,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s242_X",
+        "cells": [
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 7
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s242_KA",
+        "cells": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 7
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s242_S",
+        "cells": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s242_X1",
+        "cells": [
+          {
+            "x": 7,
+            "y": 10
+          },
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 10
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s242_X2",
+        "cells": [
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 6,
+            "y": 8
+          },
+          {
+            "x": 6,
+            "y": 9
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s242_X3",
+        "cells": [
+          {
+            "x": 5,
+            "y": 9
+          },
+          {
+            "x": 5,
+            "y": 8
+          },
+          {
+            "x": 4,
+            "y": 8
+          },
+          {
+            "x": 3,
+            "y": 8
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s242_X4",
+        "cells": [
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s242_X5",
+        "cells": [
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 7,
+            "y": 6
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s242_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 2,
+          "y": 5
+        },
+        "parameter": "s242_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_243",
+    "index": 243,
+    "rulesVersion": 2,
+    "name": "A Path to the Key",
+    "difficulty": "easy",
+    "width": 11,
+    "height": 11,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s243_X",
+        "cells": [
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s243_Y",
+        "cells": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s243_P",
+        "cells": [
+          {
+            "x": 6,
+            "y": 9
+          },
+          {
+            "x": 7,
+            "y": 9
+          },
+          {
+            "x": 8,
+            "y": 9
+          },
+          {
+            "x": 9,
+            "y": 9
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s243_KA",
+        "cells": [
+          {
+            "x": 9,
+            "y": 2
+          },
+          {
+            "x": 9,
+            "y": 3
+          },
+          {
+            "x": 9,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s243_Y1",
+        "cells": [
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s243_Y2",
+        "cells": [
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s243_Y3",
+        "cells": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s243_Y4",
+        "cells": [
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 5
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s243_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 8,
+          "y": 6
+        },
+        "parameter": "s243_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_244",
+    "index": 244,
+    "rulesVersion": 2,
+    "name": "One Sign, Two Passages",
+    "difficulty": "easy",
+    "width": 13,
+    "height": 14,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s244_X",
+        "cells": [
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 4,
+            "y": 11
+          },
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 9
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_Y",
+        "cells": [
+          {
+            "x": 9,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 5
+          },
+          {
+            "x": 9,
+            "y": 6
+          },
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 9,
+            "y": 8
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_KA",
+        "cells": [
+          {
+            "x": 10,
+            "y": 4
+          },
+          {
+            "x": 10,
+            "y": 5
+          },
+          {
+            "x": 10,
+            "y": 6
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s244_Y1",
+        "cells": [
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 7
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_X2",
+        "cells": [
+          {
+            "x": 1,
+            "y": 11
+          },
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 12
+          },
+          {
+            "x": 3,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_X3",
+        "cells": [
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 11
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_Y4",
+        "cells": [
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_Y5",
+        "cells": [
+          {
+            "x": 11,
+            "y": 1
+          },
+          {
+            "x": 11,
+            "y": 2
+          },
+          {
+            "x": 10,
+            "y": 2
+          },
+          {
+            "x": 9,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 2
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_X6",
+        "cells": [
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 8
+          },
+          {
+            "x": 3,
+            "y": 9
+          },
+          {
+            "x": 3,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 11
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s244_Y7",
+        "cells": [
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 6
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s244_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 4,
+          "y": 4
+        },
+        "parameter": "s244_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s244_ga2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 9,
+          "y": 9
+        },
+        "parameter": "s244_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_245",
+    "index": 245,
+    "rulesVersion": 2,
+    "name": "A Separate Route",
+    "difficulty": "medium",
+    "width": 11,
+    "height": 15,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s245_Y",
+        "cells": [
+          {
+            "x": 9,
+            "y": 1
+          },
+          {
+            "x": 9,
+            "y": 2
+          },
+          {
+            "x": 9,
+            "y": 3
+          },
+          {
+            "x": 9,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_X",
+        "cells": [
+          {
+            "x": 4,
+            "y": 11
+          },
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 9
+          },
+          {
+            "x": 4,
+            "y": 8
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_Q",
+        "cells": [
+          {
+            "x": 6,
+            "y": 12
+          },
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 12
+          },
+          {
+            "x": 9,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_P",
+        "cells": [
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_KA",
+        "cells": [
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 5
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s245_Y1",
+        "cells": [
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 2
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_X2",
+        "cells": [
+          {
+            "x": 1,
+            "y": 9
+          },
+          {
+            "x": 1,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 10
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_X3",
+        "cells": [
+          {
+            "x": 2,
+            "y": 13
+          },
+          {
+            "x": 1,
+            "y": 13
+          },
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 1,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_Y4",
+        "cells": [
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_Y5",
+        "cells": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_X6",
+        "cells": [
+          {
+            "x": 4,
+            "y": 13
+          },
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 3,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 12
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s245_X7",
+        "cells": [
+          {
+            "x": 8,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 6,
+            "y": 8
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s245_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 4,
+          "y": 4
+        },
+        "parameter": "s245_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s245_ga2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 9,
+          "y": 9
+        },
+        "parameter": "s245_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_246",
+    "index": 246,
+    "rulesVersion": 2,
+    "name": "Open Arch",
+    "difficulty": "easy",
+    "width": 11,
+    "height": 14,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s246_X",
+        "cells": [
+          {
+            "x": 6,
+            "y": 12
+          },
+          {
+            "x": 6,
+            "y": 11
+          },
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 6,
+            "y": 9
+          },
+          {
+            "x": 6,
+            "y": 8
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s246_Y",
+        "cells": [
+          {
+            "x": 1,
+            "y": 11
+          },
+          {
+            "x": 2,
+            "y": 11
+          },
+          {
+            "x": 3,
+            "y": 11
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s246_KA",
+        "cells": [
+          {
+            "x": 9,
+            "y": 1
+          },
+          {
+            "x": 9,
+            "y": 2
+          },
+          {
+            "x": 9,
+            "y": 3
+          },
+          {
+            "x": 9,
+            "y": 4
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s246_S",
+        "cells": [
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 9
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s246_T",
+        "cells": [
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s246_X1",
+        "cells": [
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 12
+          },
+          {
+            "x": 3,
+            "y": 12
+          },
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 5,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s246_X2",
+        "cells": [
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 10
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s246_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 6,
+          "y": 5
+        },
+        "parameter": "s246_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_247",
+    "index": 247,
+    "rulesVersion": 2,
+    "name": "Two Signs",
+    "difficulty": "medium",
+    "width": 13,
+    "height": 18,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s247_Y",
+        "cells": [
+          {
+            "x": 11,
+            "y": 1
+          },
+          {
+            "x": 11,
+            "y": 2
+          },
+          {
+            "x": 11,
+            "y": 3
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_X",
+        "cells": [
+          {
+            "x": 4,
+            "y": 13
+          },
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 4,
+            "y": 11
+          },
+          {
+            "x": 4,
+            "y": 10
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_KA",
+        "cells": [
+          {
+            "x": 6,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 8,
+            "y": 8
+          },
+          {
+            "x": 9,
+            "y": 8
+          },
+          {
+            "x": 10,
+            "y": 8
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s247_KB",
+        "cells": [
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 4
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s247_Y1",
+        "cells": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 9,
+            "y": 1
+          },
+          {
+            "x": 10,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_X2",
+        "cells": [
+          {
+            "x": 1,
+            "y": 11
+          },
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 12
+          },
+          {
+            "x": 3,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_X3",
+        "cells": [
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 11
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_Y4",
+        "cells": [
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 8,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_X5",
+        "cells": [
+          {
+            "x": 1,
+            "y": 16
+          },
+          {
+            "x": 1,
+            "y": 15
+          },
+          {
+            "x": 1,
+            "y": 14
+          },
+          {
+            "x": 1,
+            "y": 13
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_Y6",
+        "cells": [
+          {
+            "x": 10,
+            "y": 6
+          },
+          {
+            "x": 10,
+            "y": 5
+          },
+          {
+            "x": 10,
+            "y": 4
+          },
+          {
+            "x": 10,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_X7",
+        "cells": [
+          {
+            "x": 8,
+            "y": 10
+          },
+          {
+            "x": 8,
+            "y": 9
+          },
+          {
+            "x": 7,
+            "y": 9
+          },
+          {
+            "x": 6,
+            "y": 9
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s247_X8",
+        "cells": [
+          {
+            "x": 8,
+            "y": 16
+          },
+          {
+            "x": 8,
+            "y": 15
+          },
+          {
+            "x": 7,
+            "y": 15
+          },
+          {
+            "x": 6,
+            "y": 15
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s247_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 4,
+          "y": 5
+        },
+        "parameter": "s247_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s247_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 11,
+          "y": 11
+        },
+        "parameter": "s247_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_248",
+    "index": 248,
+    "rulesVersion": 2,
+    "name": "A Key Behind the Gate",
+    "difficulty": "medium",
+    "width": 16,
+    "height": 18,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s248_X",
+        "cells": [
+          {
+            "x": 1,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 10
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_KB",
+        "cells": [
+          {
+            "x": 5,
+            "y": 9
+          },
+          {
+            "x": 5,
+            "y": 8
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "direction": "up",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s248_Y",
+        "cells": [
+          {
+            "x": 3,
+            "y": 16
+          },
+          {
+            "x": 3,
+            "y": 15
+          },
+          {
+            "x": 3,
+            "y": 14
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_KA",
+        "cells": [
+          {
+            "x": 14,
+            "y": 1
+          },
+          {
+            "x": 14,
+            "y": 2
+          },
+          {
+            "x": 14,
+            "y": 3
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s248_X1",
+        "cells": [
+          {
+            "x": 4,
+            "y": 14
+          },
+          {
+            "x": 4,
+            "y": 13
+          },
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 4,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_Y2",
+        "cells": [
+          {
+            "x": 6,
+            "y": 15
+          },
+          {
+            "x": 6,
+            "y": 16
+          },
+          {
+            "x": 5,
+            "y": 16
+          },
+          {
+            "x": 4,
+            "y": 16
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_X3",
+        "cells": [
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 7,
+            "y": 11
+          },
+          {
+            "x": 6,
+            "y": 11
+          },
+          {
+            "x": 5,
+            "y": 11
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_Y4",
+        "cells": [
+          {
+            "x": 6,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 14
+          },
+          {
+            "x": 5,
+            "y": 15
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_X5",
+        "cells": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 9
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_X6",
+        "cells": [
+          {
+            "x": 8,
+            "y": 15
+          },
+          {
+            "x": 7,
+            "y": 15
+          },
+          {
+            "x": 7,
+            "y": 14
+          },
+          {
+            "x": 7,
+            "y": 13
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_X7",
+        "cells": [
+          {
+            "x": 11,
+            "y": 5
+          },
+          {
+            "x": 10,
+            "y": 5
+          },
+          {
+            "x": 9,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 5
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s248_X8",
+        "cells": [
+          {
+            "x": 11,
+            "y": 2
+          },
+          {
+            "x": 10,
+            "y": 2
+          },
+          {
+            "x": 10,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 4
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s248_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 5,
+          "y": 6
+        },
+        "parameter": "s248_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s248_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 12,
+          "y": 10
+        },
+        "parameter": "s248_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_249",
+    "index": 249,
+    "rulesVersion": 2,
+    "name": "Two Gardens",
+    "difficulty": "medium",
+    "width": 16,
+    "height": 14,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s249_X",
+        "cells": [
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 9
+          },
+          {
+            "x": 4,
+            "y": 8
+          },
+          {
+            "x": 4,
+            "y": 7
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s249_Y",
+        "cells": [
+          {
+            "x": 11,
+            "y": 1
+          },
+          {
+            "x": 11,
+            "y": 2
+          },
+          {
+            "x": 11,
+            "y": 3
+          },
+          {
+            "x": 11,
+            "y": 4
+          },
+          {
+            "x": 11,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s249_R",
+        "cells": [
+          {
+            "x": 13,
+            "y": 6
+          },
+          {
+            "x": 13,
+            "y": 5
+          },
+          {
+            "x": 13,
+            "y": 4
+          },
+          {
+            "x": 13,
+            "y": 3
+          },
+          {
+            "x": 13,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s249_Q",
+        "cells": [
+          {
+            "x": 12,
+            "y": 1
+          },
+          {
+            "x": 13,
+            "y": 1
+          },
+          {
+            "x": 14,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s249_KB",
+        "cells": [
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 9,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s249_P",
+        "cells": [
+          {
+            "x": 5,
+            "y": 12
+          },
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 3,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 12
+          },
+          {
+            "x": 1,
+            "y": 12
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s249_KA",
+        "cells": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s249_X1",
+        "cells": [
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 7
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s249_X2",
+        "cells": [
+          {
+            "x": 5,
+            "y": 11
+          },
+          {
+            "x": 5,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 9
+          },
+          {
+            "x": 5,
+            "y": 8
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s249_X3",
+        "cells": [
+          {
+            "x": 8,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 11
+          },
+          {
+            "x": 7,
+            "y": 11
+          },
+          {
+            "x": 6,
+            "y": 11
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s249_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 4,
+          "y": 6
+        },
+        "parameter": "s249_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s249_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 11,
+          "y": 11
+        },
+        "parameter": "s249_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_250",
+    "index": 250,
+    "rulesVersion": 2,
+    "name": "Follow the Signal",
+    "difficulty": "medium",
+    "width": 18,
+    "height": 18,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s250_V",
+        "cells": [
+          {
+            "x": 12,
+            "y": 1
+          },
+          {
+            "x": 12,
+            "y": 2
+          },
+          {
+            "x": 12,
+            "y": 3
+          },
+          {
+            "x": 12,
+            "y": 4
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_X",
+        "cells": [
+          {
+            "x": 16,
+            "y": 11
+          },
+          {
+            "x": 15,
+            "y": 11
+          },
+          {
+            "x": 14,
+            "y": 11
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_U",
+        "cells": [
+          {
+            "x": 5,
+            "y": 16
+          },
+          {
+            "x": 5,
+            "y": 15
+          },
+          {
+            "x": 5,
+            "y": 14
+          },
+          {
+            "x": 5,
+            "y": 13
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_KB",
+        "cells": [
+          {
+            "x": 1,
+            "y": 14
+          },
+          {
+            "x": 2,
+            "y": 14
+          },
+          {
+            "x": 3,
+            "y": 14
+          },
+          {
+            "x": 4,
+            "y": 14
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s250_P",
+        "cells": [
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 12
+          },
+          {
+            "x": 9,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_KA",
+        "cells": [
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 7,
+            "y": 8
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s250_X1",
+        "cells": [
+          {
+            "x": 14,
+            "y": 7
+          },
+          {
+            "x": 14,
+            "y": 8
+          },
+          {
+            "x": 14,
+            "y": 9
+          },
+          {
+            "x": 14,
+            "y": 10
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_V2",
+        "cells": [
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 9,
+            "y": 1
+          },
+          {
+            "x": 10,
+            "y": 1
+          },
+          {
+            "x": 11,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_U3",
+        "cells": [
+          {
+            "x": 1,
+            "y": 16
+          },
+          {
+            "x": 1,
+            "y": 15
+          },
+          {
+            "x": 2,
+            "y": 15
+          },
+          {
+            "x": 3,
+            "y": 15
+          },
+          {
+            "x": 4,
+            "y": 15
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_V4",
+        "cells": [
+          {
+            "x": 11,
+            "y": 4
+          },
+          {
+            "x": 10,
+            "y": 4
+          },
+          {
+            "x": 10,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_U5",
+        "cells": [
+          {
+            "x": 4,
+            "y": 16
+          },
+          {
+            "x": 3,
+            "y": 16
+          },
+          {
+            "x": 2,
+            "y": 16
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_X6",
+        "cells": [
+          {
+            "x": 15,
+            "y": 6
+          },
+          {
+            "x": 15,
+            "y": 7
+          },
+          {
+            "x": 15,
+            "y": 8
+          },
+          {
+            "x": 15,
+            "y": 9
+          },
+          {
+            "x": 15,
+            "y": 10
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_U7",
+        "cells": [
+          {
+            "x": 2,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 13
+          },
+          {
+            "x": 3,
+            "y": 13
+          },
+          {
+            "x": 4,
+            "y": 13
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_V8",
+        "cells": [
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 9,
+            "y": 5
+          },
+          {
+            "x": 9,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 3
+          },
+          {
+            "x": 9,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s250_X9",
+        "cells": [
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 9,
+            "y": 6
+          },
+          {
+            "x": 10,
+            "y": 6
+          },
+          {
+            "x": 11,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s250_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 5,
+          "y": 5
+        },
+        "parameter": "s250_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s250_ga2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 12,
+          "y": 5
+        },
+        "parameter": "s250_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s250_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 10,
+          "y": 11
+        },
+        "parameter": "s250_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_251",
+    "index": 251,
+    "rulesVersion": 2,
+    "name": "Shared Crossing",
+    "difficulty": "hard",
+    "width": 17,
+    "height": 15,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s251_X",
+        "cells": [
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 4
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_Y",
+        "cells": [
+          {
+            "x": 8,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 11
+          },
+          {
+            "x": 8,
+            "y": 10
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_P",
+        "cells": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 8
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_KA",
+        "cells": [
+          {
+            "x": 13,
+            "y": 8
+          },
+          {
+            "x": 12,
+            "y": 8
+          },
+          {
+            "x": 11,
+            "y": 8
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s251_Y1",
+        "cells": [
+          {
+            "x": 5,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 12
+          },
+          {
+            "x": 6,
+            "y": 12
+          },
+          {
+            "x": 7,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_X2",
+        "cells": [
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 5
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_Y3",
+        "cells": [
+          {
+            "x": 10,
+            "y": 13
+          },
+          {
+            "x": 9,
+            "y": 13
+          },
+          {
+            "x": 8,
+            "y": 13
+          },
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 6,
+            "y": 13
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_X4",
+        "cells": [
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 4,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_Y5",
+        "cells": [
+          {
+            "x": 11,
+            "y": 9
+          },
+          {
+            "x": 11,
+            "y": 10
+          },
+          {
+            "x": 10,
+            "y": 10
+          },
+          {
+            "x": 9,
+            "y": 10
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_Y6",
+        "cells": [
+          {
+            "x": 15,
+            "y": 8
+          },
+          {
+            "x": 15,
+            "y": 9
+          },
+          {
+            "x": 14,
+            "y": 9
+          },
+          {
+            "x": 13,
+            "y": 9
+          },
+          {
+            "x": 12,
+            "y": 9
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_X7",
+        "cells": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_X8",
+        "cells": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s251_Y9",
+        "cells": [
+          {
+            "x": 14,
+            "y": 1
+          },
+          {
+            "x": 15,
+            "y": 1
+          },
+          {
+            "x": 15,
+            "y": 2
+          },
+          {
+            "x": 15,
+            "y": 3
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s251_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 8,
+          "y": 4
+        },
+        "parameter": "s251_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_252",
+    "index": 252,
+    "rulesVersion": 2,
+    "name": "Two Gates",
+    "difficulty": "hard",
+    "width": 18,
+    "height": 16,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s252_X",
+        "cells": [
+          {
+            "x": 9,
+            "y": 13
+          },
+          {
+            "x": 9,
+            "y": 12
+          },
+          {
+            "x": 9,
+            "y": 11
+          },
+          {
+            "x": 9,
+            "y": 10
+          },
+          {
+            "x": 9,
+            "y": 9
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s252_P",
+        "cells": [
+          {
+            "x": 7,
+            "y": 9
+          },
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 5
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s252_KA",
+        "cells": [
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s252_Q",
+        "cells": [
+          {
+            "x": 13,
+            "y": 1
+          },
+          {
+            "x": 14,
+            "y": 1
+          },
+          {
+            "x": 15,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s252_KB",
+        "cells": [
+          {
+            "x": 15,
+            "y": 13
+          },
+          {
+            "x": 15,
+            "y": 12
+          },
+          {
+            "x": 15,
+            "y": 11
+          },
+          {
+            "x": 15,
+            "y": 10
+          }
+        ],
+        "direction": "up",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s252_X1",
+        "cells": [
+          {
+            "x": 13,
+            "y": 11
+          },
+          {
+            "x": 13,
+            "y": 10
+          },
+          {
+            "x": 12,
+            "y": 10
+          },
+          {
+            "x": 11,
+            "y": 10
+          },
+          {
+            "x": 10,
+            "y": 10
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s252_X2",
+        "cells": [
+          {
+            "x": 12,
+            "y": 14
+          },
+          {
+            "x": 12,
+            "y": 13
+          },
+          {
+            "x": 12,
+            "y": 12
+          },
+          {
+            "x": 12,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s252_X3",
+        "cells": [
+          {
+            "x": 16,
+            "y": 13
+          },
+          {
+            "x": 16,
+            "y": 14
+          },
+          {
+            "x": 15,
+            "y": 14
+          },
+          {
+            "x": 14,
+            "y": 14
+          },
+          {
+            "x": 13,
+            "y": 14
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s252_X4",
+        "cells": [
+          {
+            "x": 10,
+            "y": 13
+          },
+          {
+            "x": 11,
+            "y": 13
+          },
+          {
+            "x": 11,
+            "y": 12
+          },
+          {
+            "x": 11,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s252_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 9,
+          "y": 3
+        },
+        "parameter": "s252_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s252_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 9,
+          "y": 7
+        },
+        "parameter": "s252_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_253",
+    "index": 253,
+    "rulesVersion": 2,
+    "name": "Prepare the Signal",
+    "difficulty": "hard",
+    "width": 16,
+    "height": 18,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s253_Y",
+        "cells": [
+          {
+            "x": 11,
+            "y": 2
+          },
+          {
+            "x": 11,
+            "y": 3
+          },
+          {
+            "x": 11,
+            "y": 4
+          },
+          {
+            "x": 11,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_X",
+        "cells": [
+          {
+            "x": 4,
+            "y": 13
+          },
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 4,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_P",
+        "cells": [
+          {
+            "x": 12,
+            "y": 5
+          },
+          {
+            "x": 13,
+            "y": 5
+          },
+          {
+            "x": 14,
+            "y": 5
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_KA",
+        "cells": [
+          {
+            "x": 14,
+            "y": 9
+          },
+          {
+            "x": 14,
+            "y": 8
+          },
+          {
+            "x": 14,
+            "y": 7
+          }
+        ],
+        "direction": "up",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s253_Q",
+        "cells": [
+          {
+            "x": 12,
+            "y": 3
+          },
+          {
+            "x": 13,
+            "y": 3
+          },
+          {
+            "x": 14,
+            "y": 3
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_X1",
+        "cells": [
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 1,
+            "y": 11
+          },
+          {
+            "x": 2,
+            "y": 11
+          },
+          {
+            "x": 3,
+            "y": 11
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_Y2",
+        "cells": [
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 4
+          },
+          {
+            "x": 10,
+            "y": 4
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_X3",
+        "cells": [
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 9
+          },
+          {
+            "x": 1,
+            "y": 10
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_Y4",
+        "cells": [
+          {
+            "x": 10,
+            "y": 9
+          },
+          {
+            "x": 10,
+            "y": 8
+          },
+          {
+            "x": 10,
+            "y": 7
+          },
+          {
+            "x": 10,
+            "y": 6
+          },
+          {
+            "x": 10,
+            "y": 5
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_X5",
+        "cells": [
+          {
+            "x": 8,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 13
+          },
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 6,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 13
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_X6",
+        "cells": [
+          {
+            "x": 4,
+            "y": 16
+          },
+          {
+            "x": 5,
+            "y": 16
+          },
+          {
+            "x": 5,
+            "y": 15
+          },
+          {
+            "x": 5,
+            "y": 14
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_Y7",
+        "cells": [
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 9,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_X8",
+        "cells": [
+          {
+            "x": 8,
+            "y": 15
+          },
+          {
+            "x": 8,
+            "y": 16
+          },
+          {
+            "x": 7,
+            "y": 16
+          },
+          {
+            "x": 6,
+            "y": 16
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_Y9",
+        "cells": [
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 9,
+            "y": 2
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_X10",
+        "cells": [
+          {
+            "x": 3,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 2,
+            "y": 8
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s253_Y11",
+        "cells": [
+          {
+            "x": 13,
+            "y": 1
+          },
+          {
+            "x": 12,
+            "y": 1
+          },
+          {
+            "x": 11,
+            "y": 1
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s253_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 4,
+          "y": 6
+        },
+        "parameter": "s253_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s253_ga2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 11,
+          "y": 12
+        },
+        "parameter": "s253_KA",
+        "colorGroup": 1
+      }
+    ]
+  },
+  {
+    "id": "story_254",
+    "index": 254,
+    "rulesVersion": 2,
+    "name": "Interweaving",
+    "difficulty": "hard",
+    "width": 16,
+    "height": 18,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s254_X",
+        "cells": [
+          {
+            "x": 1,
+            "y": 9
+          },
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 3,
+            "y": 9
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_U",
+        "cells": [
+          {
+            "x": 5,
+            "y": 9
+          },
+          {
+            "x": 5,
+            "y": 8
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_P",
+        "cells": [
+          {
+            "x": 14,
+            "y": 5
+          },
+          {
+            "x": 14,
+            "y": 4
+          },
+          {
+            "x": 14,
+            "y": 3
+          },
+          {
+            "x": 14,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_KB",
+        "cells": [
+          {
+            "x": 14,
+            "y": 16
+          },
+          {
+            "x": 14,
+            "y": 15
+          },
+          {
+            "x": 14,
+            "y": 14
+          },
+          {
+            "x": 14,
+            "y": 13
+          },
+          {
+            "x": 14,
+            "y": 12
+          }
+        ],
+        "direction": "up",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s254_KA",
+        "cells": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s254_U1",
+        "cells": [
+          {
+            "x": 9,
+            "y": 6
+          },
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 7
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 6,
+            "y": 7
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_X2",
+        "cells": [
+          {
+            "x": 1,
+            "y": 14
+          },
+          {
+            "x": 1,
+            "y": 13
+          },
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 1,
+            "y": 11
+          },
+          {
+            "x": 1,
+            "y": 10
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_U3",
+        "cells": [
+          {
+            "x": 13,
+            "y": 5
+          },
+          {
+            "x": 13,
+            "y": 6
+          },
+          {
+            "x": 12,
+            "y": 6
+          },
+          {
+            "x": 11,
+            "y": 6
+          },
+          {
+            "x": 10,
+            "y": 6
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_X4",
+        "cells": [
+          {
+            "x": 4,
+            "y": 11
+          },
+          {
+            "x": 4,
+            "y": 12
+          },
+          {
+            "x": 3,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 12
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_U5",
+        "cells": [
+          {
+            "x": 10,
+            "y": 8
+          },
+          {
+            "x": 9,
+            "y": 8
+          },
+          {
+            "x": 8,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 6,
+            "y": 8
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_U6",
+        "cells": [
+          {
+            "x": 13,
+            "y": 3
+          },
+          {
+            "x": 12,
+            "y": 3
+          },
+          {
+            "x": 12,
+            "y": 4
+          },
+          {
+            "x": 12,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_X7",
+        "cells": [
+          {
+            "x": 6,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 13
+          },
+          {
+            "x": 4,
+            "y": 13
+          },
+          {
+            "x": 3,
+            "y": 13
+          },
+          {
+            "x": 2,
+            "y": 13
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s254_X8",
+        "cells": [
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 11
+          },
+          {
+            "x": 5,
+            "y": 12
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s254_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 5,
+          "y": 5
+        },
+        "parameter": "s254_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s254_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 11,
+          "y": 9
+        },
+        "parameter": "s254_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_255",
+    "index": 255,
+    "rulesVersion": 2,
+    "name": "Heart of the Junction",
+    "difficulty": "hard",
+    "width": 16,
+    "height": 17,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s255_X",
+        "cells": [
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_Y",
+        "cells": [
+          {
+            "x": 5,
+            "y": 10
+          },
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 7,
+            "y": 10
+          },
+          {
+            "x": 8,
+            "y": 10
+          },
+          {
+            "x": 9,
+            "y": 10
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_C",
+        "cells": [
+          {
+            "x": 8,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 4
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_KB",
+        "cells": [
+          {
+            "x": 14,
+            "y": 6
+          },
+          {
+            "x": 13,
+            "y": 6
+          },
+          {
+            "x": 12,
+            "y": 6
+          },
+          {
+            "x": 11,
+            "y": 6
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s255_U",
+        "cells": [
+          {
+            "x": 13,
+            "y": 7
+          },
+          {
+            "x": 12,
+            "y": 7
+          },
+          {
+            "x": 11,
+            "y": 7
+          },
+          {
+            "x": 10,
+            "y": 7
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_P",
+        "cells": [
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 3,
+            "y": 8
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_KA",
+        "cells": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s255_Y1",
+        "cells": [
+          {
+            "x": 6,
+            "y": 14
+          },
+          {
+            "x": 5,
+            "y": 14
+          },
+          {
+            "x": 5,
+            "y": 13
+          },
+          {
+            "x": 5,
+            "y": 12
+          },
+          {
+            "x": 5,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_U2",
+        "cells": [
+          {
+            "x": 9,
+            "y": 2
+          },
+          {
+            "x": 10,
+            "y": 2
+          },
+          {
+            "x": 10,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 4
+          },
+          {
+            "x": 10,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_Y3",
+        "cells": [
+          {
+            "x": 9,
+            "y": 12
+          },
+          {
+            "x": 9,
+            "y": 13
+          },
+          {
+            "x": 8,
+            "y": 13
+          },
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 6,
+            "y": 13
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_Y4",
+        "cells": [
+          {
+            "x": 6,
+            "y": 11
+          },
+          {
+            "x": 6,
+            "y": 12
+          },
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_Y5",
+        "cells": [
+          {
+            "x": 9,
+            "y": 15
+          },
+          {
+            "x": 9,
+            "y": 14
+          },
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 7,
+            "y": 14
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s255_Y6",
+        "cells": [
+          {
+            "x": 5,
+            "y": 15
+          },
+          {
+            "x": 6,
+            "y": 15
+          },
+          {
+            "x": 7,
+            "y": 15
+          },
+          {
+            "x": 8,
+            "y": 15
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s255_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 8,
+          "y": 3
+        },
+        "parameter": "s255_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s255_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 4,
+          "y": 9
+        },
+        "parameter": "s255_KB",
+        "colorGroup": 2
+      },
+      {
+        "id": "s255_gb2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 12,
+          "y": 10
+        },
+        "parameter": "s255_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_256",
+    "index": 256,
+    "rulesVersion": 2,
+    "name": "Two Open Wings",
+    "difficulty": "easy",
+    "width": 14,
+    "height": 11,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s256_KA",
+        "cells": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s256_KB",
+        "cells": [
+          {
+            "x": 10,
+            "y": 1
+          },
+          {
+            "x": 11,
+            "y": 1
+          },
+          {
+            "x": 12,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s256_X",
+        "cells": [
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_Y",
+        "cells": [
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 9,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 3
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_U",
+        "cells": [
+          {
+            "x": 4,
+            "y": 8
+          },
+          {
+            "x": 4,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 6
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_V",
+        "cells": [
+          {
+            "x": 9,
+            "y": 8
+          },
+          {
+            "x": 9,
+            "y": 7
+          },
+          {
+            "x": 9,
+            "y": 6
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_U1",
+        "cells": [
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_V2",
+        "cells": [
+          {
+            "x": 5,
+            "y": 7
+          },
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 7
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_U3",
+        "cells": [
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 7,
+            "y": 5
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_V4",
+        "cells": [
+          {
+            "x": 6,
+            "y": 9
+          },
+          {
+            "x": 6,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 8,
+            "y": 8
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_V5",
+        "cells": [
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 3,
+            "y": 9
+          },
+          {
+            "x": 4,
+            "y": 9
+          },
+          {
+            "x": 5,
+            "y": 9
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s256_U6",
+        "cells": [
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s256_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 1,
+          "y": 3
+        },
+        "parameter": "s256_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s256_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 12,
+          "y": 3
+        },
+        "parameter": "s256_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_257",
+    "index": 257,
+    "rulesVersion": 2,
+    "name": "Almost Symmetrical",
+    "difficulty": "medium",
+    "width": 17,
+    "height": 14,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s257_KA",
+        "cells": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s257_KB",
+        "cells": [
+          {
+            "x": 12,
+            "y": 2
+          },
+          {
+            "x": 13,
+            "y": 2
+          },
+          {
+            "x": 14,
+            "y": 2
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s257_X",
+        "cells": [
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_Y",
+        "cells": [
+          {
+            "x": 9,
+            "y": 5
+          },
+          {
+            "x": 10,
+            "y": 5
+          },
+          {
+            "x": 11,
+            "y": 5
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_U",
+        "cells": [
+          {
+            "x": 5,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 9
+          },
+          {
+            "x": 5,
+            "y": 8
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_V",
+        "cells": [
+          {
+            "x": 10,
+            "y": 10
+          },
+          {
+            "x": 10,
+            "y": 9
+          },
+          {
+            "x": 10,
+            "y": 8
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_P",
+        "cells": [
+          {
+            "x": 15,
+            "y": 4
+          },
+          {
+            "x": 15,
+            "y": 3
+          },
+          {
+            "x": 15,
+            "y": 2
+          },
+          {
+            "x": 15,
+            "y": 1
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_U1",
+        "cells": [
+          {
+            "x": 9,
+            "y": 8
+          },
+          {
+            "x": 9,
+            "y": 9
+          },
+          {
+            "x": 8,
+            "y": 9
+          },
+          {
+            "x": 7,
+            "y": 9
+          },
+          {
+            "x": 6,
+            "y": 9
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_V2",
+        "cells": [
+          {
+            "x": 6,
+            "y": 11
+          },
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 7,
+            "y": 10
+          },
+          {
+            "x": 8,
+            "y": 10
+          },
+          {
+            "x": 9,
+            "y": 10
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_V3",
+        "cells": [
+          {
+            "x": 10,
+            "y": 12
+          },
+          {
+            "x": 10,
+            "y": 11
+          },
+          {
+            "x": 9,
+            "y": 11
+          },
+          {
+            "x": 8,
+            "y": 11
+          },
+          {
+            "x": 7,
+            "y": 11
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_U4",
+        "cells": [
+          {
+            "x": 8,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 6,
+            "y": 8
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_V5",
+        "cells": [
+          {
+            "x": 15,
+            "y": 12
+          },
+          {
+            "x": 14,
+            "y": 12
+          },
+          {
+            "x": 13,
+            "y": 12
+          },
+          {
+            "x": 12,
+            "y": 12
+          },
+          {
+            "x": 11,
+            "y": 12
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s257_U6",
+        "cells": [
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 7
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s257_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 2,
+          "y": 5
+        },
+        "parameter": "s257_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s257_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 13,
+          "y": 5
+        },
+        "parameter": "s257_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_258",
+    "index": 258,
+    "rulesVersion": 2,
+    "name": "Relay at the Crossing",
+    "difficulty": "hard",
+    "width": 14,
+    "height": 17,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s258_V",
+        "cells": [
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_U",
+        "cells": [
+          {
+            "x": 6,
+            "y": 14
+          },
+          {
+            "x": 6,
+            "y": 13
+          },
+          {
+            "x": 6,
+            "y": 12
+          },
+          {
+            "x": 6,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_Y",
+        "cells": [
+          {
+            "x": 7,
+            "y": 14
+          },
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 9,
+            "y": 14
+          },
+          {
+            "x": 10,
+            "y": 14
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_X",
+        "cells": [
+          {
+            "x": 1,
+            "y": 9
+          },
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 3,
+            "y": 9
+          },
+          {
+            "x": 4,
+            "y": 9
+          },
+          {
+            "x": 5,
+            "y": 9
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_KB",
+        "cells": [
+          {
+            "x": 11,
+            "y": 11
+          },
+          {
+            "x": 10,
+            "y": 11
+          },
+          {
+            "x": 9,
+            "y": 11
+          },
+          {
+            "x": 8,
+            "y": 11
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s258_Z",
+        "cells": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_P",
+        "cells": [
+          {
+            "x": 8,
+            "y": 15
+          },
+          {
+            "x": 7,
+            "y": 15
+          },
+          {
+            "x": 6,
+            "y": 15
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_KA",
+        "cells": [
+          {
+            "x": 12,
+            "y": 15
+          },
+          {
+            "x": 11,
+            "y": 15
+          },
+          {
+            "x": 10,
+            "y": 15
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s258_Z1",
+        "cells": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_U2",
+        "cells": [
+          {
+            "x": 10,
+            "y": 12
+          },
+          {
+            "x": 10,
+            "y": 13
+          },
+          {
+            "x": 9,
+            "y": 13
+          },
+          {
+            "x": 8,
+            "y": 13
+          },
+          {
+            "x": 7,
+            "y": 13
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_Z3",
+        "cells": [
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_U4",
+        "cells": [
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 12
+          },
+          {
+            "x": 9,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_Z5",
+        "cells": [
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s258_Z6",
+        "cells": [
+          {
+            "x": 10,
+            "y": 5
+          },
+          {
+            "x": 10,
+            "y": 6
+          },
+          {
+            "x": 9,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 6
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s258_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 6,
+          "y": 7
+        },
+        "parameter": "s258_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s258_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 12,
+          "y": 9
+        },
+        "parameter": "s258_KB",
+        "colorGroup": 2
+      },
+      {
+        "id": "s258_gb2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 12,
+          "y": 14
+        },
+        "parameter": "s258_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_259",
+    "index": 259,
+    "rulesVersion": 2,
+    "name": "Three Areas",
+    "difficulty": "expert",
+    "width": 16,
+    "height": 17,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s259_Z",
+        "cells": [
+          {
+            "x": 7,
+            "y": 14
+          },
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 7,
+            "y": 11
+          },
+          {
+            "x": 7,
+            "y": 10
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_X",
+        "cells": [
+          {
+            "x": 2,
+            "y": 9
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 6
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_Y",
+        "cells": [
+          {
+            "x": 11,
+            "y": 14
+          },
+          {
+            "x": 11,
+            "y": 13
+          },
+          {
+            "x": 11,
+            "y": 12
+          },
+          {
+            "x": 11,
+            "y": 11
+          },
+          {
+            "x": 11,
+            "y": 10
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_P",
+        "cells": [
+          {
+            "x": 10,
+            "y": 4
+          },
+          {
+            "x": 10,
+            "y": 3
+          },
+          {
+            "x": 10,
+            "y": 2
+          },
+          {
+            "x": 10,
+            "y": 1
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_KA",
+        "cells": [
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "direction": "right",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s259_Q",
+        "cells": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_KB",
+        "cells": [
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s259_Y1",
+        "cells": [
+          {
+            "x": 8,
+            "y": 11
+          },
+          {
+            "x": 8,
+            "y": 10
+          },
+          {
+            "x": 9,
+            "y": 10
+          },
+          {
+            "x": 10,
+            "y": 10
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_X2",
+        "cells": [
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          },
+          {
+            "x": 4,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 7
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_Z3",
+        "cells": [
+          {
+            "x": 10,
+            "y": 12
+          },
+          {
+            "x": 10,
+            "y": 13
+          },
+          {
+            "x": 9,
+            "y": 13
+          },
+          {
+            "x": 8,
+            "y": 13
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_X4",
+        "cells": [
+          {
+            "x": 4,
+            "y": 11
+          },
+          {
+            "x": 3,
+            "y": 11
+          },
+          {
+            "x": 3,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 9
+          },
+          {
+            "x": 3,
+            "y": 8
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_Z5",
+        "cells": [
+          {
+            "x": 10,
+            "y": 15
+          },
+          {
+            "x": 10,
+            "y": 14
+          },
+          {
+            "x": 9,
+            "y": 14
+          },
+          {
+            "x": 8,
+            "y": 14
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_Z6",
+        "cells": [
+          {
+            "x": 14,
+            "y": 15
+          },
+          {
+            "x": 13,
+            "y": 15
+          },
+          {
+            "x": 12,
+            "y": 15
+          },
+          {
+            "x": 11,
+            "y": 15
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_X7",
+        "cells": [
+          {
+            "x": 6,
+            "y": 11
+          },
+          {
+            "x": 6,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 10
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_Z8",
+        "cells": [
+          {
+            "x": 12,
+            "y": 11
+          },
+          {
+            "x": 12,
+            "y": 12
+          },
+          {
+            "x": 12,
+            "y": 13
+          },
+          {
+            "x": 12,
+            "y": 14
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s259_Z9",
+        "cells": [
+          {
+            "x": 14,
+            "y": 12
+          },
+          {
+            "x": 13,
+            "y": 12
+          },
+          {
+            "x": 13,
+            "y": 13
+          },
+          {
+            "x": 13,
+            "y": 14
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s259_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 2,
+          "y": 5
+        },
+        "parameter": "s259_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s259_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 11,
+          "y": 5
+        },
+        "parameter": "s259_KB",
+        "colorGroup": 2
+      },
+      {
+        "id": "s259_ga2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 7,
+          "y": 3
+        },
+        "parameter": "s259_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s259_gb2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 7,
+          "y": 8
+        },
+        "parameter": "s259_KB",
+        "colorGroup": 2
+      }
+    ]
+  },
+  {
+    "id": "story_260",
+    "index": 260,
+    "rulesVersion": 2,
+    "name": "Signal at the Centre",
+    "difficulty": "expert",
+    "width": 15,
+    "height": 16,
+    "lives": 4,
+    "goal": {
+      "kind": "clearAll"
+    },
+    "threeStarMaxMistakes": 0,
+    "twoStarMaxMistakes": 1,
+    "pieces": [
+      {
+        "id": "s260_C",
+        "cells": [
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_U",
+        "cells": [
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 9,
+            "y": 2
+          },
+          {
+            "x": 10,
+            "y": 2
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_X",
+        "cells": [
+          {
+            "x": 11,
+            "y": 9
+          },
+          {
+            "x": 10,
+            "y": 9
+          },
+          {
+            "x": 9,
+            "y": 9
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_Y",
+        "cells": [
+          {
+            "x": 13,
+            "y": 3
+          },
+          {
+            "x": 13,
+            "y": 4
+          },
+          {
+            "x": 13,
+            "y": 5
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_T",
+        "cells": [
+          {
+            "x": 10,
+            "y": 14
+          },
+          {
+            "x": 10,
+            "y": 13
+          },
+          {
+            "x": 10,
+            "y": 12
+          },
+          {
+            "x": 10,
+            "y": 11
+          }
+        ],
+        "direction": "up",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_KB",
+        "cells": [
+          {
+            "x": 9,
+            "y": 5
+          },
+          {
+            "x": 8,
+            "y": 5
+          },
+          {
+            "x": 7,
+            "y": 5
+          }
+        ],
+        "direction": "left",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 2
+      },
+      {
+        "id": "s260_KA",
+        "cells": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          }
+        ],
+        "direction": "down",
+        "kind": "lockedKey",
+        "crackLevel": 0,
+        "colorGroup": 1
+      },
+      {
+        "id": "s260_P",
+        "cells": [
+          {
+            "x": 1,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 10
+          },
+          {
+            "x": 4,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 10
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_Q",
+        "cells": [
+          {
+            "x": 5,
+            "y": 11
+          },
+          {
+            "x": 4,
+            "y": 11
+          },
+          {
+            "x": 3,
+            "y": 11
+          }
+        ],
+        "direction": "left",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_X1",
+        "cells": [
+          {
+            "x": 11,
+            "y": 5
+          },
+          {
+            "x": 11,
+            "y": 6
+          },
+          {
+            "x": 11,
+            "y": 7
+          },
+          {
+            "x": 11,
+            "y": 8
+          }
+        ],
+        "direction": "down",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_T2",
+        "cells": [
+          {
+            "x": 6,
+            "y": 12
+          },
+          {
+            "x": 7,
+            "y": 12
+          },
+          {
+            "x": 8,
+            "y": 12
+          },
+          {
+            "x": 9,
+            "y": 12
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_T3",
+        "cells": [
+          {
+            "x": 5,
+            "y": 14
+          },
+          {
+            "x": 6,
+            "y": 14
+          },
+          {
+            "x": 7,
+            "y": 14
+          },
+          {
+            "x": 8,
+            "y": 14
+          },
+          {
+            "x": 9,
+            "y": 14
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_X4",
+        "cells": [
+          {
+            "x": 7,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 7
+          },
+          {
+            "x": 8,
+            "y": 7
+          },
+          {
+            "x": 9,
+            "y": 7
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_Y5",
+        "cells": [
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 9,
+            "y": 4
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      },
+      {
+        "id": "s260_X6",
+        "cells": [
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 6,
+            "y": 6
+          },
+          {
+            "x": 7,
+            "y": 6
+          },
+          {
+            "x": 8,
+            "y": 6
+          },
+          {
+            "x": 9,
+            "y": 6
+          }
+        ],
+        "direction": "right",
+        "kind": "standard",
+        "crackLevel": 0
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "s260_ga1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 6,
+          "y": 2
+        },
+        "parameter": "s260_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s260_ga2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 13,
+          "y": 2
+        },
+        "parameter": "s260_KA",
+        "colorGroup": 1
+      },
+      {
+        "id": "s260_gb1",
+        "kind": "keyGate",
+        "cell": {
+          "x": 6,
+          "y": 9
+        },
+        "parameter": "s260_KB",
+        "colorGroup": 2
+      },
+      {
+        "id": "s260_gb2",
+        "kind": "keyGate",
+        "cell": {
+          "x": 13,
+          "y": 9
+        },
+        "parameter": "s260_KB",
+        "colorGroup": 2
+      }
+    ]
+  }
+]

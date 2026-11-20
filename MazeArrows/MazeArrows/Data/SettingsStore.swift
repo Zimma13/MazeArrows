@@ -104,13 +104,15 @@ struct AppSettings: Codable, Sendable {
 final class SettingsStore {
     static let shared = SettingsStore()
     private let key = "MazeArrows.Settings.v1"
+    private let defaults: UserDefaults
 
     var settings: AppSettings {
         didSet { save() }
     }
 
-    init() {
-        if let data = UserDefaults.standard.data(forKey: key),
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        if let data = defaults.data(forKey: key),
            let decoded = try? JSONDecoder().decode(AppSettings.self, from: data) {
             self.settings = decoded
         } else {
@@ -138,7 +140,7 @@ final class SettingsStore {
 
     private func save() {
         if let data = try? JSONEncoder().encode(settings) {
-            UserDefaults.standard.set(data, forKey: key)
+            defaults.set(data, forKey: key)
         }
     }
 }

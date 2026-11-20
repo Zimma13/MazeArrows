@@ -16,6 +16,9 @@ nonisolated struct Board: Sendable {
     /// Total number of pieces present at level start. Used by `.frozen`
     /// unfreezing logic which counts neighbors that have already been removed.
     let initialPieceCount: Int
+    /// Captured once so a missing or invalid reference cannot open a gate.
+    /// Value copies used by the solver/undo retain this initial identity set.
+    private let initialKeyIDs: Set<String>
 
     init(width: Int, height: Int, pieces: [ArrowPiece], obstacles: [Obstacle] = []) {
         self.width = width
@@ -23,6 +26,7 @@ nonisolated struct Board: Sendable {
         self.pieces = pieces
         self.obstacles = obstacles
         self.initialPieceCount = pieces.count
+        self.initialKeyIDs = Set(pieces.filter { $0.kind == .lockedKey }.map(\.id))
     }
 
     func isInside(_ point: GridPoint) -> Bool {
@@ -35,6 +39,19 @@ nonisolated struct Board: Sendable {
 
     func obstacle(at point: GridPoint) -> Obstacle? {
         obstacles.first { $0.cell == point }
+    }
+
+    /// Opening is derived from the key's removal. Restoring the key during
+    /// undo closes every linked gate atomically, without a second state store.
+    func isKeyGateOpen(_ obstacle: Obstacle) -> Bool {
+        guard obstacle.kind == .keyGate,
+              let keyID = obstacle.parameter,
+              initialKeyIDs.contains(keyID) else { return false }
+        return !pieces.contains { $0.id == keyID }
+    }
+
+    func keyGates(forKeyID keyID: String) -> [Obstacle] {
+        obstacles.filter { $0.kind == .keyGate && $0.parameter == keyID }
     }
 
     func occupiedMap() -> [GridPoint: String] {

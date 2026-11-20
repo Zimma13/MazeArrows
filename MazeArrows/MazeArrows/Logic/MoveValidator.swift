@@ -47,7 +47,7 @@ nonisolated enum MoveValidator {
             let next = cell.moved(direction)
             if !board.isInside(next) { return true }
             if let blockerId = occupied[next], blockerId != piece.id { return false }
-            if let ob = obstacles[next], !obstaclePassable(ob, by: piece, direction: direction) {
+            if let ob = obstacles[next], !obstaclePassable(ob, by: piece, direction: direction, board: board) {
                 return false
             }
             cell = next
@@ -81,7 +81,12 @@ nonisolated enum MoveValidator {
     /// in `direction`. Walls block everyone. Gates let through matching
     /// direction & color. Portals are passable (teleport handled elsewhere).
     /// Ice and springs are passable. Destructibles block unless `piece` is a bomb.
-    static func obstaclePassable(_ ob: Obstacle, by piece: ArrowPiece, direction: Direction) -> Bool {
+    static func obstaclePassable(
+        _ ob: Obstacle,
+        by piece: ArrowPiece,
+        direction: Direction,
+        board: Board? = nil
+    ) -> Bool {
         switch ob.kind {
         case .wall:
             return false
@@ -90,6 +95,9 @@ nonisolated enum MoveValidator {
             if let gateDir = ob.gateDirection, gateDir != direction { return false }
             if let group = ob.colorGroup, group != piece.colorGroup { return false }
             return true
+        case .keyGate:
+            // No board means no proof that the original key was removed.
+            return board?.isKeyGateOpen(ob) ?? false
         case .portal:
             return true
         case .ice:
@@ -101,9 +109,11 @@ nonisolated enum MoveValidator {
         }
     }
 
-    /// IDs of pieces that block `piece` along the head's exit lane.
+    /// IDs of pieces that block `piece` along the full head exit lane,
+    /// including the key required by each closed key gate on that lane.
     static func blockers(for piece: ArrowPiece, board: Board) -> Set<String> {
         let occupied = board.occupiedMap()
+        let obstacles = board.obstacleMap()
         var result = Set<String>()
         var cell = piece.headCell
         while true {
@@ -111,6 +121,11 @@ nonisolated enum MoveValidator {
             if !board.isInside(next) { break }
             if let blockerId = occupied[next], blockerId != piece.id {
                 result.insert(blockerId)
+            }
+            if let obstacle = obstacles[next], obstacle.kind == .keyGate,
+               !board.isKeyGateOpen(obstacle), let keyID = obstacle.parameter {
+                // Keep a self-reference: a key behind its own gate is a cycle.
+                result.insert(keyID)
             }
             cell = next
         }
@@ -127,7 +142,7 @@ nonisolated enum MoveValidator {
             let next = cell.moved(piece.direction)
             if !board.isInside(next) { return nil }
             if let id = occupied[next], id != piece.id { return next }
-            if let ob = obstacles[next], !obstaclePassable(ob, by: piece, direction: piece.direction) {
+            if let ob = obstacles[next], !obstaclePassable(ob, by: piece, direction: piece.direction, board: board) {
                 return next
             }
             cell = next

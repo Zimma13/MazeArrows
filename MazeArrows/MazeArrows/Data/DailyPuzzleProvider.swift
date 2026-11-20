@@ -42,9 +42,13 @@ actor DailyPuzzleProvider {
                 height: level.height,
                 lives: level.lives,
                 pieces: level.pieces,
+                piecePalette: level.piecePalette,
+                obstacles: level.obstacles,
+                goal: level.goal,
                 threeStarMaxMistakes: 0,
                 twoStarMaxMistakes: 1,
-                name: "Daily · \(date)"
+                name: "Daily · \(date)",
+                rulesVersion: level.rulesVersion
             )
             cached = (date, daily)
             return daily

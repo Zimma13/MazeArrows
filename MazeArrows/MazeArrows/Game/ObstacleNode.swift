@@ -19,17 +19,23 @@ final class ObstacleNode: SKNode {
     private var reduceMotion: Bool
     private var destroyCompletion: (() -> Void)?
     private(set) var isBeingDestroyed = false
+    private(set) var isKeyGateOpen: Bool
+    private var gateBars: SKNode?
+    private var gateSymbol: SKShapeNode?
+    private var gateHighlight: SKShapeNode?
 
     init(
         obstacle: Obstacle,
         geometry: BoardGeometry,
         theme: GameTheme,
-        reduceMotion: Bool = false
+        reduceMotion: Bool = false,
+        isKeyGateOpen: Bool = false
     ) {
         self.obstacle = obstacle
         self.geometry = geometry
         self.theme = theme
         self.reduceMotion = reduceMotion
+        self.isKeyGateOpen = isKeyGateOpen
         super.init()
         self.position = geometry.point(for: obstacle.cell)
         self.name = "obstacle_\(obstacle.id)"
@@ -45,6 +51,8 @@ final class ObstacleNode: SKNode {
             addWall(size: size)
         case .gate:
             addGate(size: size)
+        case .keyGate:
+            addKeyGate(size: size)
         case .portal:
             addPortal(size: size)
         case .ice:
@@ -106,6 +114,104 @@ final class ObstacleNode: SKNode {
             marker.zPosition = 7
             addChild(marker)
         }
+    }
+
+    /// A gate has four corner posts and a removable barrier. Open gates leave
+    /// a clear centre in both axes, including the shared-crossing levels.
+    /// This deliberately has no direction arrow, unlike the legacy filter.
+    private func addKeyGate(size: CGFloat) {
+        let color = obstacle.colorGroup == 2 ? theme.accent2.uiColor : theme.accent.uiColor
+        let half = size * 0.43
+        let inner = size * 0.27
+        let postsPath = CGMutablePath()
+        for x: CGFloat in [-1, 1] {
+            for y: CGFloat in [-1, 1] {
+                postsPath.move(to: CGPoint(x: x * inner, y: y * half))
+                postsPath.addLine(to: CGPoint(x: x * half, y: y * half))
+                postsPath.addLine(to: CGPoint(x: x * half, y: y * inner))
+            }
+        }
+        let posts = SKShapeNode(path: postsPath)
+        posts.name = "key-gate-frame"
+        posts.strokeColor = color
+        posts.lineWidth = max(2, size * 0.075)
+        posts.lineCap = .round
+        posts.lineJoin = .round
+        posts.zPosition = 5
+        addChild(posts)
+
+        let bars = SKNode()
+        bars.name = "key-gate-barrier"
+        // A broad, solid rail reads as a closed passage at normal board
+        // scale. Keep the symbol above it instead of covering the barrier.
+        let barrier = SKShapeNode(
+            rectOf: CGSize(width: size * 0.82, height: size * 0.18),
+            cornerRadius: size * 0.055
+        )
+        barrier.fillColor = color
+        barrier.strokeColor = .clear
+        barrier.position.y = -size * 0.11
+        bars.addChild(barrier)
+        bars.zPosition = 6
+        addChild(bars)
+        gateBars = bars
+
+        let symbol = SKShapeNode()
+        symbol.name = "key-gate-symbol"
+        symbol.strokeColor = theme.ink.uiColor
+        symbol.fillColor = theme.boardBackground.uiColor
+        symbol.lineWidth = max(2, size * 0.07)
+        symbol.lineJoin = .round
+        symbol.zPosition = 8
+        addChild(symbol)
+        gateSymbol = symbol
+
+        let highlight = SKShapeNode(rectOf: CGSize(width: size, height: size), cornerRadius: size * 0.20)
+        highlight.name = "key-gate-connection"
+        highlight.strokeColor = .clear
+        highlight.fillColor = color.withAlphaComponent(0.22)
+        highlight.lineWidth = 0
+        highlight.zPosition = 4
+        highlight.isHidden = true
+        addChild(highlight)
+        gateHighlight = highlight
+        applyKeyGateState()
+    }
+
+    /// The open state is derived from Board, never stored as an animation
+    /// side effect. Updating every gate synchronously keeps a group atomic.
+    func setKeyGateOpen(_ open: Bool, animated: Bool = false) {
+        guard obstacle.kind == .keyGate else { return }
+        let changed = isKeyGateOpen != open
+        isKeyGateOpen = open
+        applyKeyGateState()
+        guard changed, open, animated, !reduceMotion else { return }
+
+        // Only the frame glints. The final passable centre is already clear,
+        // so a subsequent move never sees a visually half-open barrier.
+        guard let frame = childNode(withName: "key-gate-frame") else { return }
+        frame.run(.sequence([
+            .fadeAlpha(to: 0.45, duration: 0.08),
+            .fadeAlpha(to: 1, duration: 0.12)
+        ]), withKey: "key-gate-open")
+    }
+
+    private func applyKeyGateState() {
+        let size = geometry.cellSize * 0.88
+        childNode(withName: "key-gate-frame")?.removeAction(forKey: "key-gate-open")
+        childNode(withName: "key-gate-frame")?.alpha = 1
+        gateBars?.isHidden = isKeyGateOpen
+        gateSymbol?.path = KeyGateSymbol.path(
+            group: obstacle.colorGroup ?? 1,
+            radius: size * (isKeyGateOpen ? 0.115 : 0.16)
+        )
+        gateSymbol?.position = isKeyGateOpen
+            ? CGPoint(x: size * 0.31, y: size * 0.31)
+            : CGPoint(x: 0, y: size * 0.23)
+    }
+
+    func setConnectionHighlighted(_ highlighted: Bool) {
+        gateHighlight?.isHidden = !highlighted
     }
 
     private func addPortal(size: CGFloat) {
@@ -209,6 +315,9 @@ final class ObstacleNode: SKNode {
     func setReduceMotion(_ enabled: Bool) {
         guard reduceMotion != enabled else { return }
         reduceMotion = enabled
+        if enabled, obstacle.kind == .keyGate {
+            applyKeyGateState()
+        }
         updatePortalMotion()
     }
 
@@ -251,5 +360,23 @@ final class ObstacleNode: SKNode {
         for child in node.children {
             removeActionsRecursively(from: child)
         }
+    }
+}
+
+/// Use the same geometric marks on linked keys and gates. Font glyphs have
+/// very thin strokes at cell size, even when rendered with a heavy font.
+enum KeyGateSymbol {
+    static func path(group: Int, radius: CGFloat) -> CGPath {
+        let path = CGMutablePath()
+        if group == 2 {
+            path.move(to: CGPoint(x: 0, y: radius))
+            path.addLine(to: CGPoint(x: radius, y: 0))
+            path.addLine(to: CGPoint(x: 0, y: -radius))
+            path.addLine(to: CGPoint(x: -radius, y: 0))
+            path.closeSubpath()
+        } else {
+            path.addEllipse(in: CGRect(x: -radius, y: -radius, width: radius * 2, height: radius * 2))
+        }
+        return path
     }
 }

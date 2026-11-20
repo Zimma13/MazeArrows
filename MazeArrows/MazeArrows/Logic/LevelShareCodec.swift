@@ -19,6 +19,9 @@
 //      u8 firstX, u8 firstY, then (cellCount-1) 2-bit steps packed into bytes
 //    `extra`: frozen → unlock threshold; double → secondaryDirection+1.
 //    Arrow direction is not stored — it always equals the last step.
+//    Version 3: "MZ", u8 version=3, followed by a complete JSON Level with
+//    rulesVersion=2. This preserves gate IDs and explicit key references.
+//    Versions 1 and 2 stay byte-compatible with already shared links.
 //
 
 import Foundation
@@ -79,6 +82,8 @@ nonisolated enum LevelShareCodec {
     // MARK: - encode
 
     static func encode(_ level: Level) -> Data? {
+        if level.rulesVersion == 2 { return encodeVersionTwoLevel(level) }
+        guard level.rulesVersion == 1 else { return nil }
         guard level.width > 0, level.width <= 255,
               level.height > 0, level.height <= 255,
               !level.pieces.isEmpty, level.pieces.count <= 65535,
@@ -158,6 +163,18 @@ nonisolated enum LevelShareCodec {
         return (try? (out as NSData).compressed(using: .zlib)) as Data?
     }
 
+    private static func encodeVersionTwoLevel(_ level: Level) -> Data? {
+        guard !Task.isCancelled,
+              LevelValidator.validateLevel(level, requireSolvable: true) == nil,
+              let json = try? JSONEncoder().encode(level),
+              json.count <= maximumDecompressedPayloadBytes - 3 else { return nil }
+        var payload = Data([0x4D, 0x5A, 3])
+        payload.append(json)
+        guard let compressed = (try? (payload as NSData).compressed(using: .zlib)) as Data?,
+              compressed.count <= maximumCompressedPayloadBytes else { return nil }
+        return compressed
+    }
+
     // MARK: - decode
 
     static func decode(_ data: Data) -> Level? {
@@ -174,8 +191,11 @@ nonisolated enum LevelShareCodec {
         }
 
         guard take() == 0x4D, take() == 0x5A,
-              let version = take(), version == 1 || version == 2
+              let version = take(), version == 1 || version == 2 || version == 3
         else { return nil }
+        if version == 3 {
+            return decodeVersionTwoLevel(Data(raw.dropFirst(3)), compressed: data)
+        }
         guard let width = take().map(Int.init), width > 0,
               let height = take().map(Int.init), height > 0,
               let lives = take().map(Int.init),
@@ -270,6 +290,25 @@ nonisolated enum LevelShareCodec {
         guard LevelValidator.validateLevel(level, requireSolvable: true) == nil else { return nil }
         guard !Task.isCancelled else { return nil }
         return level
+    }
+
+    private static func decodeVersionTwoLevel(_ json: Data, compressed: Data) -> Level? {
+        guard !Task.isCancelled,
+              let source = try? JSONDecoder().decode(Level.self, from: json),
+              source.rulesVersion == 2,
+              LevelValidator.validateLevel(source, requireSolvable: true) == nil,
+              let hash = fnv(compressed) else { return nil }
+        // Imported content remains a shared puzzle. Never carry the story
+        // index or tutorial/reward eligibility out of the encoded source.
+        return Level(
+            id: "shared_\(hash)", index: 0, difficulty: source.difficulty,
+            width: source.width, height: source.height, lives: source.lives,
+            pieces: source.pieces, piecePalette: source.piecePalette,
+            obstacles: source.obstacles, goal: source.goal,
+            threeStarMaxMistakes: source.threeStarMaxMistakes,
+            twoStarMaxMistakes: source.twoStarMaxMistakes,
+            name: String(localized: "Shared Maze"), rulesVersion: source.rulesVersion
+        )
     }
 
     // MARK: - helpers

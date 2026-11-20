@@ -1,0 +1,934 @@
+[
+  {
+    "index": 241,
+    "count": 6,
+    "deps": {
+      "KA": [],
+      "X": [],
+      "Y": ["X"],
+      "X1": ["X"],
+      "Y2": ["Y"],
+      "X3": ["X1"]
+    },
+    "gates": {
+      "ga1": ["KA", 6, 4]
+    },
+    "gatepaths": {
+      "X": ["ga1"]
+    },
+    "nodes": {
+      "X": {"cells": [[1, 4], [2, 4], [3, 4], [4, 4]], "direction": "right"},
+      "Y": {"cells": [[3, 7], [3, 6], [3, 5]], "direction": "up"},
+      "KA": {"cells": [[4, 6], [5, 6], [6, 6], [7, 6]], "direction": "right"},
+      "X1": {"cells": [[2, 1], [1, 1], [1, 2], [1, 3]], "direction": "down"},
+      "Y2": {"cells": [[7, 7], [6, 7], [5, 7], [4, 7]], "direction": "left"},
+      "X3": {"cells": [[6, 2], [6, 1], [5, 1], [4, 1]], "direction": "left"}
+    },
+    "width": 9,
+    "height": 9,
+    "titleRU": "Первый проход",
+    "titleEN": "First Passage",
+    "difficulty": "easy",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 241)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 242,
+    "count": 8,
+    "deps": {
+      "KA": [],
+      "X": [],
+      "S": [],
+      "X1": ["X"],
+      "X2": ["X1"],
+      "X3": ["X"],
+      "X4": ["X2"],
+      "X5": ["X1"]
+    },
+    "gates": {
+      "ga1": ["KA", 2, 5]
+    },
+    "gatepaths": {
+      "X": ["ga1"]
+    },
+    "nodes": {
+      "X": {"cells": [[2, 10], [2, 9], [2, 8], [2, 7]], "direction": "up"},
+      "KA": {"cells": [[1, 4], [1, 5], [1, 6], [1, 7]], "direction": "down"},
+      "S": {"cells": [[4, 1], [5, 1], [6, 1]], "direction": "right"},
+      "X1": {"cells": [[7, 10], [6, 10], [5, 10], [4, 10], [3, 10]], "direction": "left"},
+      "X2": {"cells": [[5, 6], [6, 6], [6, 7], [6, 8], [6, 9]], "direction": "down"},
+      "X3": {"cells": [[5, 9], [5, 8], [4, 8], [3, 8]], "direction": "left"},
+      "X4": {"cells": [[3, 6], [3, 7], [4, 7], [5, 7]], "direction": "right"},
+      "X5": {"cells": [[7, 2], [7, 3], [7, 4], [7, 5], [7, 6]], "direction": "down"}
+    },
+    "width": 9,
+    "height": 12,
+    "titleRU": "С другой стороны",
+    "titleEN": "The Other Side",
+    "difficulty": "easy",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 242)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 243,
+    "count": 8,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "X": [],
+      "Y": ["X"],
+      "Y1": ["Y"],
+      "Y2": ["Y"],
+      "Y3": ["Y2"],
+      "Y4": ["Y3"]
+    },
+    "gates": {
+      "ga1": ["KA", 8, 6]
+    },
+    "gatepaths": {
+      "X": ["ga1"]
+    },
+    "nodes": {
+      "X": {"cells": [[3, 6], [4, 6], [5, 6]], "direction": "right"},
+      "Y": {"cells": [[3, 2], [3, 3], [3, 4], [3, 5]], "direction": "down"},
+      "P": {"cells": [[6, 9], [7, 9], [8, 9], [9, 9]], "direction": "right"},
+      "KA": {"cells": [[9, 2], [9, 3], [9, 4], [9, 5]], "direction": "down"},
+      "Y1": {"cells": [[7, 3], [7, 4], [6, 4], [5, 4], [4, 4]], "direction": "left"},
+      "Y2": {"cells": [[7, 1], [7, 2], [6, 2], [5, 2], [4, 2]], "direction": "left"},
+      "Y3": {"cells": [[2, 1], [3, 1], [4, 1], [5, 1], [6, 1]], "direction": "right"},
+      "Y4": {"cells": [[1, 7], [2, 7], [2, 6], [2, 5]], "direction": "up"}
+    },
+    "width": 11,
+    "height": 11,
+    "titleRU": "Дорога к ключу",
+    "titleEN": "A Path to the Key",
+    "difficulty": "easy",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 243)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 244,
+    "count": 10,
+    "deps": {
+      "KA": [],
+      "X": [],
+      "Y": [],
+      "Y1": ["Y"],
+      "X2": ["X"],
+      "X3": ["X2"],
+      "Y4": ["Y1"],
+      "Y5": ["Y4"],
+      "X6": ["X2"],
+      "Y7": ["Y1"]
+    },
+    "gates": {
+      "ga1": ["KA", 4, 4],
+      "ga2": ["KA", 9, 9]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["ga2"]
+    },
+    "nodes": {
+      "X": {"cells": [[4, 12], [4, 11], [4, 10], [4, 9]], "direction": "up"},
+      "Y": {"cells": [[9, 4], [9, 5], [9, 6], [9, 7], [9, 8]], "direction": "down"},
+      "KA": {"cells": [[10, 4], [10, 5], [10, 6]], "direction": "down"},
+      "Y1": {"cells": [[6, 6], [6, 7], [7, 7], [8, 7]], "direction": "right"},
+      "X2": {"cells": [[1, 11], [1, 12], [2, 12], [3, 12]], "direction": "right"},
+      "X3": {"cells": [[2, 8], [2, 9], [2, 10], [2, 11]], "direction": "down"},
+      "Y4": {"cells": [[7, 2], [6, 2], [6, 3], [6, 4], [6, 5]], "direction": "down"},
+      "Y5": {"cells": [[11, 1], [11, 2], [10, 2], [9, 2], [8, 2]], "direction": "left"},
+      "X6": {"cells": [[3, 7], [3, 8], [3, 9], [3, 10], [3, 11]], "direction": "down"},
+      "Y7": {"cells": [[7, 4], [8, 4], [8, 5], [8, 6]], "direction": "down"}
+    },
+    "width": 13,
+    "height": 14,
+    "titleRU": "Один знак — два прохода",
+    "titleEN": "One Sign, Two Passages",
+    "difficulty": "easy",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 244)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 245,
+    "count": 12,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "Q": [],
+      "X": [],
+      "Y": ["Q"],
+      "Y1": ["Y"],
+      "X2": ["X"],
+      "X3": ["X2"],
+      "Y4": ["Y1"],
+      "Y5": ["Y"],
+      "X6": ["X3"],
+      "X7": ["X"]
+    },
+    "gates": {
+      "ga1": ["KA", 4, 4],
+      "ga2": ["KA", 9, 9]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["ga2"]
+    },
+    "nodes": {
+      "Y": {"cells": [[9, 1], [9, 2], [9, 3], [9, 4], [9, 5]], "direction": "down"},
+      "X": {"cells": [[4, 11], [4, 10], [4, 9], [4, 8]], "direction": "up"},
+      "Q": {"cells": [[6, 12], [7, 12], [8, 12], [9, 12]], "direction": "right"},
+      "P": {"cells": [[5, 5], [5, 6], [5, 7]], "direction": "down"},
+      "KA": {"cells": [[8, 5], [7, 5], [6, 5]], "direction": "left"},
+      "Y1": {"cells": [[5, 3], [5, 2], [6, 2], [7, 2], [8, 2]], "direction": "right"},
+      "X2": {"cells": [[1, 9], [1, 10], [2, 10], [3, 10]], "direction": "right"},
+      "X3": {"cells": [[2, 13], [1, 13], [1, 12], [1, 11]], "direction": "up"},
+      "Y4": {"cells": [[8, 4], [8, 3], [7, 3], [6, 3]], "direction": "left"},
+      "Y5": {"cells": [[5, 1], [6, 1], [7, 1], [8, 1]], "direction": "right"},
+      "X6": {"cells": [[4, 13], [4, 12], [3, 12], [2, 12]], "direction": "left"},
+      "X7": {"cells": [[8, 7], [8, 8], [7, 8], [6, 8]], "direction": "left"}
+    },
+    "width": 11,
+    "height": 15,
+    "titleRU": "Самостоятельный обход",
+    "titleEN": "A Separate Route",
+    "difficulty": "medium",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 245)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 246,
+    "count": 7,
+    "deps": {
+      "KA": [],
+      "X": [],
+      "Y": ["X"],
+      "S": [],
+      "T": [],
+      "X1": ["X"],
+      "X2": ["X"]
+    },
+    "gates": {
+      "ga1": ["KA", 6, 5]
+    },
+    "gatepaths": {
+      "X": ["ga1"]
+    },
+    "nodes": {
+      "X": {"cells": [[6, 12], [6, 11], [6, 10], [6, 9], [6, 8]], "direction": "up"},
+      "Y": {"cells": [[1, 11], [2, 11], [3, 11]], "direction": "right"},
+      "KA": {"cells": [[9, 1], [9, 2], [9, 3], [9, 4]], "direction": "down"},
+      "S": {"cells": [[7, 6], [7, 7], [7, 8], [7, 9]], "direction": "down"},
+      "T": {"cells": [[3, 4], [3, 3], [3, 2]], "direction": "up"},
+      "X1": {"cells": [[1, 12], [2, 12], [3, 12], [4, 12], [5, 12]], "direction": "right"},
+      "X2": {"cells": [[2, 10], [3, 10], [4, 10], [5, 10]], "direction": "right"}
+    },
+    "width": 11,
+    "height": 14,
+    "titleRU": "Открытая арка",
+    "titleEN": "Open Arch",
+    "difficulty": "easy",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 246)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 247,
+    "count": 12,
+    "deps": {
+      "KA": [],
+      "KB": [],
+      "X": [],
+      "Y": [],
+      "Y1": ["Y"],
+      "X2": ["X"],
+      "X3": ["X2"],
+      "Y4": ["Y1"],
+      "X5": ["X2"],
+      "Y6": ["Y1"],
+      "X7": ["X3"],
+      "X8": ["X5"]
+    },
+    "gates": {
+      "ga1": ["KA", 4, 5],
+      "gb1": ["KB", 11, 11]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["gb1"]
+    },
+    "nodes": {
+      "Y": {"cells": [[11, 1], [11, 2], [11, 3]], "direction": "down"},
+      "X": {"cells": [[4, 13], [4, 12], [4, 11], [4, 10]], "direction": "up"},
+      "KA": {"cells": [[6, 8], [7, 8], [8, 8], [9, 8], [10, 8]], "direction": "right"},
+      "KB": {"cells": [[5, 2], [5, 3], [5, 4]], "direction": "down"},
+      "Y1": {"cells": [[6, 1], [7, 1], [8, 1], [9, 1], [10, 1]], "direction": "right"},
+      "X2": {"cells": [[1, 11], [1, 12], [2, 12], [3, 12]], "direction": "right"},
+      "X3": {"cells": [[2, 7], [2, 8], [2, 9], [2, 10], [2, 11]], "direction": "down"},
+      "Y4": {"cells": [[8, 6], [8, 5], [8, 4], [8, 3], [8, 2]], "direction": "up"},
+      "X5": {"cells": [[1, 16], [1, 15], [1, 14], [1, 13]], "direction": "up"},
+      "Y6": {"cells": [[10, 6], [10, 5], [10, 4], [10, 3], [10, 2]], "direction": "up"},
+      "X7": {"cells": [[8, 10], [8, 9], [7, 9], [6, 9]], "direction": "left"},
+      "X8": {"cells": [[8, 16], [8, 15], [7, 15], [6, 15]], "direction": "left"}
+    },
+    "width": 13,
+    "height": 18,
+    "titleRU": "Два знака",
+    "titleEN": "Two Signs",
+    "difficulty": "medium",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 247)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 248,
+    "count": 12,
+    "deps": {
+      "KA": [],
+      "KB": [],
+      "X": [],
+      "Y": ["X"],
+      "X1": ["X"],
+      "Y2": ["Y"],
+      "X3": ["X1"],
+      "Y4": ["Y2"],
+      "X5": ["X"],
+      "X6": ["X3"],
+      "X7": ["X5"],
+      "X8": ["X7"]
+    },
+    "gates": {
+      "ga1": ["KA", 5, 6],
+      "gb1": ["KB", 12, 10]
+    },
+    "gatepaths": {
+      "KB": ["ga1"],
+      "X": ["gb1"]
+    },
+    "nodes": {
+      "X": {"cells": [[1, 10], [2, 10], [3, 10], [4, 10], [5, 10]], "direction": "right"},
+      "KB": {"cells": [[5, 9], [5, 8], [5, 7]], "direction": "up"},
+      "Y": {"cells": [[3, 16], [3, 15], [3, 14]], "direction": "up"},
+      "KA": {"cells": [[14, 1], [14, 2], [14, 3]], "direction": "down"},
+      "X1": {"cells": [[4, 14], [4, 13], [4, 12], [4, 11]], "direction": "up"},
+      "Y2": {"cells": [[6, 15], [6, 16], [5, 16], [4, 16]], "direction": "left"},
+      "X3": {"cells": [[7, 12], [7, 11], [6, 11], [5, 11]], "direction": "left"},
+      "Y4": {"cells": [[6, 13], [5, 13], [5, 14], [5, 15]], "direction": "down"},
+      "X5": {"cells": [[1, 5], [1, 6], [1, 7], [1, 8], [1, 9]], "direction": "down"},
+      "X6": {"cells": [[8, 15], [7, 15], [7, 14], [7, 13]], "direction": "up"},
+      "X7": {"cells": [[11, 5], [10, 5], [9, 5], [8, 5]], "direction": "left"},
+      "X8": {"cells": [[11, 2], [10, 2], [10, 3], [10, 4]], "direction": "down"}
+    },
+    "width": 16,
+    "height": 18,
+    "titleRU": "Ключ за воротами",
+    "titleEN": "A Key Behind the Gate",
+    "difficulty": "medium",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 248)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 249,
+    "count": 10,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "X": [],
+      "Q": [],
+      "R": ["Q"],
+      "KB": ["R"],
+      "Y": [],
+      "X1": ["X"],
+      "X2": ["X1"],
+      "X3": ["X2"]
+    },
+    "gates": {
+      "ga1": ["KA", 4, 6],
+      "gb1": ["KB", 11, 11]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["gb1"]
+    },
+    "nodes": {
+      "X": {"cells": [[4, 10], [4, 9], [4, 8], [4, 7]], "direction": "up"},
+      "Y": {"cells": [[11, 1], [11, 2], [11, 3], [11, 4], [11, 5]], "direction": "down"},
+      "R": {"cells": [[13, 6], [13, 5], [13, 4], [13, 3], [13, 2]], "direction": "up"},
+      "Q": {"cells": [[12, 1], [13, 1], [14, 1]], "direction": "right"},
+      "KB": {"cells": [[6, 6], [7, 6], [8, 6], [9, 6]], "direction": "right"},
+      "P": {"cells": [[5, 12], [4, 12], [3, 12], [2, 12], [1, 12]], "direction": "left"},
+      "KA": {"cells": [[3, 2], [3, 3], [3, 4], [3, 5]], "direction": "down"},
+      "X1": {"cells": [[9, 7], [8, 7], [7, 7], [6, 7], [5, 7]], "direction": "left"},
+      "X2": {"cells": [[5, 11], [5, 10], [5, 9], [5, 8]], "direction": "up"},
+      "X3": {"cells": [[8, 12], [8, 11], [7, 11], [6, 11]], "direction": "left"}
+    },
+    "width": 16,
+    "height": 14,
+    "titleRU": "Два сада",
+    "titleEN": "Two Gardens",
+    "difficulty": "medium",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 249)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 250,
+    "count": 15,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "U": [],
+      "KB": ["U"],
+      "V": [],
+      "X": [],
+      "X1": ["X"],
+      "V2": ["V"],
+      "U3": ["U"],
+      "V4": ["V2"],
+      "U5": ["U3"],
+      "X6": ["X"],
+      "U7": ["U"],
+      "V8": ["V2"],
+      "X9": ["X6"]
+    },
+    "gates": {
+      "ga1": ["KA", 5, 5],
+      "ga2": ["KA", 12, 5],
+      "gb1": ["KB", 10, 11]
+    },
+    "gatepaths": {
+      "U": ["ga1"],
+      "V": ["ga2"],
+      "X": ["gb1"]
+    },
+    "nodes": {
+      "V": {"cells": [[12, 1], [12, 2], [12, 3], [12, 4]], "direction": "down"},
+      "X": {"cells": [[16, 11], [15, 11], [14, 11]], "direction": "left"},
+      "U": {"cells": [[5, 16], [5, 15], [5, 14], [5, 13]], "direction": "up"},
+      "KB": {"cells": [[1, 14], [2, 14], [3, 14], [4, 14]], "direction": "right"},
+      "P": {"cells": [[7, 12], [8, 12], [9, 12]], "direction": "right"},
+      "KA": {"cells": [[7, 4], [7, 5], [7, 6], [7, 7], [7, 8]], "direction": "down"},
+      "X1": {"cells": [[14, 7], [14, 8], [14, 9], [14, 10]], "direction": "down"},
+      "V2": {"cells": [[8, 1], [9, 1], [10, 1], [11, 1]], "direction": "right"},
+      "U3": {"cells": [[1, 16], [1, 15], [2, 15], [3, 15], [4, 15]], "direction": "right"},
+      "V4": {"cells": [[11, 4], [10, 4], [10, 3], [10, 2]], "direction": "up"},
+      "U5": {"cells": [[4, 16], [3, 16], [2, 16]], "direction": "left"},
+      "X6": {"cells": [[15, 6], [15, 7], [15, 8], [15, 9], [15, 10]], "direction": "down"},
+      "U7": {"cells": [[2, 12], [2, 13], [3, 13], [4, 13]], "direction": "right"},
+      "V8": {"cells": [[8, 5], [9, 5], [9, 4], [9, 3], [9, 2]], "direction": "up"},
+      "X9": {"cells": [[9, 7], [9, 6], [10, 6], [11, 6]], "direction": "right"}
+    },
+    "width": 18,
+    "height": 18,
+    "titleRU": "Проверка связи",
+    "titleEN": "Follow the Signal",
+    "difficulty": "medium",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 250)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 251,
+    "count": 13,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "X": [],
+      "Y": [],
+      "Y1": ["Y"],
+      "X2": ["X"],
+      "Y3": ["Y1"],
+      "X4": ["X2"],
+      "Y5": ["Y"],
+      "Y6": ["Y5"],
+      "X7": ["X4"],
+      "X8": ["X4"],
+      "Y9": ["Y6"]
+    },
+    "gates": {
+      "ga1": ["KA", 8, 4]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["ga1"]
+    },
+    "nodes": {
+      "X": {"cells": [[5, 4], [6, 4], [7, 4]], "direction": "right"},
+      "Y": {"cells": [[8, 12], [8, 11], [8, 10]], "direction": "up"},
+      "P": {"cells": [[1, 4], [1, 5], [1, 6], [1, 7], [1, 8]], "direction": "down"},
+      "KA": {"cells": [[13, 8], [12, 8], [11, 8]], "direction": "left"},
+      "Y1": {"cells": [[5, 13], [5, 12], [6, 12], [7, 12]], "direction": "right"},
+      "X2": {"cells": [[6, 7], [5, 7], [5, 6], [5, 5]], "direction": "up"},
+      "Y3": {"cells": [[10, 13], [9, 13], [8, 13], [7, 13], [6, 13]], "direction": "left"},
+      "X4": {"cells": [[2, 5], [2, 6], [3, 6], [4, 6]], "direction": "right"},
+      "Y5": {"cells": [[11, 9], [11, 10], [10, 10], [9, 10]], "direction": "left"},
+      "Y6": {"cells": [[15, 8], [15, 9], [14, 9], [13, 9], [12, 9]], "direction": "left"},
+      "X7": {"cells": [[1, 1], [2, 1], [2, 2], [2, 3], [2, 4]], "direction": "down"},
+      "X8": {"cells": [[3, 1], [3, 2], [3, 3], [3, 4], [3, 5]], "direction": "down"},
+      "Y9": {"cells": [[14, 1], [15, 1], [15, 2], [15, 3]], "direction": "down"}
+    },
+    "width": 17,
+    "height": 15,
+    "titleRU": "Общий перекрёсток",
+    "titleEN": "Shared Crossing",
+    "difficulty": "hard",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 251)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 252,
+    "count": 9,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "Q": [],
+      "KB": ["Q"],
+      "X": [],
+      "X1": ["X"],
+      "X2": ["X1"],
+      "X3": ["X2"],
+      "X4": ["X1"]
+    },
+    "gates": {
+      "ga1": ["KA", 9, 3],
+      "gb1": ["KB", 9, 7]
+    },
+    "gatepaths": {
+      "X": ["ga1", "gb1"]
+    },
+    "nodes": {
+      "X": {"cells": [[9, 13], [9, 12], [9, 11], [9, 10], [9, 9]], "direction": "up"},
+      "P": {"cells": [[7, 9], [7, 8], [7, 7], [7, 6], [7, 5]], "direction": "up"},
+      "KA": {"cells": [[1, 6], [2, 6], [3, 6], [4, 6], [5, 6]], "direction": "right"},
+      "Q": {"cells": [[13, 1], [14, 1], [15, 1]], "direction": "right"},
+      "KB": {"cells": [[15, 13], [15, 12], [15, 11], [15, 10]], "direction": "up"},
+      "X1": {"cells": [[13, 11], [13, 10], [12, 10], [11, 10], [10, 10]], "direction": "left"},
+      "X2": {"cells": [[12, 14], [12, 13], [12, 12], [12, 11]], "direction": "up"},
+      "X3": {"cells": [[16, 13], [16, 14], [15, 14], [14, 14], [13, 14]], "direction": "left"},
+      "X4": {"cells": [[10, 13], [11, 13], [11, 12], [11, 11]], "direction": "up"}
+    },
+    "width": 18,
+    "height": 16,
+    "titleRU": "Двое ворот",
+    "titleEN": "Two Gates",
+    "difficulty": "hard",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 252)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 253,
+    "count": 16,
+    "deps": {
+      "P": [],
+      "Q": [],
+      "KA": ["P", "Q"],
+      "X": [],
+      "Y": [],
+      "X1": ["X"],
+      "Y2": ["Y"],
+      "X3": ["X1"],
+      "Y4": ["Y2"],
+      "X5": ["X"],
+      "X6": ["X5"],
+      "Y7": ["Y4"],
+      "X8": ["X6"],
+      "Y9": ["Y"],
+      "X10": ["X3"],
+      "Y11": ["Y9"]
+    },
+    "gates": {
+      "ga1": ["KA", 4, 6],
+      "ga2": ["KA", 11, 12]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["ga2"]
+    },
+    "nodes": {
+      "Y": {"cells": [[11, 2], [11, 3], [11, 4], [11, 5]], "direction": "down"},
+      "X": {"cells": [[4, 13], [4, 12], [4, 11]], "direction": "up"},
+      "P": {"cells": [[12, 5], [13, 5], [14, 5]], "direction": "right"},
+      "KA": {"cells": [[14, 9], [14, 8], [14, 7]], "direction": "up"},
+      "Q": {"cells": [[12, 3], [13, 3], [14, 3]], "direction": "right"},
+      "X1": {"cells": [[1, 12], [1, 11], [2, 11], [3, 11]], "direction": "right"},
+      "Y2": {"cells": [[7, 3], [7, 4], [8, 4], [9, 4], [10, 4]], "direction": "right"},
+      "X3": {"cells": [[2, 7], [1, 7], [1, 8], [1, 9], [1, 10]], "direction": "down"},
+      "Y4": {"cells": [[10, 9], [10, 8], [10, 7], [10, 6], [10, 5]], "direction": "up"},
+      "X5": {"cells": [[8, 12], [8, 13], [7, 13], [6, 13], [5, 13]], "direction": "left"},
+      "X6": {"cells": [[4, 16], [5, 16], [5, 15], [5, 14]], "direction": "up"},
+      "Y7": {"cells": [[6, 7], [6, 6], [7, 6], [8, 6], [9, 6]], "direction": "right"},
+      "X8": {"cells": [[8, 15], [8, 16], [7, 16], [6, 16]], "direction": "left"},
+      "Y9": {"cells": [[7, 1], [7, 2], [8, 2], [9, 2]], "direction": "right"},
+      "X10": {"cells": [[3, 10], [2, 10], [2, 9], [2, 8]], "direction": "up"},
+      "Y11": {"cells": [[13, 1], [12, 1], [11, 1]], "direction": "left"}
+    },
+    "width": 16,
+    "height": 18,
+    "titleRU": "Подготовить сигнал",
+    "titleEN": "Prepare the Signal",
+    "difficulty": "hard",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 253)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 254,
+    "count": 13,
+    "deps": {
+      "KA": [],
+      "U": [],
+      "P": [],
+      "KB": ["P"],
+      "X": ["U"],
+      "U1": ["U"],
+      "X2": ["X"],
+      "U3": ["U1"],
+      "X4": ["X2"],
+      "U5": ["U"],
+      "U6": ["U3"],
+      "X7": ["X2"],
+      "X8": ["X7"]
+    },
+    "gates": {
+      "ga1": ["KA", 5, 5],
+      "gb1": ["KB", 11, 9]
+    },
+    "gatepaths": {
+      "U": ["ga1"],
+      "X": ["gb1"]
+    },
+    "nodes": {
+      "X": {"cells": [[1, 9], [2, 9], [3, 9]], "direction": "right"},
+      "U": {"cells": [[5, 9], [5, 8], [5, 7]], "direction": "up"},
+      "P": {"cells": [[14, 5], [14, 4], [14, 3], [14, 2]], "direction": "up"},
+      "KB": {"cells": [[14, 16], [14, 15], [14, 14], [14, 13], [14, 12]], "direction": "up"},
+      "KA": {"cells": [[2, 1], [3, 1], [4, 1]], "direction": "right"},
+      "U1": {"cells": [[9, 6], [9, 7], [8, 7], [7, 7], [6, 7]], "direction": "left"},
+      "X2": {"cells": [[1, 14], [1, 13], [1, 12], [1, 11], [1, 10]], "direction": "up"},
+      "U3": {"cells": [[13, 5], [13, 6], [12, 6], [11, 6], [10, 6]], "direction": "left"},
+      "X4": {"cells": [[4, 11], [4, 12], [3, 12], [2, 12]], "direction": "left"},
+      "U5": {"cells": [[10, 8], [9, 8], [8, 8], [7, 8], [6, 8]], "direction": "left"},
+      "U6": {"cells": [[13, 3], [12, 3], [12, 4], [12, 5]], "direction": "down"},
+      "X7": {"cells": [[6, 13], [5, 13], [4, 13], [3, 13], [2, 13]], "direction": "left"},
+      "X8": {"cells": [[6, 10], [5, 10], [5, 11], [5, 12]], "direction": "down"}
+    },
+    "width": 16,
+    "height": 18,
+    "titleRU": "Переплетение",
+    "titleEN": "Interweaving",
+    "difficulty": "hard",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 254)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 255,
+    "count": 13,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "C": [],
+      "KB": ["C"],
+      "U": ["C"],
+      "X": [],
+      "Y": [],
+      "Y1": ["Y"],
+      "U2": ["U"],
+      "Y3": ["Y1"],
+      "Y4": ["Y3"],
+      "Y5": ["Y1"],
+      "Y6": ["Y5"]
+    },
+    "gates": {
+      "ga1": ["KA", 8, 3],
+      "gb1": ["KB", 4, 9],
+      "gb2": ["KB", 12, 10]
+    },
+    "gatepaths": {
+      "C": ["ga1"],
+      "X": ["gb1"],
+      "Y": ["gb2"]
+    },
+    "nodes": {
+      "X": {"cells": [[4, 3], [4, 4], [4, 5]], "direction": "down"},
+      "Y": {"cells": [[5, 10], [6, 10], [7, 10], [8, 10], [9, 10]], "direction": "right"},
+      "C": {"cells": [[8, 7], [8, 6], [8, 5], [8, 4]], "direction": "up"},
+      "KB": {"cells": [[14, 6], [13, 6], [12, 6], [11, 6]], "direction": "left"},
+      "U": {"cells": [[13, 7], [12, 7], [11, 7], [10, 7]], "direction": "left"},
+      "P": {"cells": [[1, 8], [2, 8], [3, 8]], "direction": "right"},
+      "KA": {"cells": [[2, 1], [2, 2], [2, 3], [2, 4], [2, 5]], "direction": "down"},
+      "Y1": {"cells": [[6, 14], [5, 14], [5, 13], [5, 12], [5, 11]], "direction": "up"},
+      "U2": {"cells": [[9, 2], [10, 2], [10, 3], [10, 4], [10, 5]], "direction": "down"},
+      "Y3": {"cells": [[9, 12], [9, 13], [8, 13], [7, 13], [6, 13]], "direction": "left"},
+      "Y4": {"cells": [[6, 11], [6, 12], [7, 12], [8, 12]], "direction": "right"},
+      "Y5": {"cells": [[9, 15], [9, 14], [8, 14], [7, 14]], "direction": "left"},
+      "Y6": {"cells": [[5, 15], [6, 15], [7, 15], [8, 15]], "direction": "right"}
+    },
+    "width": 16,
+    "height": 17,
+    "titleRU": "Сердце узла",
+    "titleEN": "Heart of the Junction",
+    "difficulty": "hard",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 255)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 256,
+    "count": 12,
+    "deps": {
+      "KA": [],
+      "KB": [],
+      "X": [],
+      "Y": [],
+      "U": ["X"],
+      "V": ["Y"],
+      "U1": ["U"],
+      "V2": ["V"],
+      "U3": ["U1"],
+      "V4": ["V"],
+      "V5": ["V4"],
+      "U6": ["U3"]
+    },
+    "gates": {
+      "ga1": ["KA", 1, 3],
+      "gb1": ["KB", 12, 3]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["gb1"]
+    },
+    "nodes": {
+      "KA": {"cells": [[3, 1], [2, 1], [1, 1]], "direction": "left"},
+      "KB": {"cells": [[10, 1], [11, 1], [12, 1]], "direction": "right"},
+      "X": {"cells": [[5, 3], [4, 3], [3, 3]], "direction": "left"},
+      "Y": {"cells": [[8, 3], [9, 3], [10, 3]], "direction": "right"},
+      "U": {"cells": [[4, 8], [4, 7], [4, 6]], "direction": "up"},
+      "V": {"cells": [[9, 8], [9, 7], [9, 6]], "direction": "up"},
+      "U1": {"cells": [[8, 5], [8, 6], [7, 6], [6, 6], [5, 6]], "direction": "left"},
+      "V2": {"cells": [[5, 7], [6, 7], [7, 7], [8, 7]], "direction": "right"},
+      "U3": {"cells": [[5, 4], [5, 5], [6, 5], [7, 5]], "direction": "right"},
+      "V4": {"cells": [[6, 9], [6, 8], [7, 8], [8, 8]], "direction": "right"},
+      "V5": {"cells": [[2, 9], [3, 9], [4, 9], [5, 9]], "direction": "right"},
+      "U6": {"cells": [[8, 4], [7, 4], [6, 4]], "direction": "left"}
+    },
+    "width": 14,
+    "height": 11,
+    "titleRU": "Два раскрытых крыла",
+    "titleEN": "Two Open Wings",
+    "difficulty": "easy",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 256)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 257,
+    "count": 13,
+    "deps": {
+      "KA": [],
+      "KB": ["P"],
+      "X": [],
+      "Y": [],
+      "U": ["X"],
+      "V": ["Y"],
+      "P": [],
+      "U1": ["U"],
+      "V2": ["V"],
+      "V3": ["V2"],
+      "U4": ["U"],
+      "V5": ["V3"],
+      "U6": ["U4"]
+    },
+    "gates": {
+      "ga1": ["KA", 2, 5],
+      "gb1": ["KB", 13, 5]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["gb1"]
+    },
+    "nodes": {
+      "KA": {"cells": [[3, 2], [2, 2], [1, 2]], "direction": "left"},
+      "KB": {"cells": [[12, 2], [13, 2], [14, 2]], "direction": "right"},
+      "X": {"cells": [[6, 5], [5, 5], [4, 5]], "direction": "left"},
+      "Y": {"cells": [[9, 5], [10, 5], [11, 5]], "direction": "right"},
+      "U": {"cells": [[5, 10], [5, 9], [5, 8]], "direction": "up"},
+      "V": {"cells": [[10, 10], [10, 9], [10, 8]], "direction": "up"},
+      "P": {"cells": [[15, 4], [15, 3], [15, 2], [15, 1]], "direction": "up"},
+      "U1": {"cells": [[9, 8], [9, 9], [8, 9], [7, 9], [6, 9]], "direction": "left"},
+      "V2": {"cells": [[6, 11], [6, 10], [7, 10], [8, 10], [9, 10]], "direction": "right"},
+      "V3": {"cells": [[10, 12], [10, 11], [9, 11], [8, 11], [7, 11]], "direction": "left"},
+      "U4": {"cells": [[8, 7], [8, 8], [7, 8], [6, 8]], "direction": "left"},
+      "V5": {"cells": [[15, 12], [14, 12], [13, 12], [12, 12], [11, 12]], "direction": "left"},
+      "U6": {"cells": [[1, 7], [2, 7], [3, 7], [4, 7]], "direction": "right"}
+    },
+    "width": 17,
+    "height": 14,
+    "titleRU": "Почти симметрия",
+    "titleEN": "Almost Symmetrical",
+    "difficulty": "medium",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 257)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 258,
+    "count": 14,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "U": [],
+      "V": [],
+      "KB": ["U"],
+      "X": [],
+      "Y": [],
+      "Z": ["V", "X"],
+      "Z1": ["Z"],
+      "U2": ["U"],
+      "Z3": ["Z1"],
+      "U4": ["U2"],
+      "Z5": ["Z1"],
+      "Z6": ["Z3"]
+    },
+    "gates": {
+      "ga1": ["KA", 6, 7],
+      "gb1": ["KB", 12, 9],
+      "gb2": ["KB", 12, 14]
+    },
+    "gatepaths": {
+      "U": ["ga1"],
+      "V": ["ga1"],
+      "X": ["gb1"],
+      "Y": ["gb2"]
+    },
+    "nodes": {
+      "V": {"cells": [[1, 7], [2, 7], [3, 7], [4, 7], [5, 7]], "direction": "right"},
+      "U": {"cells": [[6, 14], [6, 13], [6, 12], [6, 11]], "direction": "up"},
+      "Y": {"cells": [[7, 14], [8, 14], [9, 14], [10, 14]], "direction": "right"},
+      "X": {"cells": [[1, 9], [2, 9], [3, 9], [4, 9], [5, 9]], "direction": "right"},
+      "KB": {"cells": [[11, 11], [10, 11], [9, 11], [8, 11]], "direction": "left"},
+      "Z": {"cells": [[4, 1], [4, 2], [4, 3], [4, 4]], "direction": "down"},
+      "P": {"cells": [[8, 15], [7, 15], [6, 15]], "direction": "left"},
+      "KA": {"cells": [[12, 15], [11, 15], [10, 15]], "direction": "left"},
+      "Z1": {"cells": [[1, 2], [1, 1], [2, 1], [3, 1]], "direction": "right"},
+      "U2": {"cells": [[10, 12], [10, 13], [9, 13], [8, 13], [7, 13]], "direction": "left"},
+      "Z3": {"cells": [[2, 6], [2, 5], [2, 4], [2, 3], [2, 2]], "direction": "up"},
+      "U4": {"cells": [[7, 12], [8, 12], [9, 12]], "direction": "right"},
+      "Z5": {"cells": [[3, 5], [3, 4], [3, 3], [3, 2]], "direction": "up"},
+      "Z6": {"cells": [[10, 5], [10, 6], [9, 6], [8, 6], [7, 6]], "direction": "left"}
+    },
+    "width": 14,
+    "height": 17,
+    "titleRU": "Эстафета через перекрёсток",
+    "titleEN": "Relay at the Crossing",
+    "difficulty": "hard",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 258)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 259,
+    "count": 16,
+    "deps": {
+      "P": [],
+      "KA": ["P"],
+      "Q": [],
+      "KB": ["Q"],
+      "X": [],
+      "Y": [],
+      "Z": [],
+      "Y1": ["Y"],
+      "X2": ["X"],
+      "Z3": ["Z"],
+      "X4": ["X2"],
+      "Z5": ["Z"],
+      "Z6": ["Z5"],
+      "X7": ["X4"],
+      "Z8": ["Z6"],
+      "Z9": ["Z6"]
+    },
+    "gates": {
+      "ga1": ["KA", 2, 5],
+      "gb1": ["KB", 11, 5],
+      "ga2": ["KA", 7, 3],
+      "gb2": ["KB", 7, 8]
+    },
+    "gatepaths": {
+      "X": ["ga1"],
+      "Y": ["gb1"],
+      "Z": ["ga2", "gb2"]
+    },
+    "nodes": {
+      "Z": {"cells": [[7, 14], [7, 13], [7, 12], [7, 11], [7, 10]], "direction": "up"},
+      "X": {"cells": [[2, 9], [2, 8], [2, 7], [2, 6]], "direction": "up"},
+      "Y": {"cells": [[11, 14], [11, 13], [11, 12], [11, 11], [11, 10]], "direction": "up"},
+      "P": {"cells": [[10, 4], [10, 3], [10, 2], [10, 1]], "direction": "up"},
+      "KA": {"cells": [[4, 4], [5, 4], [6, 4]], "direction": "right"},
+      "Q": {"cells": [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5]], "direction": "down"},
+      "KB": {"cells": [[6, 2], [5, 2], [4, 2]], "direction": "left"},
+      "Y1": {"cells": [[8, 11], [8, 10], [9, 10], [10, 10]], "direction": "right"},
+      "X2": {"cells": [[6, 6], [6, 7], [5, 7], [4, 7], [3, 7]], "direction": "left"},
+      "Z3": {"cells": [[10, 12], [10, 13], [9, 13], [8, 13]], "direction": "left"},
+      "X4": {"cells": [[4, 11], [3, 11], [3, 10], [3, 9], [3, 8]], "direction": "up"},
+      "Z5": {"cells": [[10, 15], [10, 14], [9, 14], [8, 14]], "direction": "left"},
+      "Z6": {"cells": [[14, 15], [13, 15], [12, 15], [11, 15]], "direction": "left"},
+      "X7": {"cells": [[6, 11], [6, 10], [5, 10], [4, 10]], "direction": "left"},
+      "Z8": {"cells": [[12, 11], [12, 12], [12, 13], [12, 14]], "direction": "down"},
+      "Z9": {"cells": [[14, 12], [13, 12], [13, 13], [13, 14]], "direction": "down"}
+    },
+    "width": 16,
+    "height": 17,
+    "titleRU": "Три участка",
+    "titleEN": "Three Areas",
+    "difficulty": "expert",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 259)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  },
+  {
+    "index": 260,
+    "count": 15,
+    "deps": {
+      "P": [],
+      "Q": [],
+      "KA": ["P", "Q"],
+      "C": [],
+      "U": [],
+      "KB": ["C"],
+      "X": [],
+      "Y": [],
+      "T": ["U", "X"],
+      "X1": ["X"],
+      "T2": ["T"],
+      "T3": ["T"],
+      "X4": ["X1"],
+      "Y5": ["Y"],
+      "X6": ["X1"]
+    },
+    "gates": {
+      "ga1": ["KA", 6, 2],
+      "ga2": ["KA", 13, 2],
+      "gb1": ["KB", 6, 9],
+      "gb2": ["KB", 13, 9]
+    },
+    "gatepaths": {
+      "C": ["ga1"],
+      "U": ["ga2"],
+      "X": ["gb1"],
+      "Y": ["gb2"]
+    },
+    "nodes": {
+      "C": {"cells": [[6, 5], [6, 4], [6, 3]], "direction": "up"},
+      "U": {"cells": [[8, 2], [9, 2], [10, 2]], "direction": "right"},
+      "X": {"cells": [[11, 9], [10, 9], [9, 9]], "direction": "left"},
+      "Y": {"cells": [[13, 3], [13, 4], [13, 5]], "direction": "down"},
+      "T": {"cells": [[10, 14], [10, 13], [10, 12], [10, 11]], "direction": "up"},
+      "KB": {"cells": [[9, 5], [8, 5], [7, 5]], "direction": "left"},
+      "KA": {"cells": [[3, 1], [3, 2], [3, 3], [3, 4]], "direction": "down"},
+      "P": {"cells": [[1, 10], [2, 10], [3, 10], [4, 10], [5, 10]], "direction": "right"},
+      "Q": {"cells": [[5, 11], [4, 11], [3, 11]], "direction": "left"},
+      "X1": {"cells": [[11, 5], [11, 6], [11, 7], [11, 8]], "direction": "down"},
+      "T2": {"cells": [[6, 12], [7, 12], [8, 12], [9, 12]], "direction": "right"},
+      "T3": {"cells": [[5, 14], [6, 14], [7, 14], [8, 14], [9, 14]], "direction": "right"},
+      "X4": {"cells": [[7, 8], [7, 7], [8, 7], [9, 7]], "direction": "right"},
+      "Y5": {"cells": [[7, 3], [7, 4], [8, 4], [9, 4]], "direction": "right"},
+      "X6": {"cells": [[6, 7], [6, 6], [7, 6], [8, 6], [9, 6]], "direction": "right"}
+    },
+    "width": 15,
+    "height": 16,
+    "titleRU": "Сигнал в центре",
+    "titleEN": "Signal at the Centre",
+    "difficulty": "expert",
+    "designBrief": "Research/2026-10-16-game-development/07-chapter-08-level-briefs.md (level 260)",
+    "purpose": "Authored core dependency graph; short ordinary continuations only. Coordinates are fixed, never randomized at runtime."
+  }
+]

@@ -133,6 +133,58 @@ final class GameViewModel: GameSceneDelegate {
     private(set) var hasUsedRevive = false
     private(set) var hadCommercialInterruption = false
     private(set) var accessibilityBoardRevision: UInt = 0
+    private(set) var gateMessage: String?
+    private var gateLessonDismissed = false
+
+    var hasKeyGates: Bool { level.rulesVersion == 2 && level.obstacles.contains { $0.kind == .keyGate } }
+
+    var isGateTraining: Bool {
+        hasKeyGates && level.id == "story_241" && mode == .story(index: 241) && gameMode == .classic
+    }
+
+    var gateGuidance: String? {
+        guard hasKeyGates else { return nil }
+        if let gateMessage { return gateMessage }
+        guard !gateLessonDismissed, case .story = mode,
+              isGateTraining || !progressStore.progress.completedLevels.contains(level.index) else { return nil }
+        if isGateTraining {
+            let board = scene?.board ?? level.makeBoard()
+            return board.obstacles.contains(where: { $0.kind == .keyGate && board.isKeyGateOpen($0) })
+                ? String(localized: "The gate is open. Clear the arrows yourself.", table: "Gates")
+                : String(localized: "Clear the key arrow to open every gate with the same symbol.", table: "Gates")
+        }
+        switch level.index {
+        case 242: return String(localized: "Your turn. Inspect gates for free; blocked moves cost a heart.", table: "Gates")
+        case 244: return String(localized: "One key opens every gate with its symbol.", table: "Gates")
+        case 247: return String(localized: "Match the symbols: each key opens its own gates.", table: "Gates")
+        case 251: return String(localized: "One gate can block more than one arrow.", table: "Gates")
+        case 252: return String(localized: "Two gates on one path need both keys.", table: "Gates")
+        default: return nil
+        }
+    }
+
+    func dismissGateGuidance() {
+        gateMessage = nil
+        gateLessonDismissed = true
+        scene?.clearKeyGateConnections()
+    }
+
+    func showGateRules() {
+        gateMessage = String(localized: "Clear the key arrow to open every gate with the same symbol.", table: "Gates")
+        announceForVoiceOver(gateMessage ?? "")
+    }
+
+    func presentGateTrainingFocus() {
+        guard isGateTraining, movesMade == 0, let scene,
+              let key = scene.board.pieces.first(where: { !scene.board.keyGates(forKeyID: $0.id).isEmpty }) else { return }
+        scene.showKeyGateConnections(forKeyID: key.id)
+    }
+
+    func sceneDidInspectKeyGate(_ obstacleID: String) {
+        guard isSessionActive, !inputLocked, !isCompleted, !isFailed,
+              let scene, let gate = scene.board.obstacles.first(where: { $0.id == obstacleID && $0.kind == .keyGate }) else { return }
+        gateMessage = scene.keyGateAccessibilityValue(for: gate)
+    }
 
     weak var scene: GameScene?
     let economyConfig: EconomyConfig
@@ -285,9 +337,11 @@ final class GameViewModel: GameSceneDelegate {
         hasUsedRevive = false
         hadCommercialInterruption = false
         moveHistory.removeAll()
+        gateMessage = nil
         scene?.resetBoard(level.makeBoard())
         scene?.clearAllPreviews()
         inputLocked = false
+        presentGateTrainingFocus()
         announceForVoiceOver(String(localized: "Level restarted. \(level.pieces.count) arrows."))
     }
 
@@ -356,6 +410,7 @@ final class GameViewModel: GameSceneDelegate {
         b.append(last)
         scene?.setBoard(b)
         scene?.clearAllPreviews()
+        gateMessage = nil
         triggerHaptic(.light)
         announceForVoiceOver(String(localized: "Move restored. \(b.pieces.count) arrows remaining."))
     }
@@ -375,6 +430,11 @@ final class GameViewModel: GameSceneDelegate {
     }
 
     func sceneDidLongPressPiece(_ pieceId: String) {
+        if isSessionActive, !inputLocked, !isCompleted, !isFailed,
+           let scene, !scene.board.keyGates(forKeyID: pieceId).isEmpty {
+            scene.showKeyGateConnections(forKeyID: pieceId)
+            gateMessage = scene.keyGateKeyAccessibilityValue(forKeyID: pieceId)
+        }
         guard isSessionActive,
               gameMode.allowsPathPreview,
               settingsStore.settings.previewPathEnabled,
@@ -410,6 +470,9 @@ final class GameViewModel: GameSceneDelegate {
 
     private func successfulMove(piece: ArrowPiece) {
         guard isSessionActive else { return }
+        gateMessage = nil
+        scene?.clearKeyGateConnections()
+        let openedGateCount = scene?.board.keyGates(forKeyID: piece.id).count ?? 0
         let generation = sessionGeneration
         inputLocked = true
         moveHistory.append(piece)
@@ -424,6 +487,10 @@ final class GameViewModel: GameSceneDelegate {
 
         scene?.performFlyOut(pieceId: piece.id) { [weak self] in
             guard let self, self.isCurrentSession(generation) else { return }
+            if openedGateCount > 0 {
+                self.gateMessage = String(localized: "Gates opened: \(openedGateCount)", table: "Gates")
+                self.announceForVoiceOver(self.gateMessage ?? "")
+            }
             let chainContinues = self.applyKindSideEffectsAfterFlyOut(piece: piece)
             if !chainContinues {
                 self.inputLocked = false
@@ -439,6 +506,23 @@ final class GameViewModel: GameSceneDelegate {
         guard isSessionActive else { return }
         let generation = sessionGeneration
         inputLocked = true
+        if hasKeyGates, let scene {
+            if let cell = MoveValidator.firstCollision(for: piece, board: scene.board),
+               let gate = scene.board.obstacle(at: cell), gate.kind == .keyGate {
+                gateMessage = scene.keyGateAccessibilityValue(for: gate)
+            } else {
+                gateMessage = String(localized: "Clear the blocking arrow first.", table: "Gates")
+            }
+        }
+        if isGateTraining {
+            announceForVoiceOver(gateMessage ?? "")
+            scene?.performBlocked(pieceId: piece.id) { [weak self] in
+                guard let self, self.isCurrentSession(generation) else { return }
+                self.inputLocked = false
+                self.highlightGateBlocker(for: piece)
+            }
+            return
+        }
         mistakesCount += 1
         combo = 0
         triggerHaptic(.warning)
@@ -475,7 +559,16 @@ final class GameViewModel: GameSceneDelegate {
             if self.usesLives && self.lives == 0 {
                 self.declareFailure(reason: .outOfLives)
             }
+            self.highlightGateBlocker(for: piece)
         }
+    }
+
+    private func highlightGateBlocker(for piece: ArrowPiece) {
+        guard hasKeyGates, let scene,
+              let cell = MoveValidator.firstCollision(for: piece, board: scene.board),
+              let gate = scene.board.obstacle(at: cell), gate.kind == .keyGate,
+              let keyID = gate.parameter else { return }
+        scene.showKeyGateConnections(forKeyID: keyID)
     }
 
     private func applyKindSideEffectsBeforeFlyOut(piece: ArrowPiece) {

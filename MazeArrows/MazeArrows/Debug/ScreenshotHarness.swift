@@ -120,7 +120,7 @@ struct ScreenshotHarnessView: View {
             }
 
         case .mechanic:
-            catalogGame(levelIndex: 68, combo: nil, clearedMoveCount: 0)
+            catalogGame(levelIndex: Self.requestedLevelIndex ?? 68, combo: nil, clearedMoveCount: 0)
 
         case .combo:
             catalogGame(levelIndex: 82, combo: 5, clearedMoveCount: 10)
@@ -172,10 +172,24 @@ struct ScreenshotHarnessView: View {
         }
     }
 
+    /// QA can inspect an actual bundled continuation level without unlocking
+    /// or rewriting the user's campaign. The harness uses its own defaults.
+    private static var requestedLevelIndex: Int? {
+        let arguments = ProcessInfo.processInfo.arguments
+        guard let flag = arguments.firstIndex(of: "--screenshot-level"),
+              arguments.indices.contains(flag + 1),
+              let index = Int(arguments[flag + 1]), (241...260).contains(index) else { return nil }
+        return index
+    }
+
     private static func level(
         _ source: Level,
         afterRemovingFirstSolvedMoves count: Int
     ) -> Level {
+        // Gate opening depends on the original key set. A reduced Level is
+        // not a resumable Board and must not pretend its removed keys never
+        // existed. Keep new gate fixtures intact until captures replay moves.
+        guard source.rulesVersion == 1 else { return source }
         guard count > 0,
               let solution = LevelSolver.solve(board: source.makeBoard())
         else { return source }
@@ -194,7 +208,8 @@ struct ScreenshotHarnessView: View {
             goal: source.goal,
             threeStarMaxMistakes: source.threeStarMaxMistakes,
             twoStarMaxMistakes: source.twoStarMaxMistakes,
-            name: source.name
+            name: source.name,
+            rulesVersion: source.rulesVersion
         )
     }
 

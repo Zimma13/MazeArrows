@@ -424,7 +424,7 @@ final class ProgressStore {
                 }
             }
         }
-        if Chapter.all.allSatisfy({ $0.isComplete(progress: progress) }) {
+        if Chapter.originalCampaignRange.allSatisfy({ progress.completedLevels.contains($0) }) {
             unlockAchievement(.allLevelsComplete)
         }
         // Only count story levels (positive index) toward "complete N levels" quests

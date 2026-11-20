@@ -44,9 +44,13 @@ actor WeeklyChallengeProvider {
                 height: level.height,
                 lives: level.lives,
                 pieces: level.pieces,
+                piecePalette: level.piecePalette,
+                obstacles: level.obstacles,
+                goal: level.goal,
                 threeStarMaxMistakes: 0,
                 twoStarMaxMistakes: 1,
-                name: "Weekly · \(week)"
+                name: "Weekly · \(week)",
+                rulesVersion: level.rulesVersion
             )
             cached = (week, weekly)
             return weekly

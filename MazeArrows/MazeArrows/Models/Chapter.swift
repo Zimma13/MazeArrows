@@ -25,6 +25,7 @@ struct Chapter: Identifiable, Hashable, Sendable {
         case 5: return String(localized: "The Glacier")
         case 6: return String(localized: "The Summit")
         case 7: return String(localized: "The Void")
+        case 8: return String(localized: "Signal Gates", table: "Gates")
         default: return String(localized: "Chapter \(id)")
         }
     }
@@ -65,5 +66,9 @@ struct Chapter: Identifiable, Hashable, Sendable {
         Chapter(id: 5, difficulty: .hard,   levelRange: 131...160, icon: "snowflake"),
         Chapter(id: 6, difficulty: .hard,   levelRange: 161...200, icon: "crown.fill"),
         Chapter(id: 7, difficulty: .expert, levelRange: 201...240, icon: "sparkles"),
+        Chapter(id: 8, difficulty: .expert, levelRange: 241...260, icon: "door.left.hand.open"),
     ]
+
+    /// Historical achievement scope; adding chapters must never move its goal.
+    static let originalCampaignRange = 1...240
 }

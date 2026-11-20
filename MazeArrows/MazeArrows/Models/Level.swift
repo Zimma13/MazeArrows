@@ -15,6 +15,9 @@ nonisolated struct Level: Identifiable, Codable, Hashable, Sendable {
     let width: Int
     let height: Int
     let lives: Int
+    /// Absent in the released catalog, whose decoding and rules remain v1.
+    /// Version 2 opts into explicit key-gate content and strict decoding.
+    let rulesVersion: Int
     let pieces: [ArrowPiece]
     /// Optional level-local colors. Photo levels use this to preserve source
     /// RGB values; an empty array falls back to the app's standard palette.
@@ -43,7 +46,8 @@ nonisolated struct Level: Identifiable, Codable, Hashable, Sendable {
         goal: LevelGoal = .clearAll,
         threeStarMaxMistakes: Int? = nil,
         twoStarMaxMistakes: Int? = nil,
-        name: String? = nil
+        name: String? = nil,
+        rulesVersion: Int = 1
     ) {
         self.id = id
         self.index = index
@@ -51,6 +55,7 @@ nonisolated struct Level: Identifiable, Codable, Hashable, Sendable {
         self.width = width
         self.height = height
         self.lives = lives
+        self.rulesVersion = rulesVersion
         self.pieces = pieces
         self.piecePalette = piecePalette
         self.obstacles = obstacles
@@ -61,26 +66,46 @@ nonisolated struct Level: Identifiable, Codable, Hashable, Sendable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, index, difficulty, width, height, lives, pieces, piecePalette
+        case id, index, difficulty, width, height, lives, rulesVersion, pieces, piecePalette
         case obstacles, goal
         case threeStarMaxMistakes, twoStarMaxMistakes, name
     }
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        rulesVersion = c.contains(.rulesVersion) ? try c.decode(Int.self, forKey: .rulesVersion) : 1
+        guard rulesVersion == 1 || rulesVersion == 2 else {
+            throw DecodingError.dataCorruptedError(
+                forKey: .rulesVersion, in: c,
+                debugDescription: "Unsupported level rules version \(rulesVersion)"
+            )
+        }
         id = try c.decode(String.self, forKey: .id)
         index = try c.decode(Int.self, forKey: .index)
         difficulty = try c.decode(Difficulty.self, forKey: .difficulty)
         width = try c.decode(Int.self, forKey: .width)
         height = try c.decode(Int.self, forKey: .height)
         lives = try c.decode(Int.self, forKey: .lives)
-        pieces = try c.decode([ArrowPiece].self, forKey: .pieces)
-        piecePalette = (try? c.decode([PieceGroupPaletteColor].self, forKey: .piecePalette)) ?? []
-        obstacles = (try? c.decode([Obstacle].self, forKey: .obstacles)) ?? []
-        goal = (try? c.decode(LevelGoal.self, forKey: .goal)) ?? .clearAll
-        threeStarMaxMistakes = try? c.decode(Int.self, forKey: .threeStarMaxMistakes)
-        twoStarMaxMistakes = try? c.decode(Int.self, forKey: .twoStarMaxMistakes)
-        name = try? c.decode(String.self, forKey: .name)
+        if rulesVersion == 2 {
+            // Legacy model decoders deliberately tolerate unknown optional
+            // fields. Do not let that fallback erase a new gate or turn an
+            // unknown key kind into an ordinary arrow in versioned content.
+            pieces = try c.decode([StrictPiece].self, forKey: .pieces).map(\.value)
+            piecePalette = try c.decodeIfPresent([PieceGroupPaletteColor].self, forKey: .piecePalette) ?? []
+            obstacles = try c.decode([StrictObstacle].self, forKey: .obstacles).map(\.value)
+            goal = try c.decodeIfPresent(StrictGoal.self, forKey: .goal)?.value ?? .clearAll
+            threeStarMaxMistakes = try c.decodeIfPresent(Int.self, forKey: .threeStarMaxMistakes)
+            twoStarMaxMistakes = try c.decodeIfPresent(Int.self, forKey: .twoStarMaxMistakes)
+            name = try c.decodeIfPresent(String.self, forKey: .name)
+        } else {
+            pieces = try c.decode([ArrowPiece].self, forKey: .pieces)
+            piecePalette = (try? c.decode([PieceGroupPaletteColor].self, forKey: .piecePalette)) ?? []
+            obstacles = (try? c.decode([Obstacle].self, forKey: .obstacles)) ?? []
+            goal = (try? c.decode(LevelGoal.self, forKey: .goal)) ?? .clearAll
+            threeStarMaxMistakes = try? c.decode(Int.self, forKey: .threeStarMaxMistakes)
+            twoStarMaxMistakes = try? c.decode(Int.self, forKey: .twoStarMaxMistakes)
+            name = try? c.decode(String.self, forKey: .name)
+        }
     }
 
     func makeBoard() -> Board {
@@ -94,5 +119,65 @@ nonisolated struct Level: Identifiable, Codable, Hashable, Sendable {
         if mistakes <= perfect { return 3 }
         if mistakes <= two { return 2 }
         return 1
+    }
+
+    private struct StrictPiece: Decodable {
+        let value: ArrowPiece
+
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: ArrowPiece.CodingKeys.self)
+            value = ArrowPiece(
+                id: try c.decode(String.self, forKey: .id),
+                cells: try c.decode([GridPoint].self, forKey: .cells),
+                direction: try c.decode(Direction.self, forKey: .direction),
+                kind: try c.decode(PieceKind.self, forKey: .kind),
+                colorGroup: try c.decodeIfPresent(Int.self, forKey: .colorGroup),
+                secondaryDirection: try c.decodeIfPresent(Direction.self, forKey: .secondaryDirection),
+                frozenUnlockNeighbors: try c.decodeIfPresent(Int.self, forKey: .frozenUnlockNeighbors),
+                chainedPieceId: try c.decodeIfPresent(String.self, forKey: .chainedPieceId),
+                crackLevel: try c.decodeIfPresent(Int.self, forKey: .crackLevel) ?? 0
+            )
+        }
+    }
+
+    private struct StrictObstacle: Decodable {
+        let value: Obstacle
+
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: Obstacle.CodingKeys.self)
+            value = Obstacle(
+                id: try c.decode(String.self, forKey: .id),
+                kind: try c.decode(ObstacleKind.self, forKey: .kind),
+                cell: try c.decode(GridPoint.self, forKey: .cell),
+                parameter: try c.decodeIfPresent(String.self, forKey: .parameter),
+                colorGroup: try c.decodeIfPresent(Int.self, forKey: .colorGroup)
+            )
+            if value.kind == .keyGate,
+               value.parameter?.isEmpty != false || value.colorGroup == nil {
+                throw DecodingError.dataCorrupted(.init(
+                    codingPath: decoder.codingPath,
+                    debugDescription: "A key gate requires an explicit key id and symbol group"
+                ))
+            }
+        }
+    }
+
+    private struct StrictGoal: Decodable {
+        let value: LevelGoal
+
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: LevelGoal.CodingKeys.self)
+            let kind = try c.decode(String.self, forKey: .kind)
+            let supported = [
+                "clearAll", "clearColorGroup", "clearWithoutMistakes", "keysBeforeLocks",
+                "freePiece", "clearInSeconds", "noHints"
+            ]
+            guard supported.contains(kind) else {
+                throw DecodingError.dataCorruptedError(
+                    forKey: .kind, in: c, debugDescription: "Unknown level goal \(kind)"
+                )
+            }
+            value = try LevelGoal(from: decoder)
+        }
     }
 }

@@ -14,6 +14,7 @@ nonisolated enum LevelLoaderError: Error, CustomStringConvertible, Sendable {
     case resourceReadFailed(String)
     case decodingFailed(String)
     case emptyCatalog
+    case invalidContinuation(String)
 
     var description: String {
         switch self {
@@ -25,6 +26,8 @@ nonisolated enum LevelLoaderError: Error, CustomStringConvertible, Sendable {
             return "Decoding failed: \(message)"
         case .emptyCatalog:
             return "Catalog contains no valid levels"
+        case .invalidContinuation(let message):
+            return "Invalid campaign continuation: \(message)"
         }
     }
 }
@@ -42,24 +45,9 @@ actor LevelLoader {
         if let cache { return cache }
         try Task.checkCancellation()
 
-        guard let url = Bundle.main.url(forResource: "levels", withExtension: "json") else {
-            throw LevelLoaderError.bundleResourceMissing("levels.json")
-        }
-
-        let data: Data
-        do {
-            data = try Data(contentsOf: url, options: [.mappedIfSafe])
-        } catch {
-            throw LevelLoaderError.resourceReadFailed(String(describing: error))
-        }
-        try Task.checkCancellation()
-
-        let decoded: [Level]
-        do {
-            decoded = try JSONDecoder().decode([Level].self, from: data)
-        } catch {
-            throw LevelLoaderError.decodingFailed(String(describing: error))
-        }
+        let legacyData = try Self.readResource("levels")
+        let continuationData = try Self.readResource("levels-v2")
+        let decoded = try Self.decodeCatalog(legacyData: legacyData, continuationData: continuationData)
         try Task.checkCancellation()
 
         // Bundled levels are solver-validated by the content pipeline and test
@@ -85,6 +73,44 @@ actor LevelLoader {
         try Task.checkCancellation()
         cache = valid
         return valid
+    }
+
+    private static func readResource(_ name: String) throws -> Data {
+        guard let url = Bundle.main.url(forResource: name, withExtension: "json") else {
+            throw LevelLoaderError.bundleResourceMissing("\(name).json")
+        }
+        do {
+            return try Data(contentsOf: url, options: [.mappedIfSafe])
+        } catch {
+            throw LevelLoaderError.resourceReadFailed(String(describing: error))
+        }
+    }
+
+    /// The shipped original pack is immutable. A malformed continuation must
+    /// fail explicitly rather than silently removing gates or creating holes.
+    static func decodeCatalog(legacyData: Data, continuationData: Data) throws -> [Level] {
+        let legacy: [Level]
+        let continuation: [Level]
+        do {
+            legacy = try JSONDecoder().decode([Level].self, from: legacyData)
+            continuation = try JSONDecoder().decode([Level].self, from: continuationData)
+        } catch {
+            throw LevelLoaderError.decodingFailed(String(describing: error))
+        }
+        guard continuation.map(\.index).sorted() == Array(241...260),
+              continuation.allSatisfy({ $0.id == "story_\($0.index)" && $0.rulesVersion == 2 }),
+              Set(legacy.map(\.id)).isDisjoint(with: Set(continuation.map(\.id))),
+              Set(legacy.map(\.index)).isDisjoint(with: Set(continuation.map(\.index))) else {
+            throw LevelLoaderError.invalidContinuation("Expected unique story_241…story_260 with rules version 2")
+        }
+        for level in continuation {
+            try Task.checkCancellation()
+            if let error = LevelValidator.validateLevel(level, requireSolvable: false) {
+                if case .cancelled = error { throw CancellationError() }
+                throw LevelLoaderError.invalidContinuation("\(level.id): \(error.description)")
+            }
+        }
+        return legacy + continuation
     }
 }
 

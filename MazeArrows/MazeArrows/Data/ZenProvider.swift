@@ -44,7 +44,11 @@ actor ZenProvider {
                 height: generated.height,
                 lives: generated.lives,
                 pieces: generated.pieces,
-                name: "Zen · \(index + 1)"
+                piecePalette: generated.piecePalette,
+                obstacles: generated.obstacles,
+                goal: generated.goal,
+                name: "Zen · \(index + 1)",
+                rulesVersion: generated.rulesVersion
             )
             cache[key] = zen
             return zen

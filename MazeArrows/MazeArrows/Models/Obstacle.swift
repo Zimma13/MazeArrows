@@ -17,6 +17,9 @@ nonisolated enum ObstacleKind: String, Codable, Sendable {
     case wall
     /// Pass-only-with-matching-direction (or color group) — used as a one-way.
     case gate
+    /// Closed until the explicitly linked key leaves the board. Unlike `gate`,
+    /// this never filters the moving arrow's direction or color.
+    case keyGate
     /// Pair of portals: piece entering one tile exits from the other (same id pair).
     case portal
     /// Piece passing onto ice slides one extra cell along its direction.
@@ -33,10 +36,12 @@ nonisolated struct Obstacle: Identifiable, Codable, Hashable, Sendable {
     let kind: ObstacleKind
     let cell: GridPoint
     /// For gates: which direction(s) the gate lets through.
+    /// For key gates: the exact id of the `.lockedKey` that opens the passage.
     /// For portals: the matching pair id (string).
     /// For others: nil.
     let parameter: String?
     /// For gates: the color group restriction. nil = any.
+    /// For key gates: a visual symbol (1 = circle, 2 = diamond), not a filter.
     let colorGroup: Int?
 
     init(

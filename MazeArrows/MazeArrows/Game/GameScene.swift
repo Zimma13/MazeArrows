@@ -23,10 +23,13 @@ protocol GameSceneDelegate: AnyObject {
     func sceneDidEndLongPress()
     /// User swiped a `.double`-kind piece. Direction is the swipe direction.
     func sceneDidSwipePiece(_ pieceId: String, direction: Direction)
+    /// Inspecting a gate is free field information, never an attempted move.
+    func sceneDidInspectKeyGate(_ obstacleID: String)
 }
 
 extension GameSceneDelegate {
     func sceneDidSwipePiece(_ pieceId: String, direction: Direction) {}
+    func sceneDidInspectKeyGate(_ obstacleID: String) {}
 }
 
 final class GameScene: SKScene {
@@ -156,6 +159,7 @@ final class GameScene: SKScene {
     /// mechanic screenshot while leaving the board and move rules untouched.
     private func applyScreenshotCaptureStateIfNeeded() {
         guard ScreenshotCaptureConfiguration.current?.scene == .mechanic,
+              !board.obstacles.contains(where: { $0.kind == .keyGate }),
               let piece = LevelSolver.nextHintPiece(board: board),
               let node = nodes[piece.id]
         else { return }
@@ -213,12 +217,7 @@ final class GameScene: SKScene {
         clearRenderedNodes(completingPendingOperations: completingPendingOperations)
         drawBoardBackground()
         for obstacle in board.obstacles {
-            let node = ObstacleNode(
-                obstacle: obstacle,
-                geometry: geometry,
-                theme: theme,
-                reduceMotion: reduceMotion
-            )
+            let node = makeNode(for: obstacle)
             obstacleLayer.addChild(node)
             obstacleNodes[obstacle.id] = node
         }
@@ -310,6 +309,12 @@ final class GameScene: SKScene {
     }
 
     private func makeNode(for piece: ArrowPiece) -> ArrowPieceNode {
+        let gateGroup = piece.kind == .lockedKey
+            ? board.keyGates(forKeyID: piece.id).first?.colorGroup
+            : nil
+        let gateColor: UIColor? = gateGroup.map {
+            $0 == 2 ? theme.accent2.uiColor : theme.accent.uiColor
+        }
         let node = ArrowPieceNode(
             piece: piece,
             geometry: geometry,
@@ -325,10 +330,28 @@ final class GameScene: SKScene {
             ),
             useGlow: theme.pieceGlow,
             showsOutline: showsArrowOutlines,
-            reduceMotion: reduceMotion
+            reduceMotion: reduceMotion,
+            keyGateGroup: gateGroup,
+            keyGateColor: gateColor
         )
         node.setCameraRenderScale(arrowRenderScale(for: cameraNode.xScale))
         return node
+    }
+
+    private func makeNode(for obstacle: Obstacle) -> ObstacleNode {
+        ObstacleNode(
+            obstacle: obstacle,
+            geometry: geometry,
+            theme: theme,
+            reduceMotion: reduceMotion,
+            isKeyGateOpen: board.isKeyGateOpen(obstacle)
+        )
+    }
+
+    private func refreshKeyGateStates(animated: Bool = false) {
+        for obstacle in board.obstacles where obstacle.kind == .keyGate {
+            obstacleNodes[obstacle.id]?.setKeyGateOpen(board.isKeyGateOpen(obstacle), animated: animated)
+        }
     }
 
     /// Applies a board mutation without rebuilding the unchanged SpriteKit
@@ -365,15 +388,13 @@ final class GameScene: SKScene {
 
         for obstacle in newBoard.obstacles {
             if let node = obstacleNodes[obstacle.id], node.obstacle == obstacle {
+                // Identity is unchanged when its key leaves or returns on
+                // Undo. Gate state must still be derived from the new board.
+                node.setKeyGateOpen(newBoard.isKeyGateOpen(obstacle))
                 continue
             }
             removeRenderedObstacle(id: obstacle.id)
-            let node = ObstacleNode(
-                obstacle: obstacle,
-                geometry: geometry,
-                theme: theme,
-                reduceMotion: reduceMotion
-            )
+            let node = makeNode(for: obstacle)
             obstacleLayer.addChild(node)
             obstacleNodes[obstacle.id] = node
         }
@@ -415,6 +436,7 @@ final class GameScene: SKScene {
     /// Incremental model update used by Undo and gameplay side effects.
     /// Unchanged nodes, active FX and the player's camera position survive.
     func setBoard(_ newBoard: Board) {
+        clearKeyGateConnections()
         let dimensionsChanged = board.width != newBoard.width || board.height != newBoard.height
         self.board = newBoard
 
@@ -471,6 +493,7 @@ final class GameScene: SKScene {
     }
 
     func performBlocked(pieceId: String, amplified: Bool = false, onComplete: @escaping () -> Void) {
+        clearKeyGateConnections()
         guard let node = nodes[pieceId] else { onComplete(); return }
         runFieldFlash(around: node.position)
         node.runBlockedFeedback(amplified: amplified, onComplete: onComplete)
@@ -517,7 +540,11 @@ final class GameScene: SKScene {
               let piece = board.pieces.first(where: { $0.id == pieceId }) else {
             onComplete(); return
         }
+        clearKeyGateConnections()
         board.removePiece(id: pieceId)
+        // All matching gates become passable in the same model mutation.
+        // There is no independently mutable visual "opened keys" inventory.
+        refreshKeyGateStates(animated: true)
         refreshAccessibilityElements()
         let distance = MoveValidator.exitDistanceInCells(for: piece, board: board) + 1
         // The action is retained by `node`; capturing that same node strongly
@@ -693,6 +720,38 @@ final class GameScene: SKScene {
         nodes.values.forEach { $0.clearPreview() }
     }
 
+    /// Highlights only endpoints, so crossing groups never cover the field
+    /// with persistent connecting lines. This works with path preview off.
+    func showKeyGateConnections(forKeyID keyID: String) {
+        clearKeyGateConnections()
+        let gates = board.keyGates(forKeyID: keyID)
+        guard !gates.isEmpty else { return }
+        nodes[keyID]?.setConnectionHighlighted(true)
+        for gate in gates {
+            obstacleNodes[gate.id]?.setConnectionHighlighted(true)
+        }
+    }
+
+    func clearKeyGateConnections() {
+        nodes.values.forEach { $0.setConnectionHighlighted(false) }
+        obstacleNodes.values.forEach { $0.setConnectionHighlighted(false) }
+    }
+
+    @discardableResult
+    func inspectKeyGate(id: String) -> Bool {
+        guard let gate = board.obstacles.first(where: { $0.id == id && $0.kind == .keyGate }),
+              let keyID = gate.parameter else { return false }
+        showKeyGateConnections(forKeyID: keyID)
+        sceneDelegate?.sceneDidInspectKeyGate(id)
+        if UIAccessibility.isVoiceOverRunning {
+            UIAccessibility.post(
+                notification: .announcement,
+                argument: [keyGateAccessibilityLabel(for: gate), keyGateAccessibilityValue(for: gate)].joined(separator: ". ")
+            )
+        }
+        return true
+    }
+
     // MARK: - camera: pinch zoom + pan scroll
 
     /// How far the player may zoom in: until a cell is ~40pt. High-detail
@@ -732,6 +791,10 @@ final class GameScene: SKScene {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         tapGesture = tap
+        if board.obstacles.contains(where: { $0.kind == .keyGate }), let longPressGesture {
+            // Releasing an inspected key must not also execute its tap.
+            tap.require(toFail: longPressGesture)
+        }
 
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         pan.maximumNumberOfTouches = 2
@@ -750,6 +813,10 @@ final class GameScene: SKScene {
     @objc private func handleTap(_ recognizer: UITapGestureRecognizer) {
         guard recognizer.state == .ended, let view = self.view else { return }
         let scenePoint = convertPoint(fromView: recognizer.location(in: view))
+        if let gate = hitTestKeyGate(at: scenePoint) {
+            inspectKeyGate(id: gate.id)
+            return
+        }
         if let pieceId = hitTestPiece(at: scenePoint) {
             sceneDelegate?.sceneDidTapPiece(pieceId)
         }
@@ -830,7 +897,14 @@ final class GameScene: SKScene {
             if board.piece(at: collision) != nil {
                 message = String(localized: "Path blocked by another arrow.")
             } else if let obstacle = board.obstacle(at: collision) {
-                message = String(localized: "Path blocked by \(accessibilityName(for: obstacle.kind)).")
+                if obstacle.kind == .keyGate {
+                    message = String(
+                        localized: "Path blocked by the \(keyGateGroupAccessibilityName(for: obstacle)) gate.",
+                        table: "Gates"
+                    )
+                } else {
+                    message = String(localized: "Path blocked by \(accessibilityName(for: obstacle.kind)).")
+                }
             } else {
                 message = String(localized: "Path blocked.")
             }
@@ -841,10 +915,57 @@ final class GameScene: SKScene {
         return true
     }
 
+    func keyGateGroupAccessibilityName(for gate: Obstacle) -> String {
+        gate.colorGroup == 2
+            ? String(localized: "diamond", table: "Gates")
+            : String(localized: "circle", table: "Gates")
+    }
+
+    func keyGateAccessibilityLabel(for gate: Obstacle) -> String {
+        String(localized: "Gate with \(keyGateGroupAccessibilityName(for: gate)) symbol", table: "Gates")
+    }
+
+    func keyGateAccessibilityValue(for gate: Obstacle) -> String {
+        let count = gate.parameter.map { board.keyGates(forKeyID: $0).count } ?? 0
+        let position = String(localized: "Row \(gate.cell.y + 1), column \(gate.cell.x + 1)")
+        let state: String
+        if board.isKeyGateOpen(gate) {
+            state = String(localized: "Open. Connected gates: \(count).", table: "Gates")
+        } else {
+            state = String(
+                localized: "Closed. Needs the \(keyGateGroupAccessibilityName(for: gate)) key. Connected gates: \(count).",
+                table: "Gates"
+            )
+        }
+        return [position, state].joined(separator: ". ")
+    }
+
+    func keyGateKeyAccessibilityValue(forKeyID keyID: String) -> String? {
+        let gates = board.keyGates(forKeyID: keyID)
+        guard let gate = gates.first else { return nil }
+        return String(
+            localized: "Opens gates with the \(keyGateGroupAccessibilityName(for: gate)) symbol: \(gates.count).",
+            table: "Gates"
+        )
+    }
+
+    @discardableResult
+    func inspectAccessibleKeyGates(forKeyID keyID: String) -> Bool {
+        guard board.pieces.contains(where: { $0.id == keyID }),
+              let description = keyGateKeyAccessibilityValue(forKeyID: keyID) else { return false }
+        showKeyGateConnections(forKeyID: keyID)
+        // The delegate can show the same optional HUD explanation as touch
+        // inspection. It is not the paid hint action or an attempted move.
+        sceneDelegate?.sceneDidLongPressPiece(keyID)
+        UIAccessibility.post(notification: .announcement, argument: description)
+        return true
+    }
+
     private func accessibilityName(for kind: ObstacleKind) -> String {
         switch kind {
         case .wall: return String(localized: "a wall")
         case .gate: return String(localized: "a gate")
+        case .keyGate: return String(localized: "a closed gate", table: "Gates")
         case .portal: return String(localized: "a portal")
         case .ice: return String(localized: "ice")
         case .spring: return String(localized: "a spring")
@@ -854,7 +975,17 @@ final class GameScene: SKScene {
 
     // MARK: - touch handling
 
+    private func hitTestKeyGate(at point: CGPoint) -> Obstacle? {
+        guard let cell = geometry.cell(at: point),
+              let obstacle = board.obstacle(at: cell),
+              obstacle.kind == .keyGate else { return nil }
+        return obstacle
+    }
+
     private func hitTestPiece(at point: CGPoint) -> String? {
+        // Exact gate cells own their touch area even when a neighbouring
+        // arrow's 44-point expanded hit target overlaps the same location.
+        guard hitTestKeyGate(at: point) == nil else { return nil }
         // Preserve exact cell selection first, especially where neighboring
         // targets overlap on a dense board.
         if let cell = geometry.cell(at: point),
@@ -907,7 +1038,9 @@ final class GameScene: SKScene {
 
         switch recognizer.state {
         case .began:
-            if let pieceId = hitTestPiece(at: scenePoint) {
+            if let gate = hitTestKeyGate(at: scenePoint) {
+                inspectKeyGate(id: gate.id)
+            } else if let pieceId = hitTestPiece(at: scenePoint) {
                 sceneDelegate?.sceneDidLongPressPiece(pieceId)
             }
         case .ended, .cancelled, .failed:

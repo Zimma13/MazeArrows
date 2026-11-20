@@ -1,0 +1,2304 @@
+{
+  "chapter": 8,
+  "rulesVersion": 2,
+  "legacySHA256": "f781f36eb3a64e8e2e84c5fb3e693e83e0f1425cc37a801d63acd7a06fb223c9",
+  "source": "authored-layouts.json",
+  "method": "Fixed authored coordinates; exact full-ray graph verification; exhaustive reachable-state checks; one counterfactual witness per gate cell.",
+  "levels": [
+    {
+      "index": 241,
+      "id": "story_241",
+      "titleRU": "Первый проход",
+      "titleEN": "First Passage",
+      "width": 9,
+      "height": 9,
+      "arrowCount": 6,
+      "gateCount": 1,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "X": [],
+        "Y": [
+          "X"
+        ],
+        "KA": [],
+        "X1": [
+          "X"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "X3": [
+          "X1"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "X"
+        ],
+        "KA": [],
+        "X1": [
+          "X"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "X3": [
+          "X1"
+        ]
+      },
+      "solution": [
+        "KA",
+        "X",
+        "X1",
+        "X3",
+        "Y",
+        "Y2"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 11,
+      "legalTransitionsChecked": 14
+    },
+    {
+      "index": 242,
+      "id": "story_242",
+      "titleRU": "С другой стороны",
+      "titleEN": "The Other Side",
+      "width": 9,
+      "height": 12,
+      "arrowCount": 8,
+      "gateCount": 1,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "X": [],
+        "KA": [],
+        "S": [],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X1"
+        ],
+        "X3": [
+          "X"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "X5": [
+          "X1"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA"
+        ],
+        "KA": [],
+        "S": [],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X1"
+        ],
+        "X3": [
+          "X"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "X5": [
+          "X1"
+        ]
+      },
+      "solution": [
+        "KA",
+        "S",
+        "X",
+        "X1",
+        "X2",
+        "X3",
+        "X4",
+        "X5"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 32,
+      "legalTransitionsChecked": 66
+    },
+    {
+      "index": 243,
+      "id": "story_243",
+      "titleRU": "Дорога к ключу",
+      "titleEN": "A Path to the Key",
+      "width": 11,
+      "height": 11,
+      "arrowCount": 8,
+      "gateCount": 1,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "X": [],
+        "Y": [
+          "X"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "Y3": [
+          "Y2"
+        ],
+        "Y4": [
+          "Y3"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "X"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "Y3": [
+          "Y2"
+        ],
+        "Y4": [
+          "Y3"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "X",
+        "Y",
+        "Y1",
+        "Y2",
+        "Y3",
+        "Y4"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 12,
+      "legalTransitionsChecked": 14
+    },
+    {
+      "index": 244,
+      "id": "story_244",
+      "titleRU": "Один знак — два прохода",
+      "titleEN": "One Sign, Two Passages",
+      "width": 13,
+      "height": 14,
+      "arrowCount": 10,
+      "gateCount": 2,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "X": [],
+        "Y": [],
+        "KA": [],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "Y4": [
+          "Y1"
+        ],
+        "Y5": [
+          "Y4"
+        ],
+        "X6": [
+          "X2"
+        ],
+        "Y7": [
+          "Y1"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ],
+        "Y": [
+          "ga2"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "KA"
+        ],
+        "KA": [],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "Y4": [
+          "Y1"
+        ],
+        "Y5": [
+          "Y4"
+        ],
+        "X6": [
+          "X2"
+        ],
+        "Y7": [
+          "Y1"
+        ]
+      },
+      "solution": [
+        "KA",
+        "X",
+        "X2",
+        "X3",
+        "X6",
+        "Y",
+        "Y1",
+        "Y4",
+        "Y5",
+        "Y7"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "ga2",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 49,
+      "legalTransitionsChecked": 103
+    },
+    {
+      "index": 245,
+      "id": "story_245",
+      "titleRU": "Самостоятельный обход",
+      "titleEN": "A Separate Route",
+      "width": 11,
+      "height": 15,
+      "arrowCount": 12,
+      "gateCount": 2,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "Y": [
+          "Q"
+        ],
+        "X": [],
+        "Q": [],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "Y4": [
+          "Y1"
+        ],
+        "Y5": [
+          "Y"
+        ],
+        "X6": [
+          "X3"
+        ],
+        "X7": [
+          "X"
+        ]
+      },
+      "gatesOnFullRay": {
+        "Y": [
+          "ga2"
+        ],
+        "X": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "Y": [
+          "KA",
+          "Q"
+        ],
+        "X": [
+          "KA"
+        ],
+        "Q": [],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "Y4": [
+          "Y1"
+        ],
+        "Y5": [
+          "Y"
+        ],
+        "X6": [
+          "X3"
+        ],
+        "X7": [
+          "X"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "Q",
+        "X",
+        "X2",
+        "X3",
+        "X6",
+        "X7",
+        "Y",
+        "Y1",
+        "Y4",
+        "Y5"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "ga2",
+          "target": "Y",
+          "legalPrefix": [
+            "Q"
+          ],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 76,
+      "legalTransitionsChecked": 175
+    },
+    {
+      "index": 246,
+      "id": "story_246",
+      "titleRU": "Открытая арка",
+      "titleEN": "Open Arch",
+      "width": 11,
+      "height": 14,
+      "arrowCount": 7,
+      "gateCount": 1,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "X": [],
+        "Y": [
+          "X"
+        ],
+        "KA": [],
+        "S": [],
+        "T": [],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "X"
+        ],
+        "KA": [],
+        "S": [],
+        "T": [],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X"
+        ]
+      },
+      "solution": [
+        "KA",
+        "S",
+        "T",
+        "X",
+        "X1",
+        "X2",
+        "Y"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 40,
+      "legalTransitionsChecked": 96
+    },
+    {
+      "index": 247,
+      "id": "story_247",
+      "titleRU": "Два знака",
+      "titleEN": "Two Signs",
+      "width": 13,
+      "height": 18,
+      "arrowCount": 12,
+      "gateCount": 2,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "Y": [],
+        "X": [],
+        "KA": [],
+        "KB": [],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "Y4": [
+          "Y1"
+        ],
+        "X5": [
+          "X2"
+        ],
+        "Y6": [
+          "Y1"
+        ],
+        "X7": [
+          "X3"
+        ],
+        "X8": [
+          "X5"
+        ]
+      },
+      "gatesOnFullRay": {
+        "Y": [
+          "gb1"
+        ],
+        "X": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "Y": [
+          "KB"
+        ],
+        "X": [
+          "KA"
+        ],
+        "KA": [],
+        "KB": [],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "Y4": [
+          "Y1"
+        ],
+        "X5": [
+          "X2"
+        ],
+        "Y6": [
+          "Y1"
+        ],
+        "X7": [
+          "X3"
+        ],
+        "X8": [
+          "X5"
+        ]
+      },
+      "solution": [
+        "KA",
+        "KB",
+        "X",
+        "X2",
+        "X3",
+        "X5",
+        "X7",
+        "X8",
+        "Y",
+        "Y1",
+        "Y4",
+        "Y6"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 84,
+      "legalTransitionsChecked": 189
+    },
+    {
+      "index": 248,
+      "id": "story_248",
+      "titleRU": "Ключ за воротами",
+      "titleEN": "A Key Behind the Gate",
+      "width": 16,
+      "height": 18,
+      "arrowCount": 12,
+      "gateCount": 2,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "X": [],
+        "KB": [],
+        "Y": [
+          "X"
+        ],
+        "KA": [],
+        "X1": [
+          "X"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "X3": [
+          "X1"
+        ],
+        "Y4": [
+          "Y2"
+        ],
+        "X5": [
+          "X"
+        ],
+        "X6": [
+          "X3"
+        ],
+        "X7": [
+          "X5"
+        ],
+        "X8": [
+          "X7"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "gb1"
+        ],
+        "KB": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KB"
+        ],
+        "KB": [
+          "KA"
+        ],
+        "Y": [
+          "X"
+        ],
+        "KA": [],
+        "X1": [
+          "X"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "X3": [
+          "X1"
+        ],
+        "Y4": [
+          "Y2"
+        ],
+        "X5": [
+          "X"
+        ],
+        "X6": [
+          "X3"
+        ],
+        "X7": [
+          "X5"
+        ],
+        "X8": [
+          "X7"
+        ]
+      },
+      "solution": [
+        "KA",
+        "KB",
+        "X",
+        "X1",
+        "X3",
+        "X5",
+        "X6",
+        "X7",
+        "X8",
+        "Y",
+        "Y2",
+        "Y4"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "KB",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 67,
+      "legalTransitionsChecked": 147
+    },
+    {
+      "index": 249,
+      "id": "story_249",
+      "titleRU": "Два сада",
+      "titleEN": "Two Gardens",
+      "width": 16,
+      "height": 14,
+      "arrowCount": 10,
+      "gateCount": 2,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "X": [],
+        "Y": [],
+        "R": [
+          "Q"
+        ],
+        "Q": [],
+        "KB": [
+          "R"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X1"
+        ],
+        "X3": [
+          "X2"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ],
+        "Y": [
+          "gb1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "KB"
+        ],
+        "R": [
+          "Q"
+        ],
+        "Q": [],
+        "KB": [
+          "R"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X1"
+        ],
+        "X3": [
+          "X2"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "Q",
+        "R",
+        "KB",
+        "X",
+        "X1",
+        "X2",
+        "X3",
+        "Y"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 35,
+      "legalTransitionsChecked": 58
+    },
+    {
+      "index": 250,
+      "id": "story_250",
+      "titleRU": "Проверка связи",
+      "titleEN": "Follow the Signal",
+      "width": 18,
+      "height": 18,
+      "arrowCount": 15,
+      "gateCount": 3,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "V": [],
+        "X": [],
+        "U": [],
+        "KB": [
+          "U"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "X1": [
+          "X"
+        ],
+        "V2": [
+          "V"
+        ],
+        "U3": [
+          "U"
+        ],
+        "V4": [
+          "V2"
+        ],
+        "U5": [
+          "U3"
+        ],
+        "X6": [
+          "X"
+        ],
+        "U7": [
+          "U"
+        ],
+        "V8": [
+          "V2"
+        ],
+        "X9": [
+          "X6"
+        ]
+      },
+      "gatesOnFullRay": {
+        "V": [
+          "ga2"
+        ],
+        "X": [
+          "gb1"
+        ],
+        "U": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "V": [
+          "KA"
+        ],
+        "X": [
+          "KB"
+        ],
+        "U": [
+          "KA"
+        ],
+        "KB": [
+          "U"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "X1": [
+          "X"
+        ],
+        "V2": [
+          "V"
+        ],
+        "U3": [
+          "U"
+        ],
+        "V4": [
+          "V2"
+        ],
+        "U5": [
+          "U3"
+        ],
+        "X6": [
+          "X"
+        ],
+        "U7": [
+          "U"
+        ],
+        "V8": [
+          "V2"
+        ],
+        "X9": [
+          "X6"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "U",
+        "KB",
+        "U3",
+        "U5",
+        "U7",
+        "V",
+        "V2",
+        "V4",
+        "V8",
+        "X",
+        "X1",
+        "X6",
+        "X9"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "U",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "ga2",
+          "target": "V",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 296,
+      "legalTransitionsChecked": 962
+    },
+    {
+      "index": 251,
+      "id": "story_251",
+      "titleRU": "Общий перекрёсток",
+      "titleEN": "Shared Crossing",
+      "width": 17,
+      "height": 15,
+      "arrowCount": 13,
+      "gateCount": 1,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "X": [],
+        "Y": [],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "Y3": [
+          "Y1"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "Y5": [
+          "Y"
+        ],
+        "Y6": [
+          "Y5"
+        ],
+        "X7": [
+          "X4"
+        ],
+        "X8": [
+          "X4"
+        ],
+        "Y9": [
+          "Y6"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ],
+        "Y": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "KA"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "Y3": [
+          "Y1"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "Y5": [
+          "Y"
+        ],
+        "Y6": [
+          "Y5"
+        ],
+        "X7": [
+          "X4"
+        ],
+        "X8": [
+          "X4"
+        ],
+        "Y9": [
+          "Y6"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "X",
+        "X2",
+        "X4",
+        "X7",
+        "X8",
+        "Y",
+        "Y1",
+        "Y3",
+        "Y5",
+        "Y6",
+        "Y9"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 93,
+      "legalTransitionsChecked": 219
+    },
+    {
+      "index": 252,
+      "id": "story_252",
+      "titleRU": "Двое ворот",
+      "titleEN": "Two Gates",
+      "width": 18,
+      "height": 16,
+      "arrowCount": 9,
+      "gateCount": 2,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "X": [],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Q": [],
+        "KB": [
+          "Q"
+        ],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X1"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "X4": [
+          "X1"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1",
+          "gb1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KA",
+          "KB"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Q": [],
+        "KB": [
+          "Q"
+        ],
+        "X1": [
+          "X"
+        ],
+        "X2": [
+          "X1"
+        ],
+        "X3": [
+          "X2"
+        ],
+        "X4": [
+          "X1"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "Q",
+        "KB",
+        "X",
+        "X1",
+        "X2",
+        "X3",
+        "X4"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [
+            "Q",
+            "KB"
+          ],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "X",
+          "legalPrefix": [
+            "P",
+            "KA"
+          ],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 16,
+      "legalTransitionsChecked": 21
+    },
+    {
+      "index": 253,
+      "id": "story_253",
+      "titleRU": "Подготовить сигнал",
+      "titleEN": "Prepare the Signal",
+      "width": 16,
+      "height": 18,
+      "arrowCount": 16,
+      "gateCount": 2,
+      "keyCount": 1,
+      "physicalPredecessors": {
+        "Y": [],
+        "X": [],
+        "P": [],
+        "KA": [
+          "P",
+          "Q"
+        ],
+        "Q": [],
+        "X1": [
+          "X"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "X3": [
+          "X1"
+        ],
+        "Y4": [
+          "Y2"
+        ],
+        "X5": [
+          "X"
+        ],
+        "X6": [
+          "X5"
+        ],
+        "Y7": [
+          "Y4"
+        ],
+        "X8": [
+          "X6"
+        ],
+        "Y9": [
+          "Y"
+        ],
+        "X10": [
+          "X3"
+        ],
+        "Y11": [
+          "Y9"
+        ]
+      },
+      "gatesOnFullRay": {
+        "Y": [
+          "ga2"
+        ],
+        "X": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "Y": [
+          "KA"
+        ],
+        "X": [
+          "KA"
+        ],
+        "P": [],
+        "KA": [
+          "P",
+          "Q"
+        ],
+        "Q": [],
+        "X1": [
+          "X"
+        ],
+        "Y2": [
+          "Y"
+        ],
+        "X3": [
+          "X1"
+        ],
+        "Y4": [
+          "Y2"
+        ],
+        "X5": [
+          "X"
+        ],
+        "X6": [
+          "X5"
+        ],
+        "Y7": [
+          "Y4"
+        ],
+        "X8": [
+          "X6"
+        ],
+        "Y9": [
+          "Y"
+        ],
+        "X10": [
+          "X3"
+        ],
+        "Y11": [
+          "Y9"
+        ]
+      },
+      "solution": [
+        "P",
+        "Q",
+        "KA",
+        "X",
+        "X1",
+        "X3",
+        "X10",
+        "X5",
+        "X6",
+        "X8",
+        "Y",
+        "Y2",
+        "Y4",
+        "Y7",
+        "Y9",
+        "Y11"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "ga2",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        }
+      ],
+      "reachableStatesChecked": 225,
+      "legalTransitionsChecked": 636
+    },
+    {
+      "index": 254,
+      "id": "story_254",
+      "titleRU": "Переплетение",
+      "titleEN": "Interweaving",
+      "width": 16,
+      "height": 18,
+      "arrowCount": 13,
+      "gateCount": 2,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "X": [
+          "U"
+        ],
+        "U": [],
+        "P": [],
+        "KB": [
+          "P"
+        ],
+        "KA": [],
+        "U1": [
+          "U"
+        ],
+        "X2": [
+          "X"
+        ],
+        "U3": [
+          "U1"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "U5": [
+          "U"
+        ],
+        "U6": [
+          "U3"
+        ],
+        "X7": [
+          "X2"
+        ],
+        "X8": [
+          "X7"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "gb1"
+        ],
+        "U": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KB",
+          "U"
+        ],
+        "U": [
+          "KA"
+        ],
+        "P": [],
+        "KB": [
+          "P"
+        ],
+        "KA": [],
+        "U1": [
+          "U"
+        ],
+        "X2": [
+          "X"
+        ],
+        "U3": [
+          "U1"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "U5": [
+          "U"
+        ],
+        "U6": [
+          "U3"
+        ],
+        "X7": [
+          "X2"
+        ],
+        "X8": [
+          "X7"
+        ]
+      },
+      "solution": [
+        "KA",
+        "P",
+        "KB",
+        "U",
+        "U1",
+        "U3",
+        "U5",
+        "U6",
+        "X",
+        "X2",
+        "X4",
+        "X7",
+        "X8"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "U",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "X",
+          "legalPrefix": [
+            "KA",
+            "U"
+          ],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 86,
+      "legalTransitionsChecked": 198
+    },
+    {
+      "index": 255,
+      "id": "story_255",
+      "titleRU": "Сердце узла",
+      "titleEN": "Heart of the Junction",
+      "width": 16,
+      "height": 17,
+      "arrowCount": 13,
+      "gateCount": 3,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "X": [],
+        "Y": [],
+        "C": [],
+        "KB": [
+          "C"
+        ],
+        "U": [
+          "C"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "U2": [
+          "U"
+        ],
+        "Y3": [
+          "Y1"
+        ],
+        "Y4": [
+          "Y3"
+        ],
+        "Y5": [
+          "Y1"
+        ],
+        "Y6": [
+          "Y5"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "gb1"
+        ],
+        "Y": [
+          "gb2"
+        ],
+        "C": [
+          "ga1"
+        ]
+      },
+      "allPredecessors": {
+        "X": [
+          "KB"
+        ],
+        "Y": [
+          "KB"
+        ],
+        "C": [
+          "KA"
+        ],
+        "KB": [
+          "C"
+        ],
+        "U": [
+          "C"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "U2": [
+          "U"
+        ],
+        "Y3": [
+          "Y1"
+        ],
+        "Y4": [
+          "Y3"
+        ],
+        "Y5": [
+          "Y1"
+        ],
+        "Y6": [
+          "Y5"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "C",
+        "KB",
+        "U",
+        "U2",
+        "X",
+        "Y",
+        "Y1",
+        "Y3",
+        "Y4",
+        "Y5",
+        "Y6"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "C",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        },
+        {
+          "gate": "gb2",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 72,
+      "legalTransitionsChecked": 169
+    },
+    {
+      "index": 256,
+      "id": "story_256",
+      "titleRU": "Два раскрытых крыла",
+      "titleEN": "Two Open Wings",
+      "width": 14,
+      "height": 11,
+      "arrowCount": 12,
+      "gateCount": 2,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "KA": [],
+        "KB": [],
+        "X": [],
+        "Y": [],
+        "U": [
+          "X"
+        ],
+        "V": [
+          "Y"
+        ],
+        "U1": [
+          "U"
+        ],
+        "V2": [
+          "V"
+        ],
+        "U3": [
+          "U1"
+        ],
+        "V4": [
+          "V"
+        ],
+        "V5": [
+          "V4"
+        ],
+        "U6": [
+          "U3"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ],
+        "Y": [
+          "gb1"
+        ]
+      },
+      "allPredecessors": {
+        "KA": [],
+        "KB": [],
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "KB"
+        ],
+        "U": [
+          "X"
+        ],
+        "V": [
+          "Y"
+        ],
+        "U1": [
+          "U"
+        ],
+        "V2": [
+          "V"
+        ],
+        "U3": [
+          "U1"
+        ],
+        "V4": [
+          "V"
+        ],
+        "V5": [
+          "V4"
+        ],
+        "U6": [
+          "U3"
+        ]
+      },
+      "solution": [
+        "KA",
+        "KB",
+        "X",
+        "U",
+        "U1",
+        "U3",
+        "U6",
+        "Y",
+        "V",
+        "V2",
+        "V4",
+        "V5"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 63,
+      "legalTransitionsChecked": 124
+    },
+    {
+      "index": 257,
+      "id": "story_257",
+      "titleRU": "Почти симметрия",
+      "titleEN": "Almost Symmetrical",
+      "width": 17,
+      "height": 14,
+      "arrowCount": 13,
+      "gateCount": 2,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "KA": [],
+        "KB": [
+          "P"
+        ],
+        "X": [],
+        "Y": [],
+        "U": [
+          "X"
+        ],
+        "V": [
+          "Y"
+        ],
+        "P": [],
+        "U1": [
+          "U"
+        ],
+        "V2": [
+          "V"
+        ],
+        "V3": [
+          "V2"
+        ],
+        "U4": [
+          "U"
+        ],
+        "V5": [
+          "V3"
+        ],
+        "U6": [
+          "U4"
+        ]
+      },
+      "gatesOnFullRay": {
+        "X": [
+          "ga1"
+        ],
+        "Y": [
+          "gb1"
+        ]
+      },
+      "allPredecessors": {
+        "KA": [],
+        "KB": [
+          "P"
+        ],
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "KB"
+        ],
+        "U": [
+          "X"
+        ],
+        "V": [
+          "Y"
+        ],
+        "P": [],
+        "U1": [
+          "U"
+        ],
+        "V2": [
+          "V"
+        ],
+        "V3": [
+          "V2"
+        ],
+        "U4": [
+          "U"
+        ],
+        "V5": [
+          "V3"
+        ],
+        "U6": [
+          "U4"
+        ]
+      },
+      "solution": [
+        "KA",
+        "P",
+        "KB",
+        "X",
+        "U",
+        "U1",
+        "U4",
+        "U6",
+        "Y",
+        "V",
+        "V2",
+        "V3",
+        "V5"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 72,
+      "legalTransitionsChecked": 143
+    },
+    {
+      "index": 258,
+      "id": "story_258",
+      "titleRU": "Эстафета через перекрёсток",
+      "titleEN": "Relay at the Crossing",
+      "width": 14,
+      "height": 17,
+      "arrowCount": 14,
+      "gateCount": 3,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "V": [],
+        "U": [],
+        "Y": [],
+        "X": [],
+        "KB": [
+          "U"
+        ],
+        "Z": [
+          "V",
+          "X"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Z1": [
+          "Z"
+        ],
+        "U2": [
+          "U"
+        ],
+        "Z3": [
+          "Z1"
+        ],
+        "U4": [
+          "U2"
+        ],
+        "Z5": [
+          "Z1"
+        ],
+        "Z6": [
+          "Z3"
+        ]
+      },
+      "gatesOnFullRay": {
+        "V": [
+          "ga1"
+        ],
+        "U": [
+          "ga1"
+        ],
+        "Y": [
+          "gb2"
+        ],
+        "X": [
+          "gb1"
+        ]
+      },
+      "allPredecessors": {
+        "V": [
+          "KA"
+        ],
+        "U": [
+          "KA"
+        ],
+        "Y": [
+          "KB"
+        ],
+        "X": [
+          "KB"
+        ],
+        "KB": [
+          "U"
+        ],
+        "Z": [
+          "V",
+          "X"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Z1": [
+          "Z"
+        ],
+        "U2": [
+          "U"
+        ],
+        "Z3": [
+          "Z1"
+        ],
+        "U4": [
+          "U2"
+        ],
+        "Z5": [
+          "Z1"
+        ],
+        "Z6": [
+          "Z3"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "U",
+        "KB",
+        "U2",
+        "U4",
+        "V",
+        "X",
+        "Y",
+        "Z",
+        "Z1",
+        "Z3",
+        "Z5",
+        "Z6"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "V",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        },
+        {
+          "gate": "gb2",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 76,
+      "legalTransitionsChecked": 173
+    },
+    {
+      "index": 259,
+      "id": "story_259",
+      "titleRU": "Три участка",
+      "titleEN": "Three Areas",
+      "width": 16,
+      "height": 17,
+      "arrowCount": 16,
+      "gateCount": 4,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "Z": [],
+        "X": [],
+        "Y": [],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Q": [],
+        "KB": [
+          "Q"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "Z3": [
+          "Z"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "Z5": [
+          "Z"
+        ],
+        "Z6": [
+          "Z5"
+        ],
+        "X7": [
+          "X4"
+        ],
+        "Z8": [
+          "Z6"
+        ],
+        "Z9": [
+          "Z6"
+        ]
+      },
+      "gatesOnFullRay": {
+        "Z": [
+          "ga2",
+          "gb2"
+        ],
+        "X": [
+          "ga1"
+        ],
+        "Y": [
+          "gb1"
+        ]
+      },
+      "allPredecessors": {
+        "Z": [
+          "KA",
+          "KB"
+        ],
+        "X": [
+          "KA"
+        ],
+        "Y": [
+          "KB"
+        ],
+        "P": [],
+        "KA": [
+          "P"
+        ],
+        "Q": [],
+        "KB": [
+          "Q"
+        ],
+        "Y1": [
+          "Y"
+        ],
+        "X2": [
+          "X"
+        ],
+        "Z3": [
+          "Z"
+        ],
+        "X4": [
+          "X2"
+        ],
+        "Z5": [
+          "Z"
+        ],
+        "Z6": [
+          "Z5"
+        ],
+        "X7": [
+          "X4"
+        ],
+        "Z8": [
+          "Z6"
+        ],
+        "Z9": [
+          "Z6"
+        ]
+      },
+      "solution": [
+        "P",
+        "KA",
+        "Q",
+        "KB",
+        "X",
+        "X2",
+        "X4",
+        "X7",
+        "Y",
+        "Y1",
+        "Z",
+        "Z3",
+        "Z5",
+        "Z6",
+        "Z8",
+        "Z9"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        },
+        {
+          "gate": "ga2",
+          "target": "Z",
+          "legalPrefix": [
+            "Q",
+            "KB"
+          ],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb2",
+          "target": "Z",
+          "legalPrefix": [
+            "P",
+            "KA"
+          ],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 215,
+      "legalTransitionsChecked": 607
+    },
+    {
+      "index": 260,
+      "id": "story_260",
+      "titleRU": "Сигнал в центре",
+      "titleEN": "Signal at the Centre",
+      "width": 15,
+      "height": 16,
+      "arrowCount": 15,
+      "gateCount": 4,
+      "keyCount": 2,
+      "physicalPredecessors": {
+        "C": [],
+        "U": [],
+        "X": [],
+        "Y": [],
+        "T": [
+          "U",
+          "X"
+        ],
+        "KB": [
+          "C"
+        ],
+        "KA": [
+          "P",
+          "Q"
+        ],
+        "P": [],
+        "Q": [],
+        "X1": [
+          "X"
+        ],
+        "T2": [
+          "T"
+        ],
+        "T3": [
+          "T"
+        ],
+        "X4": [
+          "X1"
+        ],
+        "Y5": [
+          "Y"
+        ],
+        "X6": [
+          "X1"
+        ]
+      },
+      "gatesOnFullRay": {
+        "C": [
+          "ga1"
+        ],
+        "U": [
+          "ga2"
+        ],
+        "X": [
+          "gb1"
+        ],
+        "Y": [
+          "gb2"
+        ]
+      },
+      "allPredecessors": {
+        "C": [
+          "KA"
+        ],
+        "U": [
+          "KA"
+        ],
+        "X": [
+          "KB"
+        ],
+        "Y": [
+          "KB"
+        ],
+        "T": [
+          "U",
+          "X"
+        ],
+        "KB": [
+          "C"
+        ],
+        "KA": [
+          "P",
+          "Q"
+        ],
+        "P": [],
+        "Q": [],
+        "X1": [
+          "X"
+        ],
+        "T2": [
+          "T"
+        ],
+        "T3": [
+          "T"
+        ],
+        "X4": [
+          "X1"
+        ],
+        "Y5": [
+          "Y"
+        ],
+        "X6": [
+          "X1"
+        ]
+      },
+      "solution": [
+        "P",
+        "Q",
+        "KA",
+        "C",
+        "KB",
+        "U",
+        "X",
+        "T",
+        "T2",
+        "T3",
+        "X1",
+        "X4",
+        "X6",
+        "Y",
+        "Y5"
+      ],
+      "gateWitnesses": [
+        {
+          "gate": "ga1",
+          "target": "C",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "ga2",
+          "target": "U",
+          "legalPrefix": [],
+          "closedKey": "KA"
+        },
+        {
+          "gate": "gb1",
+          "target": "X",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        },
+        {
+          "gate": "gb2",
+          "target": "Y",
+          "legalPrefix": [],
+          "closedKey": "KB"
+        }
+      ],
+      "reachableStatesChecked": 104,
+      "legalTransitionsChecked": 264
+    }
+  ]
+}

@@ -39,7 +39,11 @@ final class ArrowPieceNode: SKNode {
     /// Per-piece tint based on `kind` / `colorGroup`. Used for fragile + locked
     /// pairs so the player can tell groups apart at a glance.
     private let renderColor: UIColor
+    /// Present only for keys linked to the new pass-through gates. Legacy
+    /// key/lock levels keep their existing badge and colour unchanged.
+    private let keyGateGroup: Int?
     private var kindBadges: [SKNode] = []
+    private var connectionHighlight: SKShapeNode?
     private var stateBadge: SKLabelNode?
     private var blockedCompletion: (() -> Void)?
     private var flyOutCompletion: (() -> Void)?
@@ -56,7 +60,9 @@ final class ArrowPieceNode: SKNode {
         outlineColor: UIColor = .black,
         useGlow: Bool = false,
         showsOutline: Bool = false,
-        reduceMotion: Bool = false
+        reduceMotion: Bool = false,
+        keyGateGroup: Int? = nil,
+        keyGateColor: UIColor? = nil
     ) {
         self.piece = piece
         self.pieceId = piece.id
@@ -68,6 +74,7 @@ final class ArrowPieceNode: SKNode {
         self.useGlow = useGlow
         self.showsOutline = showsOutline
         self.reduceMotion = reduceMotion
+        self.keyGateGroup = keyGateGroup
         // Photo mazes can have 100+ cells per axis. Absolute minimums that
         // look good on campaign boards make a dense arrow stroke wider than
         // its own chevron, so zoom only enlarges a visually merged shape.
@@ -101,7 +108,7 @@ final class ArrowPieceNode: SKNode {
         self.outlineStrokeWidth = self.strokeWidth + outlineExtra
         self.contrastShape = SKShapeNode()
         self.mainShape = SKShapeNode()
-        self.renderColor = Self.tint(
+        self.renderColor = keyGateColor ?? Self.tint(
             for: piece,
             base: lineColor,
             palette: piecePalette.isEmpty ? PieceGroupPalette.colors : piecePalette
@@ -266,8 +273,33 @@ final class ArrowPieceNode: SKNode {
             addOverlay(symbol: "🔒", at: tail, size: badgeSize, color: renderColor)
             addGroupMarker(at: tail, size: badgeSize)
         case .lockedKey:
-            addOverlay(symbol: "🔑", at: tail, size: badgeSize, color: renderColor)
-            addGroupMarker(at: tail, size: badgeSize)
+            if let keyGateGroup {
+                addOverlay(
+                    symbol: "🔑",
+                    at: CGPoint(x: tail.x - geometry.cellSize * 0.12, y: tail.y + geometry.cellSize * 0.10),
+                    size: max(10, geometry.cellSize * 0.42),
+                    color: renderColor
+                )
+                let symbol = SKShapeNode(path: KeyGateSymbol.path(
+                    group: keyGateGroup,
+                    radius: geometry.cellSize * 0.13
+                ))
+                symbol.name = "key-gate-key-symbol"
+                symbol.strokeColor = lineColor
+                symbol.fillColor = .clear
+                symbol.lineWidth = max(2, geometry.cellSize * 0.065)
+                symbol.lineJoin = .round
+                symbol.position = CGPoint(
+                    x: tail.x + geometry.cellSize * 0.24,
+                    y: tail.y - geometry.cellSize * 0.31
+                )
+                symbol.zPosition = 3
+                addChild(symbol)
+                kindBadges.append(symbol)
+            } else {
+                addOverlay(symbol: "🔑", at: tail, size: badgeSize, color: renderColor)
+                addGroupMarker(at: tail, size: badgeSize)
+            }
         case .bomb:
             addOverlay(symbol: "✸", at: tail, size: badgeSize * 1.2, color: renderColor)
         case .chain:
@@ -314,6 +346,24 @@ final class ArrowPieceNode: SKNode {
     }
 
     // MARK: - state
+
+    /// Connection inspection is information about the field, not a move hint.
+    /// Keep it independent of the hint badge and do not scale the piece.
+    func setConnectionHighlighted(_ highlighted: Bool) {
+        connectionHighlight?.removeFromParent()
+        connectionHighlight = nil
+        guard highlighted, keyGateGroup != nil else { return }
+        let shape = SKShapeNode(path: baseRenderPath ?? CGMutablePath())
+        shape.name = "key-gate-connection"
+        shape.strokeColor = renderColor.withAlphaComponent(0.25)
+        shape.lineWidth = strokeWidth + max(5, geometry.cellSize * 0.22)
+        shape.lineCap = .round
+        shape.lineJoin = .round
+        shape.fillColor = .clear
+        shape.zPosition = -1
+        addChild(shape)
+        connectionHighlight = shape
+    }
 
     enum DisplayState {
         case normal, blocked, hint, leaving, areaHint, ghost
