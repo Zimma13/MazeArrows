@@ -100,57 +100,48 @@ struct AnalyticsWiringTests {
     @Test func purchasesLogCoinsSpentWithBalance() {
         withSpy { spy in
             var config = EconomyConfig.default
-            config.hintCost = 40
+            config.undoCost = 40
             let store = makeStore(coins: 100)
 
-            store.purchaseHint(config: config)
+            store.purchaseUndo(config: config)
 
-            #expect(spy.events == [.coinsSpent(sink: "hint", amount: 40, balance: 60)])
+            #expect(spy.events == [.coinsSpent(sink: "undo", amount: 40, balance: 60)])
         }
     }
 
     @Test func failedPurchaseLogsNothing() {
         withSpy { spy in
             let store = makeStore(coins: 0)
-            store.purchaseHint(config: .default)
+            store.purchaseUndo(config: .default)
             store.purchaseRevive(config: .default)
             #expect(spy.events.isEmpty)
         }
     }
 
-    @Test func hintOfferFlowLogsShownAndConverted() {
+    @Test func buyingAContinueFromTheOfferUsesOnlyEarnedCoins() {
         withSpy { spy in
-            var config = EconomyConfig.default
-            config.hintCost = 40
-            let store = makeStore(coins: 100)
-            store.progress.hintsCount = 0
+            let store = makeStore()
             let model = GameViewModel(
                 level: makeLevel(),
                 mode: .story(index: 1),
                 gameMode: .classic,
                 progressStore: store,
-                economyConfig: config
+                economyConfig: .default
             )
-            let scene = GameScene(level: makeLevel(), theme: .aurora, size: CGSize(width: 300, height: 300))
-            model.scene = scene
             model.beginSession()
-
-            model.consumeHint()
+            model.debugDeclareFailure(reason: .outOfLives)
+            model.requestRevive()
             #expect(spy.events == [
-                .offerShown(
-                    context: "hint",
-                    slots: ["rewarded", "coins", "premium"]
-                )
+                .reviveOffered,
+                .offerShown(context: "revive", slots: ["coins"])
             ])
 
+            store.progress.coins = 150
             model.purchaseOfferedResource()
-            #expect(spy.events == [
-                .offerShown(
-                    context: "hint",
-                    slots: ["rewarded", "coins", "premium"]
-                ),
-                .coinsSpent(sink: "hint", amount: 40, balance: 60),
-                .offerConverted(context: "hint", slot: "coins")
+            #expect(spy.events.suffix(3) == [
+                .coinsSpent(sink: "revive", amount: 150, balance: 0),
+                .reviveUsed,
+                .offerConverted(context: "revive", slot: "coins")
             ])
         }
     }

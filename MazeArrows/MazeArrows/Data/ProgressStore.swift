@@ -91,69 +91,10 @@ final class ProgressStore {
 
     // MARK: - Consumables
 
-    func consumeHint() -> Bool {
-        guard progress.hintsCount > 0 else { return false }
-        progress.hintsCount -= 1
-        return true
-    }
-
     func consumeUndo() -> Bool {
         guard progress.undosCount > 0 else { return false }
         progress.undosCount -= 1
         return true
-    }
-
-    func grantHint(_ count: Int = 1) { progress.hintsCount += count }
-    func grantUndo(_ count: Int = 1) { progress.undosCount += count }
-
-    // MARK: - Photo Maze
-
-    func photoMazeFreeGenerationsRemaining(
-        policy: PhotoMazeGenerationPolicy = .standard
-    ) -> Int {
-        policy.freeGenerationsRemaining(
-            used: progress.photoMazeFreeGenerationsUsed
-        )
-    }
-
-    func photoMazeGenerationAccess(
-        isPremium: Bool,
-        policy: PhotoMazeGenerationPolicy = .standard
-    ) -> PhotoMazeGenerationAccess? {
-        policy.access(
-            isPremium: isPremium,
-            freeGenerationsUsed: progress.photoMazeFreeGenerationsUsed,
-            rewardedCredits: progress.photoMazeRewardedCredits
-        )
-    }
-
-    /// The reward is stored immediately when Google confirms it. If the next
-    /// maze build fails, the user keeps the credit and can try another photo.
-    func grantPhotoMazeRewardedCredit() {
-        progress.photoMazeRewardedCredits += 1
-    }
-
-    /// Charges only a successfully built maze. Reopening or sharing the
-    /// cached maze does not call this method and therefore costs nothing.
-    @discardableResult
-    func commitSuccessfulPhotoMazeGeneration(
-        using access: PhotoMazeGenerationAccess,
-        policy: PhotoMazeGenerationPolicy = .standard
-    ) -> Bool {
-        switch access {
-        case .premium:
-            return true
-        case .free:
-            guard photoMazeFreeGenerationsRemaining(policy: policy) > 0 else {
-                return false
-            }
-            progress.photoMazeFreeGenerationsUsed += 1
-            return true
-        case .rewarded:
-            guard progress.photoMazeRewardedCredits > 0 else { return false }
-            progress.photoMazeRewardedCredits -= 1
-            return true
-        }
     }
 
     // MARK: - Economy
@@ -167,17 +108,9 @@ final class ProgressStore {
     }
 
     @discardableResult
-    func purchaseHint(config: EconomyConfig = EconomyConfigStore.shared.config) -> Bool {
-        guard spendCoins(config.hintCost) else { return false }
-        grantHint()
-        Analytics.log(.coinsSpent(sink: "hint", amount: config.hintCost, balance: progress.coins))
-        return true
-    }
-
-    @discardableResult
     func purchaseUndo(config: EconomyConfig = EconomyConfigStore.shared.config) -> Bool {
         guard spendCoins(config.undoCost) else { return false }
-        grantUndo()
+        progress.undosCount += 1
         Analytics.log(.coinsSpent(sink: "undo", amount: config.undoCost, balance: progress.coins))
         return true
     }
@@ -202,23 +135,18 @@ final class ProgressStore {
 
     // MARK: - Zen
 
-    /// Free Zen levels left for the given UTC day.
-    func zenRemainingToday(
-        date: String,
-        config: EconomyConfig = EconomyConfigStore.shared.config
-    ) -> Int {
-        let played = progress.zenPlayedDate == date ? progress.zenPlayedCount : 0
-        return max(0, config.zenFreeLevelsPerDay - played)
+    /// The daily sequence uses the persisted position as its deterministic seed index.
+    func nextZenIndex(date: String) -> Int {
+        progress.zenPlayedDate == date ? progress.zenPlayedCount : 0
     }
 
-    /// Zen completions count toward the daily free limit and grant nothing —
-    /// generated content must never feed the coin economy.
-    func recordZenCompletion(date: String) {
-        if progress.zenPlayedDate != date {
-            progress.zenPlayedDate = date
-            progress.zenPlayedCount = 0
-        }
-        progress.zenPlayedCount += 1
+    func recordZenCompletion(date: String, index: Int) {
+        // Separate windows can finish the same board, or yesterday’s board after today’s.
+        guard date >= (progress.zenPlayedDate ?? ""), index == nextZenIndex(date: date) else { return }
+        var updated = progress
+        updated.zenPlayedDate = date
+        updated.zenPlayedCount = index + 1
+        progress = updated
     }
 
     // MARK: - Master layer

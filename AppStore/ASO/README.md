@@ -1,52 +1,24 @@
-# Arrow Maze — ASO первой волны
+# Arrow Maze для iPhone и iPad · App Store 2.0
 
-Готовый пакет метаданных для 12 локалей первого релиза. Тексты основаны на фактической версии игры: 240 уровней, 7 миров, Daily Puzzle, 3 ежедневных задания, Zen, Photo Maze, серии, достижения и таблицы Game Center.
+Рабочие тексты для обновления существующей игры `zimma.MazeArrows`, Apple ID `6800708435`. Кампания включает 260 уровней в восьми мирах. Однократная оплата при загрузке открывает Photo Maze, Zen, подсказки и все темы. В этой версии нет рекламы и подписочного экрана. Файлы содержат проект карточки для выпуска после проверки сборки.
 
-## Локали
+## Как собрать карточку
 
-1. `en-US` — English (U.S.)
-2. `ja` — Japanese
-3. `de-DE` — German
-4. `ko` — Korean
-5. `zh-Hant` — Traditional Chinese
-6. `pt-BR` — Portuguese (Brazil)
-7. `es-MX` — Spanish (Mexico)
-8. `fr-FR` — French (France)
-9. `en-GB` — English (U.K.)
-10. `en-CA` — English (Canada)
-11. `en-AU` — English (Australia)
-12. `es-ES` — Spanish (Spain)
+1. Для нужной локали открыть `<locale>/metadata.txt`. В App Information перенести `APP_NAME`, `SUBTITLE` и адрес политики конфиденциальности. В локализацию версии 2.0 перенести `PROMOTIONAL_TEXT`, `KEYWORDS`, `WHATS_NEW`, адреса поддержки и сайта. Поле Description заполнить содержимым `<locale>/description.txt`.
+2. Сопоставить локаль с языковым набором через [манифест медиа](../ScreenshotSources/v2/storefronts.json). Пять пар заголовков и подписей берутся из `../ScreenshotSources/v2/screenshots.<набор>.json`. Сценарий необязательного App Preview находится в `previews/<набор>.txt`. Один набор исходников и один экспорт каждого требуемого размера используются для всех указанных в группе регионов. Готовность изображений и видео подтверждается отдельно.
+3. Перед передачей запустить `ruby AppStore/ASO/validate_aso.rb` из корня проекта. Сверить [глобальные поля и заметки для Review](GLOBAL_METADATA.md) и [порядок выпуска](PRE_SUBMISSION_BLOCKERS.md). Результат локальной проверки приведён в [отчёте](VALIDATION_REPORT.md).
 
-В каждой папке:
+## Покрытие
 
-- `metadata.txt` — Name, Subtitle, Promotional Text, Keywords и URL-поля;
-- `description.txt` — готовое описание;
-- `screenshots.txt` — порядок и продающие подписи для 5 скриншотов первого релиза;
-- `app-preview.txt` — сценарий App Preview;
-- `subscriptions.txt` — локализация группы, недельного и годового Premium.
+| Локали карточки | Языковой набор скриншотов и сценария |
+| --- | --- |
+| en-US, en-GB, en-AU, en-CA | en |
+| fr-FR, fr-CA | fr |
+| de-DE | de |
+| es-ES, es-MX | es и es-MX соответственно |
+| pt-BR, pt-PT | pt-BR и pt-PT соответственно |
+| ja, ko, zh-Hant | ja, ko, zh-Hant соответственно |
 
-Дополнительная локаль `fr-CA` пока содержит только `subscriptions.txt` и
-`screenshots.txt`. Для скриншотов она повторно использует нейтральный
-французский текст `fr-FR` и не входит в 12-локальный валидатор полной ASO-
-метадаты.
+Локальные варианты текстов для 14 карточек учитывают, например, `fases` в Бразилии и `níveis` в Португалии. Испанский и португальский интерфейсы имеют региональные различия. Список локалей рабочего пакета надо сверить с черновиком версии перед переносом. В сохранённом [ответе Apple Ads](../AppleAds/responses/app-locales.json) встречаются коды показа `de-CH`, `ja-JP` и `ko-KR`. Немецкую карточку Швейцарии обслуживает немецкая локализация, японской и корейской соответствуют `ja` и `ko`. Локаль карточки и язык интерфейса могут отличаться. [Справка Apple о локализациях](https://developer.apple.com/help/app-store-connect/reference/app-information/app-store-localizations/)
 
-## Как переносить в App Store Connect
-
-1. Сначала заполнить обязательные глобальные поля из `GLOBAL_METADATA.md`.
-2. В **App Information → Localizations** перенести `APP_NAME` и `SUBTITLE`.
-3. В **iOS App → Version → Localizations** перенести `PROMOTIONAL_TEXT`, `description.txt`, `KEYWORDS`, Support URL и Marketing URL.
-4. Загрузить локализованные скриншоты по плану `screenshots.txt`.
-5. В **Subscriptions** добавить локализации из `subscriptions.txt`.
-6. Запустить `ruby validate_aso.rb` перед вставкой и ещё раз после любых правок.
-
-## Принцип ключей
-
-Название, подзаголовок и поле Keywords не повторяют одни и те же слова. В Keywords нет пробелов после запятых, названий конкурентов, названия категории и нерелевантных запросов. Поле ограничено 100 UTF-8 байтами, поэтому CJK-наборы намеренно короче визуально.
-
-Apple ограничивает название и подзаголовок 30 символами, Promotional Text — 170 символами, описание — 4000 символами, Keywords — 100 байтами. Promotional Text не участвует в поисковом ранжировании, поэтому он написан для конверсии, а не как список ключей. Источники: [Creating your product page](https://developer.apple.com/app-store/product-page/), [Platform version information](https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information), [App information](https://developer.apple.com/help/app-store-connect/reference/app-information/app-information).
-
-## Важно перед публикацией
-
-- Support, Marketing, Privacy Policy и Terms используют опубликованные страницы `kinapp.dev`.
-- Японский, корейский, Traditional Chinese, французский, немецкий, португальский и испанский тексты готовы как release-кандидаты, но перед масштабным платным трафиком желательна финальная вычитка носителем.
-- `What’s New` не заполняется для версии 1.0; шаблон для будущего обновления находится в каждом `metadata.txt`.
+[Тексты подписок 1.0](archive/1.0/subscriptions/) сохранены для работы с прежними продуктами. [Исследование ключевых слов](KEYWORD_RESEARCH.md) относится к первоначальному выпуску. Рабочие материалы 2.0 не предлагают будущие паки и не указывают цену загрузки в региональной рекламной копии.

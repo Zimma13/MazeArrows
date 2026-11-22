@@ -174,9 +174,7 @@ struct ContentView: View {
         .environment(ProgressStore.shared)
         .environment(LevelCatalogStore.shared)
         .environment(OnboardingStore(progressStore: .shared))
-        .environment(PremiumStore())
         .environment(GameCenterStore())
-        .environment(AdService())
         .environment(ReviewRequestStore())
         .environment(AppIconStore())
 }

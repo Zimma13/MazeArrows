@@ -1,0 +1,23 @@
+Chaque flèche a une sortie. Dans quel ordre faut-il les déplacer pour libérer la grille?
+
+Arrow Maze est un casse-tête où chaque geste change la suite. Une flèche ne peut sortir que si son chemin est dégagé. Observez la grille, libérez les bonnes pièces dans le bon ordre et dégagez la grille une flèche à la fois. Un geste trop rapide peut coûter une vie. Anticipez pour enchaîner les coups.
+
+COMMENT JOUER
+• Repérez la direction de chaque flèche.
+• Touchez une pièce uniquement si le passage est libre.
+• Retirez d’abord les bonnes flèches pour ouvrir de nouveaux chemins.
+• Videz la grille, préservez vos vies et gagnez jusqu’à trois étoiles.
+
+DES DÉFIS POUR TOUS LES RYTHMES
+• Parcourez 260 niveaux répartis dans huit mondes. Dans le chapitre « Portes à symboles », chaque clé ouvre toutes les portes portant le même symbole.
+• Relevez le défi quotidien, poursuivez votre série et terminez les trois quêtes du jour.
+• En mode Zen, enchaînez les grilles à votre rythme, sans limite quotidienne.
+• Transformez vos photos en labyrinthes jouables en ajustant le niveau de détail et la silhouette.
+• Débloquez des réalisations et comparez vos résultats avec Game Center.
+• Changez de thème visuel pour renouveler l’ambiance.
+
+Les règles s’apprennent en quelques secondes, mais les grilles avancées exigent patience, observation et stratégie. Jouez un niveau rapide ou plongez dans un chapitre entier.
+
+L’achat du jeu comprend la campagne, tous les thèmes, les indices à volonté et la création illimitée de labyrinthes à partir de vos photos. Jouez sans publicité ni abonnement.
+
+Conditions d’utilisation https://kinapp.dev/arrowmaze/terms/

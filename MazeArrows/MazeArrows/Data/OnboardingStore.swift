@@ -13,9 +13,6 @@ enum OnboardingStep: String, Codable, Sendable {
     case tutorialOne
     case tutorialTwo
     case tutorialThree
-    case paywallIntro
-    case paywallTimeline
-    case paywallPlans
     case tutorialFour
     case streak
     case pushPrompt
@@ -31,12 +28,21 @@ enum OnboardingStep: String, Codable, Sendable {
         }
     }
 
-    var isPaywall: Bool {
-        switch self {
-        case .paywallIntro, .paywallTimeline, .paywallPlans:
-            return true
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let value = try container.decode(String.self)
+        switch value {
+        case "paywallIntro", "paywallTimeline", "paywallPlans":
+            // Earlier versions placed an offer between lessons three and four.
+            self = .tutorialFour
         default:
-            return false
+            guard let step = Self(rawValue: value) else {
+                throw DecodingError.dataCorruptedError(
+                    in: container,
+                    debugDescription: "Unknown onboarding step: \(value)"
+                )
+            }
+            self = step
         }
     }
 }
@@ -55,6 +61,7 @@ private struct OnboardingSnapshot: Codable, Sendable {
     var version: Int
     var step: OnboardingStep
     var completion: OnboardingCompletion?
+    // Keep the field expected by older readers of the v1 snapshot.
     var paywallWasShown: Bool
     var starterRewardWasClaimed: Bool
 
@@ -84,7 +91,6 @@ final class OnboardingStore {
     var step: OnboardingStep { snapshot.step }
     var completion: OnboardingCompletion? { snapshot.completion }
     var shouldShow: Bool { snapshot.completion == nil }
-    var paywallWasShown: Bool { snapshot.paywallWasShown }
 
     init(
         defaults: UserDefaults = .standard,
@@ -104,14 +110,6 @@ final class OnboardingStore {
         if let data = defaults.data(forKey: defaultsKey),
            let decoded = try? JSONDecoder().decode(OnboardingSnapshot.self, from: data) {
             var recovered = decoded
-
-            // A paywall is shown at most once during onboarding. If the app is
-            // killed on any of its pages, resume directly at the next lesson.
-            if recovered.completion == nil,
-               recovered.paywallWasShown,
-               recovered.step.isPaywall {
-                recovered.step = .tutorialFour
-            }
 
             // The streak reward is one-shot. On relaunch, continue after its
             // presentation instead of showing the celebration twice.
@@ -141,21 +139,7 @@ final class OnboardingStore {
 
     func move(to step: OnboardingStep) {
         guard shouldShow else { return }
-        var updated = snapshot
-        updated.step = step
-        if step.isPaywall {
-            updated.paywallWasShown = true
-        }
-        snapshot = updated
-    }
-
-    func beginPaywallIfNeeded(canPresent: Bool, isPremium: Bool) {
-        guard shouldShow else { return }
-        if isPremium || !canPresent || snapshot.paywallWasShown {
-            move(to: .tutorialFour)
-        } else {
-            move(to: .paywallIntro)
-        }
+        snapshot.step = step
     }
 
     func claimStarterReward(in progressStore: ProgressStore) {

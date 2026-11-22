@@ -18,42 +18,37 @@ private func makeIsolatedStore() -> ProgressStore {
 }
 
 @MainActor
-struct ZenLimitTests {
-
-    private var config: EconomyConfig {
-        var config = EconomyConfig.default
-        config.zenFreeLevelsPerDay = 3
-        return config
+struct ZenProgressTests {
+    @Test func dailySequenceResumesBeyondFormerLimit() {
+        let defaults = UserDefaults(suiteName: "ZenProgressTests.\(UUID().uuidString)")!
+        let store = ProgressStore(defaults: defaults)
+        let day = "2026-08-05"
+        for index in 0..<5 {
+            #expect(store.nextZenIndex(date: day) == index)
+            store.recordZenCompletion(date: day, index: index)
+        }
+        #expect(ProgressStore(defaults: defaults).nextZenIndex(date: day) == 5)
     }
 
-    @Test func remainingCountsDownWithinDay() {
+    @Test func newDayStartsAtFirstBoardAndLateFinishesCannotRewindIt() {
         let store = makeIsolatedStore()
-        #expect(store.zenRemainingToday(date: "2026-08-05", config: config) == 3)
+        let yesterday = "2026-08-05"
+        let today = "2026-08-06"
+        store.recordZenCompletion(date: yesterday, index: 0)
+        #expect(store.nextZenIndex(date: today) == 0)
+        store.recordZenCompletion(date: today, index: 0)
+        store.recordZenCompletion(date: today, index: 0)
+        store.recordZenCompletion(date: yesterday, index: 1)
 
-        store.recordZenCompletion(date: "2026-08-05")
-        store.recordZenCompletion(date: "2026-08-05")
-        #expect(store.zenRemainingToday(date: "2026-08-05", config: config) == 1)
-
-        store.recordZenCompletion(date: "2026-08-05")
-        #expect(store.zenRemainingToday(date: "2026-08-05", config: config) == 0)
-    }
-
-    @Test func limitResetsOnNewDay() {
-        let store = makeIsolatedStore()
-        for _ in 0..<3 { store.recordZenCompletion(date: "2026-08-05") }
-        #expect(store.zenRemainingToday(date: "2026-08-05", config: config) == 0)
-
-        #expect(store.zenRemainingToday(date: "2026-08-06", config: config) == 3)
-        store.recordZenCompletion(date: "2026-08-06")
-        #expect(store.progress.zenPlayedCount == 1)
-        #expect(store.progress.zenPlayedDate == "2026-08-06")
+        #expect(store.progress.zenPlayedDate == today)
+        #expect(store.nextZenIndex(date: today) == 1)
     }
 
     @Test func zenCompletionGrantsNothing() {
         let store = makeIsolatedStore()
         let before = store.progress
 
-        store.recordZenCompletion(date: "2026-08-05")
+        store.recordZenCompletion(date: "2026-08-05", index: 0)
 
         #expect(store.progress.coins == before.coins)
         #expect(store.progress.completedLevels == before.completedLevels)
@@ -82,9 +77,13 @@ struct ZenProviderTests {
     }
 
     @Test func differentIndexGivesDifferentLevel() async throws {
-        let a = try await ZenProvider.shared.level(date: "2026-08-05", index: 0)
-        let b = try await ZenProvider.shared.level(date: "2026-08-05", index: 1)
-        #expect(a.id != b.id)
+        let day = "2026-08-05"
+        let fourth = try await ZenProvider.shared.level(date: day, index: 3)
+        let fifth = try await ZenProvider.shared.level(date: day, index: 4)
+        let replay = try await ZenProvider.shared.level(date: day, index: 3)
+        #expect(fourth.id != fifth.id)
+        #expect(fourth.id == replay.id)
+        #expect(fourth.pieces == replay.pieces)
     }
 }
 

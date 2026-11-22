@@ -42,6 +42,7 @@ final class GameScene: SKScene {
     private var geometry: BoardGeometry
     private var theme: GameTheme
     private let piecePalette: [PieceGroupPaletteColor]
+    private var displayPalette: [PieceGroupPaletteColor]
     private let showsArrowOutlines: Bool
     private let arrowOutlineColor: PieceGroupPaletteColor
     private var reduceMotion: Bool
@@ -74,6 +75,7 @@ final class GameScene: SKScene {
         self.board = level.makeBoard()
         self.theme = theme
         self.piecePalette = level.piecePalette
+        self.displayPalette = level.piecePalette.map(theme.photoInk)
         self.showsArrowOutlines = showsArrowOutlines
         self.arrowOutlineColor = arrowOutlineColor
         self.reduceMotion = reduceMotion
@@ -319,7 +321,7 @@ final class GameScene: SKScene {
             piece: piece,
             geometry: geometry,
             lineColor: theme.pieceStroke.uiColor,
-            piecePalette: piecePalette,
+            piecePalette: displayPalette,
             highlightColor: theme.danger.uiColor,
             hintColor: theme.success.uiColor,
             outlineColor: UIColor(
@@ -469,6 +471,7 @@ final class GameScene: SKScene {
 
     func updateTheme(_ newTheme: GameTheme) {
         self.theme = newTheme
+        displayPalette = piecePalette.map(newTheme.photoInk)
         self.backgroundColor = newTheme.boardBackground.uiColor
         renderAll()
     }

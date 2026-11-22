@@ -1,57 +1,24 @@
 /* Common actions */
 "onboarding.action.skip" = "건너뛰기";
-"onboarding.action.close" = "닫기";
 "onboarding.action.continue" = "계속";
-"onboarding.action.next" = "다음";
 "onboarding.action.not_now" = "나중에";
-"onboarding.common.premium" = "프리미엄";
-"onboarding.action.ok" = "확인";
 "onboarding.action.yes_remind" = "네, 알려 주세요";
 
 /* Tutorial */
-"onboarding.accessibility.page_progress" = "%lld/%lld";
 "onboarding.tutorial.tap_arrow" = "화살표를 탭하세요";
 "onboarding.tutorial.great" = "잘했어요!";
 "onboarding.tutorial.path_blocked" = "경로가 막혀 있어요";
 "onboarding.tutorial.free_path_first" = "먼저 경로를 비우세요";
 "onboarding.tutorial.hint" = "힌트가 길을 알려 줘요";
-"onboarding.tutorial.hints_three" = "힌트: 3개";
 "onboarding.tutorial.combo" = "연속 클리어!";
 "onboarding.tutorial.lives_rule" = "생명은 3개예요. 막힌 경로를 탭하면 생명 1개를 잃어요";
 "onboarding.tutorial.level_number" = "레벨 %lld";
 
 /* Premium introduction */
-"onboarding.paywall.intro.title" = "제한 없이 플레이하세요";
-"onboarding.paywall.intro.photo_title" = "어떤 사진이든 미로로.";
-"onboarding.paywall.intro.hints" = "무제한 힌트";
-"onboarding.paywall.intro.photo_benefit" = "어떤 사진이든 미로로 바꾸기";
-"onboarding.paywall.intro.photo_unlimited" = "포토 미로 무제한 생성";
-"onboarding.paywall.intro.no_ads" = "광고 없음";
 
 /* Trial timeline */
 
 /* Plans and purchase */
-"onboarding.paywall.plans.title" = "요금제를 선택하세요";
-"onboarding.paywall.plans.week" = "주간";
-"onboarding.paywall.plans.year" = "연간";
-"onboarding.paywall.plans.weekly_price" = "주 %@";
-"onboarding.paywall.plans.annual_price" = "연 %@";
-"onboarding.paywall.plans.annual_per_week" = "주당 약 %@";
-"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
-"onboarding.paywall.plans.savings" = "%@ 할인";
-"onboarding.paywall.plans.weekly_cta" = "주간 프리미엄 시작";
-"onboarding.paywall.plans.annual_cta" = "%@에 1년 이용하기";
-"onboarding.paywall.plans.annual_billing" = "오늘 %@ 결제 · %@에 갱신";
-"onboarding.paywall.restore" = "구매 복원";
-"onboarding.paywall.manage_subscription" = "구독 관리";
-"onboarding.paywall.auto_renewal" = "구독은 취소할 때까지 자동으로 갱신됩니다.";
-"onboarding.paywall.terms" = "이용 약관";
-"onboarding.paywall.privacy" = "개인정보 처리방침";
-"onboarding.paywall.purchase_pending" = "구매 승인을 기다리고 있어요";
-"onboarding.paywall.purchase_failed" = "구매를 완료할 수 없어요. 다시 시도해 주세요.";
-"onboarding.paywall.restore_failed" = "구매를 복원할 수 없어요. 다시 시도해 주세요.";
-"onboarding.paywall.nothing_to_restore" = "활성화된 프리미엄 구매 내역이 없어요.";
-"onboarding.paywall.restored" = "프리미엄을 복원했어요";
 
 /* Trial reminder */
 
@@ -81,7 +48,6 @@
 "onboarding.theme.aurora_name" = "오로라 라이트";
 "onboarding.theme.neon_name" = "미드나이트 네온";
 "onboarding.theme.petal_name" = "페탈 파스텔";
-"onboarding.theme.more" = "프리미엄에서 테마 3개 더 이용 가능";
 "onboarding.theme.later" = "나중에";
 
 /* Handoff */

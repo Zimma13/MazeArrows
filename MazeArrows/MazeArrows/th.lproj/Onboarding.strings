@@ -1,57 +1,24 @@
 /* Common actions */
 "onboarding.action.skip" = "ข้าม";
-"onboarding.action.close" = "ปิด";
 "onboarding.action.continue" = "ดำเนินการต่อ";
-"onboarding.action.next" = "ถัดไป";
 "onboarding.action.not_now" = "ไว้ทีหลัง";
-"onboarding.common.premium" = "Premium";
-"onboarding.action.ok" = "ตกลง";
 "onboarding.action.yes_remind" = "ใช่ เตือนฉันด้วย";
 
 /* Tutorial */
-"onboarding.accessibility.page_progress" = "%lld จาก %lld";
 "onboarding.tutorial.tap_arrow" = "แตะลูกศร";
 "onboarding.tutorial.great" = "เยี่ยมมาก!";
 "onboarding.tutorial.path_blocked" = "เส้นทางถูกขวาง";
 "onboarding.tutorial.free_path_first" = "เปิดเส้นทางก่อน";
 "onboarding.tutorial.hint" = "คำใบ้จะแสดงเส้นทาง";
-"onboarding.tutorial.hints_three" = "คำใบ้: 3";
 "onboarding.tutorial.combo" = "เคลียร์ต่อเนื่อง!";
 "onboarding.tutorial.lives_rule" = "มี 3 ชีวิต การแตะเส้นทางที่ถูกขวางจะเสีย 1 ชีวิต";
 "onboarding.tutorial.level_number" = "ด่าน %lld";
 
 /* Premium introduction */
-"onboarding.paywall.intro.title" = "เล่นได้ไม่จำกัด";
-"onboarding.paywall.intro.photo_title" = "รูปไหนก็ได้ กลายเป็นเขาวงกต";
-"onboarding.paywall.intro.hints" = "คำใบ้ไม่จำกัด";
-"onboarding.paywall.intro.photo_benefit" = "เปลี่ยนรูปใด ๆ ให้เป็นเขาวงกต";
-"onboarding.paywall.intro.photo_unlimited" = "สร้างโฟโต้เมซได้ไม่จำกัด";
-"onboarding.paywall.intro.no_ads" = "ไม่มีโฆษณา";
 
 /* Trial timeline */
 
 /* Plans and purchase */
-"onboarding.paywall.plans.title" = "เลือกแพ็กเกจ";
-"onboarding.paywall.plans.week" = "รายสัปดาห์";
-"onboarding.paywall.plans.year" = "รายปี";
-"onboarding.paywall.plans.weekly_price" = "%@/สัปดาห์";
-"onboarding.paywall.plans.annual_price" = "%@/ปี";
-"onboarding.paywall.plans.annual_per_week" = "ประมาณ %@/สัปดาห์";
-"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
-"onboarding.paywall.plans.savings" = "ประหยัด %@";
-"onboarding.paywall.plans.weekly_cta" = "เริ่ม Premium รายสัปดาห์";
-"onboarding.paywall.plans.annual_cta" = "รับแพ็กเกจ 1 ปีในราคา %@";
-"onboarding.paywall.plans.annual_billing" = "เรียกเก็บ %@ วันนี้ · ต่ออายุวันที่ %@";
-"onboarding.paywall.restore" = "กู้คืนสินค้าที่ซื้อ";
-"onboarding.paywall.manage_subscription" = "จัดการการสมัครสมาชิก";
-"onboarding.paywall.auto_renewal" = "การสมัครสมาชิกจะต่ออายุอัตโนมัติจนกว่าจะยกเลิก";
-"onboarding.paywall.terms" = "ข้อกำหนดการใช้งาน";
-"onboarding.paywall.privacy" = "นโยบายความเป็นส่วนตัว";
-"onboarding.paywall.purchase_pending" = "กำลังรอการอนุมัติการซื้อ";
-"onboarding.paywall.purchase_failed" = "ไม่สามารถดำเนินการซื้อให้เสร็จสิ้นได้ โปรดลองอีกครั้ง";
-"onboarding.paywall.restore_failed" = "ไม่สามารถกู้คืนสินค้าที่ซื้อได้ โปรดลองอีกครั้ง";
-"onboarding.paywall.nothing_to_restore" = "ไม่พบการซื้อ Premium ที่ใช้งานอยู่";
-"onboarding.paywall.restored" = "กู้คืน Premium แล้ว";
 
 /* Trial reminder */
 
@@ -81,7 +48,6 @@
 "onboarding.theme.aurora_name" = "แสงออโรรา";
 "onboarding.theme.neon_name" = "นีออนเที่ยงคืน";
 "onboarding.theme.petal_name" = "กลีบดอกไม้พาสเทล";
-"onboarding.theme.more" = "มีอีก 3 ธีมใน Premium";
 "onboarding.theme.later" = "ภายหลัง";
 
 /* Handoff */

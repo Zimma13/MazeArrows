@@ -3,10 +3,11 @@
 //  MazeArrows
 //
 //  Created by Zimma on 11.05.2026.
-//Tests
 //
 
+import CoreGraphics
 import Foundation
+import SpriteKit
 import Testing
 @testable import MazeArrows
 
@@ -15,25 +16,25 @@ struct GameViewModelEconomyTests {
 
     private static let config: EconomyConfig = {
         var config = EconomyConfig.default
-        config.hintCost = 40
         config.undoCost = 20
         config.reviveCost = 150
         config.reviveLives = 2
         return config
     }()
 
-    /// One free arrow at the top-left pointing left — always solvable.
-    private func makeLevel(lives: Int = 3) -> Level {
+    private func makeLevel(goal: LevelGoal = .clearAll) -> Level {
         Level(
             id: "test-level",
             index: 1,
             difficulty: .easy,
             width: 4,
             height: 4,
-            lives: lives,
+            lives: 3,
             pieces: [
-                ArrowPiece(id: "a", cells: [GridPoint(x: 1, y: 0), GridPoint(x: 0, y: 0)], direction: .left)
-            ]
+                ArrowPiece(id: "a", cells: [GridPoint(x: 1, y: 0), GridPoint(x: 0, y: 0)], direction: .left),
+                ArrowPiece(id: "b", cells: [GridPoint(x: 1, y: 1), GridPoint(x: 0, y: 1)], direction: .left)
+            ],
+            goal: goal
         )
     }
 
@@ -42,7 +43,7 @@ struct GameViewModelEconomyTests {
         hints: Int = 3,
         undos: Int = 5,
         gameMode: GameMode = .classic,
-        premiumAccess: PremiumAccessPolicy = .free
+        goal: LevelGoal = .clearAll
     ) -> (GameViewModel, ProgressStore) {
         let suiteName = "MazeArrowsTests-\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: suiteName)!
@@ -52,14 +53,27 @@ struct GameViewModelEconomyTests {
         store.progress.hintsCount = hints
         store.progress.undosCount = undos
         let model = GameViewModel(
-            level: makeLevel(),
+            level: makeLevel(goal: goal),
             mode: .story(index: 1),
             gameMode: gameMode,
             progressStore: store,
-            economyConfig: Self.config,
-            premiumAccess: premiumAccess
+            economyConfig: Self.config
         )
         return (model, store)
+    }
+
+    private func startScene(for model: GameViewModel) -> GameScene {
+        let scene = GameScene(level: model.level, theme: .aurora, size: CGSize(width: 300, height: 300), reduceMotion: true)
+        scene.didChangeSize(.zero)
+        model.scene = scene
+        model.beginSession()
+        return scene
+    }
+
+    private func clear(_ pieceID: String, in scene: GameScene, model: GameViewModel) throws {
+        let node = try #require(scene.childNode(withName: "//" + pieceID) as? ArrowPieceNode)
+        model.sceneDidTapPiece(pieceID)
+        node.interruptActions(completingPendingOperations: true)
     }
 
     // MARK: - revive
@@ -113,7 +127,7 @@ struct GameViewModelEconomyTests {
         model.requestRevive()
         #expect(model.resourceOffer == .revive)
 
-        // Balance changed while the sheet was open (e.g. future rewarded slot).
+        // The sheet must use the current balance when confirming the action.
         store.progress.coins = 150
         model.purchaseOfferedResource()
 
@@ -123,184 +137,80 @@ struct GameViewModelEconomyTests {
         #expect(model.lives == Self.config.reviveLives)
     }
 
-    // MARK: - hint / undo offers
+    // MARK: - hints and undos
 
-    @Test func consumeHintWithEmptyBalanceOpensOffer() {
-        let (model, _) = makeModel(coins: 0, hints: 0)
-        let scene = GameScene(level: makeLevel(), theme: .aurora, size: CGSize(width: 300, height: 300))
-        model.scene = scene
-        model.beginSession()
+    @Test(arguments: [0, 7])
+    func hintsIgnoreLegacyBalanceAndStillCountForTheNoHintsGoal(legacyHints: Int) throws {
+        let (model, store) = makeModel(coins: 7, hints: legacyHints, goal: .noHints)
+        let scene = startScene(for: model)
+        for _ in 0..<12 {
+            model.consumeHint()
+        }
+        #expect(model.hintsUsed == 12)
+        #expect(model.resourceOffer == nil)
+        #expect(store.progress.coins == 7)
+        #expect(store.progress.hintsCount == legacyHints)
 
+        try clear("a", in: scene, model: model)
+        try clear("b", in: scene, model: model)
+        #expect(model.failReason == .goalFailed)
+        #expect(!model.isCompleted)
+    }
+
+    @Test func hardModeBlocksHintAndUndoWithAnyBalance() throws {
+        let (model, store) = makeModel(coins: 500, hints: 3, undos: 2, gameMode: .hard)
+        let scene = startScene(for: model)
+        try clear("a", in: scene, model: model)
         model.consumeHint()
+        model.consumeUndo()
 
-        #expect(model.resourceOffer == .hint)
+        #expect(scene.board.pieces.map(\.id) == ["b"])
         #expect(model.hintsUsed == 0)
-    }
-
-    @Test func purchasingOfferedHintAppliesItImmediately() {
-        let (model, store) = makeModel(coins: 100, hints: 0)
-        let scene = GameScene(level: makeLevel(), theme: .aurora, size: CGSize(width: 300, height: 300))
-        model.scene = scene
-        model.beginSession()
-
-        model.consumeHint()
-        #expect(model.resourceOffer == .hint)
-
-        model.purchaseOfferedResource()
-
         #expect(model.resourceOffer == nil)
-        #expect(model.hintsUsed == 1)
-        #expect(store.progress.coins == 60)
-        #expect(store.progress.hintsCount == 0)   // granted, then consumed by the retry
+        #expect(store.progress.hintsCount == 3)
+        #expect(store.progress.undosCount == 2)
+        #expect(store.progress.coins == 500)
     }
 
-    @Test func premiumHintIsUnlimitedButStillCountsAsUsed() {
-        let (model, store) = makeModel(
-            coins: 0,
-            hints: 0,
-            premiumAccess: .premium
-        )
-        let scene = GameScene(
-            level: makeLevel(),
-            theme: .aurora,
-            size: CGSize(width: 300, height: 300)
-        )
-        model.scene = scene
-        model.beginSession()
-
-        model.consumeHint()
-
-        #expect(model.resourceOffer == nil)
-        #expect(model.hasUnlimitedHints)
-        #expect(model.hintsUsed == 1)
-        #expect(store.progress.hintsCount == 0)
-    }
-
-    @Test func premiumUnlockFromHintOfferContinuesInterruptedHint() {
-        let (model, store) = makeModel(coins: 0, hints: 0)
-        let scene = GameScene(
-            level: makeLevel(),
-            theme: .aurora,
-            size: CGSize(width: 300, height: 300)
-        )
-        model.scene = scene
-        model.beginSession()
-
-        model.consumeHint()
-        #expect(model.resourceOffer == .hint)
-
-        model.continueHintAfterPremiumUnlock()
-
-        #expect(model.resourceOffer == nil)
-        #expect(model.hasUnlimitedHints)
-        #expect(model.hintsUsed == 1)
-        #expect(store.progress.hintsCount == 0)
-        #expect(store.progress.coins == 0)
-    }
-
-    @Test func premiumDoesNotOverrideModesThatDisableHints() {
-        let (model, _) = makeModel(
-            coins: 0,
-            hints: 0,
-            gameMode: .hard,
-            premiumAccess: .premium
-        )
-        let scene = GameScene(
-            level: makeLevel(),
-            theme: .aurora,
-            size: CGSize(width: 300, height: 300)
-        )
-        model.scene = scene
-        model.beginSession()
-
-        model.consumeHint()
-
-        #expect(!model.hasUnlimitedHints)
-        #expect(model.resourceOffer == nil)
-        #expect(model.hintsUsed == 0)
-    }
-
-    @Test func purchaseOfferedHintWithoutFundsChangesNothing() {
-        let (model, store) = makeModel(coins: 10, hints: 0)
-        let scene = GameScene(level: makeLevel(), theme: .aurora, size: CGSize(width: 300, height: 300))
-        model.scene = scene
-        model.beginSession()
-
-        model.consumeHint()
-        model.purchaseOfferedResource()
-
-        #expect(model.resourceOffer == .hint)     // sheet stays open
-        #expect(model.hintsUsed == 0)
-        #expect(store.progress.coins == 10)
-    }
-
-    @Test func rewardedHintAppliesImmediatelyWithoutCoins() {
-        let (model, store) = makeModel(coins: 0, hints: 0)
-        let scene = GameScene(
-            level: makeLevel(),
-            theme: .aurora,
-            size: CGSize(width: 300, height: 300)
-        )
-        model.scene = scene
-        model.beginSession()
-        model.consumeHint()
-
-        #expect(model.applyRewardedOffer(.hint))
-        #expect(model.resourceOffer == nil)
-        #expect(model.hintsUsed == 1)
-        #expect(store.progress.hintsCount == 0)
-        #expect(store.progress.coins == 0)
-    }
-
-    @Test func rewardedUndoIsKeptWhenInterruptedActionIsNoLongerAvailable() {
-        let (model, store) = makeModel(coins: 0, undos: 0)
-        model.beginSession()
-        model.resourceOffer = .undo
-
-        #expect(model.applyRewardedOffer(.undo))
-        #expect(model.resourceOffer == nil)
-        #expect(store.progress.undosCount == 1)
-        #expect(store.progress.coins == 0)
-    }
-
-    @Test func rewardedReviveRestoresLivesWithoutChargingCoins() {
-        let (model, store) = makeModel(coins: 0)
-        model.beginSession()
-        model.debugDeclareFailure(reason: .outOfLives)
-        model.requestRevive()
-
-        #expect(model.resourceOffer == .revive)
-        #expect(model.applyRewardedOffer(.revive))
-        #expect(!model.isFailed)
-        #expect(model.lives == Self.config.reviveLives)
-        #expect(store.progress.coins == 0)
-    }
-
-    @Test func rewardedCallbackCannotApplyAStaleOrDifferentOffer() {
-        let (model, store) = makeModel(coins: 0, hints: 0, undos: 0)
-        model.beginSession()
-        model.resourceOffer = .hint
-
-        #expect(!model.applyRewardedOffer(.undo))
-        #expect(model.resourceOffer == .hint)
-        #expect(store.progress.hintsCount == 0)
+    @Test func savedUndoIsUsedBeforeCoinsAndNextUndoCostsCoins() throws {
+        let (model, store) = makeModel(coins: 20, undos: 1)
+        let scene = startScene(for: model)
+        try clear("a", in: scene, model: model)
+        model.consumeUndo()
+        #expect(scene.board.pieces.count == 2)
         #expect(store.progress.undosCount == 0)
+        #expect(store.progress.coins == 20)
+        #expect(model.resourceOffer == nil)
+
+        try clear("a", in: scene, model: model)
+        model.consumeUndo()
+        #expect(model.resourceOffer == .undo)
+        model.purchaseOfferedResource()
+        model.purchaseOfferedResource()
+        #expect(scene.board.pieces.count == 2)
+        #expect(model.resourceOffer == nil)
+        #expect(store.progress.undosCount == 0)
+        #expect(store.progress.coins == 0)
     }
 
-    @Test func hardModeNeverOffersHints() {
-        let (model, _) = makeModel(coins: 500, hints: 0, gameMode: .hard)
-        let scene = GameScene(level: makeLevel(), theme: .aurora, size: CGSize(width: 300, height: 300))
-        model.scene = scene
-        model.beginSession()
+    @Test func undoWithEmptyBalanceLeavesBoardPlayable() throws {
+        let (model, store) = makeModel(coins: 0, undos: 0)
+        let scene = startScene(for: model)
+        try clear("a", in: scene, model: model)
+        model.consumeUndo()
+        model.purchaseOfferedResource()
+        #expect(model.resourceOffer == .undo)
+        #expect(scene.board.pieces.map(\.id) == ["b"])
+        #expect(store.progress.coins == 0)
 
-        model.consumeHint()
-
-        #expect(model.resourceOffer == nil)
+        model.dismissResourceOffer()
+        try clear("b", in: scene, model: model)
+        #expect(model.isCompleted)
     }
 
     @Test func restartClearsFailReasonAndOffer() {
-        let (model, _) = makeModel(coins: 0, hints: 0)
-        let scene = GameScene(level: makeLevel(), theme: .aurora, size: CGSize(width: 300, height: 300))
+        let (model, store) = makeModel(coins: 0, hints: 0)
+        let scene = GameScene(level: model.level, theme: .aurora, size: CGSize(width: 300, height: 300))
         model.scene = scene
         model.beginSession()
         model.debugDeclareFailure(reason: .outOfLives)
@@ -312,13 +222,14 @@ struct GameViewModelEconomyTests {
         #expect(!model.isFailed)
         #expect(model.failReason == nil)
         #expect(model.resourceOffer == nil)
+        #expect(store.progress.coins == 0)
+        #expect(model.lives == model.totalLives)
     }
 
     @Test func pricesComeFromInjectedConfig() {
         let (model, _) = makeModel(coins: 0)
-        #expect(model.price(for: .hint) == 40)
         #expect(model.price(for: .undo) == 20)
         #expect(model.price(for: .revive) == 150)
-        #expect(!model.canAfford(.hint))
+        #expect(!model.canAfford(.undo))
     }
 }

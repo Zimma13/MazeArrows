@@ -1,0 +1,10 @@
+LOCALE=fr-CA
+LANGUAGE=Français (Canada)
+APP_NAME=Arrow Maze : Casse-tête
+SUBTITLE=Démêlez chaque parcours
+PROMOTIONAL_TEXT=Trouvez la clé qui libère le passage. Explorez 260 niveaux, transformez vos photos en labyrinthes et jouez en mode Zen, sans publicité ni abonnement.
+KEYWORDS=puzzle,réflexion,labyrinthe,évasion,grille,cerveau,détente,zen,quotidien,photo,flèches,logique
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=Les 20 niveaux du chapitre « Portes à symboles » prolongent votre aventure. Libérez les clés pour ouvrir les portes marquées du même symbole. Votre progression est conservée. La publicité et les abonnements disparaissent. Profitez de Photo Maze, du mode Zen et des indices à volonté, ainsi que de tous les thèmes.

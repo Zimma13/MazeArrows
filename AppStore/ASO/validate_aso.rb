@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require "unicode_normalize/normalize"
+require "json"
 
 ROOT = File.expand_path(__dir__)
-EXPECTED_LOCALES = %w[en-US ja de-DE ko zh-Hant pt-BR es-MX fr-FR en-GB en-CA en-AU es-ES].freeze
+EXPECTED_LOCALES = %w[en-US ja de-DE ko zh-Hant pt-BR pt-PT es-MX fr-FR fr-CA en-GB en-CA en-AU es-ES].freeze
 REQUIRED_KEYS = %w[LOCALE LANGUAGE APP_NAME SUBTITLE PROMOTIONAL_TEXT KEYWORDS SUPPORT_URL PRIVACY_POLICY_URL MARKETING_URL WHATS_NEW].freeze
 
 def graphemes(value)
@@ -24,18 +25,13 @@ def read_metadata(path)
 end
 
 errors = []
-warnings = []
 stats = []
 
 EXPECTED_LOCALES.each do |locale|
   dir = File.join(ROOT, locale)
   metadata_path = File.join(dir, "metadata.txt")
   description_path = File.join(dir, "description.txt")
-  subscription_path = File.join(dir, "subscriptions.txt")
-
-  %w[screenshots.txt app-preview.txt subscriptions.txt].each do |filename|
-    errors << "#{locale}: #{filename} missing" unless File.file?(File.join(dir, filename))
-  end
+  errors << "#{locale}: retired subscription listing in release inputs" if File.exist?(File.join(dir, "subscriptions.txt"))
 
   unless File.file?(metadata_path)
     errors << "#{locale}: metadata.txt missing"
@@ -51,6 +47,8 @@ EXPECTED_LOCALES.each do |locale|
   errors << "#{locale}: missing #{missing.join(', ')}" unless missing.empty?
   next unless missing.empty?
 
+  blank = REQUIRED_KEYS.select { |key| data[key].strip.empty? }
+  errors << "#{locale}: empty #{blank.join(', ')}" unless blank.empty?
   errors << "#{locale}: LOCALE mismatch" unless data["LOCALE"] == locale
   errors << "#{locale}: APP_NAME #{graphemes(data['APP_NAME'])}/30 characters" if graphemes(data["APP_NAME"]) > 30
   errors << "#{locale}: SUBTITLE #{graphemes(data['SUBTITLE'])}/30 characters" if graphemes(data["SUBTITLE"]) > 30
@@ -84,16 +82,14 @@ EXPECTED_LOCALES.each do |locale|
   errors << "#{locale}: empty description" if description.empty?
   errors << "#{locale}: description #{graphemes(description)}/4000 characters" if graphemes(description) > 4000
 
-  if File.file?(subscription_path)
-    subscription = read_metadata(subscription_path)
-    %w[WEEKLY_DISPLAY_NAME ANNUAL_DISPLAY_NAME].each do |key|
-      errors << "#{locale}: #{key} missing" unless subscription[key]
-      errors << "#{locale}: #{key} #{graphemes(subscription[key])}/30 characters" if subscription[key] && graphemes(subscription[key]) > 30
-    end
-    %w[WEEKLY_DESCRIPTION ANNUAL_DESCRIPTION].each do |key|
-      errors << "#{locale}: #{key} missing" unless subscription[key]
-      errors << "#{locale}: #{key} #{graphemes(subscription[key])}/45 characters" if subscription[key] && graphemes(subscription[key]) > 45
-    end
+  news = data.fetch("WHATS_NEW")
+  errors << "#{locale}: release notes exceed 4000 characters" if graphemes(news) > 4000
+  errors << "#{locale}: missing new chapter in description or release notes" unless description.include?("260") && news.include?("20")
+  visible = [description, news, data["APP_NAME"], data["SUBTITLE"], data["PROMOTIONAL_TEXT"]].join(" ")
+  errors << "#{locale}: obsolete 1.0 copy" if visible.match?(/Premium|240|NOT_AVAILABLE_FOR_VERSION/i)
+
+  { "SUPPORT_URL" => "support/", "PRIVACY_POLICY_URL" => "privacy/", "MARKETING_URL" => "" }.each do |key, suffix|
+    errors << "#{locale}: unexpected #{key}" unless data[key] == "https://kinapp.dev/arrowmaze/#{suffix}"
   end
 
   stats << [
@@ -102,18 +98,39 @@ EXPECTED_LOCALES.each do |locale|
     "subtitle #{graphemes(data['SUBTITLE'])}/30",
     "promo #{graphemes(data['PROMOTIONAL_TEXT'])}/170",
     "keywords #{data['KEYWORDS'].bytesize}/100 bytes",
-    "description #{graphemes(description)}/4000"
+    "description #{graphemes(description)}/4000",
+    "what's new #{graphemes(news)}/4000"
   ].join(" | ")
 
-  warnings << "#{locale}: SUPPORT_URL is not ready" if data["SUPPORT_URL"].include?("REQUIRED")
-  warnings << "#{locale}: PRIVACY_POLICY_URL is not ready" if data["PRIVACY_POLICY_URL"].include?("REQUIRED")
 end
 
-puts "Checked #{EXPECTED_LOCALES.length} locales"
+media = File.expand_path("../ScreenshotSources/v2", ROOT)
+manifest = JSON.parse(File.read(File.join(media, "storefronts.json")))
+errors << "wrong media version" unless manifest["appVersion"] == "2.0"
+sets = manifest.fetch("sets")
+mapped = sets.values.flat_map { |entry| entry.fetch("storefronts") }
+errors << "screenshot locale coverage or duplicates" unless mapped.sort == EXPECTED_LOCALES.sort
+previews = Dir.glob(File.join(ROOT, "previews", "*.txt")).map { |path| File.basename(path, ".txt") }
+errors << "preview language coverage" unless previews.sort == sets.keys.sort
+sets.each_key do |language|
+  config_path = File.join(media, "screenshots.#{language}.json")
+  preview_path = File.join(ROOT, "previews", "#{language}.txt")
+  unless File.file?(config_path) && File.file?(preview_path)
+    errors << "#{language}: missing screenshot captions or preview script"
+    next
+  end
+  slides = JSON.parse(File.read(config_path)).fetch("slides")
+  errors << "#{language}: screenshot sequence" unless slides.map { |slide| slide["id"] } == %w[photoMaze freeArrow combo worlds daily]
+  headline = slides.find { |slide| slide["id"] == "worlds" }&.fetch("headline", [])&.join(" ").to_s
+  errors << "#{language}: incorrect campaign screenshot" unless headline.include?("260") && headline.include?("8")
+  script = File.read(preview_path)
+  errors << "#{language}: incorrect campaign preview" unless script.lines.any? { |line| line.include?("260") && line.include?("8") }
+  errors << "#{language}: old content in media" if (slides.to_json + script).match?(/240|Premium/i)
+end
+
+puts "Checked #{EXPECTED_LOCALES.length} locales and #{sets.length} language sets for version 2.0"
 puts "ERRORS: #{errors.length}"
 errors.each { |error| puts "  - #{error}" }
-puts "WARNINGS: #{warnings.length}"
-warnings.each { |warning| puts "  - #{warning}" }
 puts "LIMITS"
 stats.each { |stat| puts "  #{stat}" }
 

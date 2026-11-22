@@ -17,9 +17,6 @@ import UIKit
 
 struct PhotoLevelView: View {
     @Environment(SettingsStore.self) private var settings
-    @Environment(ProgressStore.self) private var progress
-    @Environment(PremiumStore.self) private var premium
-    @Environment(AdService.self) private var ads
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     @State private var pickerItem: PhotosPickerItem?
@@ -42,11 +39,8 @@ struct PhotoLevelView: View {
     @State private var buildStartedAt: Date?
     @State private var completedBuildDuration: TimeInterval?
     @State private var generationProgress: Double = 0
-    @State private var pendingOutputAction: PhotoMazeOutputAction?
     @State private var shareLevel: Level?
     @State private var showImportSheet = false
-    @State private var showPhotoMazeLimit = false
-    @State private var isPresentingRewardedPhotoMazeAd = false
 
     @State private var imageLoadTask: Task<Void, Never>?
     @State private var subjectTask: Task<Void, Never>?
@@ -59,32 +53,22 @@ struct PhotoLevelView: View {
     @State private var didFinishSubjectExtraction = false
     @State private var isLoadingPhoto = false
     @State private var isRebuildingMask = false
-    @State private var premiumPaywallContext: PremiumPaywallContext?
 
     private var theme: GameTheme { GameTheme.theme(for: settings.settings.themeID) }
     var body: some View {
         ZStack {
             theme.appBackground.ignoresSafeArea()
-            if !premium.hasLoadedEntitlements {
-                ProgressView("Checking Premium…")
-                    .tint(theme.accent)
-                    .foregroundStyle(theme.ink)
-                    .task {
-                        await premium.refreshEntitlements()
+            ScrollView {
+                VStack(spacing: 18) {
+                    header
+                    previewCard
+                    if sourceImage != nil {
+                        controls
                     }
-            } else {
-                ScrollView {
-                    VStack(spacing: 18) {
-                        header
-                        previewCard
-                        if sourceImage != nil {
-                            controls
-                        }
-                        actionButtons
-                    }
-                    .padding(.horizontal, 24)
-                    .padding(.vertical, 20)
+                    actionButtons
                 }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 20)
             }
         }
         .navigationTitle(Text("Photo Maze"))
@@ -108,22 +92,6 @@ struct PhotoLevelView: View {
             }
             .presentationDetents([.medium])
         }
-        .sheet(isPresented: $showPhotoMazeLimit) {
-            PhotoMazeLimitSheet(
-                theme: theme,
-                isAdReady: ads.isRewardedAdReady(for: .photoMaze),
-                isPresentingAd: isPresentingRewardedPhotoMazeAd,
-                watchAd: watchPhotoMazeAd,
-                openPremium: openPhotoMazePaywall,
-                notNow: dismissPhotoMazeLimit
-            )
-            .presentationDetents([.medium, .large])
-        }
-        .fullScreenCover(item: $premiumPaywallContext) { context in
-            PremiumPaywallView(context: context) {
-                resumePendingOutputAfterPremiumUnlock()
-            }
-        }
         .onChange(of: pickerItem) { _, newItem in
             guard let newItem else { return }
             startImageLoad(from: newItem)
@@ -137,54 +105,17 @@ struct PhotoLevelView: View {
                 releasePhotoBuffersForGameplay()
             }
         }
-        .onAppear {
-            if premium.hasLoadedEntitlements {
-                resumePendingWorkIfNeeded()
-            }
-        }
-        .onChange(of: premium.hasLoadedEntitlements) {
-            if premium.hasLoadedEntitlements {
-                resumePendingWorkIfNeeded()
-            }
-        }
-        .task {
-            if !premium.hasLoadedEntitlements {
-                await premium.refreshEntitlements()
-            }
-            if !premium.isPremium {
-                ads.preloadRewardedAd(for: .photoMaze)
-            }
-        }
+        .onAppear(perform: resumePendingWorkIfNeeded)
         .onDisappear(perform: cancelPendingWork)
     }
 
     // MARK: - sections
 
     private var header: some View {
-        VStack(spacing: 7) {
-            Text("Pick a photo with a clear silhouette — we turn it into a maze of arrows.")
-                .scaledFont(size: 14, weight: .medium)
-                .foregroundStyle(theme.inkMuted)
-                .multilineTextAlignment(.center)
-
-            if premium.isPremium {
-                Label("Premium · Unlimited Photo Mazes", systemImage: "crown.fill")
-                    .foregroundStyle(theme.rewardGold)
-            } else if progress.progress.photoMazeRewardedCredits > 0 {
-                Label("1 extra Photo Maze ready", systemImage: "play.rectangle.fill")
-                    .foregroundStyle(theme.accent)
-            } else {
-                let remaining = progress.photoMazeFreeGenerationsRemaining()
-                HStack(spacing: 5) {
-                    Text("Free Photo Maze creations remaining")
-                    Text(remaining, format: .number)
-                        .monospacedDigit()
-                }
-                    .foregroundStyle(theme.accent)
-            }
-        }
-        .scaledFont(size: 12, weight: .bold)
-        .multilineTextAlignment(.center)
+        Text("Pick a photo with a clear silhouette — we turn it into a maze of arrows.")
+            .scaledFont(size: 14, weight: .medium)
+            .foregroundStyle(theme.inkMuted)
+            .multilineTextAlignment(.center)
     }
 
     private var previewCard: some View {
@@ -200,7 +131,7 @@ struct PhotoLevelView: View {
                 ProgressView()
                     .tint(theme.accent)
             } else if let mask {
-                MaskPreview(mask: mask)
+                MaskPreview(mask: mask, theme: theme)
                     .padding(18)
             } else if sourceImage != nil {
                 Text("No silhouette found — try Invert or another photo")
@@ -504,7 +435,6 @@ struct PhotoLevelView: View {
         buildStartedAt = nil
         completedBuildDuration = nil
         generationProgress = 0
-        pendingOutputAction = nil
         selectedInstance = nil
         useSubjectCutout = true
         didFinishSubjectExtraction = false
@@ -604,7 +534,6 @@ struct PhotoLevelView: View {
         buildStartedAt = nil
         completedBuildDuration = nil
         generationProgress = 0
-        pendingOutputAction = nil
         generationFailed = false
 
         let cutout = activeCutout
@@ -651,8 +580,7 @@ struct PhotoLevelView: View {
         }
     }
 
-    /// Play and the V2 sharing flow reuse a cached board. Only a new successful
-    /// build spends one free generation or an earned rewarded-ad credit.
+    /// Play and sharing use the same generated board for the current mask.
     private func requestLevel(for action: PhotoMazeOutputAction) {
         if let builtLevel {
             perform(action, with: builtLevel)
@@ -660,36 +588,15 @@ struct PhotoLevelView: View {
         }
         guard let mask, !isRebuildingMask, !isGenerating else { return }
 
-        pendingOutputAction = action
-        guard let access = progress.photoMazeGenerationAccess(
-            isPremium: premium.isPremium
-        ) else {
-            showPhotoMazeLimit = true
-            Analytics.log(.offerShown(
-                context: "photo_maze",
-                slots: ["rewarded", "premium"]
-            ))
-            ads.preloadRewardedAd(for: .photoMaze)
-            return
-        }
-
-        startLevelBuild(from: mask, using: access, action: action)
-    }
-
-    private func startLevelBuild(
-        from mask: ImageBoardResult,
-        using access: PhotoMazeGenerationAccess,
-        action: PhotoMazeOutputAction
-    ) {
         levelTask?.cancel()
         let requestID = UUID()
         levelRequestID = requestID
         isGenerating = true
         generationFailed = false
         generationProgress = 0
-        buildStartedAt = Date()
+        let startedAt = Date()
+        buildStartedAt = startedAt
         completedBuildDuration = nil
-        let startedAt = buildStartedAt ?? Date()
 
         levelTask = Task {
             for await update in PhotoMazeLevelBuilder.updates(for: mask) {
@@ -701,7 +608,6 @@ struct PhotoLevelView: View {
                 case .finished(let level):
                     finishLevelBuild(
                         level,
-                        using: access,
                         action: action,
                         startedAt: startedAt,
                         requestID: requestID
@@ -714,7 +620,6 @@ struct PhotoLevelView: View {
 
     private func finishLevelBuild(
         _ level: Level?,
-        using access: PhotoMazeGenerationAccess,
         action: PhotoMazeOutputAction,
         startedAt: Date,
         requestID: UUID
@@ -731,15 +636,8 @@ struct PhotoLevelView: View {
             return
         }
 
-        guard progress.commitSuccessfulPhotoMazeGeneration(using: access) else {
-            generationFailed = true
-            showPhotoMazeLimit = true
-            return
-        }
-
         generationProgress = 1
         builtLevel = level
-        pendingOutputAction = nil
         perform(action, with: level)
     }
 
@@ -750,48 +648,6 @@ struct PhotoLevelView: View {
         case .share:
             shareLevel = level
         }
-    }
-
-    private func watchPhotoMazeAd() {
-        guard !isPresentingRewardedPhotoMazeAd,
-              ads.isRewardedAdReady(for: .photoMaze)
-        else { return }
-
-        isPresentingRewardedPhotoMazeAd = true
-        Task { @MainActor in
-            let earned = await ads.presentRewardedAd(for: .photoMaze) {
-                progress.grantPhotoMazeRewardedCredit()
-                Analytics.log(.offerConverted(context: "photo_maze", slot: "rewarded"))
-            }
-            isPresentingRewardedPhotoMazeAd = false
-
-            guard earned, let pendingOutputAction else { return }
-            showPhotoMazeLimit = false
-            await Task.yield()
-            requestLevel(for: pendingOutputAction)
-        }
-    }
-
-    private func openPhotoMazePaywall() {
-        showPhotoMazeLimit = false
-        Task { @MainActor in
-            await Task.yield()
-            premiumPaywallContext = .photoMaze
-        }
-    }
-
-    private func resumePendingOutputAfterPremiumUnlock() {
-        guard premium.isPremium, let pendingOutputAction else { return }
-        Analytics.log(.offerConverted(context: "photo_maze", slot: "premium"))
-        Task { @MainActor in
-            await Task.yield()
-            requestLevel(for: pendingOutputAction)
-        }
-    }
-
-    private func dismissPhotoMazeLimit() {
-        pendingOutputAction = nil
-        showPhotoMazeLimit = false
     }
 
     private func announceForVoiceOver(_ message: String) {
@@ -857,9 +713,10 @@ struct PhotoLevelView: View {
 
 // MARK: - mask preview
 
-/// Draws the extracted mask using the exact RGB palette embedded in the game.
+/// Draws the extracted mask with the inks used on the playable board.
 private struct MaskPreview: View {
     let mask: ImageBoardResult
+    let theme: GameTheme
 
     var body: some View {
         Canvas { context, size in
@@ -870,11 +727,8 @@ private struct MaskPreview: View {
                 let sourceColor = mask.zoneColors.indices.contains(zoneIndex)
                     ? mask.zoneColors[zoneIndex]
                     : (r: 0.0, g: 0.0, b: 0.0)
-                let color = Color(
-                    red: sourceColor.r,
-                    green: sourceColor.g,
-                    blue: sourceColor.b
-                )
+                let ink = theme.photoInk(.init(red: sourceColor.r, green: sourceColor.g, blue: sourceColor.b))
+                let color = Color(red: ink.red, green: ink.green, blue: ink.blue)
                 for point in zone {
                     let rect = CGRect(
                         x: offsetX + CGFloat(point.x) * cell + cell * 0.08,

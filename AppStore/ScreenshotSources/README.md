@@ -1,113 +1,40 @@
-# Localized App Store screenshots
+# Native 2.0 App Store screenshots
 
-`render_english_screenshots.swift` composes five localized App Store
-screenshots for iPhone 6.9-inch and iPad 13-inch. It only works from real,
-native app captures. Missing captures are reported together and no final
-artwork is generated.
+The current iPhone and iPad artwork uses the existing five-slide design. The four gameplay slides show the new hint button. The campaign slide shows the 260 levels and eight worlds. The daily slide also uses the existing quest panel for languages whose quest screen is unchanged. European Portuguese uses an original quest capture because the archive has no PT-PT panel.
 
-The screenshot package contains these storefront locales:
+## Storefronts and sources
 
-```text
-en-US  ja  de-DE  ko  zh-Hant  pt-BR  es-MX
-fr-FR  fr-CA  en-GB  en-CA  en-AU  es-ES
-```
+The canonical mapping is in [v2/storefronts.json](v2/storefronts.json). Each language set has one copy manifest under `v2/screenshots.<set>.json`. English covers the US, UK, Australia and Canada. French covers France and Canada. Spanish for Spain and Mexico differs in promotional copy. The Brazilian and European Portuguese screens differ in native UI labels, including the Undo action.
 
-Each locale has a versioned `screenshots.<locale>.json` manifest. Headline and
-supporting copy are arrays of one or two manually balanced lines; the renderer
-will shrink them only within the approved type-size range and will fail instead
-of silently clipping text. CoreText shaping and fallback are resolved with the
-manifest locale, including Japanese, Korean, and Traditional Chinese.
+For submission, follow the ordered entries in [v2/Generated/assets.json](v2/Generated/assets.json). Each entry points to a local PNG relative to `v2/Generated`. Reuse those paths for every listed storefront. Spain and Mexico share slides 1, 2 and 4 on both devices. Slides 3 and 5 have different copy. [The English contact sheet](v2/Generated/Review/en.png) shows the complete layout. The remaining contact sheets are in the same folder.
 
-## Required captures
+The November 22, 2026 Photo Maze artwork shows the updated arrow contrast from native version 2.0, build 2. The other four slides on each device retain their November 20 exports. The 10 language sets cover 14 storefronts and reference 94 unique submission PNGs across 100 device and slide combinations.
 
-Place opaque PNG captures below `_captures/<captureLocale>/`. A manifest's
-`captureLocale` is intentionally separate from its App Store storefront:
+The directories `Generated/`, `Review/`, `_captures/` and the `screenshots.*.json` manifests at this README’s level belong to 1.x. The 2.0 runner reads only the expressly mapped unchanged quest panels from the old captures. It writes all new files under `v2/`.
 
-```text
-en-US, en-GB, en-CA, en-AU -> en-US
-de-DE -> de                 fr-FR, fr-CA -> fr
-es-ES -> es                 es-MX -> es-MX
-ja -> ja                    ko -> ko
-zh-Hant -> zh-Hant          pt-BR -> pt-BR
-```
+## Capture on macOS
 
-Every capture locale needs opaque PNGs at these paths (shown with `en-US`):
-
-```text
-_captures/en-US/iPhone-6.9/photo-game.png   1320 x 2868
-_captures/en-US/iPhone-6.9/free-arrow.png   1320 x 2868
-_captures/en-US/iPhone-6.9/combo.png        1320 x 2868
-_captures/en-US/iPhone-6.9/worlds.png       1320 x 2868
-_captures/en-US/iPhone-6.9/daily.png        1320 x 2868
-_captures/en-US/iPhone-6.9/quests.png       1320 x 2868
-
-_captures/en-US/iPad-13/photo-game.png      2064 x 2752
-_captures/en-US/iPad-13/free-arrow.png      2064 x 2752
-_captures/en-US/iPad-13/combo.png           2064 x 2752
-_captures/en-US/iPad-13/worlds.png          2064 x 2752
-_captures/en-US/iPad-13/daily.png           2064 x 2752
-_captures/en-US/iPad-13/quests.png          2064 x 2752
-```
-
-The shared source photo is
-`parrot-photo-maze-compact-v2.png`. `photo-game.png` must show the actual
-playable maze generated from that photo.
-
-## Render and validate
-
-From the repository root:
+Use the native project's Debug simulator build with its screenshot harness and explicitly selected, booted simulators. The iPhone should produce 1320 × 2868 pixels, the iPad 2064 × 2752. Both devices must run the same app build for new captures. Use dedicated simulators. The harness sets the device's game theme to Midnight Neon and stores its progress fixture in a separate preferences suite.
 
 ```sh
-swift -module-cache-path /tmp/arrow-maze-screenshot-modules \
-  AppStore/ScreenshotSources/render_english_screenshots.swift --locale en-US
-
-swift -module-cache-path /tmp/arrow-maze-screenshot-modules \
-  AppStore/ScreenshotSources/render_english_screenshots.swift \
-  --locale en-US --validate
+AppStore/ScreenshotSources/Tools/capture_localized_screenshots.sh \
+  --app-bundle "$APP_BUNDLE" --iphone-udid "$IPHONE_UDID" --ipad-udid "$IPAD_UDID"
 ```
 
-Replace `en-US` with any supported storefront locale. `--locale` selects the
-manifest and derives the capture, generated-output, and contact-sheet paths.
+Supplying just one device processes its captures. Repeated `--profile` options select individual language sets. The runner waits for the native screen-ready marker, captures from CoreSimulator and checks PNG integrity and dimensions. The app version, build and hashes of the simulator executable and debug library are recorded alongside per-device source indexes. Each index identifies the capture or reused panel for every slide. Reruns skip existing sources from the same build after checksum verification. Use `--force` to recapture the selected profiles.
 
-After all localized captures are ready, render the 12 remaining storefronts
-as one guarded batch:
+For a change confined to Photo Maze, pass `--scene photo` during capture. The runner refreshes the selected scene from the new binary and keeps the other source images. The `captureIndexes` links in the export manifest identify each device's source index. Reused 2.0 images carry a `sourceBuild` reference to the executable and resource hashes that produced them. The `unchanged-v1-quest-screen` entries identify the archived quest panels.
+
+## Render and check
+
+The capture stage needs Xcode's simctl and ImageMagick. The Swift compositor uses CoreGraphics, CoreText and the SF Pro Rounded fonts. The renderer runs the local validation command from the asc CLI for each logical five-image set. Run from the repository root.
 
 ```sh
 AppStore/ScreenshotSources/Tools/render_localized_screenshots.sh --dry-run
 AppStore/ScreenshotSources/Tools/render_localized_screenshots.sh
+python3 AppStore/ScreenshotSources/Tools/media_v2.py validate
 ```
 
-The bulk runner never includes `en-US`. It renders and validates each locale
-sequentially in a private `/tmp` stage, requires exactly five iPhone and five
-iPad screenshots for every storefront, then publishes all 12 locales only
-after the entire batch succeeds. Existing localized outputs are backed up for
-rollback during the publication transaction, and the approved English files
-are fingerprinted before and after it.
+To refresh only the Photo Maze slide in an existing package, use `AppStore/ScreenshotSources/Tools/render_localized_screenshots.sh --slide photoMaze`. The compositor copies the four previously validated exports for each language and device, renders the new slide, then builds the contact sheet and validates all five images together.
 
-`fr-CA` intentionally reuses the neutral French copy and native French app
-captures from `fr-FR`. The final ten storefront PNGs are byte-identical; only
-the locale manifest, output folder, and review contact-sheet label differ.
-
-Outputs:
-
-```text
-Generated/en-US/iPhone-6.9/01_your-photo-your-maze.png ... 05_*.png
-Generated/en-US/iPad-13/01_your-photo-your-maze.png ... 05_*.png
-Review/en-US_contact-sheet.png
-```
-
-Every final screenshot is rendered directly in sRGB, encoded as a
-three-channel RGB PNG without transparency, and checked for exact size,
-color space, alpha, filename order, duplicate output data, manifest structure,
-font glyph coverage, and text fit.
-
-Optional overrides are available for isolated testing:
-
-```text
---locale LOCALE
---input-root PATH
---output-root PATH
---manifest PATH
---photo PATH
---contact-sheet PATH
-```
+Rendering checks all source checksums and text fit. The compositor validates five opaque RGB/sRGB PNGs per language and device. The runner stores identical exports once, checks device dimensions and ordered checksums, then replaces the local 2.0 package. App Store Connect upload is a separate release step.

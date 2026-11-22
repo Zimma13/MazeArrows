@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "locale": "fr",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": [
+        "VOTRE PHOTO.",
+        "VOTRE LABYRINTHE."
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "Choisissez un sujet. Transformez-le en énigme jouable."
+      ],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": [
+        "TROUVEZ LA",
+        "FLÈCHE LIBRE"
+      ],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": [
+        "Un seul bon geste peut ouvrir toute la grille."
+      ],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": [
+        "REGARDEZ TOUT",
+        "SE DÉNOUER"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "Anticipez. Enchaînez des combos parfaits."
+      ],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_260-levels-8-worlds.png",
+      "headline": [
+        "260 NIVEAUX.",
+        "8 MONDES."
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "Ouvrez les portes avec les clés correspondantes."
+      ],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": [
+        "NOUVELLE ÉNIGME",
+        "CHAQUE JOUR"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "Énigme quotidienne, trois quêtes et bonus de série."
+      ],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

@@ -284,8 +284,7 @@ private struct ScreenshotGameView: View {
             mode: mode,
             gameMode: gameMode,
             progressStore: progressStore,
-            settingsStore: .shared,
-            premiumAccess: .free
+            settingsStore: .shared
         )
         if let combo {
             model.prepareForScreenshot(combo: combo, movesMade: movesMade)

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "locale": "de",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": [
+        "DEIN FOTO.",
+        "DEIN LABYRINTH."
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "Wähle ein Motiv. Mach daraus ein spielbares Rätsel."
+      ],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": [
+        "FINDE DEN",
+        "FREIEN PFEIL"
+      ],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": [
+        "Ein kluger Zug kann das ganze Feld öffnen."
+      ],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": [
+        "SIEH, WIE SICH",
+        "ALLES AUFLÖST"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "Plane voraus. Starte eine Kettenreaktion nach der anderen."
+      ],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_260-levels-8-worlds.png",
+      "headline": [
+        "260 LEVEL.",
+        "8 WELTEN."
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "Öffne Tore mit den passenden Schlüsseln."
+      ],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": [
+        "JEDEN TAG",
+        "EIN NEUES RÄTSEL"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "Tagesrätsel, drei Aufgaben und Serienboni."
+      ],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

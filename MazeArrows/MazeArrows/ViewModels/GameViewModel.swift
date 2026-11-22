@@ -20,8 +20,7 @@ final class GameViewModel: GameSceneDelegate {
         case daily(date: String)
         case weekly(week: String)
         case generated(difficulty: Difficulty, seed: UInt64)
-        /// Endless generated flow. Counts toward the daily free limit,
-        /// never grants rewards.
+        /// Endless generated flow. Date and index identify each board. No rewards.
         case zen(date: String, index: Int)
         /// Replay of a completed story level with a master modifier
         /// (challenge / timed / hard). One-time crown + coin reward.
@@ -74,7 +73,7 @@ final class GameViewModel: GameSceneDelegate {
 
     /// A resource the player ran out of — drives the offer sheet.
     enum ResourceOffer: String, Identifiable, Equatable, Sendable {
-        case hint, undo, revive
+        case undo, revive
         var id: String { rawValue }
     }
 
@@ -94,11 +93,8 @@ final class GameViewModel: GameSceneDelegate {
     var resourceOffer: ResourceOffer? {
         didSet {
             guard let offer = resourceOffer, offer != oldValue else { return }
-            hadCommercialInterruption = true
-            var slots = ["coins"]
-            if FeatureFlags.adsAvailable { slots.insert("rewarded", at: 0) }
-            if offer == .hint { slots.append("premium") }
-            Analytics.log(.offerShown(context: offer.rawValue, slots: slots))
+            showedResourceOffer = true
+            Analytics.log(.offerShown(context: offer.rawValue, slots: ["coins"]))
         }
     }
     private(set) var elapsedSeconds: Int = 0
@@ -109,7 +105,6 @@ final class GameViewModel: GameSceneDelegate {
     private(set) var showComboBurst: Bool = false
     /// Combo callout text — non-nil when a "Sweep!"/"Chain Clear!" is shown.
     private(set) var comboCallout: String?
-    private(set) var premiumAccess: PremiumAccessPolicy
 
     static func shouldPresentComboHUD(for combo: Int) -> Bool {
         combo >= 2
@@ -126,12 +121,9 @@ final class GameViewModel: GameSceneDelegate {
     /// Total coin balance increase actually granted for this victory.
     private(set) var completionCoinReward: Int = 0
     /// True only when this victory cleared a campaign level for the first time.
-    /// Interstitial scheduling deliberately ignores replays and special modes.
     private(set) var isFirstStoryCompletion = false
-    /// Prevents review requests after a revive or any monetization surface in
-    /// the current level session.
     private(set) var hasUsedRevive = false
-    private(set) var hadCommercialInterruption = false
+    private(set) var showedResourceOffer = false
     private(set) var accessibilityBoardRevision: UInt = 0
     private(set) var gateMessage: String?
     private var gateLessonDismissed = false
@@ -193,7 +185,6 @@ final class GameViewModel: GameSceneDelegate {
     private let soundPlayer: SoundEffectsPlayer
     private var sessionGeneration: UInt = 0
     private var isSessionActive = false
-    private var isRewardedAdPresentationActive = false
     private var chainedMoveTask: Task<Void, Never>?
     private var comboDismissTask: Task<Void, Never>?
 
@@ -208,8 +199,7 @@ final class GameViewModel: GameSceneDelegate {
         progressStore: ProgressStore? = nil,
         settingsStore: SettingsStore? = nil,
         soundPlayer: SoundEffectsPlayer? = nil,
-        economyConfig: EconomyConfig? = nil,
-        premiumAccess: PremiumAccessPolicy = .free
+        economyConfig: EconomyConfig? = nil
     ) {
         self.level = level
         self.mode = mode
@@ -221,7 +211,6 @@ final class GameViewModel: GameSceneDelegate {
         self.progressStore = progressStore ?? .shared
         self.settingsStore = settingsStore ?? .shared
         self.soundPlayer = soundPlayer ?? .shared
-        self.premiumAccess = premiumAccess
     }
 
     // MARK: - timer
@@ -263,8 +252,7 @@ final class GameViewModel: GameSceneDelegate {
         guard isSessionActive,
               !isCompleted,
               !isFailed,
-              resourceOffer == nil,
-              !isRewardedAdPresentationActive
+              resourceOffer == nil
         else { return }
 
         elapsedSeconds += 1
@@ -293,25 +281,11 @@ final class GameViewModel: GameSceneDelegate {
     var totalLives: Int {
         gameMode.livesOverride(levelLives: level.lives) ?? max(1, level.lives)
     }
-    var availableHints: Int {
-        gameMode.allowsHints ? max(0, progressStore.progress.hintsCount) : 0
-    }
-    var hasUnlimitedHints: Bool {
-        gameMode.allowsHints && premiumAccess.hasUnlimitedHints
-    }
     var availableUndos: Int {
         gameMode.allowsUndo ? max(0, progressStore.progress.undosCount) : 0
     }
 
     // MARK: - mutations
-
-    func updatePremiumAccess(_ access: PremiumAccessPolicy) {
-        guard premiumAccess != access else { return }
-        premiumAccess = access
-        if access.hasUnlimitedHints, resourceOffer == .hint {
-            resourceOffer = nil
-        }
-    }
 
     func restart() {
         invalidatePendingWork()
@@ -335,7 +309,7 @@ final class GameViewModel: GameSceneDelegate {
         completionCoinReward = 0
         isFirstStoryCompletion = false
         hasUsedRevive = false
-        hadCommercialInterruption = false
+        showedResourceOffer = false
         moveHistory.removeAll()
         gateMessage = nil
         scene?.resetBoard(level.makeBoard())
@@ -353,14 +327,6 @@ final class GameViewModel: GameSceneDelegate {
             triggerHaptic(.warning)
             announceForVoiceOver(String(localized: "Hints are unavailable in this mode."))
             return
-        }
-        if !premiumAccess.hasUnlimitedHints {
-            guard progressStore.consumeHint() else {
-                resourceOffer = .hint
-                triggerHaptic(.warning)
-                announceForVoiceOver(String(localized: "No hints remaining."))
-                return
-            }
         }
         guard let piece = LevelSolver.nextHintPiece(board: scene.board) else {
             triggerHaptic(.warning)
@@ -382,7 +348,7 @@ final class GameViewModel: GameSceneDelegate {
         }
         triggerHaptic(.light)
         announceForVoiceOver(
-            String(localized: "Hint: try the arrow pointing \(piece.direction.rawValue).")
+            String(localized: "Hint: try the arrow pointing \(OnboardingCopy.directionName(piece.direction)).")
         )
     }
 
@@ -712,7 +678,6 @@ final class GameViewModel: GameSceneDelegate {
 
     func price(for offer: ResourceOffer) -> Int {
         switch offer {
-        case .hint:   return economyConfig.hintCost
         case .undo:   return economyConfig.undoCost
         case .revive: return economyConfig.reviveCost
         }
@@ -738,10 +703,6 @@ final class GameViewModel: GameSceneDelegate {
     func purchaseOfferedResource() {
         guard let offer = resourceOffer else { return }
         switch offer {
-        case .hint:
-            guard progressStore.purchaseHint(config: economyConfig) else { return }
-            resourceOffer = nil
-            consumeHint()
         case .undo:
             guard progressStore.purchaseUndo(config: economyConfig) else { return }
             resourceOffer = nil
@@ -754,55 +715,8 @@ final class GameViewModel: GameSceneDelegate {
         Analytics.log(.offerConverted(context: offer.rawValue, slot: "coins"))
     }
 
-    /// Delivers exactly one non-transferable in-game reward after AdMob has
-    /// confirmed the completed view. The interrupted action is retried at once;
-    /// if it is no longer applicable, the earned hint/undo remains in inventory.
-    @discardableResult
-    func applyRewardedOffer(_ offer: ResourceOffer) -> Bool {
-        guard resourceOffer == offer else { return false }
-
-        switch offer {
-        case .hint:
-            progressStore.grantHint()
-            resourceOffer = nil
-            consumeHint()
-        case .undo:
-            progressStore.grantUndo()
-            resourceOffer = nil
-            consumeUndo()
-        case .revive:
-            guard canRevive else { return false }
-            resourceOffer = nil
-            applyRevive()
-        }
-
-        Analytics.log(.offerConverted(context: offer.rawValue, slot: "rewarded"))
-        return true
-    }
-
-    /// Keeps timed gameplay paused while an opt-in full-screen ad covers the
-    /// board, including the short interval after the earn-reward callback.
-    func setRewardedAdPresentationActive(_ isActive: Bool) {
-        isRewardedAdPresentationActive = isActive
-        if isActive {
-            hadCommercialInterruption = true
-        }
-    }
-
-    func recordCommercialInterruption() {
-        hadCommercialInterruption = true
-    }
-
     func dismissResourceOffer() {
         resourceOffer = nil
-    }
-
-    /// Continues the interrupted hint action after StoreKit confirms Premium.
-    func continueHintAfterPremiumUnlock() {
-        updatePremiumAccess(.premium)
-        resourceOffer = nil
-        consumeHint()
-        Analytics.log(.offerConverted(context: ResourceOffer.hint.rawValue, slot: "premium"))
     }
 
     private func applyRevive() {
@@ -856,9 +770,9 @@ final class GameViewModel: GameSceneDelegate {
             progressStore.markWeeklyCompleted(week: week)
             showPendingAchievementBannerIfNeeded()
 
-        case .zen(let date, _):
+        case .zen(let date, let index):
             isFirstStoryCompletion = false
-            progressStore.recordZenCompletion(date: date)
+            progressStore.recordZenCompletion(date: date, index: index)
 
         case .master(let index):
             isFirstStoryCompletion = false

@@ -124,18 +124,9 @@ final class SettingsStore {
         settings = .defaults
     }
 
-    @discardableResult
-    func selectTheme(_ id: AppThemeID, access: PremiumAccessPolicy) -> Bool {
-        guard access.canUseTheme(id) else { return false }
-        guard settings.themeID != id else { return true }
+    func selectTheme(_ id: AppThemeID) {
+        guard settings.themeID != id else { return }
         settings.themeID = id
-        return true
-    }
-
-    func enforceThemeAccess(_ access: PremiumAccessPolicy) {
-        let resolved = access.resolvedTheme(settings.themeID)
-        guard resolved != settings.themeID else { return }
-        settings.themeID = resolved
     }
 
     private func save() {

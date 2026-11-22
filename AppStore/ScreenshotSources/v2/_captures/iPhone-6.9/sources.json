@@ -1,0 +1,499 @@
+{
+  "app": {
+    "version": "2.0",
+    "build": "2",
+    "binaries": {
+      "MazeArrows": "2c941540ac02529f45b70eb5bba6185bb55375d77984881d41794009c80359cc",
+      "MazeArrows.debug.dylib": "8761cc384ddb44613d008c7e1e0e14936414df73a0da95933a3cd549702f50eb"
+    },
+    "resources": {
+      "Assets.car": "1a1a5c5e7e6d5e405e62e8090d7f369c3483cf3404850197f61d5354de499340",
+      "de.lproj/Gates.strings": "f5ae229363e8fafb8f5ee8c32f64a1312f7b9f676ecb308a910f701b01820aa0",
+      "de.lproj/Localizable.strings": "bb0a02a026cb0ebe551f38b4c3226be0d21b15ad1d0cc78534a57838f380495b",
+      "de.lproj/Localizable.stringsdict": "4cb134ad7378d6f7e094eb499ca3abdb6cc18b1b8d3d0ff28ce2d842ecbc7612",
+      "de.lproj/Onboarding.strings": "13b43d46517294edf79ccb705041954682eb739a5a95b03c2658a649ed894b23",
+      "en-IN.lproj/Gates.strings": "8dea5b9b085d609d504aaeef6a83f2014a6b1875ebe687916bea9b3e54612359",
+      "en-IN.lproj/Localizable.strings": "33f731071186441aee6181612eab0024a669efc60070dc4184618a5c1e3f8eb5",
+      "en-IN.lproj/Onboarding.strings": "d5cfdd859da1a177d68d6b32b3403a5969b5723ac0e6113545d8550bc6c8dca7",
+      "en.lproj/Gates.strings": "8dea5b9b085d609d504aaeef6a83f2014a6b1875ebe687916bea9b3e54612359",
+      "en.lproj/Localizable.strings": "9c86f24335b5c0d09189947285fd91aeeed3fbd5ef4221fdca1d58e75ccf2835",
+      "en.lproj/Localizable.stringsdict": "b5417abcdf5c3b66d48bd70f2bfdd2c561f983dfc343e033ed709572b2bb97bc",
+      "es-MX.lproj/Gates.strings": "2d0ccac490094e0c2c0952e1a7845f0f491eedeb518a99e66246a1001242c9b0",
+      "es-MX.lproj/Localizable.strings": "a42dc6c341d12e463cafe4b75398bf445086caf8016a9b176f15b481574e1adc",
+      "es-MX.lproj/Localizable.stringsdict": "189485d64303017154d57d128c19415397de8b633f90f01dd60d7716e36335d5",
+      "es-MX.lproj/Onboarding.strings": "5813b980707b3b0dff5d21d0ec8830b9ab14e82a8375a77980d8d07a33ab30d7",
+      "es.lproj/Gates.strings": "2d0ccac490094e0c2c0952e1a7845f0f491eedeb518a99e66246a1001242c9b0",
+      "es.lproj/Localizable.strings": "089ee6cc2d59f38134383f0fd15fbcbc9aa437eecdb3ead0223406e72f61bc21",
+      "es.lproj/Localizable.stringsdict": "70f092e193f7cf37495f9bc35f610dac1fd3da806177ed05af8355ffd7f89aa9",
+      "es.lproj/Onboarding.strings": "dc254aa9105949d09d938141c7393c58c08886c0c0bcdea50b5c5abcd80f5146",
+      "fr.lproj/Gates.strings": "674ae0ca2eeeb5a16f47cfa2aeec6aaf0232cf0d64ae618ff2e959f0abc0b690",
+      "fr.lproj/Localizable.strings": "ecfcc658246302607aff88057306648a6e60ce346643a5b388be02a354c26dcd",
+      "fr.lproj/Localizable.stringsdict": "28731e01f062e70dd92885a1ca92b15ea59c8b1a79fd019be752db56284c426d",
+      "fr.lproj/Onboarding.strings": "ea4ffa90f71d18849bf89f8048b22878028c320cd8d25b32c77ecf06fa7ed0e1",
+      "hi.lproj/Gates.strings": "d6078314cfb1f559013a5abae37a0a878e171f76ee7354842228aa1d5ceb9082",
+      "hi.lproj/Localizable.strings": "fce48fda541d83dde0404790b6d588487e3b180a4dda2da9a075eb28c2fd5e63",
+      "hi.lproj/Localizable.stringsdict": "24d4aeadeb3f86e64b67f9eb700f32a8599497997e87d28ce2d0cf166bc5b8c2",
+      "hi.lproj/Onboarding.strings": "729c5b69f339ea272847272d4a2bf492dd08e2c6b64d0691a1c7f5b2a5bf2ceb",
+      "id.lproj/Gates.strings": "23e9229051d21d0189c94e0dcc55c2d8436a3c7560a32eb52fe02b19906f32a7",
+      "id.lproj/Localizable.strings": "68d5358165344d2a291fbc94651b34f0ada6e9a776ad7e8dc093f177ec36c548",
+      "id.lproj/Onboarding.strings": "b1e5305e3233e5ce9a10e1b0ce7ad736bbe7bfb00f43e50d802fe3c4898cd00a",
+      "ja.lproj/Gates.strings": "f6ef2a9804175c5d785639ab7a8389533e14985c27f554c68a6e53cfe45d7586",
+      "ja.lproj/Localizable.strings": "49ff2f328a7a5400c670fcf80eb1a403426f55622c758dc7037b0cc481eb351d",
+      "ja.lproj/Onboarding.strings": "eafb4b1e730a5600e0603f76eec9b11215df785a20d16b43b557b123386d8c0c",
+      "ko.lproj/Gates.strings": "14d62d975e31eea54af66a37c99ca984d83d461879d7a9a0376ab1e8de37a37c",
+      "ko.lproj/Localizable.strings": "f0e8eafc56ec6eb52e1ec4454819d5f65e2ba14cf3535a731e29eacc244f22a0",
+      "ko.lproj/Onboarding.strings": "240f1e765fdf26742c4a323c2e74cfb0291f149abf24fac225cbc6f77ed5a4c0",
+      "levels-v2.json": "50bda86533d23b9c669af5c9a58b4be8427cca76edcfeda1cbde0e5d2fae5955",
+      "levels.json": "f781f36eb3a64e8e2e84c5fb3e693e83e0f1425cc37a801d63acd7a06fb223c9",
+      "pt-BR.lproj/Gates.strings": "9740ba2f958be3f414a828b3d20e6be730e08b8b989f55a79d66d0d14e24550a",
+      "pt-BR.lproj/Localizable.strings": "3520328ffe22055e13e6991dc86953341a835230010d16814cc01c7f44c59c87",
+      "pt-BR.lproj/Localizable.stringsdict": "24059572a2e5bf029dca294406d09dd0330f58ee60d44d3bdd76b40056d43faf",
+      "pt-BR.lproj/Onboarding.strings": "967398a5321da2fb84cd712f4591a24e5c6ac6ff4d9e888c5ece007017e86605",
+      "pt-PT.lproj/Gates.strings": "ad11e04da1bf2cde2eb4c4da360bd77c7fc5ba78bec69e4f6b86e3770eeb55ae",
+      "pt-PT.lproj/Localizable.strings": "1a5cbe314b804d72cd6cf868611a480e7469a25f9609be8c1f74d37103279f3c",
+      "pt-PT.lproj/Localizable.stringsdict": "56e052fe09fb08f676fbcbfc8ae6656f6d702b9e32a5362b74d83433a782a3ff",
+      "pt-PT.lproj/Onboarding.strings": "c2ba03e1abf7a6ee71af2ea3364639a094ed9bacf961f59e401e3395ff2b7584",
+      "ru.lproj/Gates.strings": "d030d2c6a7cfb83adc1bb652db7505982810b84e882635146a3f53c6626b28fb",
+      "ru.lproj/Localizable.strings": "fa2da56d1633f4a561c88c88b01bbd2fef3a256eb1239215250420ee57af425a",
+      "ru.lproj/Localizable.stringsdict": "4db78ea3fe978e5c53b7d6381708812f619dee83156be68d458da1ffee22e6f6",
+      "ru.lproj/Onboarding.strings": "e6ba85f92fc6316b4da48de75bc62e7ca869bb87004b942ae234d1662b58c296",
+      "th.lproj/Gates.strings": "ea86c89b3cf048e33021a3e4c2a2f6f4b2eb05a10fc15abf6da8d7800f288681",
+      "th.lproj/Localizable.strings": "85c033dc5e5d99ce6beb47e4f2e4a3b6f0a020d5c4deb12422ea4f7e0c867f99",
+      "th.lproj/Onboarding.strings": "92bc515df86c63a22ebc4764314f9593117b22bc424ceba612a256c4b47c36ff",
+      "zh-Hant.lproj/Gates.strings": "3ae23740a22b178c848eb1cb5555014b8c435828791de74f8cfdd3899cdffde2",
+      "zh-Hant.lproj/Localizable.strings": "8af83ceaea0957b8a5ee901d6605d3fb9df0223851cbd9f3fce715c7519942f6",
+      "zh-Hant.lproj/Onboarding.strings": "d71cb6d6a23ea3151a6e14976cff8732fc45fd0e15dee6f138722721310b5eaa"
+    }
+  },
+  "sets": {
+    "en": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/c7195db6cb2f182249cbf40874e1b2f0367a4908acf1f36e7e79fb936823c6a9.png",
+        "sha256": "c7195db6cb2f182249cbf40874e1b2f0367a4908acf1f36e7e79fb936823c6a9",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/db909edfe88bfa02a0d72daadaac423ac529aa4014d925b2a4342d3cd9cebd37.png",
+        "sha256": "db909edfe88bfa02a0d72daadaac423ac529aa4014d925b2a4342d3cd9cebd37",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/2a56443bc3cbfcddf34f3edb717a6e5004259b98a3b25c9026057561644f38a9.png",
+        "sha256": "2a56443bc3cbfcddf34f3edb717a6e5004259b98a3b25c9026057561644f38a9",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/6ac85a3de473dd756487fd66800f954ade71bdd7db31d82240f239611a5eca65.png",
+        "sha256": "6ac85a3de473dd756487fd66800f954ade71bdd7db31d82240f239611a5eca65",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/en-US/iPhone-6.9/quests.png",
+        "sha256": "84c48a56ab1efee3969ec8c772c321b426dc4ddcfbb061b7c73dc0da667f7115",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/8b1fd53fb0952c0c174388a78117a4fe48f4c089de8c8b0b54c6a15e5b061db8.png",
+        "sha256": "8b1fd53fb0952c0c174388a78117a4fe48f4c089de8c8b0b54c6a15e5b061db8",
+        "origin": "2.0-simulator"
+      }
+    },
+    "de": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/bb8541b14f1a54a95ea72fa67872562be9424a8b2e58e482728b70295ead2423.png",
+        "sha256": "bb8541b14f1a54a95ea72fa67872562be9424a8b2e58e482728b70295ead2423",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/611439fad0e641fc3d0a59851ea3417c7c9c4ccc2cc8e0846746faca258e6d7f.png",
+        "sha256": "611439fad0e641fc3d0a59851ea3417c7c9c4ccc2cc8e0846746faca258e6d7f",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/315eb86d80b7fff2eaa88d7ab3162d420f4a652a298d170fe7f0363875b538b3.png",
+        "sha256": "315eb86d80b7fff2eaa88d7ab3162d420f4a652a298d170fe7f0363875b538b3",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/aa9c1b6cab57127d94749c0dfbbeae24751c19fa1ec9c7c6747a3dfe2cdf262e.png",
+        "sha256": "aa9c1b6cab57127d94749c0dfbbeae24751c19fa1ec9c7c6747a3dfe2cdf262e",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/de/iPhone-6.9/quests.png",
+        "sha256": "a890ff4d9e9b693a722200a853f907b1cacc8b31790b16784f91bed92c9e80a0",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/e9f4949bee9650212c9b15a2fe0e1f57a61512b67c47665e08f0aa08d1eea8cc.png",
+        "sha256": "e9f4949bee9650212c9b15a2fe0e1f57a61512b67c47665e08f0aa08d1eea8cc",
+        "origin": "2.0-simulator"
+      }
+    },
+    "es": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/8cc61ace81dd1d8806e5ab25a3963465c0166e070c24638f82040a4e1ddfe495.png",
+        "sha256": "8cc61ace81dd1d8806e5ab25a3963465c0166e070c24638f82040a4e1ddfe495",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/3c1d14bc85be4aafdddf18e531dbf1aad6b434b2222f0346b449bffa65fe561d.png",
+        "sha256": "3c1d14bc85be4aafdddf18e531dbf1aad6b434b2222f0346b449bffa65fe561d",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/4f9463bc8c1fb4a0d9c4f31713230dbe13ebe2418db555a757ffffd339ef66ef.png",
+        "sha256": "4f9463bc8c1fb4a0d9c4f31713230dbe13ebe2418db555a757ffffd339ef66ef",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/c4864a3749ed15858b3266553f9729b48f717a5fceb77d4c10f2d1f1525389fa.png",
+        "sha256": "c4864a3749ed15858b3266553f9729b48f717a5fceb77d4c10f2d1f1525389fa",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/es/iPhone-6.9/quests.png",
+        "sha256": "1d5075d286bb8fafcc19778a02af5e08106139227c27d5b23c3e134b1d806b1b",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/932bf6d195e99bd8db5a7c12b7318385293858753bc092bd9d0fd32f790683e1.png",
+        "sha256": "932bf6d195e99bd8db5a7c12b7318385293858753bc092bd9d0fd32f790683e1",
+        "origin": "2.0-simulator"
+      }
+    },
+    "es-MX": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/8cc61ace81dd1d8806e5ab25a3963465c0166e070c24638f82040a4e1ddfe495.png",
+        "sha256": "8cc61ace81dd1d8806e5ab25a3963465c0166e070c24638f82040a4e1ddfe495",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/3c1d14bc85be4aafdddf18e531dbf1aad6b434b2222f0346b449bffa65fe561d.png",
+        "sha256": "3c1d14bc85be4aafdddf18e531dbf1aad6b434b2222f0346b449bffa65fe561d",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/4f9463bc8c1fb4a0d9c4f31713230dbe13ebe2418db555a757ffffd339ef66ef.png",
+        "sha256": "4f9463bc8c1fb4a0d9c4f31713230dbe13ebe2418db555a757ffffd339ef66ef",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/c4864a3749ed15858b3266553f9729b48f717a5fceb77d4c10f2d1f1525389fa.png",
+        "sha256": "c4864a3749ed15858b3266553f9729b48f717a5fceb77d4c10f2d1f1525389fa",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/es-MX/iPhone-6.9/quests.png",
+        "sha256": "d04366f221afdab7b20b0bf386d54e64e3f80b5e05fae08b876568f45fa8c4cd",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/932bf6d195e99bd8db5a7c12b7318385293858753bc092bd9d0fd32f790683e1.png",
+        "sha256": "932bf6d195e99bd8db5a7c12b7318385293858753bc092bd9d0fd32f790683e1",
+        "origin": "2.0-simulator"
+      }
+    },
+    "fr": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/d293aac7675ea4ea815b4299acc57f367c4d31fb4bdfa11b66469de56d7b7082.png",
+        "sha256": "d293aac7675ea4ea815b4299acc57f367c4d31fb4bdfa11b66469de56d7b7082",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/1434b31e2dd848d00672adc38b8a9a73d857b604fe23209fed930238fd9997d6.png",
+        "sha256": "1434b31e2dd848d00672adc38b8a9a73d857b604fe23209fed930238fd9997d6",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/6621cdb34e9163529f464b5ae2ef37d6f21cca7c11b1746082fafaf285a43d08.png",
+        "sha256": "6621cdb34e9163529f464b5ae2ef37d6f21cca7c11b1746082fafaf285a43d08",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/1707fecdb26e5bc000dcf209e58f0a7b7971a60617de079f80abb11f62170940.png",
+        "sha256": "1707fecdb26e5bc000dcf209e58f0a7b7971a60617de079f80abb11f62170940",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/fr/iPhone-6.9/quests.png",
+        "sha256": "0109daa37b9a8161fa8bc78a0f6da223e13f345e2073e0f2b0f835e11f2c73ef",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/6187c329826ec591ebe05d7c6a8f5848b2bdeb1dfcfd06a9dfae607e559c5c13.png",
+        "sha256": "6187c329826ec591ebe05d7c6a8f5848b2bdeb1dfcfd06a9dfae607e559c5c13",
+        "origin": "2.0-simulator"
+      }
+    },
+    "ja": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/0f21569e2d7800b9a66c49838f2e17eeeb511aa3f33611fc4b63947d017dae12.png",
+        "sha256": "0f21569e2d7800b9a66c49838f2e17eeeb511aa3f33611fc4b63947d017dae12",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/2f95c6467054c7f2e91679d36f0d1cb6e692a5cab0473ee5c48ed76ba3524b17.png",
+        "sha256": "2f95c6467054c7f2e91679d36f0d1cb6e692a5cab0473ee5c48ed76ba3524b17",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/8e0814cd546073fe3e05d0b096359926a949439ea719846deece64a6e511033f.png",
+        "sha256": "8e0814cd546073fe3e05d0b096359926a949439ea719846deece64a6e511033f",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/82157bbee51786cac2935336031d9f5ae5cd6d7105d8d7c6d8f6a2120592e7ed.png",
+        "sha256": "82157bbee51786cac2935336031d9f5ae5cd6d7105d8d7c6d8f6a2120592e7ed",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/ja/iPhone-6.9/quests.png",
+        "sha256": "6f893d64110e513c8f7b50f91c3f77946f60d2bd38dee0ad4076ca2d8f33b405",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/022a4b237711dd3cc9ac64ea898e82eeaceed21c6350a131906348427c4287ee.png",
+        "sha256": "022a4b237711dd3cc9ac64ea898e82eeaceed21c6350a131906348427c4287ee",
+        "origin": "2.0-simulator"
+      }
+    },
+    "ko": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/c06018aa373258f2693c1575bd0ff640a5caedeb718d3b2be2212059b858dedf.png",
+        "sha256": "c06018aa373258f2693c1575bd0ff640a5caedeb718d3b2be2212059b858dedf",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/a81f176e5795478c9802e96bc0795ae196a1aac286073b5ee399e53fdd692b7a.png",
+        "sha256": "a81f176e5795478c9802e96bc0795ae196a1aac286073b5ee399e53fdd692b7a",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/f44627013e58f628d4c5878722403fc9107da78a8d37298091093055a05fe64c.png",
+        "sha256": "f44627013e58f628d4c5878722403fc9107da78a8d37298091093055a05fe64c",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/a6f72f0c82ac44fe693738e28ec61ddfe31e467c9665da6f83839e608b79c41f.png",
+        "sha256": "a6f72f0c82ac44fe693738e28ec61ddfe31e467c9665da6f83839e608b79c41f",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/ko/iPhone-6.9/quests.png",
+        "sha256": "c5720f53f0055082fab6c335f7f27760359c9f45760003277ff1318ec098624b",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/5b152939cee07871b08356ce25ad02e3aadde18a2a791e45861d155f139918d3.png",
+        "sha256": "5b152939cee07871b08356ce25ad02e3aadde18a2a791e45861d155f139918d3",
+        "origin": "2.0-simulator"
+      }
+    },
+    "pt-BR": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/ed455aea30595db3d10b3185d74ed4b2f1fd8c31e4dc132730056446c6f59802.png",
+        "sha256": "ed455aea30595db3d10b3185d74ed4b2f1fd8c31e4dc132730056446c6f59802",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/188ce7687fc4e28f2e696a8afc9e3e3d461486f6cb2226b9f0897453aa8b8f21.png",
+        "sha256": "188ce7687fc4e28f2e696a8afc9e3e3d461486f6cb2226b9f0897453aa8b8f21",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/d0c036b854c93cf8ba3cb21fc29466d031e401169c74058f2d95c32752d4e08f.png",
+        "sha256": "d0c036b854c93cf8ba3cb21fc29466d031e401169c74058f2d95c32752d4e08f",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/d0c824a295250735c2992716c55a99c52650e26ec5d66f73aa83aa8db3c6ff27.png",
+        "sha256": "d0c824a295250735c2992716c55a99c52650e26ec5d66f73aa83aa8db3c6ff27",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/pt-BR/iPhone-6.9/quests.png",
+        "sha256": "ee4b6db2684aad9cf0cdd4243d8c08016ae6b71086366570a58c11c79db690eb",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/f88ccaee9889691fe5565cb84024b41beb2bf7526a1ba66083c8e5e35acdcd3f.png",
+        "sha256": "f88ccaee9889691fe5565cb84024b41beb2bf7526a1ba66083c8e5e35acdcd3f",
+        "origin": "2.0-simulator"
+      }
+    },
+    "pt-PT": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/ff421163b9f359088aa630056febc7e0a471506d675b1577ce06c45bf782d401.png",
+        "sha256": "ff421163b9f359088aa630056febc7e0a471506d675b1577ce06c45bf782d401",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/50109109e1c098fd1ec74c51aaab14641f63de0d5b30dc6f260e4129e2de1b02.png",
+        "sha256": "50109109e1c098fd1ec74c51aaab14641f63de0d5b30dc6f260e4129e2de1b02",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/ba686f9f025e49b8d84f4d4e3f13fc057e827ae67adf6ba2fbc5114321576b4c.png",
+        "sha256": "ba686f9f025e49b8d84f4d4e3f13fc057e827ae67adf6ba2fbc5114321576b4c",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/fd3724b80d2e358f028c16479a46ae6474efca77e72449cfa3bf9d8163371ccc.png",
+        "sha256": "fd3724b80d2e358f028c16479a46ae6474efca77e72449cfa3bf9d8163371ccc",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "v2/_captures/iPhone-6.9/218483308fa1251f46f613315041d93309259d1d898734556ea5c1de13ef7606.png",
+        "sha256": "218483308fa1251f46f613315041d93309259d1d898734556ea5c1de13ef7606",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/6ee176a258acfbd10327e0241491cd545fab82be2cf7fa719f206147b70f7815.png",
+        "sha256": "6ee176a258acfbd10327e0241491cd545fab82be2cf7fa719f206147b70f7815",
+        "origin": "2.0-simulator"
+      }
+    },
+    "zh-Hant": {
+      "free-arrow": {
+        "source": "v2/_captures/iPhone-6.9/ffd8772c57610b79e62c4ba4c15880061d745b22efc119b0cf1219fa996c0d6c.png",
+        "sha256": "ffd8772c57610b79e62c4ba4c15880061d745b22efc119b0cf1219fa996c0d6c",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "combo": {
+        "source": "v2/_captures/iPhone-6.9/08e5561240913cc1d31a566e1bd89a4a22e490b6e7e47cb08c0609600a9eb94d.png",
+        "sha256": "08e5561240913cc1d31a566e1bd89a4a22e490b6e7e47cb08c0609600a9eb94d",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "worlds": {
+        "source": "v2/_captures/iPhone-6.9/5b186042978c24d97156040e426df2f098d01e35812ed1c5da6118cabb7b5359.png",
+        "sha256": "5b186042978c24d97156040e426df2f098d01e35812ed1c5da6118cabb7b5359",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "daily": {
+        "source": "v2/_captures/iPhone-6.9/7751b9648d45f92dec5edf732a6d43f89b2f052c99913bf673ea8591a1d1bba7.png",
+        "sha256": "7751b9648d45f92dec5edf732a6d43f89b2f052c99913bf673ea8591a1d1bba7",
+        "origin": "2.0-simulator",
+        "sourceBuild": "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa"
+      },
+      "quests": {
+        "source": "_captures/zh-Hant/iPhone-6.9/quests.png",
+        "sha256": "4647395baac29d98b1e20936932ab726b7a44d63d42f0b114855d355c9be7cf7",
+        "origin": "unchanged-v1-quest-screen"
+      },
+      "photo-game": {
+        "source": "v2/_captures/iPhone-6.9/996b412ecc2b5515196d6f97fc8065b2d16a59b94d4cc11007fc3d1370854052.png",
+        "sha256": "996b412ecc2b5515196d6f97fc8065b2d16a59b94d4cc11007fc3d1370854052",
+        "origin": "2.0-simulator"
+      }
+    }
+  },
+  "sourceBuilds": {
+    "0c22568bcbf9ee0f0e953820297a34be02771d93758916f586c4ce8870c0e2fa": {
+      "version": "2.0",
+      "build": "2",
+      "binaries": {
+        "MazeArrows": "2c941540ac02529f45b70eb5bba6185bb55375d77984881d41794009c80359cc",
+        "MazeArrows.debug.dylib": "1447e6c1c6f58f751e82a37c5c175ca2a48d27da63cbe1ed0e41846f763b7c9f"
+      },
+      "resources": {
+        "Assets.car": "1a1a5c5e7e6d5e405e62e8090d7f369c3483cf3404850197f61d5354de499340",
+        "de.lproj/Gates.strings": "f5ae229363e8fafb8f5ee8c32f64a1312f7b9f676ecb308a910f701b01820aa0",
+        "de.lproj/Localizable.strings": "1e024f050e168c4a0a58201ffd9126f5c85d64b46c8be7ba39faf141ec31e6e7",
+        "de.lproj/Localizable.stringsdict": "4cb134ad7378d6f7e094eb499ca3abdb6cc18b1b8d3d0ff28ce2d842ecbc7612",
+        "de.lproj/Onboarding.strings": "13b43d46517294edf79ccb705041954682eb739a5a95b03c2658a649ed894b23",
+        "en-IN.lproj/Gates.strings": "8dea5b9b085d609d504aaeef6a83f2014a6b1875ebe687916bea9b3e54612359",
+        "en-IN.lproj/Localizable.strings": "97ef2dcda5f7afb70066d9148e9c7d818bdf663a3de3acce8131df6ccfa34cee",
+        "en-IN.lproj/Onboarding.strings": "d5cfdd859da1a177d68d6b32b3403a5969b5723ac0e6113545d8550bc6c8dca7",
+        "en.lproj/Gates.strings": "8dea5b9b085d609d504aaeef6a83f2014a6b1875ebe687916bea9b3e54612359",
+        "en.lproj/Localizable.strings": "9c86f24335b5c0d09189947285fd91aeeed3fbd5ef4221fdca1d58e75ccf2835",
+        "en.lproj/Localizable.stringsdict": "b5417abcdf5c3b66d48bd70f2bfdd2c561f983dfc343e033ed709572b2bb97bc",
+        "es-MX.lproj/Gates.strings": "2d0ccac490094e0c2c0952e1a7845f0f491eedeb518a99e66246a1001242c9b0",
+        "es-MX.lproj/Localizable.strings": "bfcb0e1f7b66f88d140087e558a77f58ccd7300e5fa979a903f3eccaec01d545",
+        "es-MX.lproj/Localizable.stringsdict": "189485d64303017154d57d128c19415397de8b633f90f01dd60d7716e36335d5",
+        "es-MX.lproj/Onboarding.strings": "5813b980707b3b0dff5d21d0ec8830b9ab14e82a8375a77980d8d07a33ab30d7",
+        "es.lproj/Gates.strings": "2d0ccac490094e0c2c0952e1a7845f0f491eedeb518a99e66246a1001242c9b0",
+        "es.lproj/Localizable.strings": "d7fd23c778c2c36745515518cbb6fc14422f8ce3fede9c1b821ea3d17da7ba12",
+        "es.lproj/Localizable.stringsdict": "70f092e193f7cf37495f9bc35f610dac1fd3da806177ed05af8355ffd7f89aa9",
+        "es.lproj/Onboarding.strings": "dc254aa9105949d09d938141c7393c58c08886c0c0bcdea50b5c5abcd80f5146",
+        "fr.lproj/Gates.strings": "674ae0ca2eeeb5a16f47cfa2aeec6aaf0232cf0d64ae618ff2e959f0abc0b690",
+        "fr.lproj/Localizable.strings": "ae99154511c90b58e740392064ebad41f340ab506afe23092808278c9739daba",
+        "fr.lproj/Localizable.stringsdict": "28731e01f062e70dd92885a1ca92b15ea59c8b1a79fd019be752db56284c426d",
+        "fr.lproj/Onboarding.strings": "ea4ffa90f71d18849bf89f8048b22878028c320cd8d25b32c77ecf06fa7ed0e1",
+        "hi.lproj/Gates.strings": "d6078314cfb1f559013a5abae37a0a878e171f76ee7354842228aa1d5ceb9082",
+        "hi.lproj/Localizable.strings": "deeb4a3cafaf624939198eff3936795d4fd8f746d2a3dddb954840c1d6ca5e6d",
+        "hi.lproj/Localizable.stringsdict": "24d4aeadeb3f86e64b67f9eb700f32a8599497997e87d28ce2d0cf166bc5b8c2",
+        "hi.lproj/Onboarding.strings": "729c5b69f339ea272847272d4a2bf492dd08e2c6b64d0691a1c7f5b2a5bf2ceb",
+        "id.lproj/Gates.strings": "23e9229051d21d0189c94e0dcc55c2d8436a3c7560a32eb52fe02b19906f32a7",
+        "id.lproj/Localizable.strings": "a6f60815af9b1b3fe3caf705ec98236bcdd770b0d6601fd6c17c42940a09db9c",
+        "id.lproj/Onboarding.strings": "b1e5305e3233e5ce9a10e1b0ce7ad736bbe7bfb00f43e50d802fe3c4898cd00a",
+        "ja.lproj/Gates.strings": "f6ef2a9804175c5d785639ab7a8389533e14985c27f554c68a6e53cfe45d7586",
+        "ja.lproj/Localizable.strings": "0ed9e13a330c2743be05344454c74e70f224b1ab89862b94fdd5c64af2de4920",
+        "ja.lproj/Onboarding.strings": "eafb4b1e730a5600e0603f76eec9b11215df785a20d16b43b557b123386d8c0c",
+        "ko.lproj/Gates.strings": "14d62d975e31eea54af66a37c99ca984d83d461879d7a9a0376ab1e8de37a37c",
+        "ko.lproj/Localizable.strings": "c7095109c138b8b92b8efbe1556e597f348e3ec4880df8d98a7d3a25abe592a9",
+        "ko.lproj/Onboarding.strings": "240f1e765fdf26742c4a323c2e74cfb0291f149abf24fac225cbc6f77ed5a4c0",
+        "levels-v2.json": "50bda86533d23b9c669af5c9a58b4be8427cca76edcfeda1cbde0e5d2fae5955",
+        "levels.json": "f781f36eb3a64e8e2e84c5fb3e693e83e0f1425cc37a801d63acd7a06fb223c9",
+        "pt-BR.lproj/Gates.strings": "9740ba2f958be3f414a828b3d20e6be730e08b8b989f55a79d66d0d14e24550a",
+        "pt-BR.lproj/Localizable.strings": "cca29504090e3ac3b2c52fdb5fc095e02f38bf4f462f47ffd3a1d15440c394b4",
+        "pt-BR.lproj/Localizable.stringsdict": "24059572a2e5bf029dca294406d09dd0330f58ee60d44d3bdd76b40056d43faf",
+        "pt-BR.lproj/Onboarding.strings": "967398a5321da2fb84cd712f4591a24e5c6ac6ff4d9e888c5ece007017e86605",
+        "pt-PT.lproj/Gates.strings": "ad11e04da1bf2cde2eb4c4da360bd77c7fc5ba78bec69e4f6b86e3770eeb55ae",
+        "pt-PT.lproj/Localizable.strings": "e92051816058eb5ee434bd39581daf2222f418093821003d924a78f207b8b4a7",
+        "pt-PT.lproj/Localizable.stringsdict": "56e052fe09fb08f676fbcbfc8ae6656f6d702b9e32a5362b74d83433a782a3ff",
+        "pt-PT.lproj/Onboarding.strings": "c2ba03e1abf7a6ee71af2ea3364639a094ed9bacf961f59e401e3395ff2b7584",
+        "ru.lproj/Gates.strings": "d030d2c6a7cfb83adc1bb652db7505982810b84e882635146a3f53c6626b28fb",
+        "ru.lproj/Localizable.strings": "3904ea15b4361234f20a3666399e9e3eafdbbd3470c33c6633ff62d4e78fba3c",
+        "ru.lproj/Localizable.stringsdict": "4db78ea3fe978e5c53b7d6381708812f619dee83156be68d458da1ffee22e6f6",
+        "ru.lproj/Onboarding.strings": "e6ba85f92fc6316b4da48de75bc62e7ca869bb87004b942ae234d1662b58c296",
+        "th.lproj/Gates.strings": "ea86c89b3cf048e33021a3e4c2a2f6f4b2eb05a10fc15abf6da8d7800f288681",
+        "th.lproj/Localizable.strings": "fb30de76f89dd80178971cb7b34b86e7887d4ec36611cae5246697dcf6af167f",
+        "th.lproj/Onboarding.strings": "92bc515df86c63a22ebc4764314f9593117b22bc424ceba612a256c4b47c36ff",
+        "zh-Hant.lproj/Gates.strings": "3ae23740a22b178c848eb1cb5555014b8c435828791de74f8cfdd3899cdffde2",
+        "zh-Hant.lproj/Localizable.strings": "a9fcb577077399ea57fd460373866459f3e4c0b000ac4ecc8a9aff95ab67234e",
+        "zh-Hant.lproj/Onboarding.strings": "d71cb6d6a23ea3151a6e14976cff8732fc45fd0e15dee6f138722721310b5eaa"
+      }
+    }
+  }
+}

@@ -1,57 +1,24 @@
 /* Common actions */
 "onboarding.action.skip" = "Lewati";
-"onboarding.action.close" = "Tutup";
 "onboarding.action.continue" = "Lanjutkan";
-"onboarding.action.next" = "Berikutnya";
 "onboarding.action.not_now" = "Nanti saja";
-"onboarding.common.premium" = "Premium";
-"onboarding.action.ok" = "OK";
 "onboarding.action.yes_remind" = "Ya, ingatkan saya";
 
 /* Tutorial */
-"onboarding.accessibility.page_progress" = "%lld dari %lld";
 "onboarding.tutorial.tap_arrow" = "Ketuk panah";
 "onboarding.tutorial.great" = "Bagus!";
 "onboarding.tutorial.path_blocked" = "Jalur terhalang";
 "onboarding.tutorial.free_path_first" = "Buka jalurnya terlebih dahulu";
 "onboarding.tutorial.hint" = "Petunjuk menunjukkan jalan";
-"onboarding.tutorial.hints_three" = "Petunjuk: 3";
 "onboarding.tutorial.combo" = "Bersih Beruntun!";
 "onboarding.tutorial.lives_rule" = "3 nyawa. Mengetuk jalur yang terhalang mengurangi 1 nyawa";
 "onboarding.tutorial.level_number" = "Level %lld";
 
 /* Premium introduction */
-"onboarding.paywall.intro.title" = "Main tanpa batas";
-"onboarding.paywall.intro.photo_title" = "Foto apa pun. Jadi labirin.";
-"onboarding.paywall.intro.hints" = "Petunjuk tanpa batas";
-"onboarding.paywall.intro.photo_benefit" = "Ubah foto apa pun menjadi labirin";
-"onboarding.paywall.intro.photo_unlimited" = "Pembuatan Labirin Foto tanpa batas";
-"onboarding.paywall.intro.no_ads" = "Tanpa iklan";
 
 /* Trial timeline */
 
 /* Plans and purchase */
-"onboarding.paywall.plans.title" = "Pilih paket";
-"onboarding.paywall.plans.week" = "Mingguan";
-"onboarding.paywall.plans.year" = "Tahunan";
-"onboarding.paywall.plans.weekly_price" = "%@/minggu";
-"onboarding.paywall.plans.annual_price" = "%@/tahun";
-"onboarding.paywall.plans.annual_per_week" = "≈ %@/minggu";
-"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
-"onboarding.paywall.plans.savings" = "Hemat %@";
-"onboarding.paywall.plans.weekly_cta" = "Mulai Premium mingguan";
-"onboarding.paywall.plans.annual_cta" = "Dapatkan 1 tahun seharga %@";
-"onboarding.paywall.plans.annual_billing" = "%@ ditagihkan hari ini · Diperpanjang %@";
-"onboarding.paywall.restore" = "Pulihkan pembelian";
-"onboarding.paywall.manage_subscription" = "Kelola langganan";
-"onboarding.paywall.auto_renewal" = "Langganan diperpanjang secara otomatis hingga dibatalkan.";
-"onboarding.paywall.terms" = "Ketentuan Penggunaan";
-"onboarding.paywall.privacy" = "Kebijakan Privasi";
-"onboarding.paywall.purchase_pending" = "Pembelian sedang menunggu persetujuan";
-"onboarding.paywall.purchase_failed" = "Pembelian tidak dapat diselesaikan. Silakan coba lagi.";
-"onboarding.paywall.restore_failed" = "Pembelian tidak dapat dipulihkan. Silakan coba lagi.";
-"onboarding.paywall.nothing_to_restore" = "Tidak ditemukan pembelian Premium yang aktif.";
-"onboarding.paywall.restored" = "Premium berhasil dipulihkan";
 
 /* Trial reminder */
 
@@ -81,7 +48,6 @@
 "onboarding.theme.aurora_name" = "Cahaya Aurora";
 "onboarding.theme.neon_name" = "Neon Tengah Malam";
 "onboarding.theme.petal_name" = "Pastel Kelopak";
-"onboarding.theme.more" = "3 tema lainnya di Premium";
 "onboarding.theme.later" = "Nanti";
 
 /* Handoff */

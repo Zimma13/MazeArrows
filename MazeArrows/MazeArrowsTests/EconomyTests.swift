@@ -55,28 +55,6 @@ struct ProgressStoreEconomyTests {
 
     // MARK: purchases
 
-    @Test func purchaseHintDeductsCostAndGrantsHint() {
-        var config = EconomyConfig.default
-        config.hintCost = 40
-        let store = makeStore(coins: 100)
-        let hintsBefore = store.progress.hintsCount
-
-        #expect(store.purchaseHint(config: config))
-        #expect(store.progress.coins == 60)
-        #expect(store.progress.hintsCount == hintsBefore + 1)
-    }
-
-    @Test func purchaseHintWithoutFundsChangesNothing() {
-        var config = EconomyConfig.default
-        config.hintCost = 40
-        let store = makeStore(coins: 39)
-        let hintsBefore = store.progress.hintsCount
-
-        #expect(!store.purchaseHint(config: config))
-        #expect(store.progress.coins == 39)
-        #expect(store.progress.hintsCount == hintsBefore)
-    }
-
     @Test func purchaseUndoDeductsCostAndGrantsUndo() {
         var config = EconomyConfig.default
         config.undoCost = 25
@@ -147,13 +125,11 @@ struct EconomyConfigStoreTests {
 
     @Test func defaultsMatchProposal() {
         let config = EconomyConfig.default
-        #expect(config.hintCost == 100)
         #expect(config.undoCost == 30)
         #expect(config.reviveCost == 150)
         #expect(config.reviveLives == 2)
         #expect(config.streakFreezeCost == 250)
         #expect(config.maxStreakFreezes == 2)
-        #expect(config.zenFreeLevelsPerDay == 3)
         #expect(config.masterClearReward == 25)
         #expect(config.streakChests == [3: 50, 7: 100, 14: 200, 30: 400])
     }
@@ -161,19 +137,19 @@ struct EconomyConfigStoreTests {
     #if DEBUG
     @Test func debugOverrideAppliesOnlyToProvidedKeys() {
         let defaults = makeIsolatedDefaults()
-        defaults.set(55, forKey: "economy.hintCost")
+        defaults.set(55, forKey: "economy.undoCost")
 
         let store = EconomyConfigStore(base: .default, defaults: defaults)
-        #expect(store.config.hintCost == 55)
-        #expect(store.config.undoCost == EconomyConfig.default.undoCost)
+        #expect(store.config.undoCost == 55)
+        #expect(store.config.reviveCost == EconomyConfig.default.reviveCost)
     }
 
     @Test func debugOverrideIgnoresNonPositiveValues() {
         let defaults = makeIsolatedDefaults()
-        defaults.set(0, forKey: "economy.hintCost")
+        defaults.set(0, forKey: "economy.undoCost")
 
         let store = EconomyConfigStore(base: .default, defaults: defaults)
-        #expect(store.config.hintCost == EconomyConfig.default.hintCost)
+        #expect(store.config.undoCost == EconomyConfig.default.undoCost)
     }
     #endif
 }

@@ -15,8 +15,6 @@ struct GameView: View {
     @State private var model: GameViewModel
     @Environment(\.dismiss) private var dismiss
     @Environment(SettingsStore.self) private var settings
-    @Environment(PremiumStore.self) private var premium
-    @Environment(AdService.self) private var ads
     @Environment(ProgressStore.self) private var progress
     @Environment(OnboardingStore.self) private var onboarding
     @Environment(ReviewRequestStore.self) private var reviewRequests
@@ -28,9 +26,6 @@ struct GameView: View {
 
     @State private var sceneContainer = SceneContainer()
     @State private var isVoiceOverRunning = UIAccessibility.isVoiceOverRunning
-    @State private var premiumPaywallContext: PremiumPaywallContext?
-    @State private var opensHintPaywallAfterOfferDismisses = false
-    @State private var hasResolvedCompletionPresentation = false
     let onNext: (() -> Void)?
 
     init(model: GameViewModel, onNext: (() -> Void)? = nil) {
@@ -107,7 +102,7 @@ struct GameView: View {
                         },
                         bind: {
                             model.scene = $0
-                            $0.accessibilityElementsDidChange = { [weak model] in
+                            $0.accessibilityElementsDidChange = { [weak model = model] in
                                 model?.accessibilityBoardDidChange()
                             }
                         }
@@ -149,42 +144,22 @@ struct GameView: View {
 
         }
         .toolbar(.hidden, for: .navigationBar)
-        .sheet(
-            item: Bindable(model).resourceOffer,
-            onDismiss: openPendingHintPaywall
-        ) { offer in
+        .sheet(item: Bindable(model).resourceOffer) { offer in
             ResourceOfferSheet(
                 model: model,
                 offer: offer,
                 theme: theme,
-                openPremium: {
-                    opensHintPaywallAfterOfferDismisses = true
+                onRetry: restartGame,
+                onClose: {
                     model.dismissResourceOffer()
+                    closeGame()
                 }
             )
-                .presentationDetents([.medium, .large])
-                .presentationDragIndicator(.visible)
-        }
-        .fullScreenCover(item: $premiumPaywallContext) { context in
-            PremiumPaywallView(context: context) {
-                if context == .hints {
-                    model.continueHintAfterPremiumUnlock()
-                }
-            }
-        }
-        .onChange(of: premiumPaywallContext) { _, context in
-            if context != nil {
-                model.recordCommercialInterruption()
-            }
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.visible)
         }
         .task {
             await model.runSessionTimer()
-        }
-        .onChange(of: premium.isPremium, initial: true) { _, isPremium in
-            guard premium.hasLoadedEntitlements else { return }
-            model.updatePremiumAccess(
-                PremiumAccessPolicy(isPremium: isPremium)
-            )
         }
         .onReceive(
             NotificationCenter.default.publisher(
@@ -195,19 +170,14 @@ struct GameView: View {
         }
         .overlay {
             if model.isCompleted {
-                if hasResolvedCompletionPresentation {
-                    WinOverlayView(
-                        model: model,
-                        theme: theme,
-                        onReplay: restartGame,
-                        onClose: closeGame,
-                        onNext: nextAction
-                    )
-                    .transition(.opacity)
-                } else {
-                    LevelCompleteTransitionView(theme: theme)
-                        .transition(.opacity)
-                }
+                WinOverlayView(
+                    model: model,
+                    theme: theme,
+                    onReplay: restartGame,
+                    onClose: closeGame,
+                    onNext: nextAction
+                )
+                .transition(.opacity)
             } else if model.isFailed {
                 FailOverlayView(
                     model: model,
@@ -307,7 +277,13 @@ struct GameView: View {
             )
         }
         .task(id: model.isCompleted) {
-            await resolveCompletionPresentation()
+            guard model.isCompleted,
+                  scenePhase == .active,
+                  !ProcessInfo.processInfo.arguments.contains("--debug-auto-next"),
+                  let opportunity = reviewOpportunity,
+                  let reservation = reviewRequests.reserve(opportunity: opportunity)
+            else { return }
+            await requestReviewAfterCelebration(reservation)
         }
         #if DEBUG
         .task(id: model.isCompleted) {
@@ -325,48 +301,6 @@ struct GameView: View {
             onNext()
         }
         #endif
-    }
-
-    private func resolveCompletionPresentation() async {
-        guard model.isCompleted else {
-            hasResolvedCompletionPresentation = false
-            return
-        }
-
-        if scenePhase == .active,
-           !ProcessInfo.processInfo.arguments.contains("--debug-auto-next"),
-           let opportunity = reviewOpportunity,
-           let reservation = reviewRequests.reserve(opportunity: opportunity) {
-            _ = ads.registerInterstitialOpportunity(
-                isFirstStoryCompletion: model.isFirstStoryCompletion,
-                allowsPresentation: false
-            )
-            hasResolvedCompletionPresentation = true
-            await requestReviewAfterCelebration(reservation)
-            return
-        }
-
-        let allowsPresentation = model.pendingAchievementBanner == nil
-            && !ProcessInfo.processInfo.arguments.contains("--debug-auto-next")
-        let shouldPresent = ads.registerInterstitialOpportunity(
-            isFirstStoryCompletion: model.isFirstStoryCompletion,
-            allowsPresentation: allowsPresentation
-        )
-
-        guard shouldPresent else {
-            hasResolvedCompletionPresentation = true
-            return
-        }
-
-        do {
-            try await Task.sleep(for: .milliseconds(800))
-        } catch {
-            return
-        }
-        guard !Task.isCancelled, model.isCompleted else { return }
-
-        _ = ads.presentInterstitialIfReady()
-        hasResolvedCompletionPresentation = true
     }
 
     private func requestReviewAfterCelebration(
@@ -396,12 +330,9 @@ struct GameView: View {
         guard !Task.isCancelled,
               model.isCompleted,
               !model.hasUsedRevive,
-              !model.hadCommercialInterruption,
+              !model.showedResourceOffer,
               model.resourceOffer == nil,
-              premiumPaywallContext == nil,
               scenePhase == .active,
-              !ads.isPresentingInterstitial,
-              !ads.isPresentingRewardedAd,
               reviewRequests.commit(reservation)
         else { return }
 
@@ -437,15 +368,9 @@ struct GameView: View {
             isFirstCompletion: model.isFirstStoryCompletion,
             stars: model.earnedStars,
             hasUsedRevive: model.hasUsedRevive,
-            hadCommercialInterruption: model.hadCommercialInterruption,
+            showedResourceOffer: model.showedResourceOffer,
             streakDays: progress.progress.dailyStreak
         )
-    }
-
-    private func openPendingHintPaywall() {
-        guard opensHintPaywallAfterOfferDismisses else { return }
-        opensHintPaywallAfterOfferDismisses = false
-        premiumPaywallContext = .hints
     }
 
     private var nextAction: (() -> Void)? {
@@ -466,7 +391,6 @@ struct GameView: View {
             contentID: analyticsContentID,
             mode: analyticsMode
         ))
-        hasResolvedCompletionPresentation = false
         model.restart()
     }
 
@@ -719,9 +643,7 @@ struct GameView: View {
             ActionPillView(
                 systemImage: model.gameMode.allowsHints ? "lightbulb.fill" : "lock.fill",
                 label: "Hint",
-                badge: model.gameMode.allowsHints
-                    ? (model.hasUnlimitedHints ? "∞" : "\(model.availableHints)")
-                    : nil,
+                badge: model.gameMode.allowsHints ? "∞" : nil,
                 isDisabled: model.isCompleted || model.isFailed || !model.gameMode.allowsHints,
                 voiceOverHint: "Highlights a recommended arrow.",
                 theme: theme

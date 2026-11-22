@@ -1,0 +1,10 @@
+LOCALE=pt-PT
+LANGUAGE=Português (Portugal)
+APP_NAME=Arrow Maze Quest: Lógica
+SUBTITLE=Liberta todas as setas
+PROMOTIONAL_TEXT=Qual é a chave que abre o caminho? Explora 260 níveis, transforma fotografias em labirintos e descontrai no modo Zen. Sem anúncios nem subscrições.
+KEYWORDS=labirinto,puzzle,flecha,escape,cérebro,bloco,toque,rota,desafio,relaxar,zen,diário,foto,trilha
+SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
+PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
+MARKETING_URL=https://kinapp.dev/arrowmaze/
+WHATS_NEW=O capítulo «Portões de sinal» traz 20 níveis. Liberta as chaves para abrir os portões com o símbolo correspondente. O teu progresso mantém-se. A publicidade e as subscrições dão lugar a um jogo com todos os temas, pistas ilimitadas e acesso sem limites a Photo Maze e ao modo Zen.

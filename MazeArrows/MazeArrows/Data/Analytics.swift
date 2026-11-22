@@ -5,9 +5,7 @@
 //  Created by Zimma on 11.05.2026.
 //
 //
-//  Typed economy events, wired now so funnels exist from day one. The client
-//  is a no-op until an analytics SDK lands (stage 13 of the monetization
-//  plan) — swapping `Analytics.client` is the only integration point.
+//  Gameplay events are logged locally in debug builds.
 //
 
 import Foundation
@@ -52,7 +50,6 @@ enum AnalyticsEvent: Equatable, Sendable {
     case reviveOffered
     case reviveUsed
     case zenLevelStart(index: Int)
-    case zenLimitHit
     case masterClear(levelIndex: Int, modifier: String)
     case streakFreezeUsed
     case streakChestClaimed(day: Int, coins: Int)
@@ -91,7 +88,6 @@ enum AnalyticsEvent: Equatable, Sendable {
         case .reviveOffered:      return "revive_offered"
         case .reviveUsed:         return "revive_used"
         case .zenLevelStart:      return "zen_level_start"
-        case .zenLimitHit:        return "zen_limit_hit"
         case .masterClear:        return "master_clear"
         case .streakFreezeUsed:   return "streak_freeze_used"
         case .streakChestClaimed: return "streak_chest_claimed"
@@ -170,7 +166,7 @@ enum AnalyticsEvent: Equatable, Sendable {
             return ["context": context, "slots": slots.joined(separator: ",")]
         case .offerConverted(let context, let slot):
             return ["context": context, "slot": slot]
-        case .reviveOffered, .reviveUsed, .zenLimitHit, .streakFreezeUsed:
+        case .reviveOffered, .reviveUsed, .streakFreezeUsed:
             return [:]
         case .zenLevelStart(let index):
             return ["index": "\(index)"]

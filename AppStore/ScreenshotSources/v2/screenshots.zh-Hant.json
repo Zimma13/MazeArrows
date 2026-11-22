@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "locale": "zh-Hant",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": [
+        "你的照片",
+        "你的迷宮"
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "選個主角，把它變成真正能玩的謎題。"
+      ],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": [
+        "找出能動的",
+        "關鍵箭頭"
+      ],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": [
+        "聰明一步，就能解鎖整個盤面。"
+      ],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": [
+        "看它一口氣",
+        "全部解開"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "提前規劃，連出暢快連擊。"
+      ],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_260-levels-8-worlds.png",
+      "headline": [
+        "260個關卡",
+        "8個世界"
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "使用相同符號的鑰匙開門。"
+      ],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": [
+        "每天都有",
+        "全新迷宮"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "每日謎題、3項任務，還有連續紀錄獎勵。"
+      ],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

@@ -43,7 +43,7 @@ struct ReviewRequestPolicyTests {
         isFirstCompletion: Bool = true,
         stars: Int = 2,
         hasUsedRevive: Bool = false,
-        hadCommercialInterruption: Bool = false,
+        showedResourceOffer: Bool = false,
         streakDays: Int = 0
     ) -> ReviewRequestOpportunity {
         ReviewRequestOpportunity(
@@ -53,7 +53,7 @@ struct ReviewRequestPolicyTests {
             isFirstCompletion: isFirstCompletion,
             stars: stars,
             hasUsedRevive: hasUsedRevive,
-            hadCommercialInterruption: hadCommercialInterruption,
+            showedResourceOffer: showedResourceOffer,
             streakDays: streakDays
         )
     }
@@ -108,7 +108,7 @@ struct ReviewRequestPolicyTests {
         ))
     }
 
-    @Test func reviveAndCommercialSurfacesBlockTheRequest() {
+    @Test func reviveAndResourceOffersBlockTheRequest() {
         let state = readyState()
 
         #expect(!policy.isEligible(
@@ -118,7 +118,7 @@ struct ReviewRequestPolicyTests {
             appVersion: "1.0"
         ))
         #expect(!policy.isEligible(
-            for: opportunity(hadCommercialInterruption: true),
+            for: opportunity(showedResourceOffer: true),
             state: state,
             now: date(3),
             appVersion: "1.0"

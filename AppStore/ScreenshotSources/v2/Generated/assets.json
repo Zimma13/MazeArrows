@@ -1,0 +1,688 @@
+{
+  "app": {
+    "version": "2.0",
+    "build": "2",
+    "binaries": {
+      "MazeArrows": "2c941540ac02529f45b70eb5bba6185bb55375d77984881d41794009c80359cc",
+      "MazeArrows.debug.dylib": "8761cc384ddb44613d008c7e1e0e14936414df73a0da95933a3cd549702f50eb"
+    },
+    "resources": {
+      "Assets.car": "1a1a5c5e7e6d5e405e62e8090d7f369c3483cf3404850197f61d5354de499340",
+      "de.lproj/Gates.strings": "f5ae229363e8fafb8f5ee8c32f64a1312f7b9f676ecb308a910f701b01820aa0",
+      "de.lproj/Localizable.strings": "bb0a02a026cb0ebe551f38b4c3226be0d21b15ad1d0cc78534a57838f380495b",
+      "de.lproj/Localizable.stringsdict": "4cb134ad7378d6f7e094eb499ca3abdb6cc18b1b8d3d0ff28ce2d842ecbc7612",
+      "de.lproj/Onboarding.strings": "13b43d46517294edf79ccb705041954682eb739a5a95b03c2658a649ed894b23",
+      "en-IN.lproj/Gates.strings": "8dea5b9b085d609d504aaeef6a83f2014a6b1875ebe687916bea9b3e54612359",
+      "en-IN.lproj/Localizable.strings": "33f731071186441aee6181612eab0024a669efc60070dc4184618a5c1e3f8eb5",
+      "en-IN.lproj/Onboarding.strings": "d5cfdd859da1a177d68d6b32b3403a5969b5723ac0e6113545d8550bc6c8dca7",
+      "en.lproj/Gates.strings": "8dea5b9b085d609d504aaeef6a83f2014a6b1875ebe687916bea9b3e54612359",
+      "en.lproj/Localizable.strings": "9c86f24335b5c0d09189947285fd91aeeed3fbd5ef4221fdca1d58e75ccf2835",
+      "en.lproj/Localizable.stringsdict": "b5417abcdf5c3b66d48bd70f2bfdd2c561f983dfc343e033ed709572b2bb97bc",
+      "es-MX.lproj/Gates.strings": "2d0ccac490094e0c2c0952e1a7845f0f491eedeb518a99e66246a1001242c9b0",
+      "es-MX.lproj/Localizable.strings": "a42dc6c341d12e463cafe4b75398bf445086caf8016a9b176f15b481574e1adc",
+      "es-MX.lproj/Localizable.stringsdict": "189485d64303017154d57d128c19415397de8b633f90f01dd60d7716e36335d5",
+      "es-MX.lproj/Onboarding.strings": "5813b980707b3b0dff5d21d0ec8830b9ab14e82a8375a77980d8d07a33ab30d7",
+      "es.lproj/Gates.strings": "2d0ccac490094e0c2c0952e1a7845f0f491eedeb518a99e66246a1001242c9b0",
+      "es.lproj/Localizable.strings": "089ee6cc2d59f38134383f0fd15fbcbc9aa437eecdb3ead0223406e72f61bc21",
+      "es.lproj/Localizable.stringsdict": "70f092e193f7cf37495f9bc35f610dac1fd3da806177ed05af8355ffd7f89aa9",
+      "es.lproj/Onboarding.strings": "dc254aa9105949d09d938141c7393c58c08886c0c0bcdea50b5c5abcd80f5146",
+      "fr.lproj/Gates.strings": "674ae0ca2eeeb5a16f47cfa2aeec6aaf0232cf0d64ae618ff2e959f0abc0b690",
+      "fr.lproj/Localizable.strings": "ecfcc658246302607aff88057306648a6e60ce346643a5b388be02a354c26dcd",
+      "fr.lproj/Localizable.stringsdict": "28731e01f062e70dd92885a1ca92b15ea59c8b1a79fd019be752db56284c426d",
+      "fr.lproj/Onboarding.strings": "ea4ffa90f71d18849bf89f8048b22878028c320cd8d25b32c77ecf06fa7ed0e1",
+      "hi.lproj/Gates.strings": "d6078314cfb1f559013a5abae37a0a878e171f76ee7354842228aa1d5ceb9082",
+      "hi.lproj/Localizable.strings": "fce48fda541d83dde0404790b6d588487e3b180a4dda2da9a075eb28c2fd5e63",
+      "hi.lproj/Localizable.stringsdict": "24d4aeadeb3f86e64b67f9eb700f32a8599497997e87d28ce2d0cf166bc5b8c2",
+      "hi.lproj/Onboarding.strings": "729c5b69f339ea272847272d4a2bf492dd08e2c6b64d0691a1c7f5b2a5bf2ceb",
+      "id.lproj/Gates.strings": "23e9229051d21d0189c94e0dcc55c2d8436a3c7560a32eb52fe02b19906f32a7",
+      "id.lproj/Localizable.strings": "68d5358165344d2a291fbc94651b34f0ada6e9a776ad7e8dc093f177ec36c548",
+      "id.lproj/Onboarding.strings": "b1e5305e3233e5ce9a10e1b0ce7ad736bbe7bfb00f43e50d802fe3c4898cd00a",
+      "ja.lproj/Gates.strings": "f6ef2a9804175c5d785639ab7a8389533e14985c27f554c68a6e53cfe45d7586",
+      "ja.lproj/Localizable.strings": "49ff2f328a7a5400c670fcf80eb1a403426f55622c758dc7037b0cc481eb351d",
+      "ja.lproj/Onboarding.strings": "eafb4b1e730a5600e0603f76eec9b11215df785a20d16b43b557b123386d8c0c",
+      "ko.lproj/Gates.strings": "14d62d975e31eea54af66a37c99ca984d83d461879d7a9a0376ab1e8de37a37c",
+      "ko.lproj/Localizable.strings": "f0e8eafc56ec6eb52e1ec4454819d5f65e2ba14cf3535a731e29eacc244f22a0",
+      "ko.lproj/Onboarding.strings": "240f1e765fdf26742c4a323c2e74cfb0291f149abf24fac225cbc6f77ed5a4c0",
+      "levels-v2.json": "50bda86533d23b9c669af5c9a58b4be8427cca76edcfeda1cbde0e5d2fae5955",
+      "levels.json": "f781f36eb3a64e8e2e84c5fb3e693e83e0f1425cc37a801d63acd7a06fb223c9",
+      "pt-BR.lproj/Gates.strings": "9740ba2f958be3f414a828b3d20e6be730e08b8b989f55a79d66d0d14e24550a",
+      "pt-BR.lproj/Localizable.strings": "3520328ffe22055e13e6991dc86953341a835230010d16814cc01c7f44c59c87",
+      "pt-BR.lproj/Localizable.stringsdict": "24059572a2e5bf029dca294406d09dd0330f58ee60d44d3bdd76b40056d43faf",
+      "pt-BR.lproj/Onboarding.strings": "967398a5321da2fb84cd712f4591a24e5c6ac6ff4d9e888c5ece007017e86605",
+      "pt-PT.lproj/Gates.strings": "ad11e04da1bf2cde2eb4c4da360bd77c7fc5ba78bec69e4f6b86e3770eeb55ae",
+      "pt-PT.lproj/Localizable.strings": "1a5cbe314b804d72cd6cf868611a480e7469a25f9609be8c1f74d37103279f3c",
+      "pt-PT.lproj/Localizable.stringsdict": "56e052fe09fb08f676fbcbfc8ae6656f6d702b9e32a5362b74d83433a782a3ff",
+      "pt-PT.lproj/Onboarding.strings": "c2ba03e1abf7a6ee71af2ea3364639a094ed9bacf961f59e401e3395ff2b7584",
+      "ru.lproj/Gates.strings": "d030d2c6a7cfb83adc1bb652db7505982810b84e882635146a3f53c6626b28fb",
+      "ru.lproj/Localizable.strings": "fa2da56d1633f4a561c88c88b01bbd2fef3a256eb1239215250420ee57af425a",
+      "ru.lproj/Localizable.stringsdict": "4db78ea3fe978e5c53b7d6381708812f619dee83156be68d458da1ffee22e6f6",
+      "ru.lproj/Onboarding.strings": "e6ba85f92fc6316b4da48de75bc62e7ca869bb87004b942ae234d1662b58c296",
+      "th.lproj/Gates.strings": "ea86c89b3cf048e33021a3e4c2a2f6f4b2eb05a10fc15abf6da8d7800f288681",
+      "th.lproj/Localizable.strings": "85c033dc5e5d99ce6beb47e4f2e4a3b6f0a020d5c4deb12422ea4f7e0c867f99",
+      "th.lproj/Onboarding.strings": "92bc515df86c63a22ebc4764314f9593117b22bc424ceba612a256c4b47c36ff",
+      "zh-Hant.lproj/Gates.strings": "3ae23740a22b178c848eb1cb5555014b8c435828791de74f8cfdd3899cdffde2",
+      "zh-Hant.lproj/Localizable.strings": "8af83ceaea0957b8a5ee901d6605d3fb9df0223851cbd9f3fce715c7519942f6",
+      "zh-Hant.lproj/Onboarding.strings": "d71cb6d6a23ea3151a6e14976cff8732fc45fd0e15dee6f138722721310b5eaa"
+    }
+  },
+  "sets": {
+    "en": {
+      "storefronts": [
+        "en-US",
+        "en-GB",
+        "en-AU",
+        "en-CA"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "en/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "61a8c44d868a42271e69a33ca04feab0c3c292f7a8e649ab71847ff3d3a1c38e"
+          },
+          {
+            "id": "freeArrow",
+            "file": "en/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "b2915e0eaa93242bb6899a283154963b2748f0109dbdf468e64511f65d50f506"
+          },
+          {
+            "id": "combo",
+            "file": "en/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "f4cc83cd5fd635eaf92ec3f64b4adb79c81b5976169f87473cb1c034ad2057c2"
+          },
+          {
+            "id": "worlds",
+            "file": "en/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "d226ef14bdbc008bd659bb5fe3ccb11b989e63fba012d1fbb4ac8d3d01e3b59b"
+          },
+          {
+            "id": "daily",
+            "file": "en/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "9120be36063c45d5c335987eb270a03ed1a05916bfc732b990a0a7dc9bbb4509"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "en/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "906b4f5887d03003045cd2a995ca812978836179ee551964251c47054d14d743"
+          },
+          {
+            "id": "freeArrow",
+            "file": "en/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "9b4884cd27e4cbc6ba32f412fb06da703279d254ece794f300c2492f53ac3bd0"
+          },
+          {
+            "id": "combo",
+            "file": "en/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "abe84188b68cc737d778daded76e2c8d1809891be81090a825e5abd5139cfa5a"
+          },
+          {
+            "id": "worlds",
+            "file": "en/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "2c8cd6bf7663db8dfc955b04dbc03ab4cc1e62e031211bd697f3f1e90fe73719"
+          },
+          {
+            "id": "daily",
+            "file": "en/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "a25eb3515722ebc2754ad2cc0daea817ef567a44a49178d0fbf2fef93facde57"
+          }
+        ]
+      }
+    },
+    "de": {
+      "storefronts": [
+        "de-DE"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "de/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "856123bded766c63eba36eb53e42b1651f09ee7c7cae733de33f30adc23b2d61"
+          },
+          {
+            "id": "freeArrow",
+            "file": "de/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "3d79f266e1d71b9a2d0c2416983d7dfc6b45bca40e00136a4cbe19f5cf0cc34a"
+          },
+          {
+            "id": "combo",
+            "file": "de/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "e773e35802a802476d56c15eb97ac6a9d2397a20a784ad4cc093431c28b226f9"
+          },
+          {
+            "id": "worlds",
+            "file": "de/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "0651c387502cc342070b73ff2007f575a567a7cbf786d204cc89438108262bfa"
+          },
+          {
+            "id": "daily",
+            "file": "de/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "fdb39d77fae6c95822900c838ac9953e8b1590841134ede589ab3d1dcd0a552a"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "de/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "ade3b46737cb5bb842bcd4198c822baddd68781baae9bf6e41d436c0d911a325"
+          },
+          {
+            "id": "freeArrow",
+            "file": "de/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "0dfecf4a3acc10eb21bd302f120c762faf7488866912304d33a0673350b0ca53"
+          },
+          {
+            "id": "combo",
+            "file": "de/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "4a66bba9aee1a6d0121db40679b6ebc85ac1921f7a66d51d396a56cf6b36b534"
+          },
+          {
+            "id": "worlds",
+            "file": "de/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "9f0ef4b16d5f9188a7c26ad73ad8167c249f7e42d3aa1a9d535b10418afdd045"
+          },
+          {
+            "id": "daily",
+            "file": "de/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "f3de3ef8df012c6bb93f27d7e55097b16028418b4460617b42ada0009492fca6"
+          }
+        ]
+      }
+    },
+    "es": {
+      "storefronts": [
+        "es-ES"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "es/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "bcbb0fb3a832b28615e02706170a8fcdaabbd32a84bf6f1a9d1e96a6f7419ec2"
+          },
+          {
+            "id": "freeArrow",
+            "file": "es/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "999fe1656a4112fcd780ee7a1a0e39dc84c13fc79db1a360af206b83fee100cd"
+          },
+          {
+            "id": "combo",
+            "file": "es/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "d9d31325d54f5f8c3b69e3a534250b84eeae10281726483df07147bdcbb90c38"
+          },
+          {
+            "id": "worlds",
+            "file": "es/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "0e63936d2284469bc00481045b3ccdc85326450420a0042a864428a0d03818b7"
+          },
+          {
+            "id": "daily",
+            "file": "es/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "d0211bc6a9a79d91ae74d85488382a3e828529f3f1bde193354d73095249294f"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "es/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "3f17c70c984c15181c640cb603f5bbdf2ac88e74a10fa5da550c89657282a26f"
+          },
+          {
+            "id": "freeArrow",
+            "file": "es/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "09dcddf7f104f9075281e0ab9172a4354bddbdc60e3a53982d9c716c1a6f4f15"
+          },
+          {
+            "id": "combo",
+            "file": "es/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "93cf5cf710ab7f71b31cdcaba195c7b5987b40521ddc6a7686523dc8d4e9ef30"
+          },
+          {
+            "id": "worlds",
+            "file": "es/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "7551176e88377c724dcc55a59cb27e3050a7b3eb4839c1cfffb6fa15ef68fce3"
+          },
+          {
+            "id": "daily",
+            "file": "es/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "1f7f9a08927bf4be01bc500d44e330339388febf4c0def5b2bc385ba3a47c18b"
+          }
+        ]
+      }
+    },
+    "es-MX": {
+      "storefronts": [
+        "es-MX"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "es/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "bcbb0fb3a832b28615e02706170a8fcdaabbd32a84bf6f1a9d1e96a6f7419ec2"
+          },
+          {
+            "id": "freeArrow",
+            "file": "es/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "999fe1656a4112fcd780ee7a1a0e39dc84c13fc79db1a360af206b83fee100cd"
+          },
+          {
+            "id": "combo",
+            "file": "es-MX/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "af6d21ad54c85e06726653ebea1d33e4d4d71092cb2d5c62402f92561fcb7fa7"
+          },
+          {
+            "id": "worlds",
+            "file": "es/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "0e63936d2284469bc00481045b3ccdc85326450420a0042a864428a0d03818b7"
+          },
+          {
+            "id": "daily",
+            "file": "es-MX/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "db36d83c9b8a6c101b2179e0d9bfc4f1ec885d34f8ac7f45dab59de1abe5efc3"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "es/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "3f17c70c984c15181c640cb603f5bbdf2ac88e74a10fa5da550c89657282a26f"
+          },
+          {
+            "id": "freeArrow",
+            "file": "es/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "09dcddf7f104f9075281e0ab9172a4354bddbdc60e3a53982d9c716c1a6f4f15"
+          },
+          {
+            "id": "combo",
+            "file": "es-MX/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "ba4abee3e5b6e6f39dd66a2f9af586766bd63b0ad5faab309dd9e25428429c3e"
+          },
+          {
+            "id": "worlds",
+            "file": "es/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "7551176e88377c724dcc55a59cb27e3050a7b3eb4839c1cfffb6fa15ef68fce3"
+          },
+          {
+            "id": "daily",
+            "file": "es-MX/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "5aec0e8b3a4e29d693a51f9563b5ef13d4770e2f1beae04718c0c223ebc61022"
+          }
+        ]
+      }
+    },
+    "fr": {
+      "storefronts": [
+        "fr-FR",
+        "fr-CA"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "fr/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "268c5632f8b6085d23fef22071190881f42494eb6b3dd8179b130ac79244c7d5"
+          },
+          {
+            "id": "freeArrow",
+            "file": "fr/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "cf84fc2ca8fa911542a0de10c7581bec518458db0b68bde5f1cc77510ea7c214"
+          },
+          {
+            "id": "combo",
+            "file": "fr/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "6725ea7ce6371702bc00f831e1e7d54ead020b1043934b591531943c955a8f5f"
+          },
+          {
+            "id": "worlds",
+            "file": "fr/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "56bc0ea2c134453a0c733e295f52fdf7a5faab858b8ed2a1c336991ad22be4b8"
+          },
+          {
+            "id": "daily",
+            "file": "fr/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "665a14d60a0310429ddcaa6f6b27ed0afe2b2091bbd486cea64fe86bfba1676f"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "fr/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "85efc0643885aa289cd99739643502d86cbe3f76e3ea71f2290c63ce61773a68"
+          },
+          {
+            "id": "freeArrow",
+            "file": "fr/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "b06c8fb56f640b4972ad38fb38ede4fe7e003a613ed19215e50f49633d038f25"
+          },
+          {
+            "id": "combo",
+            "file": "fr/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "e9e1b6d31b32ada9d96e3aec284631914ca7d93c85739e9875e2b053c1f7c70b"
+          },
+          {
+            "id": "worlds",
+            "file": "fr/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "34b2297a8eac4c9c26bf6cd16a7b8e4fb8b2c6993a3b154982e7784c6f0a8bba"
+          },
+          {
+            "id": "daily",
+            "file": "fr/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "4c70c6095bbfc004d530041a32d332d399066987151fad5560f806761b3ad8bd"
+          }
+        ]
+      }
+    },
+    "ja": {
+      "storefronts": [
+        "ja"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "ja/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "d56447cc8e10644fddc1847cd08307d275ab3cb1fc324c9a9d8e108312083aa9"
+          },
+          {
+            "id": "freeArrow",
+            "file": "ja/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "a749e535ed7cdd17a55af827f39da97324fe4cc3b1f544b31f347439229dbce3"
+          },
+          {
+            "id": "combo",
+            "file": "ja/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "41f51caf12f8acff4515dca2d3357a13269525f2cd0ae913c364ab578d0bc12b"
+          },
+          {
+            "id": "worlds",
+            "file": "ja/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "676f3d5d5ff67fad3eb99cd8c87e782dc26849af2d800e862185674193d61217"
+          },
+          {
+            "id": "daily",
+            "file": "ja/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "8f4063175008cb269a633997970d57b02476fc3c991be5c3b7222d895f858185"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "ja/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "80589b636f9808762275c86b5d461bd3902d0ac06172c55aad7eab985e9610ac"
+          },
+          {
+            "id": "freeArrow",
+            "file": "ja/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "eae7f2e80a93cd119c9cbcadc8a067c75e25681ec07d1030c99815694d259981"
+          },
+          {
+            "id": "combo",
+            "file": "ja/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "6ea84e20efd4cf8215060cd226fb90613ef264ac1948f256d36e859256c03c84"
+          },
+          {
+            "id": "worlds",
+            "file": "ja/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "87d23ec022352b111f17fa8c7d56a4100081d8e445d3cf21c656c1debf039df0"
+          },
+          {
+            "id": "daily",
+            "file": "ja/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "2efd987d3d02bf761ab1eee4925bef1dba0ea4f45d864327ac47e9df09ee11de"
+          }
+        ]
+      }
+    },
+    "ko": {
+      "storefronts": [
+        "ko"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "ko/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "7703291d8baaf2c25705c6a8094e3e1da192c69eb6e51b33da670f400b4172bf"
+          },
+          {
+            "id": "freeArrow",
+            "file": "ko/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "745c1fb44aca40c4c854f6aa676125bc4e71d92d64c60760ab2e75f7346bb074"
+          },
+          {
+            "id": "combo",
+            "file": "ko/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "a15f84c9c33daaee0632976cbad4ca4a5c426390693c9ad33867e31d6671493c"
+          },
+          {
+            "id": "worlds",
+            "file": "ko/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "13e00b9be152f80c5ac84e9f3201fd462e69fc53bc00064abd2715bfce32ec4d"
+          },
+          {
+            "id": "daily",
+            "file": "ko/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "bee06beb07ec88f28bca5fb6b11ec202918c288be7d55e4f699e98d3decface2"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "ko/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "11889ecc29bc4df478fb4e3d64cbeeeed0798aff2578e3335394c1b956dd770d"
+          },
+          {
+            "id": "freeArrow",
+            "file": "ko/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "04a2a674c0a8ae61c29735267b2dcb5e2098052dbde302b74566c35636e5dbdc"
+          },
+          {
+            "id": "combo",
+            "file": "ko/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "c2d7090da2126b7f62f64512e02a0bf852f4538a897ef23dc77a3718a58d1932"
+          },
+          {
+            "id": "worlds",
+            "file": "ko/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "93fa9c211cd93eb42f1c87c75c794f65e8b2c77e3581f4c4859ac0249d700035"
+          },
+          {
+            "id": "daily",
+            "file": "ko/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "5b4ff1e6afbb99ddfcf9b13aeb881a0f44e4701fe59816dec9a16c0c88cb2c1c"
+          }
+        ]
+      }
+    },
+    "pt-BR": {
+      "storefronts": [
+        "pt-BR"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "pt-BR/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "02f00fbd241c4d708e565f981be2342a4d2c88ecb7628867e40bb7afe33d176e"
+          },
+          {
+            "id": "freeArrow",
+            "file": "pt-BR/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "e51ae8214df8a39efd80e0e0a9e0e1f3d184a9746b6dde900fd369230703a4b5"
+          },
+          {
+            "id": "combo",
+            "file": "pt-BR/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "021d87a9af9f536934488c664b36679ee304e01e79aec00274ac863f7fb6026d"
+          },
+          {
+            "id": "worlds",
+            "file": "pt-BR/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "680bc3d135a9a08ce3c37e3aaaa7a15d87c4db87277f542d3b39a710499145d3"
+          },
+          {
+            "id": "daily",
+            "file": "pt-BR/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "191a7d2736f79d042c5a1b0f3270e9e6a906cfc2c38fd64428d049745b32e5c4"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "pt-BR/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "cb03f5296a55c8348fe7cdd7a3b21336bdea29a957d1784fb2b157debf09a654"
+          },
+          {
+            "id": "freeArrow",
+            "file": "pt-BR/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "7db8c7ab42d2dac77739d030a053813c9d85c7b54790d38d8d405111fd019ae3"
+          },
+          {
+            "id": "combo",
+            "file": "pt-BR/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "3ac3102c4d8a526862d9dab3091cca06fc05eec463d10f8829b7aa9aa27ef416"
+          },
+          {
+            "id": "worlds",
+            "file": "pt-BR/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "0310fe8bc73c63cfe3910d990b6c02b9f0085d57b175277a47c6d0a438fb5352"
+          },
+          {
+            "id": "daily",
+            "file": "pt-BR/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "b62f0538407866f2585bb600e7254875c50c65582f247d0c2fece98c74b5e187"
+          }
+        ]
+      }
+    },
+    "pt-PT": {
+      "storefronts": [
+        "pt-PT"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "pt-PT/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "ea61176af55dc24ae2eb567c6c06a9493ff84c9120593f327fedfc16e1a6f24e"
+          },
+          {
+            "id": "freeArrow",
+            "file": "pt-PT/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "64d49746c191d39d2e86ebe65fb9728232a0835fe9d38d03bb5621267814a0e8"
+          },
+          {
+            "id": "combo",
+            "file": "pt-PT/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "9032e35ef194317f056932c4485d8fa2983d7fda2ec1d7ba788425dc0f7beb08"
+          },
+          {
+            "id": "worlds",
+            "file": "pt-PT/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "48d10bd83fa518e08c97e6c7cbb64cb24bf046fd32c8d530dd42ca790aada5ed"
+          },
+          {
+            "id": "daily",
+            "file": "pt-PT/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "f4a61567b5289a26f09252f6b5275498d10e99f78346017a98450f848fcac8bf"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "pt-PT/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "236c6ed06350b7213c2a7795bbce9e097af8f641e4c81fe99a971fdf66cbd3b4"
+          },
+          {
+            "id": "freeArrow",
+            "file": "pt-PT/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "957e1f910c92b6e9687b2211caceeda162de03d7213c355986ad79cd9437bee9"
+          },
+          {
+            "id": "combo",
+            "file": "pt-PT/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "c6749d1358683bb2e0490bdd57944fcaa4b03f34c807dbbd6c95dfa49031953d"
+          },
+          {
+            "id": "worlds",
+            "file": "pt-PT/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "1615783cc2a0b0302a83d8ae5dfface8c3e42c73c25efcfe6a697644c2e40d4e"
+          },
+          {
+            "id": "daily",
+            "file": "pt-PT/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "69d8964a927da26481c3189d73b7a8c6e5b57ff9d7553ebfa44c7e73a71657e7"
+          }
+        ]
+      }
+    },
+    "zh-Hant": {
+      "storefronts": [
+        "zh-Hant"
+      ],
+      "devices": {
+        "iPhone-6.9": [
+          {
+            "id": "photoMaze",
+            "file": "zh-Hant/iPhone-6.9/01_your-photo-your-maze.png",
+            "sha256": "5d4edc0498032016b74e1375ef0ac2e91ae4623e276b2fa77dade18eba7d52ed"
+          },
+          {
+            "id": "freeArrow",
+            "file": "zh-Hant/iPhone-6.9/02_find-the-free-arrow.png",
+            "sha256": "c4a0c99609c98d5035b8ca7d9a803a5bf212783e6ceb760a9636e4b18511db8b"
+          },
+          {
+            "id": "combo",
+            "file": "zh-Hant/iPhone-6.9/03_watch-it-all-unravel.png",
+            "sha256": "5c2ac89f84bf39c3e0261e44f7566724718091bb12368181deca2d8cc13e8fda"
+          },
+          {
+            "id": "worlds",
+            "file": "zh-Hant/iPhone-6.9/04_260-levels-8-worlds.png",
+            "sha256": "770ce78fe52814e00655e2e443a7e27faef1b4093f60e64866a4d905e07aa3da"
+          },
+          {
+            "id": "daily",
+            "file": "zh-Hant/iPhone-6.9/05_fresh-maze-every-day.png",
+            "sha256": "2e1838b5c8724ddcbd806d34e858909c7a5053d068f67fbfafba2a08b41c1f7f"
+          }
+        ],
+        "iPad-13": [
+          {
+            "id": "photoMaze",
+            "file": "zh-Hant/iPad-13/01_your-photo-your-maze.png",
+            "sha256": "080d58d14e79bcd4c84bd0fff98db1ea88fcd423d712f0cf62117b62bcad418f"
+          },
+          {
+            "id": "freeArrow",
+            "file": "zh-Hant/iPad-13/02_find-the-free-arrow.png",
+            "sha256": "99d53daa7f7498cef72beb8444c5d6b363c4c9b687d8d3e4df0e45c077b6b009"
+          },
+          {
+            "id": "combo",
+            "file": "zh-Hant/iPad-13/03_watch-it-all-unravel.png",
+            "sha256": "6990fde05568d7b5870effe3704813cb2556be63ffcda8332448aebb637b3f53"
+          },
+          {
+            "id": "worlds",
+            "file": "zh-Hant/iPad-13/04_260-levels-8-worlds.png",
+            "sha256": "73639c56e81c8e11288629a8525c2f931e8ad3ea3146fb84452d1dd8979bf1c5"
+          },
+          {
+            "id": "daily",
+            "file": "zh-Hant/iPad-13/05_fresh-maze-every-day.png",
+            "sha256": "b25be7c92d3bd44b26f533d8fd2eb7b487e48eec46ec44f32c0ac265ece5df0b"
+          }
+        ]
+      }
+    }
+  },
+  "captureIndexes": {
+    "iPhone-6.9": "../_captures/iPhone-6.9/sources.json",
+    "iPad-13": "../_captures/iPad-13/sources.json"
+  }
+}

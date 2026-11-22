@@ -18,9 +18,7 @@ struct MazeArrowsApp: App {
     @State private var progress = ProgressStore.shared
     @State private var levelCatalog = LevelCatalogStore.shared
     @State private var onboarding = OnboardingStore(progressStore: .shared)
-    @State private var premium = PremiumStore()
     @State private var gameCenter = GameCenterStore()
-    @State private var ads = AdService()
     @State private var reviewRequests = ReviewRequestStore()
     @State private var appIcons = AppIconStore()
 
@@ -47,9 +45,7 @@ struct MazeArrowsApp: App {
                 .environment(progress)
                 .environment(levelCatalog)
                 .environment(onboarding)
-                .environment(premium)
                 .environment(gameCenter)
-                .environment(ads)
                 .environment(reviewRequests)
                 .environment(appIcons)
                 .preferredColorScheme(settings.settings.themeID == .neon ? .dark : .light)
@@ -67,42 +63,6 @@ struct MazeArrowsApp: App {
                 }
                 .task {
                     await levelCatalog.loadIfNeeded()
-                }
-                // StoreKit is independent from catalog decoding. A sibling
-                // task avoids serializing two cold-launch dependencies.
-                .task {
-                    guard !Self.isScreenshotCaptureActive else { return }
-                    await premium.start()
-                    settings.enforceThemeAccess(
-                        PremiumAccessPolicy(isPremium: premium.isPremium)
-                    )
-                    await ads.updateStatus(
-                        isPremium: premium.isPremium,
-                        agePolicy: adAgePolicy
-                    )
-                }
-                .onChange(of: premium.isPremium) { _, isPremium in
-                    guard !Self.isScreenshotCaptureActive else { return }
-                    guard premium.hasLoadedEntitlements else { return }
-                    settings.enforceThemeAccess(
-                        PremiumAccessPolicy(isPremium: isPremium)
-                    )
-                    Task {
-                        await ads.updateStatus(
-                            isPremium: isPremium,
-                            agePolicy: adAgePolicy
-                        )
-                    }
-                }
-                .onChange(of: adAgePolicy, initial: true) { _, agePolicy in
-                    guard !Self.isScreenshotCaptureActive else { return }
-                    guard premium.hasLoadedEntitlements else { return }
-                    Task {
-                        await ads.updateStatus(
-                            isPremium: premium.isPremium,
-                            agePolicy: agePolicy
-                        )
-                    }
                 }
                 .onChange(of: settings.settings.themeID) { _, themeID in
                     guard !Self.isScreenshotCaptureActive else { return }
@@ -139,19 +99,6 @@ struct MazeArrowsApp: App {
                         reviewRequests.recordActiveDay()
                         SoundEffectsPlayer.shared.setEnabled(settings.settings.soundEnabled)
                         gameCenter.refreshPlayerState()
-                        Task {
-                            await premium.refreshEntitlements()
-                            settings.enforceThemeAccess(
-                                PremiumAccessPolicy(isPremium: premium.isPremium)
-                            )
-                            await ads.updateStatus(
-                                isPremium: premium.isPremium,
-                                agePolicy: adAgePolicy
-                            )
-                            await premium.loadProductsIfNeeded(
-                                force: premium.loadState == .unavailable
-                            )
-                        }
                     } else {
                         SoundEffectsPlayer.shared.suspend()
                     }
@@ -190,13 +137,6 @@ struct MazeArrowsApp: App {
                     Text("Your current app icon was kept. Please try again.")
                 }
         }
-    }
-
-    private var adAgePolicy: AdAgePolicy {
-        .resolve(
-            connectionState: gameCenter.connectionState,
-            player: gameCenter.player
-        )
     }
 
     private var matchingIconAlertIsPresented: Binding<Bool> {

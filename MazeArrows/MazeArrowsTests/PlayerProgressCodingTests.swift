@@ -67,6 +67,31 @@ struct PlayerProgressCodingTests {
         #expect(decoded.photoMazeRewardedCredits == 2)
     }
 
+    @Test func oldSaveContinuesZenAfterThirdBoardWithLegacyInventoryIntact() {
+        let defaults = UserDefaults(suiteName: "PaidEditionTests.\(UUID().uuidString)")!
+        let date = "2026-08-05"
+        let old = """
+        {"unlockedLevelIndex":6,"completedLevels":[1,2,3,4,5],"stars":{"5":2},
+         "hintsCount":7,"undosCount":8,"dailyStreak":2,"coins":91,
+         "zenPlayedDate":"2026-08-05","zenPlayedCount":3,
+         "photoMazeFreeGenerationsUsed":5,"photoMazeRewardedCredits":2}
+        """
+        defaults.set(Data(old.utf8), forKey: "MazeArrows.PlayerProgress.v2")
+        let store = ProgressStore(defaults: defaults)
+        #expect(store.nextZenIndex(date: date) == 3)
+        store.recordZenCompletion(date: date, index: 3)
+
+        let saved = ProgressStore(defaults: defaults).progress
+        #expect(saved.zenPlayedCount == 4)
+        #expect(saved.unlockedLevelIndex == 6)
+        #expect(saved.bestStars(5) == 2)
+        #expect(saved.coins == 91)
+        #expect(saved.hintsCount == 7)
+        #expect(saved.undosCount == 8)
+        #expect(saved.photoMazeFreeGenerationsUsed == 5)
+        #expect(saved.photoMazeRewardedCredits == 2)
+    }
+
     @Test func memberwiseInitDropsNonPositiveMasterClearKeys() {
         let progress = PlayerProgress(
             unlockedLevelIndex: 1,

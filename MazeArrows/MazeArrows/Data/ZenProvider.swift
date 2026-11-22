@@ -16,7 +16,7 @@ actor ZenProvider {
     static let shared = ZenProvider()
     private init() {}
 
-    private var cache: [String: Level] = [:]
+    private var lastBoard: (key: String, level: Level)?
 
     nonisolated static func difficulty(forIndex index: Int) -> Difficulty {
         switch index {
@@ -29,7 +29,7 @@ actor ZenProvider {
     func level(date: String, index: Int) throws -> Level {
         try Task.checkCancellation()
         let key = "zen_\(date)_\(index)"
-        if let cached = cache[key] { return cached }
+        if let lastBoard, lastBoard.key == key { return lastBoard.level }
 
         let difficulty = Self.difficulty(forIndex: index)
         var rng = SeededRandomNumberGenerator(seed: stableHash64(key))
@@ -50,7 +50,7 @@ actor ZenProvider {
                 name: "Zen · \(index + 1)",
                 rulesVersion: generated.rulesVersion
             )
-            cache[key] = zen
+            lastBoard = (key, zen)
             return zen
         }
         try Task.checkCancellation()
@@ -72,7 +72,7 @@ actor ZenProvider {
             ],
             name: "Zen"
         )
-        cache[key] = fallback
+        lastBoard = (key, fallback)
         return fallback
     }
 }

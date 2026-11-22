@@ -10,122 +10,21 @@ import Foundation
 
 enum OnboardingCopy {
     static let skip = text("onboarding.action.skip", "Skip")
-    static let close = text("onboarding.action.close", "Close")
     static let continueAction = text("onboarding.action.continue", "Continue")
-    static let next = text("onboarding.action.next", "Next")
     static let notNow = text("onboarding.action.not_now", "Not now")
     static let yesRemind = text("onboarding.action.yes_remind", "Yes, remind me")
-    static let premium = text("onboarding.common.premium", "Premium")
-    static let ok = text("onboarding.action.ok", "OK")
-
-    static func pageProgress(_ current: Int, of total: Int) -> String {
-        text("onboarding.accessibility.page_progress", "\(current) of \(total)")
-    }
 
     static let tapArrow = text("onboarding.tutorial.tap_arrow", "Tap the arrow")
     static let great = text("onboarding.tutorial.great", "Nice!")
     static let pathBlocked = text("onboarding.tutorial.path_blocked", "Path blocked")
     static let freePathFirst = text("onboarding.tutorial.free_path_first", "Clear the path first")
     static let hintShowsMove = text("onboarding.tutorial.hint", "Hints show the way")
-    static let hintsThree = text("onboarding.tutorial.hints_three", "Hints: 3")
     static let combo = text("onboarding.tutorial.combo", "Chain Clear!")
     static let livesRule = text(
         "onboarding.tutorial.lives_rule",
         "3 lives. Tapping a blocked path costs 1 life"
     )
 
-    static let playWithoutLimits = text("onboarding.paywall.intro.title", "Play without limits")
-    static let anyPhotoMaze = text("onboarding.paywall.intro.photo_title", "Any photo. A maze.")
-    static let unlimitedHints = text(
-        "onboarding.paywall.intro.hints",
-        "Unlimited hints"
-    )
-    static let turnAnyPhoto = text(
-        "onboarding.paywall.intro.photo_benefit",
-        "Turn any photo into a maze"
-    )
-    static let unlimitedPhotoMazes = text(
-        "onboarding.paywall.intro.photo_unlimited",
-        "Unlimited Photo Maze creations"
-    )
-    static let noAds = text("onboarding.paywall.intro.no_ads", "No ads")
-    static let choosePlan = text("onboarding.paywall.plans.title", "Choose a plan")
-    static let week = text("onboarding.paywall.plans.week", "Week")
-    static let year = text("onboarding.paywall.plans.year", "Year")
-
-    static func weeklyPrice(_ price: String) -> String {
-        text("onboarding.paywall.plans.weekly_price", "\(price)/week")
-    }
-
-    static func annualPrice(_ price: String) -> String {
-        text("onboarding.paywall.plans.annual_price", "\(price)/year")
-    }
-
-    static func annualPerWeek(_ price: String) -> String {
-        text(
-            "onboarding.paywall.plans.annual_per_week",
-            "≈ \(price)/week"
-        )
-    }
-
-    static func planPriceLine(_ primary: String, _ secondary: String) -> String {
-        text(
-            "onboarding.paywall.plans.price_line",
-            "\(primary) · \(secondary)"
-        )
-    }
-
-    static func savings(_ percent: Int) -> String {
-        let formattedPercent = (Double(percent) / 100).formatted(
-            .percent.precision(.fractionLength(0))
-        )
-        return text("onboarding.paywall.plans.savings", "Save \(formattedPercent)")
-    }
-
-    static let subscribeWeekly = text(
-        "onboarding.paywall.plans.weekly_cta",
-        "Start weekly Premium"
-    )
-
-    static func subscribeAnnual(_ price: String) -> String {
-        text("onboarding.paywall.plans.annual_cta", "Get a year for \(price)")
-    }
-
-    static func chargedTodayBillingSubtitle(_ price: String, _ date: String) -> String {
-        text(
-            "onboarding.paywall.plans.annual_billing",
-            "\(price) charged today · Renews \(date)"
-        )
-    }
-
-    static let restore = text("onboarding.paywall.restore", "Restore purchases")
-    static let manageSubscription = text(
-        "onboarding.paywall.manage_subscription",
-        "Manage subscription"
-    )
-    static let autoRenewalDisclosure = text(
-        "onboarding.paywall.auto_renewal",
-        "Subscription renews automatically until canceled."
-    )
-    static let terms = text("onboarding.paywall.terms", "Terms of Use")
-    static let privacy = text("onboarding.paywall.privacy", "Privacy Policy")
-    static let purchasePending = text(
-        "onboarding.paywall.purchase_pending",
-        "Purchase is waiting for approval"
-    )
-    static let purchaseFailed = text(
-        "onboarding.paywall.purchase_failed",
-        "Purchase couldn't be completed. Please try again."
-    )
-    static let restoreFailed = text(
-        "onboarding.paywall.restore_failed",
-        "Purchases couldn't be restored. Please try again."
-    )
-    static let nothingToRestore = text(
-        "onboarding.paywall.nothing_to_restore",
-        "No active Premium purchase was found."
-    )
-    static let restored = text("onboarding.paywall.restored", "Premium restored")
     static let oneDay = text("onboarding.streak.one_day", "1 day")
     static let firstStreakDay = text("onboarding.streak.title", "Day 1 of your streak!")
     static let starterGift = text("onboarding.streak.gift", "+25 · starter gift")
@@ -164,10 +63,6 @@ enum OnboardingCopy {
     static let auroraName = text("onboarding.theme.aurora_name", "Aurora Light")
     static let neonName = text("onboarding.theme.neon_name", "Midnight Neon")
     static let petalName = text("onboarding.theme.petal_name", "Petal Pastel")
-    static let morePremiumThemes = text(
-        "onboarding.theme.more",
-        "3 more themes in Premium"
-    )
     static let later = text("onboarding.theme.later", "Later")
 
     static func themeName(_ id: AppThemeID) -> String {
@@ -217,10 +112,14 @@ enum OnboardingCopy {
         "onboarding.accessibility.arrow_blocked",
         "Path is blocked. Find the blocking arrow first."
     )
-    static let directionUp = text("onboarding.direction.up", "up")
-    static let directionDown = text("onboarding.direction.down", "down")
-    static let directionLeft = text("onboarding.direction.left", "left")
-    static let directionRight = text("onboarding.direction.right", "right")
+    static func directionName(_ direction: Direction) -> String {
+        switch direction {
+        case .up: text("onboarding.direction.up", "up")
+        case .down: text("onboarding.direction.down", "down")
+        case .left: text("onboarding.direction.left", "left")
+        case .right: text("onboarding.direction.right", "right")
+        }
+    }
 
     private static func text(
         _ key: StaticString,

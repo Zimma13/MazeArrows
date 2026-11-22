@@ -17,26 +17,18 @@ private let sourceDirectory = URL(fileURLWithPath: #filePath)
 
 private struct Options {
     var validateOnly = false
-    var locale = "en-US"
-    var localeWasExplicit = false
-    var inputRootWasExplicit = false
-    var outputRootWasExplicit = false
-    var manifestWasExplicit = false
-    var contactSheetWasExplicit = false
-    var inputRoot = sourceDirectory
-        .appendingPathComponent("_captures/en-US", isDirectory: true)
-    var outputRoot = sourceDirectory
-        .appendingPathComponent("Generated/en-US", isDirectory: true)
-    var manifest = sourceDirectory.appendingPathComponent("screenshots.en-US.json")
+    var slideID: String?
+    var locale = "en"
+    var inputRoot = URL(fileURLWithPath: "/")
+    var outputRoot = URL(fileURLWithPath: "/")
+    var manifest = sourceDirectory.appendingPathComponent("v2/screenshots.en.json")
     var photo = sourceDirectory.appendingPathComponent("parrot-photo-maze-compact-v2.png")
-    var contactSheet = sourceDirectory
-        .appendingPathComponent("Review/en-US_contact-sheet.png")
+    var contactSheet = URL(fileURLWithPath: "/")
 }
 
 private struct Manifest: Decodable {
     let schemaVersion: Int
     let locale: String
-    let captureLocale: String
     let slides: [Slide]
 }
 
@@ -58,22 +50,6 @@ private struct SlideBlueprint {
     let backgroundCapture: String
     let template: String
 }
-
-private let captureLocaleByStorefront = [
-    "en-US": "en-US",
-    "ja": "ja",
-    "de-DE": "de",
-    "ko": "ko",
-    "zh-Hant": "zh-Hant",
-    "pt-BR": "pt-BR",
-    "es-MX": "es-MX",
-    "fr-FR": "fr",
-    "fr-CA": "fr",
-    "en-GB": "en-US",
-    "en-CA": "en-US",
-    "en-AU": "en-US",
-    "es-ES": "es",
-]
 
 private let slideBlueprints = [
     SlideBlueprint(
@@ -99,7 +75,7 @@ private let slideBlueprints = [
     ),
     SlideBlueprint(
         id: "worlds",
-        filename: "04_240-levels-7-worlds.png",
+        filename: "04_260-levels-8-worlds.png",
         accent: "pink",
         backgroundCapture: "worlds",
         template: "worlds"
@@ -325,18 +301,6 @@ private func validateManifest(_ manifest: Manifest) throws {
     var problems: [String] = []
     if manifest.schemaVersion != 1 {
         problems.append("Manifest schemaVersion must be 1, found \(manifest.schemaVersion).")
-    }
-    guard let expectedCaptureLocale = captureLocaleByStorefront[manifest.locale] else {
-        let locales = captureLocaleByStorefront.keys.sorted().joined(separator: ", ")
-        throw ScriptError.message(
-            "Unsupported storefront locale \(manifest.locale). Expected one of: \(locales)."
-        )
-    }
-    if manifest.captureLocale != expectedCaptureLocale {
-        problems.append(
-            "Manifest \(manifest.locale) must use captureLocale \(expectedCaptureLocale), " +
-            "found \(manifest.captureLocale)."
-        )
     }
     if manifest.slides.count != slideBlueprints.count {
         problems.append(
@@ -1811,7 +1775,12 @@ private func parseOptions() throws -> Options {
             }
             index += 1
             options.locale = arguments[index]
-            options.localeWasExplicit = true
+        case "--slide":
+            guard index + 1 < arguments.count else {
+                throw ScriptError.message("Missing slide ID.")
+            }
+            index += 1
+            options.slideID = arguments[index]
         case "--input-root", "--output-root", "--manifest", "--photo", "--contact-sheet":
             guard index + 1 < arguments.count else {
                 throw ScriptError.message("Missing value after \(argument).")
@@ -1821,17 +1790,13 @@ private func parseOptions() throws -> Options {
             switch argument {
             case "--input-root":
                 options.inputRoot = url
-                options.inputRootWasExplicit = true
             case "--output-root":
                 options.outputRoot = url
-                options.outputRootWasExplicit = true
             case "--manifest":
                 options.manifest = url
-                options.manifestWasExplicit = true
             case "--photo": options.photo = url
             case "--contact-sheet":
                 options.contactSheet = url
-                options.contactSheetWasExplicit = true
             default: break
             }
         case "--help", "-h":
@@ -1841,9 +1806,11 @@ private func parseOptions() throws -> Options {
             Usage:
               swift render_english_screenshots.swift [options]
 
+            The v2 batch runner supplies input/output paths for each canonical set.
             Options:
               --validate              Validate existing outputs only
-              --locale LOCALE         Storefront locale (default: en-US)
+              --slide ID              Render one slide and rebuild the contact sheet from all five
+              --locale LOCALE         Canonical language set (default: en)
               --input-root PATH       Capture root containing device folders
               --output-root PATH      Generated output root
               --manifest PATH         Localized JSON manifest
@@ -1857,50 +1824,23 @@ private func parseOptions() throws -> Options {
         index += 1
     }
 
-    if options.localeWasExplicit && captureLocaleByStorefront[options.locale] == nil {
-        let locales = captureLocaleByStorefront.keys.sorted().joined(separator: ", ")
-        throw ScriptError.message(
-            "Unsupported storefront locale \(options.locale). Expected one of: \(locales)."
-        )
-    }
-    if !options.manifestWasExplicit {
-        options.manifest = sourceDirectory
-            .appendingPathComponent("screenshots.\(options.locale).json")
-    }
-    return options
-}
-
-private func resolveLocalePaths(_ parsed: Options, manifest: Manifest) throws -> Options {
-    if parsed.localeWasExplicit && parsed.locale != manifest.locale {
-        throw ScriptError.message(
-            "--locale \(parsed.locale) does not match manifest locale \(manifest.locale)."
-        )
-    }
-
-    var options = parsed
-    options.locale = manifest.locale
-    if !options.inputRootWasExplicit {
-        options.inputRoot = sourceDirectory
-            .appendingPathComponent("_captures", isDirectory: true)
-            .appendingPathComponent(manifest.captureLocale, isDirectory: true)
-    }
-    if !options.outputRootWasExplicit {
-        options.outputRoot = sourceDirectory
-            .appendingPathComponent("Generated", isDirectory: true)
-            .appendingPathComponent(manifest.locale, isDirectory: true)
-    }
-    if !options.contactSheetWasExplicit {
-        options.contactSheet = sourceDirectory
-            .appendingPathComponent("Review/\(manifest.locale)_contact-sheet.png")
+    guard options.outputRoot.path != "/", options.contactSheet.path != "/",
+          options.validateOnly || options.inputRoot.path != "/" else {
+        throw ScriptError.message("Pass --input-root, --output-root and --contact-sheet using the v2 media runner.")
     }
     return options
 }
 
 private func run() throws {
-    let parsedOptions = try parseOptions()
-    let manifest = try loadManifest(at: parsedOptions.manifest)
+    let options = try parseOptions()
+    let manifest = try loadManifest(at: options.manifest)
+    guard options.locale == manifest.locale else {
+        throw ScriptError.message("Language set does not match manifest locale.")
+    }
     try validateManifest(manifest)
-    let options = try resolveLocalePaths(parsedOptions, manifest: manifest)
+    if let id = options.slideID, !manifest.slides.contains(where: { $0.id == id }) {
+        throw ScriptError.message("Unknown slide ID: \(id)")
+    }
     try prepareFonts()
     try validateGlyphCoverage(manifest)
 
@@ -1920,6 +1860,7 @@ private func run() throws {
         }
         let folder = options.outputRoot.appendingPathComponent(device.rawValue, isDirectory: true)
         for (index, slide) in manifest.slides.enumerated() {
+            if let id = options.slideID, slide.id != id { continue }
             let image = try renderSlide(
                 slide: slide,
                 index: index,

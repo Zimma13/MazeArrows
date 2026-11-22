@@ -1,57 +1,24 @@
 /* Common actions */
 "onboarding.action.skip" = "スキップ";
-"onboarding.action.close" = "閉じる";
 "onboarding.action.continue" = "続ける";
-"onboarding.action.next" = "次へ";
 "onboarding.action.not_now" = "今はしない";
-"onboarding.common.premium" = "プレミアム";
-"onboarding.action.ok" = "OK";
 "onboarding.action.yes_remind" = "はい、通知する";
 
 /* Tutorial */
-"onboarding.accessibility.page_progress" = "%lld / %lld";
 "onboarding.tutorial.tap_arrow" = "矢印をタップ";
 "onboarding.tutorial.great" = "いいですね！";
 "onboarding.tutorial.path_blocked" = "進路がふさがれています";
 "onboarding.tutorial.free_path_first" = "先に進路を空けましょう";
 "onboarding.tutorial.hint" = "ヒントが進む道を示します";
-"onboarding.tutorial.hints_three" = "ヒント：3";
 "onboarding.tutorial.combo" = "連続クリア！";
 "onboarding.tutorial.lives_rule" = "ライフは3つ。ふさがれた進路をタップするとライフを1つ失います";
 "onboarding.tutorial.level_number" = "レベル%lld";
 
 /* Premium introduction */
-"onboarding.paywall.intro.title" = "制限なしでプレイ";
-"onboarding.paywall.intro.photo_title" = "どんな写真も迷路に。";
-"onboarding.paywall.intro.hints" = "ヒントが無制限";
-"onboarding.paywall.intro.photo_benefit" = "どんな写真も迷路に変換";
-"onboarding.paywall.intro.photo_unlimited" = "フォト迷路を無制限に作成";
-"onboarding.paywall.intro.no_ads" = "広告なし";
 
 /* Trial timeline */
 
 /* Plans and purchase */
-"onboarding.paywall.plans.title" = "プランを選択";
-"onboarding.paywall.plans.week" = "週間";
-"onboarding.paywall.plans.year" = "年間";
-"onboarding.paywall.plans.weekly_price" = "週額%@";
-"onboarding.paywall.plans.annual_price" = "年額%@";
-"onboarding.paywall.plans.annual_per_week" = "週あたり約%@";
-"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
-"onboarding.paywall.plans.savings" = "%@お得";
-"onboarding.paywall.plans.weekly_cta" = "週間プレミアムを開始";
-"onboarding.paywall.plans.annual_cta" = "%@で年間プランを開始";
-"onboarding.paywall.plans.annual_billing" = "本日%@を請求 · %@に更新";
-"onboarding.paywall.restore" = "購入を復元";
-"onboarding.paywall.manage_subscription" = "サブスクリプションを管理";
-"onboarding.paywall.auto_renewal" = "キャンセルするまでサブスクリプションは自動更新されます。";
-"onboarding.paywall.terms" = "利用規約";
-"onboarding.paywall.privacy" = "プライバシーポリシー";
-"onboarding.paywall.purchase_pending" = "購入の承認を待っています";
-"onboarding.paywall.purchase_failed" = "購入を完了できませんでした。もう一度お試しください。";
-"onboarding.paywall.restore_failed" = "購入を復元できませんでした。もう一度お試しください。";
-"onboarding.paywall.nothing_to_restore" = "有効なプレミアム購入が見つかりませんでした。";
-"onboarding.paywall.restored" = "プレミアムを復元しました";
 
 /* Trial reminder */
 
@@ -81,7 +48,6 @@
 "onboarding.theme.aurora_name" = "オーロラライト";
 "onboarding.theme.neon_name" = "ミッドナイトネオン";
 "onboarding.theme.petal_name" = "ペタルパステル";
-"onboarding.theme.more" = "プレミアムにはさらに3つのテーマ";
 "onboarding.theme.later" = "後で";
 
 /* Handoff */

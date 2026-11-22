@@ -1,51 +1,14 @@
 "onboarding.action.skip" = "Omitir";
-"onboarding.action.close" = "Cerrar";
 "onboarding.action.continue" = "Continuar";
-"onboarding.action.next" = "Siguiente";
 "onboarding.action.not_now" = "Ahora no";
-"onboarding.common.premium" = "Premium";
-"onboarding.action.ok" = "Aceptar";
-"onboarding.accessibility.page_progress" = "%lld de %lld";
 
 "onboarding.tutorial.tap_arrow" = "Toca la flecha";
 "onboarding.tutorial.great" = "¡Genial!";
 "onboarding.tutorial.path_blocked" = "Camino bloqueado";
 "onboarding.tutorial.free_path_first" = "Despeja primero el camino";
 "onboarding.tutorial.hint" = "Las pistas muestran el camino";
-"onboarding.tutorial.hints_three" = "Pistas: 3";
 "onboarding.tutorial.combo" = "¡Limpieza en cadena!";
 "onboarding.tutorial.lives_rule" = "3 vidas. Tocar un camino bloqueado cuesta 1 vida";
-
-"onboarding.paywall.intro.title" = "Juega sin límites";
-"onboarding.paywall.intro.photo_title" = "Cualquier foto. Un laberinto.";
-"onboarding.paywall.intro.hints" = "Pistas ilimitadas";
-"onboarding.paywall.intro.photo_benefit" = "Convierte cualquier foto en un laberinto";
-"onboarding.paywall.intro.photo_unlimited" = "Creaciones ilimitadas de laberintos fotográficos";
-"onboarding.paywall.intro.no_ads" = "Sin anuncios";
-
-
-"onboarding.paywall.plans.title" = "Elige un plan";
-"onboarding.paywall.plans.week" = "Semana";
-"onboarding.paywall.plans.year" = "Año";
-"onboarding.paywall.plans.weekly_price" = "%@/semana";
-"onboarding.paywall.plans.annual_price" = "%@/año";
-"onboarding.paywall.plans.annual_per_week" = "≈ %@/semana";
-"onboarding.paywall.plans.price_line" = "%1$@ · %2$@";
-"onboarding.paywall.plans.savings" = "Ahorra un %@";
-"onboarding.paywall.plans.weekly_cta" = "Iniciar Premium semanal";
-"onboarding.paywall.plans.annual_cta" = "Consigue un año por %@";
-"onboarding.paywall.plans.annual_billing" = "Se cobran %@ hoy · Se renueva el %@";
-
-"onboarding.paywall.restore" = "Restaurar compras";
-"onboarding.paywall.manage_subscription" = "Gestionar suscripción";
-"onboarding.paywall.auto_renewal" = "La suscripción se renueva automáticamente hasta que se cancele.";
-"onboarding.paywall.terms" = "Condiciones de uso";
-"onboarding.paywall.privacy" = "Política de privacidad";
-"onboarding.paywall.purchase_pending" = "La compra está pendiente de aprobación";
-"onboarding.paywall.purchase_failed" = "No se ha podido completar la compra. Inténtalo de nuevo.";
-"onboarding.paywall.restore_failed" = "No se han podido restaurar las compras. Inténtalo de nuevo.";
-"onboarding.paywall.nothing_to_restore" = "No se ha encontrado ninguna compra Premium activa.";
-"onboarding.paywall.restored" = "Premium restaurado";
 
 "onboarding.action.yes_remind" = "Sí, avísame";
 
@@ -72,7 +35,6 @@
 "onboarding.theme.aurora_name" = "Aurora Light";
 "onboarding.theme.neon_name" = "Midnight Neon";
 "onboarding.theme.petal_name" = "Petal Pastel";
-"onboarding.theme.more" = "3 temas más en Premium";
 "onboarding.theme.later" = "Más tarde";
 
 "onboarding.handoff.title" = "¡Estás imparable!";

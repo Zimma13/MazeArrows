@@ -11,7 +11,7 @@ import Foundation
 struct PlayerProgress: Codable, Sendable {
     var unlockedLevelIndex: Int
     var completedLevels: Set<Int>
-    var hintsCount: Int
+    var hintsCount: Int                     // Legacy inventory, preserved across updates.
     var undosCount: Int
     var stars: [Int: Int]                    // levelIndex → best stars (0..3)
     var bestTimes: [Int: Int]                // levelIndex → best time in seconds
@@ -34,14 +34,14 @@ struct PlayerProgress: Codable, Sendable {
     var streakFreezes: Int
     var claimedStreakChests: Set<Int>        // streak-day milestones already paid
 
-    // Zen free daily limit
+    // Position in the daily sequence of Zen boards.
     var zenPlayedDate: String?               // yyyy-MM-dd, UTC
     var zenPlayedCount: Int
 
     // Master layer: levelIndex → modifiers cleared
     var masterClears: [Int: Set<GameMode>]
 
-    // Photo Maze lifetime allowance and earned, unspent ad credits.
+    // Historical Photo Maze counts retained for save compatibility.
     var photoMazeFreeGenerationsUsed: Int
     var photoMazeRewardedCredits: Int
 

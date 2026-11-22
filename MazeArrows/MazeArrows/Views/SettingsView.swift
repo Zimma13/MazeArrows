@@ -6,40 +6,17 @@
 //
 //
 
-import StoreKit
 import SwiftUI
 import UIKit
 
 struct SettingsView: View {
-    private enum PresentedPurchaseAlert: Identifiable {
-        case message(String)
-
-        var id: String {
-            switch self {
-            case .message(let message):
-                "purchase-\(message)"
-            }
-        }
-    }
-
     @Environment(SettingsStore.self) private var settings
     @Environment(ProgressStore.self) private var progress
     @Environment(GameCenterStore.self) private var gameCenter
-    @Environment(PremiumStore.self) private var premium
-    @Environment(AdService.self) private var ads
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
 
     @State private var showResetConfirm = false
-    @State private var showPrivacyOptionsError = false
-    @State private var showsManageSubscriptions = false
-    @State private var purchaseAlert: PresentedPurchaseAlert?
-    @State private var premiumPaywallContext: PremiumPaywallContext?
-
     private var theme: GameTheme { GameTheme.theme(for: settings.settings.themeID) }
-    private var premiumAccess: PremiumAccessPolicy {
-        PremiumAccessPolicy(isPremium: premium.isPremium)
-    }
 
     var body: some View {
         @Bindable var settings = settings
@@ -88,36 +65,9 @@ struct SettingsView: View {
                         }
                     }
 
-                    sectionTitle("Premium")
-                    settingsCard {
-                        premiumStatusRow
-                        Divider().background(theme.glassBorder)
-                        restorePurchasesRow
-                        Divider().background(theme.glassBorder)
-                        manageSubscriptionRow
-                    }
-                    .alert(item: $purchaseAlert) { alert in
-                        switch alert {
-                        case .message(let message):
-                            Alert(
-                                title: Text(OnboardingCopy.premium),
-                                message: Text(message),
-                                dismissButton: .default(Text(OnboardingCopy.ok)) {
-                                    premium.resetPurchaseMessage()
-                                }
-                            )
-                        }
-                    }
-
                     sectionTitle("Privacy")
                     settingsCard {
-                        PrivacySettingsRows(
-                            theme: theme,
-                            showsAdvertisingChoices: ads.isPrivacyOptionsRequired
-                                && !premium.isPremium,
-                            isPresentingAdvertisingChoices: ads.isPresentingPrivacyOptions,
-                            presentAdvertisingChoices: presentAdvertisingChoices
-                        )
+                        PrivacySettingsRows(theme: theme)
                     }
 
                     sectionTitle("Support")
@@ -278,27 +228,6 @@ struct SettingsView: View {
         } message: {
             Text("All stars, best times and unlocked levels will be cleared.")
         }
-        .alert("Privacy options unavailable", isPresented: $showPrivacyOptionsError) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text("Please try again later.")
-        }
-        .manageSubscriptionsSheet(isPresented: $showsManageSubscriptions)
-        .fullScreenCover(item: $premiumPaywallContext) { context in
-            PremiumPaywallView(context: context) {
-                if case .theme(let id) = context {
-                    settings.selectTheme(id, access: .premium)
-                }
-            }
-        }
-    }
-
-    private func presentAdvertisingChoices() {
-        Task {
-            if !(await ads.presentPrivacyOptions()) {
-                showPrivacyOptionsError = true
-            }
-        }
     }
 
     private func sectionTitle(_ text: LocalizedStringKey) -> some View {
@@ -345,135 +274,6 @@ struct SettingsView: View {
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Game Center")
         .accessibilityValue(Text(gameCenterStatusText))
-    }
-
-    private var premiumStatusRow: some View {
-        Button {
-            if premium.isPremium {
-                showsManageSubscriptions = true
-            } else {
-                premiumPaywallContext = .settings
-            }
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: "crown.fill")
-                    .frame(width: 32, height: 32)
-                    .foregroundStyle(theme.achievementGold)
-                    .background(theme.achievementGold.opacity(0.12), in: Circle())
-                    .accessibilityHidden(true)
-
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(OnboardingCopy.premium)
-                        .scaledFont(size: 15, weight: .semibold)
-                        .foregroundStyle(theme.ink)
-                    Text(OnboardingCopy.playWithoutLimits)
-                        .scaledFont(size: 12, weight: .medium)
-                        .foregroundStyle(theme.inkMuted)
-                }
-
-                Spacer()
-
-                if premium.isPremium {
-                    Label("Active", systemImage: "checkmark.circle.fill")
-                        .labelStyle(.titleAndIcon)
-                        .scaledFont(size: 12, weight: .bold)
-                        .foregroundStyle(theme.success)
-                }
-
-                Image(systemName: "chevron.right")
-                    .scaledFont(size: 12, weight: .bold)
-                    .foregroundStyle(theme.inkMuted)
-                    .accessibilityHidden(true)
-            }
-            .padding(.vertical, 8)
-            .minimumTapTarget()
-            .contentShape(.rect)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(OnboardingCopy.premium)
-        .accessibilityValue(premium.isPremium ? Text("Active") : Text(OnboardingCopy.playWithoutLimits))
-        .accessibilityHint(
-            premium.isPremium
-                ? Text(OnboardingCopy.manageSubscription)
-                : Text(OnboardingCopy.choosePlan)
-        )
-    }
-
-    private var restorePurchasesRow: some View {
-        Button(action: restorePurchases) {
-            HStack(spacing: 12) {
-                Image(systemName: "arrow.clockwise")
-                    .frame(width: 32, height: 32)
-                    .foregroundStyle(theme.accent)
-                    .background(theme.accent.opacity(0.12), in: Circle())
-                    .accessibilityHidden(true)
-
-                Text(OnboardingCopy.restore)
-                    .scaledFont(size: 15, weight: .semibold)
-                    .foregroundStyle(theme.ink)
-
-                Spacer()
-
-                if premium.purchaseState == .purchasing {
-                    ProgressView()
-                        .tint(theme.accent)
-                        .accessibilityHidden(true)
-                }
-            }
-            .padding(.vertical, 8)
-            .minimumTapTarget()
-            .contentShape(.rect)
-        }
-        .buttonStyle(.plain)
-        .disabled(premium.purchaseState == .purchasing)
-        .accessibilityLabel(OnboardingCopy.restore)
-    }
-
-    private var manageSubscriptionRow: some View {
-        Button {
-            showsManageSubscriptions = true
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: "creditcard.fill")
-                    .frame(width: 32, height: 32)
-                    .foregroundStyle(theme.accent)
-                    .background(theme.accent.opacity(0.12), in: Circle())
-                    .accessibilityHidden(true)
-
-                Text(OnboardingCopy.manageSubscription)
-                    .scaledFont(size: 15, weight: .semibold)
-                    .foregroundStyle(theme.ink)
-
-                Spacer()
-
-                Image(systemName: "chevron.right")
-                    .scaledFont(size: 12, weight: .bold)
-                    .foregroundStyle(theme.inkMuted)
-                    .accessibilityHidden(true)
-            }
-            .padding(.vertical, 8)
-            .minimumTapTarget()
-            .contentShape(.rect)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(OnboardingCopy.manageSubscription)
-    }
-
-    private func restorePurchases() {
-        guard premium.purchaseState != .purchasing else { return }
-        Task {
-            let restored = await premium.restorePurchases()
-            purchaseAlert = .message(
-                restored ? OnboardingCopy.restored : restoreFailureMessage
-            )
-        }
-    }
-
-    private var restoreFailureMessage: String {
-        if case .failed(let message) = premium.purchaseState {
-            return message
-        }
-        return OnboardingCopy.nothingToRestore
     }
 
     private var gameCenterStatusText: LocalizedStringKey {
@@ -673,9 +473,7 @@ struct SettingsView: View {
 
     private func themeRow(id: AppThemeID, isSelected: Bool) -> some View {
         return Button {
-            if !settings.selectTheme(id, access: premiumAccess) {
-                premiumPaywallContext = .theme(id)
-            }
+            settings.selectTheme(id)
         } label: {
             HStack {
                 themeSwatch(for: id)
@@ -683,17 +481,6 @@ struct SettingsView: View {
                     .scaledFont(size: 15, weight: .medium)
                     .foregroundStyle(theme.ink)
                 Spacer()
-                if id.requiresPremium {
-                    Label(
-                        "Premium",
-                        systemImage: premiumAccess.canUseTheme(id)
-                            ? "crown.fill"
-                            : "lock.fill"
-                    )
-                    .labelStyle(.iconOnly)
-                    .foregroundStyle(theme.achievementGold)
-                    .accessibilityHidden(true)
-                }
                 if isSelected {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundStyle(theme.accent)
@@ -704,11 +491,6 @@ struct SettingsView: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(Text("Theme: \(id.displayName)"))
-        .accessibilityHint(
-            id.requiresPremium && !premiumAccess.canUseTheme(id)
-                ? Text("Requires Arrow Maze Premium.")
-                : Text("")
-        )
         .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 
@@ -747,6 +529,4 @@ struct SettingsView: View {
         .environment(SettingsStore.shared)
         .environment(ProgressStore.shared)
         .environment(GameCenterStore())
-        .environment(PremiumStore())
-        .environment(AdService())
 }

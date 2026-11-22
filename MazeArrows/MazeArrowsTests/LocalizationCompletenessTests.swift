@@ -80,8 +80,7 @@ struct LocalizationCompletenessTests {
             "Photo Maze",
             "PHOTO MAZE",
             "Choose a photo",
-            "Choose another photo",
-            "Unlimited Photo Maze creations"
+            "Choose another photo"
         ] {
             let entry = try #require(strings[key] as? [String: Any])
             let localizations = try #require(entry["localizations"] as? [String: Any])

@@ -5,10 +5,6 @@
 //  Created by Zimma on 11.05.2026.
 //
 //
-//  Single contextual sheet for the "ran out of X" moments: hint, undo, revive.
-//  Slots appear top-down: rewarded ad (behind FeatureFlags.adsAvailable),
-//  buy with coins, and Premium for hints.
-//
 
 import SwiftUI
 
@@ -16,9 +12,8 @@ struct ResourceOfferSheet: View {
     let model: GameViewModel
     let offer: GameViewModel.ResourceOffer
     let theme: GameTheme
-    let openPremium: () -> Void
-    @Environment(AdService.self) private var ads
-    @State private var isShowingRewardedAd = false
+    let onRetry: () -> Void
+    let onClose: () -> Void
 
     private var price: Int { model.price(for: offer) }
     private var canAfford: Bool { model.canAfford(offer) }
@@ -36,12 +31,10 @@ struct ResourceOfferSheet: View {
                     CoinBalanceChip(coins: model.coinBalance, theme: theme)
 
                     VStack(spacing: 10) {
-                        if shouldShowRewardedSlot {
-                            rewardedSlot
-                        }
                         coinSlot
-                        if offer == .hint {
-                            premiumSlot
+                        if !canAfford {
+                            GhostButton(text: "Retry", theme: theme, action: onRetry)
+                            GhostButton(text: "Back to levels", theme: theme, action: onClose)
                         }
                         GhostButton(text: "Not now", theme: theme) {
                             model.dismissResourceOffer()
@@ -53,9 +46,6 @@ struct ResourceOfferSheet: View {
                 }
                 .frame(maxWidth: .infinity)
             }
-        }
-        .task {
-            ads.preloadRewardedAd(for: rewardedPlacement)
         }
     }
 
@@ -90,7 +80,6 @@ struct ResourceOfferSheet: View {
 
     private var iconName: String {
         switch offer {
-        case .hint:   return "lightbulb.fill"
         case .undo:   return "arrow.uturn.backward"
         case .revive: return "heart.fill"
         }
@@ -98,7 +87,6 @@ struct ResourceOfferSheet: View {
 
     private var title: LocalizedStringKey {
         switch offer {
-        case .hint:   return "Out of hints"
         case .undo:   return "Out of undos"
         case .revive: return "Keep going?"
         }
@@ -106,83 +94,8 @@ struct ResourceOfferSheet: View {
 
     private var subtitle: LocalizedStringKey {
         switch offer {
-        case .hint:   return "A hint highlights the next arrow that can fly out."
         case .undo:   return "An undo brings back the last cleared arrow."
         case .revive: return "Continue this level right where you left off."
-        }
-    }
-
-    // MARK: - slots
-
-    private var rewardedSlot: some View {
-        Button(action: watchRewardedAd) {
-            DynamicTypeStack(spacing: 8) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Watch ad")
-                        .textCase(.uppercase)
-                        .scaledFont(size: 15, weight: .heavy)
-                    Text(buyLabel)
-                        .scaledFont(size: 12, weight: .semibold)
-                        .foregroundStyle(theme.inkSoft)
-                }
-                Spacer(minLength: 8)
-                if isShowingRewardedAd {
-                    ProgressView()
-                        .tint(theme.accent)
-                } else {
-                    Image(systemName: "play.rectangle.fill")
-                        .scaledFont(size: 21, weight: .semibold)
-                        .foregroundStyle(theme.accent)
-                        .accessibilityHidden(true)
-                }
-            }
-            .foregroundStyle(theme.ink)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 12)
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .fill(theme.surface)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 26, style: .continuous)
-                            .stroke(theme.accent.opacity(0.55), lineWidth: 1.5)
-                    )
-            )
-            .minimumTapTarget()
-        }
-        .buttonStyle(.plain)
-        .disabled(isShowingRewardedAd)
-        .accessibilityLabel("Watch ad")
-        .accessibilityValue(Text(buyLabel))
-    }
-
-    private var rewardedPlacement: RewardedAdPlacement {
-        switch offer {
-        case .hint:   return .hint
-        case .undo:   return .undo
-        case .revive: return .revive
-        }
-    }
-
-    private var shouldShowRewardedSlot: Bool {
-        FeatureFlags.adsAvailable
-            && (isShowingRewardedAd || ads.isRewardedAdReady(for: rewardedPlacement))
-    }
-
-    private func watchRewardedAd() {
-        guard !isShowingRewardedAd else { return }
-        isShowingRewardedAd = true
-        model.setRewardedAdPresentationActive(true)
-
-        Task { @MainActor in
-            defer {
-                model.setRewardedAdPresentationActive(false)
-                isShowingRewardedAd = false
-            }
-
-            _ = await ads.presentRewardedAd(for: rewardedPlacement) {
-                model.applyRewardedOffer(offer)
-            }
         }
     }
 
@@ -229,14 +142,9 @@ struct ResourceOfferSheet: View {
 
     private var buyLabel: LocalizedStringKey {
         switch offer {
-        case .hint:   return "Get 1 hint"
         case .undo:   return "Get 1 undo"
         case .revive: return "Continue · +\(model.economyConfig.reviveLives) lives"
         }
-    }
-
-    private var premiumSlot: some View {
-        GhostButton(text: "Premium — unlimited", theme: theme, action: openPremium)
     }
 }
 

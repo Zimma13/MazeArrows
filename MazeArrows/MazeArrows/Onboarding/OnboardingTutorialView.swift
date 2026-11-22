@@ -471,7 +471,7 @@ private struct TutorialHUD: View {
             }
 
             if hintsAreVisible {
-                Label(OnboardingCopy.hintsThree, systemImage: "lightbulb.fill")
+                Label("Hints", systemImage: "lightbulb.fill")
                     .foregroundStyle(theme.accent)
             }
 
@@ -665,7 +665,10 @@ private struct TutorialPieceButton: View {
         .animation(.easeIn(duration: exitDuration), value: isExiting)
         .animation(.easeInOut(duration: 0.25), value: isSpotlighted)
         .animation(.linear(duration: reduceMotion ? 0.01 : 0.35), value: shakeValue)
-        .accessibilityLabel(OnboardingCopy.arrowAccessibility(piece.id, piece.direction.localizedName))
+        .accessibilityLabel(OnboardingCopy.arrowAccessibility(
+            piece.id,
+            OnboardingCopy.directionName(piece.direction)
+        ))
         .accessibilityHint(
             MoveValidator.canFlyOut(piece: piece, board: board)
                 ? OnboardingCopy.arrowFreeAccessibility
@@ -722,15 +725,6 @@ private extension Direction {
         case .down: return "arrow.down"
         case .left: return "arrow.left"
         case .right: return "arrow.right"
-        }
-    }
-
-    var localizedName: String {
-        switch self {
-        case .up: return OnboardingCopy.directionUp
-        case .down: return OnboardingCopy.directionDown
-        case .left: return OnboardingCopy.directionLeft
-        case .right: return OnboardingCopy.directionRight
         }
     }
 }

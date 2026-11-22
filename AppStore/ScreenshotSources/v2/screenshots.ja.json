@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": [
+        "あなたの写真。",
+        "あなただけの迷路。"
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "好きな被写体を、遊べるパズルに。"
+      ],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": [
+        "動かせる矢印を",
+        "見つけよう"
+      ],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": [
+        "ひとつのひらめきが、盤面全体を動かす。"
+      ],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": [
+        "すべてがほどける",
+        "爽快コンボ"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "先を読んで、気持ちいい連鎖をつなごう。"
+      ],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_260-levels-8-worlds.png",
+      "headline": [
+        "260ステージ",
+        "8つのワールド"
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "同じ印の鍵でゲートを開こう。"
+      ],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": [
+        "毎日、新しい",
+        "迷路に挑戦"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "デイリーパズル、3つのクエスト、連続記録の報酬。"
+      ],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

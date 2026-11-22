@@ -22,7 +22,7 @@ struct ReviewRequestOpportunity: Equatable, Sendable {
     let isFirstCompletion: Bool
     let stars: Int
     let hasUsedRevive: Bool
-    let hadCommercialInterruption: Bool
+    let showedResourceOffer: Bool
     let streakDays: Int
 }
 
@@ -71,7 +71,7 @@ struct ReviewRequestPolicy: Sendable {
               opportunity.completedStoryLevelsAfterOnboarding >= minimumStoryCompletions,
               currentState.activeDays.count >= minimumActiveDays,
               !opportunity.hasUsedRevive,
-              !opportunity.hadCommercialInterruption,
+              !opportunity.showedResourceOffer,
               !currentState.attemptedVersions.contains(appVersion),
               currentState.attemptDates.count < maximumAttemptsInRollingWindow
         else { return false }

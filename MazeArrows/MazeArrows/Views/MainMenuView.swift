@@ -500,5 +500,4 @@ private struct CircleMenuButton: View {
         .environment(SettingsStore.shared)
         .environment(ProgressStore.shared)
         .environment(LevelCatalogStore.shared)
-        .environment(PremiumStore())
 }

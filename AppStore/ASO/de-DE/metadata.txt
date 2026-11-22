@@ -1,10 +1,10 @@
 LOCALE=de-DE
 LANGUAGE=Deutsch (Deutschland)
-APP_NAME=Arrow Maze: Pfeilwelt 240
+APP_NAME=Arrow Maze: Pfeilwelt 260
 SUBTITLE=Wege clever entwirren
-PROMOTIONAL_TEXT=Ein freier Weg kann das ganze Feld öffnen. Plane voraus, steigere deine Serie und meistere 240 Level, Tagesrätsel, Zen und dein eigenes Photo Maze.
+PROMOTIONAL_TEXT=Welcher Schlüssel öffnet den Weg? Löse 260 Level, verwandle Fotos in Labyrinthe und entspanne im Zen-Modus. Ohne Werbung und ohne Abo.
 KEYWORDS=denkspiel,knobeln,ausweg,route,block,tippen,gitter,gehirn,ruhe,zen,täglich,foto,taktik,pfad,rätsel
 SUPPORT_URL=https://kinapp.dev/arrowmaze/support/
 PRIVACY_POLICY_URL=https://kinapp.dev/arrowmaze/privacy/
 MARKETING_URL=https://kinapp.dev/arrowmaze/
-WHATS_NEW=NOT_AVAILABLE_FOR_VERSION_1.0
+WHATS_NEW=Die Kampagne geht mit 20 neuen Leveln weiter. Befreie im Kapitel „Signaltore“ die Schlüssel, um Tore mit dem passenden Symbol zu öffnen. Dein Fortschritt bleibt erhalten. Werbung und Abos entfallen. Photo Maze, Zen und Hinweise sind unbegrenzt verfügbar, alle Designs sind enthalten.

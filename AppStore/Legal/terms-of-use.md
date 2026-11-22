@@ -1,12 +1,12 @@
 # Terms of Use
 
-Arrow Maze · Effective August 13, 2026
+Arrow Maze for iPhone and iPad · Effective {{EFFECTIVE_DATE}}
 
 **Important:** These Terms supplement the [Apple Standard End User License Agreement](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) (“Apple Standard EULA”), which applies to the licence for Arrow Maze when downloaded from the App Store. If these Terms conflict with the Apple Standard EULA or mandatory consumer law, the Apple Standard EULA or mandatory law controls to the extent of the conflict.
 
 ## 1. Agreement
 
-These Terms of Use (“Terms”) are an agreement between you and **{{LEGAL_NAME}}** (“we,” “us,” or the “Developer”) governing your use of the Arrow Maze mobile application, its content, features, subscriptions, and related support services (collectively, the “App”). By downloading, purchasing, or using the App, you agree to these Terms, the Apple Standard EULA, and our [Privacy Policy]({{PRIVACY_URL}}).
+These Terms of Use (“Terms”) are an agreement between you and **Stepanov Dmitrii** (“we,” “us,” or the “Developer”) governing your use of the Arrow Maze mobile application, its content, features, legacy subscriptions, and related support services (collectively, the “App”). By downloading, purchasing, or using the App, you agree to these Terms, the Apple Standard EULA, and our [Privacy Policy](https://kinapp.dev/arrowmaze/privacy/).
 
 If you do not agree, do not use the App. If you are not legally able to accept these Terms on your own, a parent or legal guardian must review and accept them for you.
 
@@ -18,7 +18,7 @@ The App, its software, original levels, artwork, sound, interface, name, logo, a
 
 ## 3. The game
 
-Arrow Maze is a single-player puzzle game. Features may include campaign levels, daily puzzles and quests, Zen play, Photo Maze, themes, virtual items, achievements, Game Center leaderboards, and optional Premium access. Feature availability may depend on App version, device compatibility, region, Game Center status, and a valid App Store entitlement.
+Arrow Maze is a single-player puzzle game. Version 2.0 includes 260 campaign levels in eight worlds, daily puzzles and quests, Zen play, unlimited Photo Maze creations and hints, all six themes, and Game Center features. Version 1.x includes a 240-level campaign and may offer optional Premium access. Feature availability can depend on app version, device compatibility, region and Game Center status.
 
 We may balance levels, rewards, virtual items, difficulty, and feature limits to maintain the game. We will not intentionally remove a paid entitlement during its valid subscription period without providing an appropriate remedy required by applicable law or App Store rules.
 
@@ -39,14 +39,20 @@ You must not:
 - introduce malicious code or interfere with the App, Game Center, App Store, or another user’s device;
 - use the App to harass, deceive, or harm others.
 
-## 6. Premium subscriptions
+## 6. App purchases and legacy subscriptions
 
-The App may offer weekly and annual auto-renewable Premium subscriptions. The purchase screen displays the available plan, current localized price, billing period, and included features before you confirm a purchase. Prices and availability may vary by country and may change as permitted by Apple and applicable law.
+### Version 2.0
+
+The App Store displays the local price before a new customer confirms a one-time purchase. The 260-level campaign and the features listed in section 3 are included, with no advertising or in-app purchases in version 2.0. If you previously obtained Arrow Maze, use the same Apple Account to update or download it again. Installing the update does not change the billing status of a separate subscription. Check that status in your Apple Account.
+
+### Version 1.x
+
+Version 1.x may offer weekly and annual auto-renewable Premium subscriptions. The purchase screen displays the available plan, current localized price, billing period, and included features before you confirm a purchase. Prices and availability may vary by country and may change as permitted by Apple and applicable law.
 
 - Payment is charged to your Apple Account after confirmation.
 - A subscription renews automatically unless you cancel it through your Apple Account subscriptions settings before renewal, within the time required by Apple.
 - You can manage or cancel a subscription in Settings → Apple Account → Subscriptions. Deleting the App does not cancel a subscription.
-- Use Restore Purchases in the App to refresh an existing eligible entitlement.
+- On version 1.x, use Restore Purchases in the App to refresh an existing eligible entitlement.
 - Billing, cancellation, and refund requests are administered by Apple and are subject to Apple’s terms and applicable consumer law.
 
 ## 7. Virtual items and rewards
@@ -63,7 +69,7 @@ We may release updates to improve performance, security, compatibility, levels, 
 
 ## 10. Support
 
-Support is available at [{{SUPPORT_URL}}]({{SUPPORT_URL}}) or [{{SUPPORT_EMAIL}}](mailto:{{SUPPORT_EMAIL}}). Apple has no obligation to provide maintenance or support for the App except as required under the Apple Standard EULA or applicable law.
+Support is available at [https://kinapp.dev/arrowmaze/support/](https://kinapp.dev/arrowmaze/support/) or [support@kinapp.dev](mailto:support@kinapp.dev). Apple has no obligation to provide maintenance or support for the App except as required under the Apple Standard EULA or applicable law.
 
 ## 11. Disclaimers
 
@@ -75,7 +81,7 @@ To the maximum extent permitted by applicable law, the Developer is not liable f
 
 ## 13. Suspension and termination
 
-You may stop using and delete the App at any time; subscription cancellation is a separate action described above. Your licence may terminate if you materially breach these Terms or the Apple Standard EULA. Provisions that by their nature should survive termination—including ownership, disclaimers, liability limitations, and dispute provisions—will survive.
+You may stop using and delete the App at any time. To manage a subscription from version 1.x, follow section 6. Your licence may terminate if you materially breach these Terms or the Apple Standard EULA. Provisions that by their nature should survive termination—including ownership, disclaimers, liability limitations, and dispute provisions—will survive.
 
 ## 14. Changes to these Terms
 
@@ -83,7 +89,7 @@ We may update these Terms to reflect changes to the App, law, or App Store requi
 
 ## 15. Governing law and disputes
 
-Except where mandatory consumer law provides otherwise, these Terms are governed by {{GOVERNING_LAW}}, without regard to conflict-of-law rules, and disputes are subject to the jurisdiction of {{COURTS}}. If you are a consumer, this clause does not remove rights or forums that the law of your usual residence makes mandatory.
+Except where mandatory consumer law provides otherwise, these Terms are governed by the laws of the jurisdiction in which the Developer is established, without regard to conflict-of-law rules, and disputes are subject to the jurisdiction of the courts of that jurisdiction. If you are a consumer, this clause does not remove rights or forums that the law of your usual residence makes mandatory.
 
 ## 16. Apple as third-party beneficiary
 
@@ -91,11 +97,12 @@ Apple and its subsidiaries are third-party beneficiaries of these Terms as they 
 
 ## 17. Contact
 
-{{LEGAL_NAME}}  
-{{POSTAL_ADDRESS}}  
-[{{SUPPORT_EMAIL}}](mailto:{{SUPPORT_EMAIL}})
+Stepanov Dmitrii
+
+[support@kinapp.dev](mailto:support@kinapp.dev)
 
 ---
 
-[Privacy Policy]({{PRIVACY_URL}}) · [Support]({{SUPPORT_URL}})  
-© 2026 {{LEGAL_NAME}}. All rights reserved.
+[Privacy Policy](https://kinapp.dev/arrowmaze/privacy/) · [Support](https://kinapp.dev/arrowmaze/support/)
+
+© 2026 Stepanov Dmitrii. All rights reserved.

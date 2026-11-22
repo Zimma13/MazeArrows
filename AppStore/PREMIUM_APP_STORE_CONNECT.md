@@ -1,5 +1,7 @@
 # Arrow Maze Premium — App Store Connect
 
+> Архив нативной версии 1.x. Порядок завершения подписок и выпуска платной 2.0 описан в [журнале версии](../VERSION_2.md).
+
 Актуальная конфигурация для первого релиза, созданная 13 августа 2026 года.
 
 ## Идентификаторы
@@ -42,7 +44,7 @@
 - Spanish (Mexico)
 - Spanish (Spain)
 
-Тексты продуктов находятся в `AppStore/ASO/<locale>/subscriptions.txt`.
+Тексты продуктов находятся в `AppStore/ASO/archive/1.0/subscriptions/<locale>.txt`.
 
 ## Общие настройки
 

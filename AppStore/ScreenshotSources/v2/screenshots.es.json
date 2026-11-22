@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "locale": "es",
+  "slides": [
+    {
+      "id": "photoMaze",
+      "filename": "01_your-photo-your-maze.png",
+      "headline": [
+        "TU FOTO.",
+        "TU LABERINTO."
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "Elige una silueta. Conviértela en un laberinto jugable."
+      ],
+      "backgroundCapture": "photo-game",
+      "template": "photoToMaze"
+    },
+    {
+      "id": "freeArrow",
+      "filename": "02_find-the-free-arrow.png",
+      "headline": [
+        "ENCUENTRA LA",
+        "FLECHA LIBRE"
+      ],
+      "accentLine": 1,
+      "accent": "cyan",
+      "support": [
+        "Una jugada inteligente puede abrir todo el tablero."
+      ],
+      "backgroundCapture": "free-arrow",
+      "template": "heroDevice"
+    },
+    {
+      "id": "combo",
+      "filename": "03_watch-it-all-unravel.png",
+      "headline": [
+        "MIRA CÓMO",
+        "TODO ENCAJA"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "Planifica tus jugadas. Encadena combos perfectos."
+      ],
+      "backgroundCapture": "combo",
+      "template": "combo"
+    },
+    {
+      "id": "worlds",
+      "filename": "04_260-levels-8-worlds.png",
+      "headline": [
+        "260 NIVELES.",
+        "8 MUNDOS."
+      ],
+      "accentLine": 1,
+      "accent": "pink",
+      "support": [
+        "Abre las puertas con las llaves que correspondan."
+      ],
+      "backgroundCapture": "worlds",
+      "template": "worlds"
+    },
+    {
+      "id": "daily",
+      "filename": "05_fresh-maze-every-day.png",
+      "headline": [
+        "NUEVO LABERINTO",
+        "CADA DÍA"
+      ],
+      "accentLine": 1,
+      "accent": "gold",
+      "support": [
+        "Reto diario, tres misiones y recompensas por tu racha."
+      ],
+      "backgroundCapture": "daily",
+      "template": "dailyAndQuests"
+    }
+  ]
+}

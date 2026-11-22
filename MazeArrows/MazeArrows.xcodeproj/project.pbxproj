@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FA2D7988300CB0A500CACCED /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2D7987300CB0A500CACCED /* StoreKit.framework */; };
-		FAAD00010000000000000001 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FAAD00020000000000000001 /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAD00010000000000000001 /* GoogleMobileAds in Frameworks */,
 				FA2D7988300CB0A500CACCED /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +118,6 @@
 			);
 			name = MazeArrows;
 			packageProductDependencies = (
-				FAAD00020000000000000001 /* GoogleMobileAds */,
 			);
 			productName = MazeArrows;
 			productReference = FA8F4F872FB5AA5300615C92 /* MazeArrows.app */;
@@ -199,7 +196,6 @@
 			mainGroup = FA8F4F7E2FB5AA5300615C92;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FAF90F44302DCFA100A6CF44 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FA8F4F882FB5AA5300615C92 /* Products */;
@@ -383,7 +379,6 @@
 		FA8F4F932FB5AA5400615C92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADMOB_APP_ID = "ca-app-pub-3940256099942544~1458002511";
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconNeon AppIconPetal AppIconSakura AppIconAtlas AppIconNordic";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -426,7 +421,6 @@
 		FA8F4F942FB5AA5400615C92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADMOB_APP_ID = "ca-app-pub-4288377893011444~6264190828";
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconNeon AppIconPetal AppIconSakura AppIconAtlas AppIconNordic";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -546,24 +540,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		FAF90F44302DCFA100A6CF44 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 13.7.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FAAD00020000000000000001 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAF90F44302DCFA100A6CF44 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA8F4F7F2FB5AA5300615C92 /* Project object */;
 }

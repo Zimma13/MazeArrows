@@ -96,6 +96,47 @@ struct GameTheme: Sendable {
         }
     }
 
+    /// Adjust only the displayed ink of an image zone. Archived and shared
+    /// levels keep the sampled RGB, so the same photo can follow any theme.
+    func photoInk(_ sample: PieceGroupPaletteColor) -> PieceGroupPaletteColor {
+        let background = boardBackground.resolve(in: EnvironmentValues()).relativeLuminance
+        let source = Color.Resolved(
+            red: Float(sample.red), green: Float(sample.green), blue: Float(sample.blue)
+        )
+        let luminance = source.relativeLuminance
+        let minimumRatio: Float = 4.5
+        let ratio = (max(background, luminance) + 0.05) / (min(background, luminance) + 0.05)
+        guard ratio < minimumRatio else { return sample }
+
+        let darkTarget = (background + 0.05) / minimumRatio - 0.05
+        let lightTarget = minimumRatio * (background + 0.05) - 0.05
+        let target = darkTarget >= 0 && (lightTarget > 1 || luminance < background)
+            ? darkTarget : lightTarget
+
+        // Scale the linear RGB channels together to retain the photo's hue.
+        // Once a channel reaches white, mix in only the white still needed.
+        let peak = max(source.linearRed, source.linearGreen, source.linearBlue)
+        let scale = peak > 0 ? min(target / luminance, 1 / peak) : 0
+        let scaledLuminance = luminance * scale
+        let white = scaledLuminance < target ? (target - scaledLuminance) / (1 - scaledLuminance) : 0
+        func channel(_ original: Float) -> Float {
+            let scaled = original * scale
+            return scaled + (1 - scaled) * white
+        }
+        let displayed = Color.Resolved(
+            colorSpace: .sRGBLinear,
+            red: channel(source.linearRed), green: channel(source.linearGreen), blue: channel(source.linearBlue)
+        )
+        // Nearest-byte rounding can lose the last bit of contrast in the
+        // rendered stroke. Round corrected channels away from the board.
+        func displayChannel(_ value: Float) -> Double {
+            Double((value * 255).rounded(target > luminance ? .up : .down)) / 255
+        }
+        return PieceGroupPaletteColor(
+            red: displayChannel(displayed.red), green: displayChannel(displayed.green), blue: displayChannel(displayed.blue)
+        )
+    }
+
     static let aurora = GameTheme(
         id: .aurora,
         displayName: "Aurora Light",
@@ -263,6 +304,12 @@ struct GameTheme: Sendable {
         glassBorder: adaptiveHex(0x1F2A1E, normalAlpha: 0.20, increasedAlpha: 0.52),
         achievementGold: adaptiveHex(0x765300, increased: 0x533900)
     )
+}
+
+private extension Color.Resolved {
+    var relativeLuminance: Float {
+        0.2126 * linearRed + 0.7152 * linearGreen + 0.0722 * linearBlue
+    }
 }
 
 nonisolated private func hex(_ value: UInt32) -> Color {

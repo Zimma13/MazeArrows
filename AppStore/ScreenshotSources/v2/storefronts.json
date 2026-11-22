@@ -1,0 +1,80 @@
+{
+  "appVersion": "2.0",
+  "bundleID": "zimma.MazeArrows",
+  "sets": {
+    "en": {
+      "storefronts": [
+        "en-US",
+        "en-GB",
+        "en-AU",
+        "en-CA"
+      ],
+      "appleLocale": "en_US",
+      "questSource": "en-US"
+    },
+    "de": {
+      "storefronts": [
+        "de-DE"
+      ],
+      "appleLocale": "de_DE",
+      "questSource": "de"
+    },
+    "es": {
+      "storefronts": [
+        "es-ES"
+      ],
+      "appleLocale": "es_ES",
+      "questSource": "es"
+    },
+    "es-MX": {
+      "storefronts": [
+        "es-MX"
+      ],
+      "appleLocale": "es_MX",
+      "questSource": "es-MX"
+    },
+    "fr": {
+      "storefronts": [
+        "fr-FR",
+        "fr-CA"
+      ],
+      "appleLocale": "fr_FR",
+      "questSource": "fr"
+    },
+    "ja": {
+      "storefronts": [
+        "ja"
+      ],
+      "appleLocale": "ja_JP",
+      "questSource": "ja"
+    },
+    "ko": {
+      "storefronts": [
+        "ko"
+      ],
+      "appleLocale": "ko_KR",
+      "questSource": "ko"
+    },
+    "pt-BR": {
+      "storefronts": [
+        "pt-BR"
+      ],
+      "appleLocale": "pt_BR",
+      "questSource": "pt-BR"
+    },
+    "pt-PT": {
+      "storefronts": [
+        "pt-PT"
+      ],
+      "appleLocale": "pt_PT",
+      "questSource": null
+    },
+    "zh-Hant": {
+      "storefronts": [
+        "zh-Hant"
+      ],
+      "appleLocale": "zh_TW",
+      "questSource": "zh-Hant"
+    }
+  }
+}
